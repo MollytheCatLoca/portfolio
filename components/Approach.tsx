@@ -12,44 +12,36 @@ const Approach = () => {
         Nuestro <span className="text-purple">Enfoque</span>
       </h1>
 
-      {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
-        {/* add des prop */}
         <Card
           title="Diseño & Estrategia"
           icon={<AceternityIcon order="Fase 1" />}
-          des="Colaboraremos para mapear los objetivos de tu proyecto energético, el público objetivo y las funcionalidades clave. Discutiremos aspectos como la estructura del sistema, la integración de tecnologías renovables y los requisitos de contenido técnico."
+          des="Colaboraremos para mapear los objetivos del proyecto, el público objetivo y las funcionalidades clave. Discutiremos aspectos como la estructura del sistema, la integración de tecnologías avanzadas y los requisitos de contenido técnico. Este enfoque asegura que el proyecto esté alineado con tus necesidades y expectativas."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
-            // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
             containerClassName="bg-emerald-900 rounded-3xl overflow-hidden"
           />
         </Card>
         <Card
           title="Planificación & Ejecución"
           icon={<AceternityIcon order="Fase 2" />}
-          des="Una vez que acordamos el plan, nuestro equipo de expertos se pone manos a la obra para llevar a cabo el proyecto. Desde los diseños iniciales hasta la implementación final, te mantenemos actualizado en cada paso del proceso. Trabajamos de manera colaborativa, asegurándonos de que todas las etapas se desarrollen de acuerdo con los más altos estándares de calidad y eficiencia."
+          des="Una vez que acordamos el plan, nuestro equipo se pone en marcha para llevar a cabo el proyecto. Seguimos un enfoque iterativo y colaborativo, manteniéndote informado en cada paso del proceso. Nuestro objetivo es garantizar la calidad y eficiencia en todas las etapas del desarrollo."
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            // change bg-black to bg-pink-900
             containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
             colors={[
-              // change the colors of the
               [255, 166, 158],
               [221, 255, 247],
             ]}
             dotSize={2}
           />
-          {/* Radial gradient for the cute fade */}
-          {/* remove this one */}
-          {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
           title="Implementación & Capacitación"
           icon={<AceternityIcon order="Fase 3" />}
-          des="Realizamos la instalación y puesta en marcha de todos los sistemas energéticos. Nuestro equipo de profesionales se asegura de que cada componente funcione de manera óptima y que el sistema completo esté listo para operar. Además, proporcionamos capacitación integral a tu equipo, garantizando que estén preparados para manejar y mantener el sistema con confianza y eficacia."
+          des="Realizamos la instalación y puesta en marcha de todos los sistemas, asegurando que cada componente funcione de manera óptima. Proporcionamos capacitación integral a tu equipo, garantizando que estén preparados para manejar y mantener el sistema con eficacia y confianza. Este enfoque asegura una transición suave y una adopción exitosa."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -63,6 +55,7 @@ const Approach = () => {
 };
 
 export default Approach;
+
 
 const Card = ({
   title,

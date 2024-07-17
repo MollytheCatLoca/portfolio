@@ -8,15 +8,15 @@ const Footer = () => {
   return (
     <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
       {/* background grid */}
-      
 
       <div className="flex flex-col items-center">
-        <h1 className="heading-responsive lg:max-w-[45vw] sm:max-w-[50vw] text-center ">
-        ¿Listos para transformar  <span className="text-purple">el futuro</span> energético?
+      <h1 className="heading-responsive lg:max-w-[40vw] sm:max-w-[50vw] text-center ">
+          ¿Listos para liderar <span className="text-purple">la transformación sostenible</span>?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-        Soluciones sostenibles que impulsan un mañana más verde y eficiente.
+          Innovación y tecnología para un futuro más eficiente y verde.
         </p>
+
         <a href="mailto:contacto@bisintegraciones.com">
           <MagicButton
             title="Contáctanos"

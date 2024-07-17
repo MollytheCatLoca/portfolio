@@ -1,15 +1,26 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
-import { projects } from "@/data";
 import { PinContainer } from "./ui/PinContainer";
 
-const RecentProjects = () => {
+interface ProjectItem {
+  id: number;
+  title: string;
+  des: string;
+  img: string;
+  iconLists: string[];
+  link: string;
+}
+
+interface RecentProjectsProps {
+  projects: ProjectItem[];
+}
+
+const RecentProjects: React.FC<RecentProjectsProps> = ({ projects }) => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading-responsive mb-10">
-        Proyectos que {" "}
-        <span className="text-purple">Potencian</span>
+        Proyectos que <span className="text-purple">Potencian</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (

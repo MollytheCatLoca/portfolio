@@ -51,13 +51,12 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transformando Conceptos en Soluciones Energéticas Sustentables"
+            words="Liderando la Transformación Sostenible con Innovación y Tecnología"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-          En BIS Integraciones, impulsamos el cambio hacia la sostenibilidad con tecnología de punta en energías renovables.
-
+          En BIS Integraciones, lideramos la transformación hacia un futuro sostenible, integrando tecnología avanzada en energías renovables, IT y soluciones viales.
           </p>
 
           <a href="#about">

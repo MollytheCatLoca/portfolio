@@ -1,15 +1,32 @@
 "use client";
 
 import React from "react";
-
-import { companies, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
 
-const Clients = () => {
+
+interface Company {
+  id: number;
+  name: string;
+  img: string;
+  nameImg: string;
+}
+
+interface Testimonial {
+  quote: string;
+  name: string;
+  title: string;
+}
+
+interface ClientsProps {
+  companies: Company[];
+  testimonials: Testimonial[];
+}
+
+const Clients: React.FC<ClientsProps> = ({ companies, testimonials }) => {
   return (
     <section id="testimonials" className="py-20">
-      <h1 className="heading-responsive" id="clients">
-        Ideas que
+      <h1 className="heading-responsive">
+        Ideas que 
         <span className="text-purple"> Potencian</span>
       </h1>
 
@@ -28,16 +45,16 @@ const Clients = () => {
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
           {companies.map((company) => (
             <React.Fragment key={company.id}>
-            <div className="flex items-center justify-center">
-              <img
-                src={company.nameImg}
-                alt={company.name}
-                className="w-24 h-auto mx-4 object-contain" // Ajustar tamaño y margen
-              />
-            </div>
-          </React.Fragment>
-          
-          
+              <div className="flex md:max-w-60 max-w-32 gap-2">
+           
+                <img
+                  src={company.nameImg}
+                  alt={company.name}
+                  width={company.id === 4 || company.id === 5 ? 100 : 150}
+                  className="md:w-24 w-20"
+                />
+              </div>
+            </React.Fragment>
           ))}
         </div>
       </div>

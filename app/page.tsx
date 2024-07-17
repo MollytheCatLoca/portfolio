@@ -1,30 +1,24 @@
-import Image from "next/image";
-import Hero from "@/components/Hero";
+import React from 'react';
+import Footer from '@/components/Footer';
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import { FaHome } from "react-icons/fa";
-import Grid from "@/components/Grid";
-import RecentProjects from "@/components/RecentProjects";
-import { navItems } from "@/data";
-import Clients from "@/components/Clients";
-import Experience from "@/components/Experience";
-import Approach from "@/components/Approach";
-import Footer from "@/components/Footer";
+import { navItems, gridItems_home, RECENT_PROJECT_HOME } from "@/data";
+import Hero from '@/components/Hero';
+import RecentProjects from '@/components/RecenProjectss-Home';
+import ChatCompNew from '@/components/ChatCompNew';
 
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip">
-      <div className="max-w-7xl w-full">
-      <FloatingNav className="" navItems={navItems}/>
-      <Hero /> 
-      <Grid />
-      <RecentProjects />
-      <Clients />
-      <Experience />
-      <Approach />
+    <main className="relative bg-black-100 flex justify-center overflow-clip items-center flex-col  mx-auto sm:px-10 px-1">
+      <div className="w-ful">
+      <FloatingNav navItems={navItems} />
+      <Hero />
+      <RecentProjects projects={RECENT_PROJECT_HOME} />
+      <ChatCompNew />
       <Footer />
-
       </div>
     </main>
   );
-}
+};
+
+export default Home;
