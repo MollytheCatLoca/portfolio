@@ -139,7 +139,7 @@ const ChatCompNew: React.FC = () => {
               </Button>
             </div>
           </CardHeader>
-          <CardContent className="chatbot-card-content">
+          <CardContent className="chatbot-card-conte">
             {messages.map((message, index) => (
               <div key={index} className={`message ${message.role === 'assistant' ? 'bot' : 'user'}`}>
                 <div className="font-medium">{message.role === 'assistant' ? 'Chatbot' : 'You'}</div>

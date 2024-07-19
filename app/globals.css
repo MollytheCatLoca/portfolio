@@ -80,6 +80,7 @@
   }
 }
 
+
 @layer utilities {
   .heading-responsive {
     font-size: 1.875rem; /* text-2xl (incrementado 50%) */
@@ -103,5 +104,13 @@
     color: #A855F7; /* Ajusta según tu configuración de Tailwind */
   }
   .shadow-text {
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);}
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1) !important;
+
+  }
+
+  .scale {
+    transform: scale(1.15); /* 15% más grande */
+    transform-origin: top center; /* Opcional: ajusta el origen de la transformación */
+  }
+  
 }

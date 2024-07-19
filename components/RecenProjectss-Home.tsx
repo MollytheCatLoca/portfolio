@@ -1,5 +1,4 @@
 "use client";
-
 import { FaLocationArrow } from "react-icons/fa6";
 import { PinContainer } from "./ui/PinContainer";
 
@@ -20,7 +19,7 @@ const RecentProjects: React.FC<RecentProjectsProps> = ({ projects }) => {
   return (
     <section className="py-36" id="projects">
       
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-0 mb-40">
+      <div className="flex flex-wrap items-center justify-center p-36 mt-0 mb-40">
 
   
         {projects.map((item) => (
@@ -28,11 +27,11 @@ const RecentProjects: React.FC<RecentProjectsProps> = ({ projects }) => {
             key={item.id}
             title={item.title}
             href={item.link}
-            containerClassName="flex flex-grow sm:w-64 w-full md:w-[20vw]"
+            containerClassName="flex flex-grow sm:w-64 w-full gap-10 md:w-[20vw]"
 
-            //containerClassName="flex flex-grow sm:w-64 w-full md:w-[20vw] p-1"// "flex flex-col lg:flex-row items-center justify-center w-full gap-12"
+            //containerClassName="flex flex-grow sm:w-64 w-full md:w-[20vw] p-1"// "flex flex-col lg:flex-row items-center justify-center w-full gap-10"
           >
-            <div className="relative flex items-center justify-center sm:w-64 w-full overflow-hidden aspect-[16/20] mb-20">
+            <div className="relative flex items-center justify-center sm:w-64 w-full overflow-hidden aspect-[16/20] gap-10 mb-20">
               <div
                 className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                 style={{ backgroundColor: "#13162D" }}

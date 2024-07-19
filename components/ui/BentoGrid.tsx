@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
@@ -122,7 +121,7 @@ export const BentoGridItem = ({
           )}
         >
           {/* Descripción */}
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#e2e3e8] z-10">
+          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#e2e3e8] z-10 shadow-text">
             {description}
           </div>
           {/* Título */}

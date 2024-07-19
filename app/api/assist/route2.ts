@@ -7,24 +7,20 @@ const openai = new OpenAI({
 
 export async function POST(req: Request) {
   try {
-    console.log('Request received');
-    
+    // Parse the request body
     const input: {
       threadId: string | null;
       message: string;
     } = await req.json();
-    
-    console.log('Parsed input:', input);
 
+    // Create a thread if needed
     const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;
-    console.log('Thread ID:', threadId);
 
+    // Add a message to the thread
     const createdMessage = await openai.beta.threads.messages.create(threadId, {
       role: 'user',
       content: input.message,
     });
-
-    console.log('Created message:', createdMessage);
 
     const assistantId = process.env.OPENAI_ASSISTANT_ID || '';
 
@@ -35,10 +31,12 @@ export async function POST(req: Request) {
     return AssistantResponse(
       { threadId, messageId: createdMessage.id },
       async ({ forwardStream }) => {
+        // Run the assistant on the thread
         const runStream = openai.beta.threads.runs.stream(threadId, {
           assistant_id: assistantId,
         });
 
+        // forward run status would stream message deltas
         await forwardStream(runStream);
       },
     );

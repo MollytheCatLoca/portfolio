@@ -2,6 +2,7 @@
 
 import React from "react";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
+import Image from "next/image";
 
 
 interface Company {
@@ -50,8 +51,9 @@ const Clients: React.FC<ClientsProps> = ({ companies, testimonials }) => {
                 <img
                   src={company.nameImg}
                   alt={company.name}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
+                  width={company.id === 4 || company.id === 5 ? 100 : 150 }
                   className="md:w-24 w-20"
+                  
                 />
               </div>
             </React.Fragment>
