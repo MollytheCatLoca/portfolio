@@ -1,9 +1,7 @@
-/* chatbot.css */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Añadir alrededor de la línea 1 */
 @keyframes grow {
   0% {
     transform: scaleY(0);
@@ -13,47 +11,41 @@
   }
 }
 
-/* Define variables de CSS para los colores y estilos del chatbot */
-@layer base {
-  :root {
-    --chatbot-background: 0 0% 100%;
-    --chatbot-foreground: 222.2 84% 4.9%;
-    --chatbot-card: 0 0% 100%;
-    --chatbot-card-foreground: 222.2 84% 4.9%;
-    --chatbot-popover: 0 0% 100%;
-    --chatbot-popover-foreground: 222.2 84% 4.9%;
-    --chatbot-primary: 221.2 83.2% 53.3%;
-    --chatbot-primary-foreground: 210 40% 98%;
-    --chatbot-secondary: 210 40% 96.1%;
-    --chatbot-secondary-foreground: 222.2 47.4% 11.2%;
-    --chatbot-muted: 210 40% 96.1%;
-    --chatbot-muted-foreground: 215.4 16.3% 44%;
-    --chatbot-accent: 210 40% 96.1%;
-    --chatbot-accent-foreground: 222.2 47.4% 11.2%;
-    --chatbot-destructive: 0 72% 51%;
-    --chatbot-destructive-foreground: 210 40% 98%;
-    --chatbot-border: 214.3 31.8% 91.4%;
-    --chatbot-input: 214.3 31.8% 91.4%;
-    --chatbot-ring: 221.2 83.2% 53.3%;
-    --chatbot-radius: 0.5rem;
-  }
+:root {
+  --chatbot-background: 0 0% 100%;
+  --chatbot-foreground: 222.2 84% 4.9%;
+  --chatbot-card: 0 0% 100%;
+  --chatbot-card-foreground: 222.2 84% 4.9%;
+  --chatbot-primary: 221.2 83.2% 53.3%;
+  --chatbot-primary-foreground: 210 40% 98%;
+  --chatbot-secondary: 210 40% 96.1%;
+  --chatbot-secondary-foreground: 222.2 47.4% 11.2%;
+  --chatbot-muted: 210 40% 96.1%;
+  --chatbot-muted-foreground: 215.4 16.3% 44%;
+  --chatbot-accent: 210 40% 96.1%;
+  --chatbot-accent-foreground: 222.2 47.4% 11.2%;
+  --chatbot-destructive: 0 72% 51%;
+  --chatbot-destructive-foreground: 210 40% 98%;
+  --chatbot-border: 214.3 31.8% 91.4%;
+  --chatbot-input: 214.3 31.8% 91.4%;
+  --chatbot-ring: 221.2 83.2% 53.3%;
+  --chatbot-radius: 0.5rem;
 }
 
-
-/* Estilo de la tarjeta del chatbot */
 .chatbot-card {
   border: 2px solid hsl(var(--chatbot-primary));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: var(--chatbot-radius);
   background-color: hsl(var(--chatbot-card));
   color: hsl(var(--chatbot-card-foreground));
-  padding: 0px;
+  padding: 0;  /* Elimina el padding interno */
+  margin: 0;   /* Elimina el margen externo */
   width: 100%;
-  animation: grow 0.5s ease-in ; /* Añadir esta línea */
-  transform-origin: bottom ; /* Añadir esta línea */
+  max-width: 100%; /* Asegurar que ocupe todo el ancho */
+  animation: grow 0.5s ease-in;
+  transform-origin: bottom; /* Cambiado de bottom a top para abrir hacia abajo */
 }
 
-/* Estilo del encabezado de la tarjeta del chatbot */
 .chatbot-card-header {
   display: flex;
   align-items: center;
@@ -65,32 +57,39 @@
   border-top-right-radius: var(--chatbot-radius);
 }
 
-/* Estilo del contenido de la tarjeta del chatbot */
 .chatbot-card-content {
-  padding: 1rem;
-  height: 600px;
+  flex: 1;
   overflow-y: auto;
   background-color: hsl(var(--chatbot-background));
   color: hsl(var(--chatbot-foreground));
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-
+  padding: 1rem;
+  height: 400px; /* Ajusta esto según sea necesario */
 }
 
-/* Contenedor de los mensajes */
+/* Scrollbar personalizado y sutil */
+.chatbot-card-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot-card-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.chatbot-card-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .message-container {
   display: flex;
-  width: 100%;
-  margin-bottom: 20px; /* Añade espacio vacío entre los mensajes */
+  width: 95%;
+  margin-bottom: 12px;
 }
 
-/* Estilo de los mensajes */
 .message {
-  max-width: 80%; /* Ancho máximo del mensaje */
+  max-width: 80%;
   display: flex;
   flex-direction: column;
-  margin: 1% ;
   gap: 0.5rem;
   padding: 0.75rem;
   font-size: 0.875rem;
@@ -99,105 +98,70 @@
   margin-bottom: 1rem;
 }
 
-
-.chatbot-minimized-icon {
-  position: absolute;
-  bottom: 1rem !important; /* Ajusta la distancia desde el borde inferior */
-  right: 1rem !important;   /* Ajusta la distancia desde el borde izquierdo */
-  width: 3.5rem !important;  /* Tamaño del icono */
-  height: 3.5rem !important; /* Tamaño del icono */
-  background-color: hsl(var(--chatbot-primary)) !important; /* Color de fondo */
-  border-radius: 50% !important; /* Hace el icono redondo */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  cursor: pointer !important;
-  color: hsl(var(--chatbot-primary-foreground)) !important;
-}
-
-
-/* Estilo de los mensajes del bot */
 .message.bot {
   background-color: hsl(var(--chatbot-muted));
   color: hsl(var(--chatbot-muted-foreground));
 }
 
-/* Estilo de los mensajes del usuario */
 .message.user {
   background-color: hsl(var(--chatbot-primary));
   color: hsl(var(--chatbot-primary-foreground));
   text-align: right;
-  margin-left: auto; /* Mueve el globo del mensaje a la derecha */
-}
-
-/* Estilo del pie de la tarjeta del chatbot */
-.chatbot-card-footer {
-  padding: 1rem;
-  border-top: 1px solid hsl(var(--chatbot-muted));
-}
-
-/* Estilo del botón de enviar */
-.chatbot-send-btn {
-  color: hsl(var(--chatbot-primary-foreground));
-  background-color: hsl(var(--chatbot-primary));
-}
-
-/* Estilo del botón de enviar cuando se pasa el ratón por encima */
-.chatbot-send-btn:hover {
-  background-color: hsl(var(--chatbot-primary-foreground)) / 0.2;
-}
-
-/* Estilo de la barra de desplazamiento */
-.chatbot-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: hsl(var(--chatbot-muted)) hsl(var(--chatbot-muted-foreground));
-}
-
-/* Estilo de los mensajes en el contenido */
-.chatbot-message {
-  font-weight: 500;
-}
-
-/* Estilo del campo de entrada de texto */
-.chatbot-input {
-  flex: 1;
-  background-color: hsl(var(--chatbot-input));
-  color: hsl(var(--chatbot-foreground));
-}
-
-/* Estilo del icono del chatbot */
-.chatbot-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: hsl(var(--chatbot-primary-foreground));
-}
-
-/* Estilo del icono del chatbot cuando se pasa el ratón por encima */
-.chatbot-icon:hover {
-  background-color: hsl(var(--chatbot-primary)) / 0.2;
-  border-radius: var(--chatbot-radius);
+  margin-left: auto;
 }
 
 .chatbot-card-footer form {
   display: flex;
   align-items: center;
+  align-self: flex-end; /* Alinea el formulario al final */
+  width: 100%;
+  height: 3.8rem; /* Ajusta la altura del formulario */
 }
 
 .chatbot-input {
   flex: 1;
-  padding: 0.5rem; /* Ajusta el padding según sea necesario */
+  padding: 0.3rem;
   border: 1px solid hsl(var(--chatbot-border));
   border-radius: var(--chatbot-radius);
   background-color: hsl(var(--chatbot-input));
   color: hsl(var(--chatbot-foreground));
+  margin-right: 0.5rem; /* Espacio entre el input y el botón */
+  margin-left: 0.5rem; /* Espacio entre el input y el borde */
+  width: calc(100% - 4.5rem); /* Asegura que el input ocupe todo el ancho restante */
+  /* Añade margen interno para un mejor aspecto */
+  padding-left: 1rem;
 }
 
 .chatbot-send-btn {
-  margin-left: 0.5rem; /* Espacio entre el campo de entrada y el botón */
+  flex-shrink: 0; /* Evita que el botón se reduzca */
   color: hsl(var(--chatbot-primary-foreground));
   background-color: hsl(var(--chatbot-primary));
   border-radius: var(--chatbot-radius);
-  padding: 0.5rem; /* Ajusta el padding según sea necesario */
+  padding: 0.5rem;
+  width: 2.5rem; /* Ancho fijo para el botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem; /* Espacio entre el botón y el input */
 }
 
+.chatbot-minimized-icon {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 200px;
+  height: 300px;
+  background-color: hsl(var(--chatbot-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: hsl(var(--chatbot-primary-foreground));
+}
 
+.chatbot-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  color: hsl(var(--chatbot-primary-foreground));
+}

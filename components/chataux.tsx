@@ -86,22 +86,16 @@ const ChatCompNew: React.FC = () => {
       const lastMessage = assistantMessages[assistantMessages.length - 1];
       if (lastMessage.role === 'assistant') {
         setIsReceiving(true);
-        setCurrentResponse(lastMessage.content); // Sobrescribe en lugar de concatenar
+        setCurrentResponse(lastMessage.content);  // Sobrescribe en lugar de concatenar
       } else if (lastMessage.content !== lastUserMessage) {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { role: lastMessage.role as 'user' | 'assistant' | 'code', text: lastMessage.content },
-        ]);
+        setMessages((prevMessages) => [...prevMessages, { role: lastMessage.role as 'user' | 'assistant' | 'code', text: lastMessage.content }]);
       }
     }
   }, [assistantMessages, lastUserMessage]);
 
   useEffect(() => {
     if (status === 'awaiting_message' && currentResponse) {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { role: 'assistant', text: currentResponse },
-      ]);
+      setMessages((prevMessages) => [...prevMessages, { role: 'assistant', text: currentResponse }]);
       setCurrentResponse(''); // Resetear el estado de la respuesta en curso
       setIsReceiving(false);
       setInputDisabled(false); // Permitir nueva entrada del usuario
@@ -113,10 +107,7 @@ const ChatCompNew: React.FC = () => {
     if (!inputDisabled) {
       const userMessage = input.trim();
       if (userMessage && userMessage !== lastUserMessage) {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { role: 'user', text: userMessage },
-        ]); // Solo agregamos el mensaje del usuario aquí
+        setMessages((prevMessages) => [...prevMessages, { role: 'user', text: userMessage }]);  // Solo agregamos el mensaje del usuario aquí
         submitMessage(e); // Llamamos submitMessage con el evento de formulario
         setLastUserMessage(userMessage); // Actualizar la última entrada del usuario
         setInputDisabled(true); // Deshabilitar entrada hasta que el bot responda
@@ -127,7 +118,6 @@ const ChatCompNew: React.FC = () => {
   const toggleChatbot = () => {
     setIsChatbotOpen(!isChatbotOpen);
   };
-
   return (
     <div className="fixed bottom-4 right-4 z-50 w-full max-w-md">
       {isChatbotOpen && (
@@ -135,12 +125,7 @@ const ChatCompNew: React.FC = () => {
           <CardHeader className="chatbot-card-header">
             <h3 className="text-lg font-medium">Chatbot BIS</h3>
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="chatbot-icon"
-                onClick={toggleChatbot}
-              >
+              <Button variant="ghost" size="icon" className="chatbot-icon" onClick={toggleChatbot}>
                 <MinimizeIcon className="w-5 h-5" />
                 <span className="sr-only">Minimize</span>
               </Button>
@@ -148,34 +133,22 @@ const ChatCompNew: React.FC = () => {
                 <MaximizeIcon className="w-5 h-5" />
                 <span className="sr-only">Maximize</span>
               </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="chatbot-icon"
-                onClick={toggleChatbot}
-              >
+              <Button variant="ghost" size="icon" className="chatbot-icon" onClick={toggleChatbot}>
                 <XIcon className="w-5 h-5" />
                 <span className="sr-only">Close</span>
               </Button>
             </div>
           </CardHeader>
-          <CardContent className="chatbot-card-content">
+          <CardContent className="chatbot-card-conte">
             {messages.map((message, index) => (
-              <div
-                key={index}
-                className={`message ${
-                  message.role === 'assistant' ? 'bot' : 'user'
-                }`}
-              >
-                <div className="font-medium">
-                  {message.role === 'assistant' ? 'Chatbot' : 'You'}
-                </div>
+              <div key={index} className={`message ${message.role === 'assistant' ? 'bot' : 'user'}`}>
+                <div className="font-medium">{message.role === 'assistant' ? 'Chatbot' : 'You'}</div>
                 <p>{message.text}</p>
               </div>
             ))}
             {isReceiving && (
-              <div className="message bot">
-                <div className="font-medium">Chatbot</div>
+              <div className='message bot'>
+                <div className='font-medium'>Chatbot</div>
                 <p>{currentResponse}</p>
               </div>
             )}
@@ -185,22 +158,17 @@ const ChatCompNew: React.FC = () => {
             <div ref={ref} />
           </CardContent>
           <CardFooter className="chatbot-card-footer">
-            <form onSubmit={onSubmit} className="flex items-center w-full">
+            <form onSubmit={onSubmit}>
               <input
                 ref={inputRef}
-                name="message"
+                name='message'
                 value={input}
                 onChange={handleInputChange}
                 placeholder="Type your message..."
                 className="chatbot-input"
                 disabled={status !== 'awaiting_message' || inputDisabled} // Deshabilitar entrada si está en progreso o esperando respuesta
               />
-              <Button
-                type="submit"
-                size="icon"
-                className="chatbot-send-btn"
-                disabled={status !== 'awaiting_message' || inputDisabled}
-              >
+              <Button type="submit" size="icon" className="chatbot-send-btn" disabled={status !== 'awaiting_message' || inputDisabled}>
                 <SendIcon className="w-4 h-4" />
                 <span className="sr-only">Send</span>
               </Button>
@@ -209,20 +177,15 @@ const ChatCompNew: React.FC = () => {
         </Card>
       )}
       {!isChatbotOpen && (
-        <Button
-          variant="ghost"
-          size="icon"
-          className="chatbot-icon chatbot-minimized-icon"
-          onClick={toggleChatbot}
-        >
-          <MessageCircleIcon className="w-16 h-16" /> {/* Aumenta el tamaño aquí */}
-          <span className="sr-only">Open Chatbot</span>
-        </Button>
-      )}
+      <Button variant="ghost" size="icon" className="chatbot-icon chatbot-minimized-icon" onClick={toggleChatbot}>
+        <MessageCircleIcon className="w-16 h-16" />  {/* Aumenta el tamaño aquí */}
+        <span className="sr-only">Open Chatbot</span>
+      </Button>
+)}
+
     </div>
   );
 };
-
 
 function MinimizeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
