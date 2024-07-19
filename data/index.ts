@@ -800,7 +800,7 @@ export const RECENT_PROJECT_HOME: {
     id: 2,
     title: "IT",
     des: "Tech Partners",
-    img: "/IT_Solution1.jpg", // Usando la imagen del grid de IT
+    img: "/IT_Solution2.jpg", // Usando la imagen del grid de IT
     iconLists: ["/dock.svg"], // Iconos representativos
     link: "/it",
   },

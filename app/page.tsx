@@ -14,7 +14,7 @@ const Home = () => {
         <FloatingNav navItems={navItems} /> 
        
       <Hero />
-      <div className="scale-125"> <RecentProjects projects={RECENT_PROJECT_HOME} /></div>
+      <div className="scale-95"> <RecentProjects projects={RECENT_PROJECT_HOME} /></div>
      
       <ChatCompNew />
       <Footer />
