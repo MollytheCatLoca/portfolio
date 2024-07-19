@@ -17,21 +17,17 @@ interface RecentProjectsProps {
 
 const RecentProjects: React.FC<RecentProjectsProps> = ({ projects }) => {
   return (
-    <section className="py-36" id="projects">
+    <section className="mt-2 pb-16 mb-16" id="projects">
       
-      <div className="flex flex-wrap items-center justify-center p-36 mt-0 mb-40">
-
-  
+      <div className="flex flex-wrap items-center justify-center gap-16 mt-10 ">
         {projects.map((item) => (
           <PinContainer
             key={item.id}
             title={item.title}
             href={item.link}
-            containerClassName="flex flex-grow sm:w-64 w-full gap-10 md:w-[20vw]"
-
-            //containerClassName="flex flex-grow sm:w-64 w-full md:w-[20vw] p-1"// "flex flex-col lg:flex-row items-center justify-center w-full gap-10"
+            containerClassName="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] gap-20 flex-col mb-10 mt-10"
           >
-            <div className="relative flex items-center justify-center sm:w-64 w-full overflow-hidden aspect-[16/20] gap-10 mb-20">
+            <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
               <div
                 className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                 style={{ backgroundColor: "#13162D" }}

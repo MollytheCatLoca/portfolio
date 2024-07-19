@@ -89,7 +89,7 @@ export const companies_Energy: {
   nameImg: string;
 }[] = [
   { id: 1, name: "Huawei", img: "", nameImg: "/huawei_logo_PNG1.png" },
-  { id: 2, name: "greenpower", img: "", nameImg: "Abb_logo_PNG6.png" },
+  { id: 2, name: "ABB", img: "", nameImg: "/Abb_logo_PNG6.png" },
   { id: 3, name: "renewableenergy", img: "", nameImg: "/Trina.svg" },
   { id: 4, name: "Honeywell", img: "", nameImg: "/Honeywell-Logo-1.svg" },
   { id: 5, name: "Siri", img: "", nameImg: "/Siri-Logo-SVG_010.svg" },
@@ -115,8 +115,8 @@ export const companies_Vial: {
   nameImg: string;
 }[] = [
   { id: 1, name: "Huawei", img: "", nameImg: "/huawei_logo_PNG1.png" },
-  { id: 2, name: "greenpower", img: "", nameImg: "Abb_logo_PNG6.png" },
-  { id: 3, name: "renewableenergy", img: "", nameImg: "/Trina.svg" },
+  { id: 2, name: "ABB", img: "", nameImg: "/allinone.webp" },
+  { id: 3, name: "Trina", img: "", nameImg: "/Trina.svg" },
   { id: 4, name: "Honeywell", img: "", nameImg: "/Honeywell-Logo-1.svg" },
   { id: 5, name: "Siri", img: "", nameImg: "/Siri-Logo-SVG_010.svg" },
 ];
@@ -215,7 +215,7 @@ export const projects_Energy: {
     title: "Soluciones All-in-One",
     des: "Parques solares con toda la electrónica necesaria en un container preconfigurado, listos para su uso.",
     img: "/BatsPanel.jpg",
-    iconLists: ["/solar.svg", "/efficiency.svg", "/innovation.svg"],
+    iconLists: ["/solar-panel.png", "/solar-energy.png", "/energy.png"],
     link: "https://bisintegraciones.com/transformando-municipios-en-comunidades-sustentables-con-energias-renovables/",
   },
   {
@@ -223,7 +223,7 @@ export const projects_Energy: {
     title: "Energía Verde para Edificios Públicos",
     des: "Instalación de paneles solares en colegios y hospitales para reducir costos y mejorar la sostenibilidad.",
     img: "/edificiosSolar.jpg",
-    iconLists: ["/public_buldings.svg", "/solar.svg", "/sustainability.svg"],
+    iconLists: ["/public-administration.png", "/solar-panel.png", "/planet-earth.png"],
     link: "https://bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
   {
@@ -231,7 +231,7 @@ export const projects_Energy: {
     title: "Parques Solares",
     des: "Generación de energía verde a pequeña escala para reducir costos energéticos y fomentar la sostenibilidad.",
     img: "/SolarTech5.jpg",
-    iconLists: ["/solar.svg", "/sustainability.svg", "/efficiency.svg"],
+    iconLists: ["/solar-panel.png", "/planet-earth.png", "/energy.png"],
     link: "https://bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
   {
@@ -239,7 +239,7 @@ export const projects_Energy: {
     title: "Consultoría Energética Integral",
     des: "Asesoría completa desde estudios de viabilidad hasta la implementación y optimización de sistemas.",
     img: "/consultoriaener.jpg",
-    iconLists: ["/consulting.svg", "/efficiency.svg", "/sustainability.svg"],
+    iconLists: ["/strategic-consulting.png", "/energy.png", "/planet-earth.png"],
     link: "https://bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
 ];
