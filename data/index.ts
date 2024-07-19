@@ -220,7 +220,7 @@ export const projects_Energy: {
     des: "Parques solares con toda la electrónica necesaria en un container preconfigurado, listos para su uso.",
     img: "/BatsPanel.jpg",
     iconLists: ["/solar-panel.png", "/solar-energy.png", "/energy.png"],
-    link: "https://bisintegraciones.com/transformando-municipios-en-comunidades-sustentables-con-energias-renovables/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
   {
     id: 2,
@@ -228,7 +228,7 @@ export const projects_Energy: {
     des: "Instalación de paneles solares en colegios y hospitales para reducir costos y mejorar la sostenibilidad.",
     img: "/edificiosSolar.jpg",
     iconLists: ["/public-administration.png", "/solar-panel.png", "/planet-earth.png"],
-    link: "https://bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
   {
     id: 3,
@@ -236,7 +236,7 @@ export const projects_Energy: {
     des: "Generación de energía verde a pequeña escala para reducir costos energéticos y fomentar la sostenibilidad.",
     img: "/SolarTech5.jpg",
     iconLists: ["/solar-panel.png", "/planet-earth.png", "/energy.png"],
-    link: "https://bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
   {
     id: 4,
@@ -244,7 +244,7 @@ export const projects_Energy: {
     des: "Asesoría completa desde estudios de viabilidad hasta la implementación y optimización de sistemas.",
     img: "/consultoriaener.jpg",
     iconLists: ["/strategic-consulting.png", "/energy.png", "/planet-earth.png"],
-    link: "https://bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
   },
 ];
 
@@ -421,7 +421,7 @@ export const projects_IT: {
     des: "Creamos soluciones para tus necesidades específicas.",
     img: "/ITP_SoftFac.jpg",
     iconLists: ["/dock.svg"],
-    link: "https://bisintegraciones.com/desarrollo-software-a-medida/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-it/",
   },
   {
     id: 2,
@@ -429,7 +429,7 @@ export const projects_IT: {
     des: "Implementamos y gestionamos infraestructuras IT robustas y escalables.",
     img: "/ITP_Fiber.jpg",
     iconLists: ["/next.svg"],
-    link: "https://bisintegraciones.com/infraestructura-it/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-it/",
   },
   {
     id: 3,
@@ -437,7 +437,7 @@ export const projects_IT: {
     des: "Asesoramos en la optimización y modernización de tus sistemas IT.",
     img: "/ITP_Program.jpg",
     iconLists: ["/git.svg"],
-    link: "https://bisintegraciones.com/consultoria-it/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-it/",
   },
   {
     id: 4,
@@ -445,7 +445,7 @@ export const projects_IT: {
     des: "Protegemos tu infraestructura digital contra amenazas cibernéticas.",
     img: "/ITP_CiberSeg.jpg",
     iconLists: ["/host.svg"],
-    link: "https://bisintegraciones.com/seguridad-cibernetica/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-it/",
   },
 ];
 
@@ -622,23 +622,23 @@ export const projects_Vial: {
     des: "Sistemas de botones de pánico",
     img: "/VIAL_PanicB.webp",
     iconLists: ["/cloud-data.png"],
-    link: "https://bisintegraciones.com/botones-de-panico/",
+    link: "https://blog.bisintegraciones.com/soluciones-viales-inteligentes-para-una-movilidad-segura-y-eficiente/",
   },
   {
     id: 2,
     title: "Totems",
-    des: "Seguridad Urbana",
+    des: "Seguridad para tu ciudad",
     img: "/VIAL_TOTEM1.webp",
     iconLists: ["/totem.png"],
-    link: "https://bisintegraciones.com/totems-informativos/",
+    link: "https://blog.bisintegraciones.com/descubre-el-nuevo-totem-de-seguridad-para-tu-ciudad/",
   },
   {
     id: 3,
-    title: "Gestión de Tráfico Inteligente",
-    des: "Gestión eficiente del tráfico vehicular",
+    title: "Parking Inteligente",
+    des: "Gestión de Estacionamiento",
     img: "/VIAL_Transit.jpg",
     iconLists: [ "/traffic.png"],
-    link: "https://bisintegraciones.com/gestion-trafico-inteligente/",
+    link: "https://blog.bisintegraciones.com/parkease-la-solucion-inteligente-e-integral-para-la-gestion-de-estacionamiento/",
   },
   {
     id: 4,
@@ -646,7 +646,7 @@ export const projects_Vial: {
     des: "Camaras & Contac Centers",
     img: "/VIAL_911.jpg",
     iconLists: [ "/diaphragm.png"],
-    link: "https://bisintegraciones.com/camaras-de-vigilancia/",
+    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-it-2/",
   },
 ];
 
