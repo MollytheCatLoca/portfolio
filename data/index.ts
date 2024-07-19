@@ -813,7 +813,7 @@ export const RECENT_PROJECT_HOME: {
     title: "Vial",
     des: "Gestión Vial",
     img: "/Vial_Solution5.jpg", // Usando la imagen del grid de Vial
-    iconLists: ["/git.svg"], // Iconos representativos
+    iconLists: ["/diaphragm.png"], // Iconos representativos
     link: "/vial",
   },
 ];
