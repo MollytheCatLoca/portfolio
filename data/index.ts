@@ -551,7 +551,7 @@ export const gridItems_Vial: {
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] bg-gradient-to-r from-blue-500 via-blue-300 to-blue-100",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end bg-opacity-70",
-    img: "/Vial_Solution1.jpg",
+    img: "/Vial_Solution5.jpg",
     spareImg: "",
   },
   {
@@ -624,7 +624,7 @@ export const projects_Vial: {
     id: 2,
     title: "Totems",
     des: "Seguridad Urbana",
-    img: "/Vial_TOTEM1.webp",
+    img: "/VIAL_TOTEM1.webp",
     iconLists: ["/efficiency.svg"],
     link: "https://bisintegraciones.com/totems-informativos/",
   },
@@ -775,7 +775,7 @@ export const gridItems_home: {
     className: "my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4",
     imgClassName: "w-full h-full object-cover",
     titleClassName: "justify-end bg-opacity-70 p-4 text-white",
-    img: "/Vial_Solution1.jpg",
+    img: "/Vial_Solution5.jpg",
     spareImg: "",
   },
 ];
@@ -808,7 +808,7 @@ export const RECENT_PROJECT_HOME: {
     id: 3,
     title: "Vial",
     des: "Gestión Vial",
-    img: "/Vial_Solution1.jpg", // Usando la imagen del grid de Vial
+    img: "/Vial_Solution5.jpg", // Usando la imagen del grid de Vial
     iconLists: ["/git.svg"], // Iconos representativos
     link: "/vial",
   },
