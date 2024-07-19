@@ -26,6 +26,7 @@ export default function RootLayout({
             disableTransitionOnChange
       >
             {children}
+            <Analytics />
           
         </ThemeProvider>
         
