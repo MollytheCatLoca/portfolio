@@ -81,6 +81,10 @@ export const navItems = [
   { name: "Vial", link: "/vial" },
 ];
 
+//Abb_logo_PNG6
+//
+//
+
 // Empresas asociadas, comunes a todas las secciones
 export const companies_Energy: {
   id: number;
@@ -89,10 +93,10 @@ export const companies_Energy: {
   nameImg: string;
 }[] = [
   { id: 1, name: "Huawei", img: "", nameImg: "/huawei_logo_PNG1.png" },
-  { id: 2, name: "ABB", img: "", nameImg: "/Abb_logo_PNG6.png" },
-  { id: 3, name: "renewableenergy", img: "", nameImg: "/Trina.svg" },
-  { id: 4, name: "Honeywell", img: "", nameImg: "/Honeywell-Logo-1.svg" },
-  { id: 5, name: "Siri", img: "", nameImg: "/Siri-Logo-SVG_010.svg" },
+  { id: 2, name: "ABB", img: "", nameImg: "/Honeywell-Logo-1.svg" },
+  { id: 3, name: "renewableenergy", img: "", nameImg: "/Guan.png" },
+  { id: 4, name: "Honeywell", img: "", nameImg: "/Abb_logo_PNG6.png" },
+  { id: 5, name: "Siri", img: "", nameImg: "/Solarcity-01.png" },
 ];
 
 export const companies_IT: {
@@ -102,10 +106,10 @@ export const companies_IT: {
   nameImg: string;
 }[] = [
   { id: 1, name: "Huawei", img: "", nameImg: "/huawei_logo_PNG1.png" },
-  { id: 2, name: "greenpower", img: "", nameImg: "cloud.svg" },
-  { id: 3, name: "renewableenergy", img: "", nameImg: "/dock.svg" },
-  { id: 4, name: "Honeywell", img: "", nameImg: "/Honeywell-Logo-1.svg" },
-  { id: 5, name: "Siri", img: "", nameImg: "/host.svg" },
+  { id: 2, name: "greenpower", img: "", nameImg: "/Atos-01.png" },
+  { id: 3, name: "renewableenergy", img: "", nameImg: "/host.svg" },
+  { id: 4, name: "Honeywell", img: "", nameImg: "/dock.svg" },
+  { id: 5, name: "Siri", img: "", nameImg: "/microsoft.png" },
 ];
 
 export const companies_Vial: {
@@ -115,10 +119,10 @@ export const companies_Vial: {
   nameImg: string;
 }[] = [
   { id: 1, name: "Huawei", img: "", nameImg: "/huawei_logo_PNG1.png" },
-  { id: 2, name: "ABB", img: "", nameImg: "/allinone.webp" },
-  { id: 3, name: "Trina", img: "", nameImg: "/Trina.svg" },
+  { id: 2, name: "ABB", img: "", nameImg: "/ILAT-01.png" },
+  { id: 3, name: "Trina", img: "", nameImg: "/Vinci-01.png" },
   { id: 4, name: "Honeywell", img: "", nameImg: "/Honeywell-Logo-1.svg" },
-  { id: 5, name: "Siri", img: "", nameImg: "/Siri-Logo-SVG_010.svg" },
+  { id: 5, name: "Siri", img: "", nameImg: "/Shimizu-01.png" },
 ];
 
 // Redes sociales comunes a todas las secciones
@@ -617,7 +621,7 @@ export const projects_Vial: {
     title: "Seguridad Ciudadana",
     des: "Sistemas de botones de pánico",
     img: "/VIAL_PanicB.webp",
-    iconLists: ["/efficiency.svg"],
+    iconLists: ["/cloud-data.png"],
     link: "https://bisintegraciones.com/botones-de-panico/",
   },
   {
@@ -625,7 +629,7 @@ export const projects_Vial: {
     title: "Totems",
     des: "Seguridad Urbana",
     img: "/VIAL_TOTEM1.webp",
-    iconLists: ["/efficiency.svg"],
+    iconLists: ["/totem.png"],
     link: "https://bisintegraciones.com/totems-informativos/",
   },
   {
@@ -633,7 +637,7 @@ export const projects_Vial: {
     title: "Gestión de Tráfico Inteligente",
     des: "Gestión eficiente del tráfico vehicular",
     img: "/VIAL_Transit.jpg",
-    iconLists: [ "/efficiency.svg"],
+    iconLists: [ "/traffic.png"],
     link: "https://bisintegraciones.com/gestion-trafico-inteligente/",
   },
   {
@@ -641,7 +645,7 @@ export const projects_Vial: {
     title: "Tecnologia en Vigilancia",
     des: "Camaras & Contac Centers",
     img: "/VIAL_911.jpg",
-    iconLists: [ "/efficiency.svg"],
+    iconLists: [ "/diaphragm.png"],
     link: "https://bisintegraciones.com/camaras-de-vigilancia/",
   },
 ];
