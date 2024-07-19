@@ -8,7 +8,8 @@ const nextConfig = {
     OPENAI_ASSISTANT_ID: process.env.OPENAI_ASSISTANT_ID,
   },
   trailingSlash: true,
-  //distDir: 'out',  // Puedes mantener esta configuración para especificar el directorio de salida
+  // output: 'export', // Comentar o eliminar esta línea
+  distDir: 'out',
 };
 
 export default nextConfig;
