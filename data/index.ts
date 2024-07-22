@@ -180,7 +180,7 @@ export const gridItems_Energy: {
     description: "Soluciones llave en mano que simplifican la instalación y operación de sistemas de energía solar.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "h-full w-full object-cover object-center",
-    titleClassName: "justify-start",
+    titleClassName: "justify-start bg-opacity-20",
     img: "/BatsPanel.jpg",
     spareImg: "",
   },
@@ -190,7 +190,7 @@ export const gridItems_Energy: {
     description: "Proyectos que convierten a las localidades en ejemplos de sostenibilidad y eficiencia.",
     className: "relative md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 h-full w-full object-cover object-center",
-    titleClassName: "justify-end bg-black bg-opacity-50 text-white",
+    titleClassName: "justify-end bg-black bg-opacity-20 text-white",
     img: "/SolarTech6.jpg",
     spareImg: "/grid.svg",
   },
@@ -220,7 +220,7 @@ export const projects_Energy: {
     des: "Parques solares con toda la electrónica necesaria en un container preconfigurado, listos para su uso.",
     img: "/BatsPanel.jpg",
     iconLists: ["/solar-panel.png", "/solar-energy.png", "/energy.png"],
-    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
+    link: "/energy/all-in-one/",
   },
   {
     id: 2,
@@ -236,7 +236,7 @@ export const projects_Energy: {
     des: "Generación de energía verde a pequeña escala para reducir costos energéticos y fomentar la sostenibilidad.",
     img: "/SolarTech5.jpg",
     iconLists: ["/solar-panel.png", "/planet-earth.png", "/energy.png"],
-    link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
+    link: "/energy/all-in-one/",
   },
   {
     id: 4,
@@ -818,3 +818,111 @@ export const RECENT_PROJECT_HOME: {
   },
 ];
 
+export const gridItems_AllinOne: {
+  id: number;
+  title: string;
+  description: string;
+  className: string;
+  imgClassName: string;
+  titleClassName: string;
+  img?: string;
+  spareImg?: string;
+}[] = [
+  {
+    id: 1,
+    title: "Energía Simplificada",
+    description: "Soluciones energéticas integrales para un futuro sostenible, todo en un solo lugar.",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] bg-gradient-to-r from-blue-500 via-blue-300 to-blue-100",
+    imgClassName: "w-full h-full",
+    titleClassName: "justify-end items-left bg-black bg-opacity-20",
+    img: "/BatsPanel.jpg",
+    spareImg: "",
+  },
+  {
+    id: 2,
+    title: "Financiamiento Asequible",
+    description: "Opciones de leasing flexibles para hacer realidad tu proyecto energético.",
+    className: "relative lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "w-full h-full",
+    titleClassName: "bg-black bg-opacity-50 text-white p-4 rounded-lg justify-end items-left",
+    img: "/SolarTech2.jpg",
+    spareImg: "",
+  },
+  {
+    id: 3,
+    title: "Ideal para Gobiernos",
+    description: "Soluciones eficientes y sostenibles para municipios y provincias.",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "w-full h-full object-cover",
+    titleClassName: "bg-black bg-opacity-30 text-white p-4 rounded-lg justify-end",
+    img: "/SolarTech6.jpg",
+    spareImg: "",
+  },
+  {
+    id: 4,
+    title: "Eficiencia Energética",
+    description: "Reducción de costos energéticos con tecnología avanzada.",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "w-full h-full object-cover",
+    titleClassName: "bg-black bg-opacity-20 text-white p-4 rounded-lg",
+    img: "/EN_BATFAC2.jpg",
+    spareImg: "",
+  },
+  {
+    id: 5,
+    title: "Soluciones para Edificios Públicos",
+    description: "Optimización de energía en instalaciones gubernamentales.",
+    className: " md:col-span-3 md:row-span-2",
+    imgClassName: "w-full h-full object-cover",
+    titleClassName: "bg-black bg-opacity-20 text-white p-4 rounded-lg",
+    img: "/EN_BATFAC.jpg",
+    spareImg: "",
+  },
+  {
+    id: 6,
+    title: "Rápido Retorno de Inversión",
+    description: "Altos costos de energía cubiertos con cuotas accesibles y bajas tasas, asegurando un retorno de inversión eficiente.",
+    className: "llg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] bg-gradient-to-r from-blue-500 via-blue-300 to-blue-100",
+    imgClassName: "w-full h-full object-cover",
+    titleClassName: "bg-black bg-opacity-30 text-white p-4 rounded-lg justify-center items-left",
+    img: "/EN_BAT_PAN.jpg",
+    spareImg: "",
+  },
+];
+
+export const testimonials_AllInOne: {
+  quote: string;
+  name: string;
+  title: string;
+}[] = [
+  {
+    quote: "La solución All-in-One simplifica todo el proceso energético al ofrecer una plataforma integral que cubre desde la instalación hasta el mantenimiento. Con esta solución, hemos observado una reducción del 30% en costos operativos, permitiendo a los municipios y provincias reinvertir esos ahorros en otras áreas críticas.",
+    name: "Energía Simplificada",
+    title: "Municipios y Provincias",
+  },
+  {
+    quote: "Nuestro programa de financiamiento a través de leasing ofrece tasas competitivas y cuotas accesibles, haciendo posible que los proyectos de energía renovable se financien por sí mismos. Los altos costos de energía ahora se pueden cubrir con los ahorros generados, asegurando un retorno de inversión en menos de cinco años.",
+    name: "Financiamiento Asequible",
+    title: "Proyectos de Energía Renovable",
+  },
+  {
+    quote: "Para gobiernos locales y provinciales, la solución All-in-One proporciona una manera eficiente de implementar proyectos sostenibles. Hemos trabajado con múltiples municipios, ayudándolos a reducir sus huellas de carbono y a mejorar la eficiencia energética de sus edificios públicos, todo mientras mantienen un presupuesto equilibrado.",
+    name: "Ideal para Gobiernos",
+    title: "Implementación Sostenible",
+  },
+  {
+    quote: "La tecnología avanzada de nuestros sistemas All-in-One no solo reduce los costos energéticos, sino que también mejora la eficiencia operativa. En nuestras instalaciones más recientes, hemos visto un ahorro energético del 40%, lo que demuestra el impacto positivo de integrar soluciones tecnológicas de última generación.",
+    name: "Eficiencia Energética",
+    title: "Ahorro y Sostenibilidad",
+  },
+  {
+    quote: "Las soluciones All-in-One son ideales para edificios públicos que buscan optimizar su consumo energético. Gracias a nuestra tecnología avanzada, estos edificios pueden operar de manera más eficiente, reduciendo costos y mejorando su impacto ambiental, lo que resulta en un entorno más sostenible y económico.",
+    name: "Soluciones para Edificios Públicos",
+    title: "Optimización Energética",
+  },
+  {
+    quote: "La solución All-in-One no solo ofrece una tecnología de vanguardia, sino que también asegura un rápido retorno de inversión. Con tasas de financiamiento bajas y cuotas accesibles, los altos costos de energía se ven mitigados, permitiendo que el proyecto se pague solo en pocos años, garantizando una solución económica y eficiente.",
+    name: "Retorno de Inversión Rápido",
+    title: "Tecnología y Economía",
+  },
+];
