@@ -71,46 +71,174 @@
     border: none;
     scroll-behavior: smooth;
   }
+
   body {
     background: hsl(var(--background));
     color: hsl(var(--foreground));
   }
+
   button {
     outline: none;
   }
+
+  .container {
+    min-height: 100vh;
+    background-color: transparent;
+    /* Fondo transparente */
+    color: var(--foreground);
+  }
+
+  .container2 {
+    min-height: 100vh;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .wrapper {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media screen and (max-width: 1536px) {
+    .wrapper {
+      max-width: 1366px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .wrapper {
+      max-width: 1024px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      max-width: 768px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      max-width: 640px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .wrapper {
+      max-width: 475px;
+    }
+  }
+
+  .ql-container {
+    font-size: 28px !important;
+  }
+
+  .quill>.ql-container>.ql-editor.ql-blank::before {
+    color: #b3b3b1;
+  }
 }
 
-
 @layer utilities {
-  .heading-responsive {
-    font-size: 1.875rem; /* text-2xl (incrementado 50%) */
-    @media (min-width: 640px) { /* sm */
-      font-size: 2.25rem; /* text-3xl (incrementado 50%) */
+  .responsive-heading2 {
+    font-size: 2.25rem;
+
+    @media (min-width: 640px) {
+      font-size: 2.5rem;
     }
-    @media (min-width: 768px) { /* md */
-      font-size: 2.6125rem; /* text-4xl (incrementado 50%) */
+
+    @media (min-width: 768px) {
+      font-size: 2.875rem;
     }
-    @media (min-width: 1024px) { /* lg */
-      font-size: 2.975rem; /* text-5xl (incrementado 50%) */
+
+    @media (min-width: 1024px) {
+      font-size: 3.5rem;
     }
-    @media (min-width: 1280px) { /* xl */
-      font-size: 3.3rem; /* text-6xl (incrementado 50%) */
+
+    @media (min-width: 1280px) {
+      font-size: 4rem;
     }
+
     font-weight: bold;
     text-align: center;
   }
-  
+
   .text-purple {
-    color: #A855F7; /* Ajusta según tu configuración de Tailwind */
+    color: #A855F7;
   }
+
+  .shadow-text {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1) !important;
+  }
+
+  .scale {
+    transform: scale(1.15);
+    transform-origin: top center;
+  }
+
+  .content {
+    display: flex;
+    gap: 50px;
+  }
+
+
+  .heading-responsive {
+    font-size: 1.875rem;
+
+    /* text-2xl (incrementado 50%) */
+    @media (min-width: 640px) {
+      /* sm */
+      font-size: 2.25rem;
+      /* text-3xl (incrementado 50%) */
+    }
+
+
+
+    @media (min-width: 768px) {
+      /* md */
+      font-size: 2.6125rem;
+      /* text-4xl (incrementado 50%) */
+    }
+
+    @media (min-width: 1024px) {
+      /* lg */
+      font-size: 2.975rem;
+      /* text-5xl (incrementado 50%) */
+    }
+
+    @media (min-width: 1280px) {
+      /* xl */
+      font-size: 3.3rem;
+      /* text-6xl (incrementado 50%) */
+    }
+
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .text-purple {
+    color: #A855F7;
+    /* Ajusta según tu configuración de Tailwind */
+  }
+
   .shadow-text {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 1) !important;
 
   }
 
   .scale {
-    transform: scale(1.15); /* 15% más grande */
-    transform-origin: top center; /* Opcional: ajusta el origen de la transformación */
+    transform: scale(1.15);
+    /* 15% más grande */
+    transform-origin: top center;
+    /* Opcional: ajusta el origen de la transformación */
   }
-  
+
+  .content {
+    display: flex;
+    gap: 50px;
+  }
 }

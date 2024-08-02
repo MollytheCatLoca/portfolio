@@ -12,20 +12,20 @@ import ChatCompNew from '@/components/ChatCompNew';
 
 const Energy = () => {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
-        <h1 className="text-white text-center text-4xl">Bienvenido a BIS ENERGIA</h1>
-        <Hero_Energy />
-        <Grid gridItems={gridItems_Energy} />
-        <RecentProjects projects={projects_Energy} />
-        <Clients companies={companies_Energy} testimonials={testimonials_Energy} />
-        <Experience workExperience={workExperience_Energy} />
-        <Approach_Energy />
-        <ChatCompNew />
-        <Footer_Energy/>
-      </div>
-    </main>
+    <main className= "relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 dark" >
+    <div className="max-w-7xl w-full" >
+      <FloatingNav navItems={ navItems } />
+        < h1 className = "text-white text-center text-4xl" > Bienvenido a BIS ENERGIA </h1>
+          < Hero_Energy />
+          <Grid gridItems={ gridItems_Energy } />
+            < RecentProjects projects = { projects_Energy } />
+              <Clients companies={ companies_Energy } testimonials = { testimonials_Energy } />
+                <Experience workExperience={ workExperience_Energy } />
+                  < Approach_Energy />
+                  <ChatCompNew />
+                  < Footer_Energy />
+                  </div>
+                  </main>
   );
 };
 

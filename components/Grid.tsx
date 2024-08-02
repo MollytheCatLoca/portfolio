@@ -10,6 +10,7 @@ interface GridItem {
   titleClassName: string;
   img?: string;
   spareImg?: string;
+  link?: string;
 }
 
 interface GridProps {
@@ -18,22 +19,25 @@ interface GridProps {
 
 const Grid: React.FC<GridProps> = ({ gridItems }) => {
   return (
-    <section id="about">
-      <BentoGrid>
-        {gridItems.map(({ id, title, description, className, img, imgClassName, titleClassName, spareImg }) => (
-          <BentoGridItem
-            id={id}
-            key={id}
-            title={title}
-            description={description}
-            className={className}
-            img={img}
-            imgClassName={imgClassName}
-            titleClassName={titleClassName}
-            spareImg={spareImg}
-          />
-        ))}
-      </BentoGrid>
+    <section id= "about" >
+    <BentoGrid>
+    {
+      gridItems.map(({ id, title, description, className, img, imgClassName, titleClassName, spareImg, link }) => (
+        <BentoGridItem
+            id= { id }
+            key = { id }
+            title = { title }
+            description = { description }
+            className = { className }
+            img = { img }
+            imgClassName = { imgClassName }
+            titleClassName = { titleClassName }
+            spareImg = { spareImg }
+            link = { link }
+        />
+        ))
+    }
+    </BentoGrid>
     </section>
   );
 }

@@ -12,20 +12,19 @@ import ChatCompNew from '@/components/ChatCompNew';
 
 const Vial = () => {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
-        <h1 className="text-white text-center text-4xl">Bienvenido a BIS VIAL</h1>
-        <Hero_Vial />
-        <Grid gridItems={gridItems_Vial} />
-        <RecentProjects projects={projects_Vial} />
-        <Clients companies={companies_Vial} testimonials={testimonials_Vial} />
-        <Experience workExperience={workExperience_Vial} />
-        <Approach_Vial />
-        <ChatCompNew />
-        <Footer_Vial/>
-      </div>
-    </main>
+    <main className= "relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 dark" >
+    <div className="max-w-7xl w-full" >
+      <FloatingNav navItems={ navItems } />
+        < Hero_Vial />
+        <Grid gridItems={ gridItems_Vial } />
+          < RecentProjects projects = { projects_Vial } />
+            <Clients companies={ companies_Vial } testimonials = { testimonials_Vial } />
+              <Experience workExperience={ workExperience_Vial } />
+                < Approach_Vial />
+                <ChatCompNew />
+                < Footer_Vial />
+                </div>
+                </main>
   );
 };
 
