@@ -155,7 +155,7 @@ const ChatCompNew: React.FC = () => {
   };
 
   return (
-    <div className= "fixed bottom-4 right-4 z-50 w-full max-w-md" >
+    <div className= "fixed bottom-4 right-2  md:right-4 md:left-auto z-50 w-[95%] md:w-full md:max-w-md" >
     { isChatbotOpen && (
       <Card className="chatbot-card" >
         <CardHeader className="chatbot-card-header" >
