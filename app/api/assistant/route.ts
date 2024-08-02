@@ -1,14 +1,14 @@
 import { AssistantResponse } from 'ai';
 import OpenAI from 'openai';
+import axios from 'axios';
 import { NextResponse } from 'next/server';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || '',
 });
 
-// Nueva forma de configurar la ruta
-export const runtime = 'edge'; // Esto habilita el runtime de Edge
-export const dynamic = 'force-dynamic'; // Esto hace que la ruta sea siempre dinámica
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   const timeoutPromise = new Promise((_, reject) =>
@@ -39,11 +39,62 @@ export async function POST(req: Request) {
 
     const responsePromise = AssistantResponse(
       { threadId, messageId: createdMessage.id },
-      async ({ forwardStream }) => {
+      async ({ forwardStream, sendDataMessage }) => {
         const runStream = openai.beta.threads.runs.stream(threadId, {
           assistant_id: assistantId,
         });
-        await forwardStream(runStream);
+        let runResult = await forwardStream(runStream);
+        while (
+          runResult?.status === 'requires_action' &&
+          runResult.required_action?.type === 'submit_tool_outputs'
+        ) {
+          const tool_outputs =
+            runResult.required_action.submit_tool_outputs.tool_calls.map(
+              (toolCall: any) => {
+                const parameters = JSON.parse(toolCall.function.arguments);
+                // Handle tool calls here if needed
+                return {};
+              },
+            );
+          runResult = await forwardStream(
+            openai.beta.threads.runs.submitToolOutputsStream(
+              threadId,
+              runResult.id,
+              { tool_outputs },
+            ),
+          );
+        }
+
+        // Get the final response
+        const messages = await openai.beta.threads.messages.list(threadId);
+        const assistantMessages = messages.data.filter(msg => msg.role === 'assistant');
+        if (assistantMessages.length > 0 && assistantMessages[0].content[0].type === 'text') {
+          const fullResponse = assistantMessages[0].content[0].text.value;
+          // Save the interaction to Heroku
+          const url = 'https://prompt-handler-06fbef253337.herokuapp.com/insert/';
+          const timestamp = new Date().toISOString();
+          const data = [{
+            pregunta: input.message,
+            respuesta: fullResponse,
+            timestamp: timestamp,
+            commit: `commit-${timestamp}`
+          }];
+          const auth = {
+            username: process.env.API_USERNAME,
+            password: process.env.API_PASSWORD
+          };
+          try {
+            const response = await axios.post(url, data, { auth });
+            console.log('Response from Heroku:', response.data);
+            if (response.data.message === '1 registros insertados correctamente') {
+              console.log('Registro insertado correctamente');
+            } else {
+              console.log('No se pudo confirmar la inserción del registro');
+            }
+          } catch (error) {
+            console.error('Error saving data to Heroku:', error);
+          }
+        }
       }
     );
 
