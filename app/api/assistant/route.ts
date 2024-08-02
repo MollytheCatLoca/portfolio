@@ -23,6 +23,10 @@ export async function POST(req: Request) {
     } = await req.json();
     console.log('Parsed input:', input);
 
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error('OPENAI_API_KEY is not set');
+    }
+
     const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;
     console.log('Thread ID:', threadId);
 
@@ -32,9 +36,9 @@ export async function POST(req: Request) {
     });
     console.log('Created message:', createdMessage);
 
-    const assistantId = process.env.OPENAI_ASSISTANT_ID || '';
+    const assistantId = process.env.OPENAI_ASSISTANT_ID;
     if (!assistantId) {
-      throw new Error('ASSISTANT_ID environment is not set');
+      throw new Error('OPENAI_ASSISTANT_ID is not set');
     }
 
     const responsePromise = AssistantResponse(
@@ -71,29 +75,7 @@ export async function POST(req: Request) {
         if (assistantMessages.length > 0 && assistantMessages[0].content[0].type === 'text') {
           const fullResponse = assistantMessages[0].content[0].text.value;
           // Save the interaction to Heroku
-          const url = 'https://prompt-handler-06fbef253337.herokuapp.com/insert/';
-          const timestamp = new Date().toISOString();
-          const data = [{
-            pregunta: input.message,
-            respuesta: fullResponse,
-            timestamp: timestamp,
-            commit: `commit-${timestamp}`
-          }];
-          const auth = {
-            username: process.env.API_USERNAME,
-            password: process.env.API_PASSWORD
-          };
-          try {
-            const response = await axios.post(url, data, { auth });
-            console.log('Response from Heroku:', response.data);
-            if (response.data.message === '1 registros insertados correctamente') {
-              console.log('Registro insertado correctamente');
-            } else {
-              console.log('No se pudo confirmar la inserción del registro');
-            }
-          } catch (error) {
-            console.error('Error saving data to Heroku:', error);
-          }
+          await saveToHeroku(input.message, fullResponse);
         }
       }
     );
@@ -107,5 +89,50 @@ export async function POST(req: Request) {
       return new NextResponse('Request timeout', { status: 504 });
     }
     return new NextResponse('Internal Server Error', { status: 500 });
+  }
+}
+
+async function saveToHeroku(question: string, answer: string) {
+  const url = 'https://prompt-handler-06fbef253337.herokuapp.com/insert/';
+  const timestamp = new Date().toISOString();
+  const data = [{
+    pregunta: question,
+    respuesta: answer,
+    timestamp: timestamp,
+    commit: `commit-${timestamp}`
+  }];
+
+  const username = process.env.API_USERNAME;
+  const password = process.env.API_PASSWORD;
+
+  if (!username || !password) {
+    console.error('API_USERNAME or API_PASSWORD is not set');
+    throw new Error('Authentication credentials are not set');
+  }
+
+  const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
+
+  try {
+    const response = await axios.post(url, data, {
+      headers: {
+        'Authorization': `Basic ${token}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    console.log('Response from Heroku:', response.data);
+    if (response.data.message === '1 registros insertados correctamente') {
+      console.log('Registro insertado correctamente');
+    } else {
+      console.log('No se pudo confirmar la inserción del registro');
+    }
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('Error saving data to Heroku:', error.response?.data);
+      console.error('Status code:', error.response?.status);
+    } else {
+      console.error('Error saving data to Heroku:', error);
+    }
+    throw error; // Re-throw the error to be handled by the caller
   }
 }
