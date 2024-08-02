@@ -1,26 +1,19 @@
 import { AssistantResponse } from 'ai';
 import OpenAI from 'openai';
-import { NextResponse } from 'next/server';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || '',
 });
 
-// Nueva forma de configurar la ruta
-export const runtime = 'edge'; // Esto habilita el runtime de Edge
-export const dynamic = 'force-dynamic'; // Esto hace que la ruta sea siempre dinámica
-
 export async function POST(req: Request) {
-  const timeoutPromise = new Promise((_, reject) =>
-    setTimeout(() => reject(new Error('Request timeout')), 300000) // 5 minutos
-  );
-
   try {
     console.log('Request received');
+    
     const input: {
       threadId: string | null;
       message: string;
     } = await req.json();
+    
     console.log('Parsed input:', input);
 
     const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;
@@ -30,31 +23,27 @@ export async function POST(req: Request) {
       role: 'user',
       content: input.message,
     });
+
     console.log('Created message:', createdMessage);
 
     const assistantId = process.env.OPENAI_ASSISTANT_ID || '';
+
     if (!assistantId) {
       throw new Error('ASSISTANT_ID environment is not set');
     }
 
-    const responsePromise = AssistantResponse(
+    return AssistantResponse(
       { threadId, messageId: createdMessage.id },
       async ({ forwardStream }) => {
         const runStream = openai.beta.threads.runs.stream(threadId, {
           assistant_id: assistantId,
         });
+
         await forwardStream(runStream);
-      }
+      },
     );
-
-    // Usa Promise.race para implementar un timeout
-    return await Promise.race([responsePromise, timeoutPromise]);
-
   } catch (error) {
     console.error('Error in API route:', (error as Error).message);
-    if (error instanceof Error && error.message === 'Request timeout') {
-      return new NextResponse('Request timeout', { status: 504 });
-    }
-    return new NextResponse('Internal Server Error', { status: 500 });
+    return new Response('Internal Server Error', { status: 500 });
   }
 }
