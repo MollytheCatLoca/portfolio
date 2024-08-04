@@ -1,3 +1,5 @@
+"use client"
+
 // app/old-page/page.tsx
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
