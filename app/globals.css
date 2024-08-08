@@ -185,6 +185,31 @@
     gap: 50px;
   }
 
+  /* globals.css */
+  /* globals.css */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Oculta cualquier contenido que desborde el contenedor */
+    width: 3rem;
+    /* Ajusta el tamaño fijo del contenedor del logo */
+    height: 3rem;
+    /* Ajusta el tamaño fijo del contenedor del logo */
+  }
+
+  .logo-container img {
+    scale: 1.45;
+    max-height: 100%;
+    /* Ajusta el logo para que ocupe todo el contenedor */
+    max-width: 100%;
+    /* Ajusta el logo para que ocupe todo el contenedor */
+    position: relative;
+    top: 0.3rem;
+    /* Ajusta esta medida para bajar el logo */
+  }
+
 
   .heading-responsive {
     font-size: 1.875rem;
@@ -222,11 +247,22 @@
 
   .text-purple {
     color: #A855F7;
+    text-shadow: #A855F7;
     /* Ajusta según tu configuración de Tailwind */
   }
 
+  .text-blue {
+    color: #f7f8fa;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+    /* Sombra más gruesa */
+    /*-webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+    /* Borde del texto */
+  }
+
+
   .shadow-text {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1) !important;
+    text-shadow: black;
 
   }
 

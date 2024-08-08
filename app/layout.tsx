@@ -19,12 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang= "en" className = "dark" >
-      <body className="dark" >
-        <ThemeProvider>
-        { children }
-        < Analytics />
-        </ThemeProvider>
-        </body>
-        </html>
+      <head>
+      <link rel="icon" href = "/BISLogo.svg" type = "image/svg+xml" />
+        </head>
+        < body className = "dark" >
+          <ThemeProvider>
+          { children }
+          < Analytics />
+          </ThemeProvider>
+          </body>
+          </html>
     );
 }

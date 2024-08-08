@@ -1,25 +1,24 @@
 {
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "always"
-    },
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact"
-    ],
-    "tailwindCSS.includeLanguages": {
-      "typescript": "javascript",
-      "typescriptreact": "javascript"
-    },
-    "typescript.suggestionActions.enabled": false,
-    "typescript.surveys.enabled": false,
-    "typescript.validate.enable": false,
-    "typescript.tsserver.experimental.enableProjectDiagnostics": false,
-    "typescript.tsserver.experimental.enableTypeAcquisition": false,
-    "typescript.tsserver.experimental.completeFunctionCalls": false,
-    "typescript.tsserver.maxTsServerMemory": 4096
-  }
-  
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "typescript.suggestionActions.enabled": true,
+  "typescript.surveys.enabled": false,
+  "typescript.validate.enable": false,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.tsserver.experimental.enableTypeAcquisition": false,
+  "typescript.tsserver.experimental.completeFunctionCalls": false,
+  "typescript.tsserver.maxTsServerMemory": 4096
+}

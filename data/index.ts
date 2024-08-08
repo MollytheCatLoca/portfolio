@@ -103,6 +103,7 @@ export const gridItems_Energy: {
       titleClassName: "justify-center",
       img: "",
       spareImg: "",
+      link: "/energy/financing"
     },
     {
       id: 4,
@@ -155,16 +156,16 @@ export const projects_Energy: {
     },
     {
       id: 2,
-      title: "Energía Verde para Edificios Públicos",
-      des: "Instalación de paneles solares en colegios y hospitales para reducir costos y mejorar la sostenibilidad.",
+      title: "Consultoría Financiera",
+      des: "Catalizando Proyectos hacia un Futuro Energético Sustentable y Rentable.",
       img: "/edificiosSolar.jpg",
       iconLists: ["/public-administration.png", "/solar-panel.png", "/planet-earth.png"],
-      link: "https://blog.bisintegraciones.com/soluciones-integrales-en-energias-renovables/",
+      link: "/energy/financing",
     },
     {
       id: 3,
-      title: "Parques Solares",
-      des: "Generación de energía verde a pequeña escala para reducir costos energéticos y fomentar la sostenibilidad.",
+      title: "Energía Verde para Edificios Públicos",
+      des: "Instalación de paneles solares en colegios y hospitales para reducir costos y mejorar la sostenibilidad.",
       img: "/SolarTech5.jpg",
       iconLists: ["/solar-panel.png", "/planet-earth.png", "/energy.png"],
       link: "/energy/all-in-one/",

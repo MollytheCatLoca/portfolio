@@ -1,0 +1,280 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    border: none;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  button {
+    outline: none;
+  }
+
+  .container {
+    min-height: 100vh;
+    background-color: transparent;
+    /* Fondo transparente */
+    color: var(--foreground);
+  }
+
+  .container2 {
+    min-height: 100vh;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  .wrapper {
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media screen and (max-width: 1536px) {
+    .wrapper {
+      max-width: 1366px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .wrapper {
+      max-width: 1024px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .wrapper {
+      max-width: 768px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      max-width: 640px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .wrapper {
+      max-width: 475px;
+    }
+  }
+
+  .ql-container {
+    font-size: 28px !important;
+  }
+
+  .quill>.ql-container>.ql-editor.ql-blank::before {
+    color: #b3b3b1;
+  }
+}
+
+@layer utilities {
+  .responsive-heading2 {
+    font-size: 2.25rem;
+
+    @media (min-width: 640px) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 2.875rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 3.5rem;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 4rem;
+    }
+
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .text-purple {
+    color: #A855F7;
+  }
+
+  .shadow-text {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1) !important;
+  }
+
+  .scale {
+    transform: scale(1.15);
+    transform-origin: top center;
+  }
+
+  .content {
+    display: flex;
+    gap: 50px;
+  }
+
+  /* globals.css */
+  /* globals.css */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Oculta cualquier contenido que desborde el contenedor */
+    width: 3rem;
+    /* Ajusta el tamaño fijo del contenedor del logo */
+    height: 3rem;
+    /* Ajusta el tamaño fijo del contenedor del logo */
+  }
+
+  .logo-container img {
+    scale: 1.45;
+    max-height: 100%;
+    /* Ajusta el logo para que ocupe todo el contenedor */
+    max-width: 100%;
+    /* Ajusta el logo para que ocupe todo el contenedor */
+    position: relative;
+    top: 0.3rem;
+    /* Ajusta esta medida para bajar el logo */
+  }
+
+
+  .heading-responsive {
+    font-size: 1.875rem;
+
+    /* text-2xl (incrementado 50%) */
+    @media (min-width: 640px) {
+      /* sm */
+      font-size: 2.25rem;
+      /* text-3xl (incrementado 50%) */
+    }
+
+
+
+    @media (min-width: 768px) {
+      /* md */
+      font-size: 2.6125rem;
+      /* text-4xl (incrementado 50%) */
+    }
+
+    @media (min-width: 1024px) {
+      /* lg */
+      font-size: 2.975rem;
+      /* text-5xl (incrementado 50%) */
+    }
+
+    @media (min-width: 1280px) {
+      /* xl */
+      font-size: 3.3rem;
+      /* text-6xl (incrementado 50%) */
+    }
+
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .text-purple {
+    color: #A855F7;
+    text-shadow: #A855F7;
+    /* Ajusta según tu configuración de Tailwind */
+  }
+
+  .text-blue {
+    color: #f7f8fa;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+    /* Sombra más gruesa */
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+    /* Borde del texto */
+  }
+
+
+  .shadow-text {
+    text-shadow: black;
+
+  }
+
+  .scale {
+    transform: scale(1.15);
+    /* 15% más grande */
+    transform-origin: top center;
+    /* Opcional: ajusta el origen de la transformación */
+  }
+
+  .content {
+    display: flex;
+    gap: 50px;
+  }
+}
