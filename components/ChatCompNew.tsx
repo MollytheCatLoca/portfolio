@@ -7,6 +7,7 @@ import '@/styles/chatbot.css';
 import { Message, useAssistant } from 'ai/react';
 
 
+
 // Función para procesar Markdown simple
 const processMarkdown = (text: string) => {
   // Reemplazar marcadores de fuente completos
@@ -89,6 +90,7 @@ const ChatCompNew: React.FC = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [inputDisabled, setInputDisabled] = useState(false);
   const [lastUserMessage, setLastUserMessage] = useState<string | null>(null);
+  const [initialMessageShown, setInitialMessageShown] = useState(false);
 
   const scrollToBottom = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -103,6 +105,17 @@ const ChatCompNew: React.FC = () => {
       inputRef.current?.focus();
     }
   }, [status]);
+
+  useEffect(() => {
+    if (isChatbotOpen && !initialMessageShown) {
+      const welcomeMessage = {
+        role: 'assistant',
+        text: 'Hola, soy el Chatbot de BIS, potenciado por Inteligencia Artificial. Pregúntame lo que quieras sobre nuestros productos y servicios. ¡Estoy aquí para ayudarte! Arranquemos.'
+      };
+      setMessages([welcomeMessage]);
+      setInitialMessageShown(true);
+    }
+  }, [isChatbotOpen, initialMessageShown]);
 
   useEffect(() => {
     if (assistantMessages.length > 0) {
@@ -152,6 +165,9 @@ const ChatCompNew: React.FC = () => {
 
   const toggleChatbot = () => {
     setIsChatbotOpen(!isChatbotOpen);
+    if (!isChatbotOpen) {
+      setInitialMessageShown(false);
+    }
   };
 
   return (
