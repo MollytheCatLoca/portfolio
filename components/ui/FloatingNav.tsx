@@ -78,7 +78,7 @@ style = {{
       >
   <div className = "logo-container" >
     <img
-              src="/BISLogo.SVG"
+              src="/BISLogo.svg"
 alt = "BIS Integraciones Logo"
 className = "h-10 w-10"
   />

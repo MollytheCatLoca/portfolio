@@ -256,7 +256,7 @@
     font-weight: bold;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
     /* Sombra más gruesa */
-    /*-webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
     /* Borde del texto */
   }
 
