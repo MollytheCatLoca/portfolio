@@ -84,6 +84,7 @@ export const gridItems_Energy: {
       titleClassName: "justify-end bg-opacity-70",
       img: "/EN_SolarSunset.jpg",
       spareImg: "",
+      link: "/energy/soluciones"
     },
     {
       id: 2,

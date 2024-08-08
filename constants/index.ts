@@ -54,6 +54,59 @@ export const benefits = [
 ];
 
 
+export const benefits_soluciones = [
+    {
+        id: "0",
+        title: "Gestión Integral de Proyectos",
+        text: "Ofrecemos una administración completa de proyectos energéticos, desde la planificación hasta la ejecución, garantizando eficiencia y sostenibilidad.",
+        backgroundUrl: "/benefits/card-1.svg",
+        iconUrl: "/benefits/icon-1.svg",
+        imageUrl: "/benefits/image-2.png",
+    },
+    {
+        id: "1",
+        title: "Tecnología Renovable",
+        text: "Nuestro equipo implementa tecnologías renovables de vanguardia, asegurando un uso óptimo y sostenible de los recursos energéticos.",
+        backgroundUrl: "/benefits/card-2.svg",
+        iconUrl: "/benefits/icon-2.svg",
+        imageUrl: "/benefits/image-2.png",
+        light: true,
+    },
+    {
+        id: "2",
+        title: "Eficiencia Energética",
+        text: "Brindamos asesoramiento experto para mejorar la eficiencia energética, reduciendo el consumo y los costos operativos de nuestros clientes.",
+        backgroundUrl: "/benefits/card-3.svg",
+        iconUrl: "/benefits/icon-3.svg",
+        imageUrl: "/benefits/image-2.png",
+    },
+    {
+        id: "3",
+        title: "Infraestructura Sostenible",
+        text: "Desarrollamos infraestructuras verdes que apoyan la transición hacia energías limpias, promoviendo la sostenibilidad ambiental.",
+        backgroundUrl: "/benefits/card-4.svg",
+        iconUrl: "/benefits/icon-4.svg",
+        imageUrl: "/benefits/image-2.png",
+        light: true,
+    },
+    {
+        id: "4",
+        title: "Optimización de Recursos",
+        text: "Implementamos estrategias innovadoras para maximizar el aprovechamiento de los recursos energéticos disponibles, garantizando eficiencia y ahorro.",
+        backgroundUrl: "/benefits/card-5.svg",
+        iconUrl: "/benefits/icon-4.svg",
+        imageUrl: "/benefits/image-2.png",
+    },
+    {
+        id: "5",
+        title: "Planificación Sostenible",
+        text: "Ofrecemos planificación y diseño sostenible, asegurando la viabilidad económica y el respeto al entorno natural en cada proyecto.",
+        backgroundUrl: "/benefits/card-6.svg",
+        iconUrl: "/benefits/icon-4.svg",
+        imageUrl: "/benefits/image-2.png",
+    },
+];
+
 export const heroIcons = [
     "/home-smile.svg",
     "/file-02.svg",
