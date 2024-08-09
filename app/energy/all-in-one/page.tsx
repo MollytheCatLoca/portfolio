@@ -4,9 +4,9 @@ import { FloatingNav } from '@/components/ui/FloatingNav';
 import Footer_Energy from '@/components/Footer-Energy';
 import ChatCompNew from '@/components/ChatCompNew';
 import Hero_AllinOne from '@/components/Hero-AllInOne';
-import Grid from '@/components/Grid2';
+import Grid from '@/components/Grid3';
 import Clients from '@/components/ClientsCards';
-
+//**  < Clients companies = { companies_Energy } testimonials = { testimonials_AllInOne } />
 const AllInOne = () => {
   return (
     <main className= "relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 dark" >
@@ -15,11 +15,11 @@ const AllInOne = () => {
         < h1 className = "text-white text-center text-4xl" > </h1>
           < Hero_AllinOne />
           <Grid gridItems={ gridItems_AllinOne } />
-            < Clients companies = { companies_Energy } testimonials = { testimonials_AllInOne } />
-              <ChatCompNew />
-              < Footer_Energy />
-              </div>
-              </main>
+
+            < ChatCompNew />
+            <Footer_Energy />
+            </div>
+            </main>
   );
 };
 
