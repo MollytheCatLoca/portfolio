@@ -5,7 +5,7 @@ import Footer_Energy from '@/components/Footer-Energy';
 import ChatCompNew from '@/components/ChatCompNew';
 import Hero_AllinOne from '@/components/Hero-AllInOne';
 import Grid from '@/components/Grid2';
-import Clients from '@/components/Clients';
+import Clients from '@/components/ClientsCards';
 
 const AllInOne = () => {
   return (

@@ -24,33 +24,33 @@ const CarouselV02: React.FC<CarouselV02Props> = ({ imageItems }) => {
         return () => clearInterval(interval)
     }, [imageItems])
 
-
+    //** <h1 className="heading-responsive mb-12" >
+    /**Viabilizar los < span className = "text-purple" > Proyectos </span>
+            </h1>
+            */
     return (
-        <div className= "w-[90%] mx-auto" >
+        <div className= "w-[100%] mx-auto" >
 
         <Carousel className = "w-full justify-center" >
-            <h1 className="heading-responsive mb-12" >
-                Viabilizar los < span className = "text-purple" > Proyectos </span>
-                    </h1>
 
-                    <CarouselContent>
-    {
-        imageItems.map((item, index) => {
-            // Log para cada item
+            <CarouselContent>
+            {
+                imageItems.map((item, index) => {
+                    // Log para cada item
 
-            return (
-                <CarouselItem key= { index } className = { index === currentIndex ? "block" : "hidden"
-        }>
-        <div className="relative overflow-hidden rounded-lg" >
-        <img
+                    return (
+                        <CarouselItem key= { index } className = { index === currentIndex ? "block" : "hidden"
+                }>
+                <div className="relative overflow-hidden rounded-lg" >
+                <img
                     src={ item.src }
                     width = { 448}
-                    height = { 252}
+                    height = { 352}
                     alt = { item.title }
                     className = "object-cover w-full aspect-video"
-            />
-            <div className="absolute inset-0 flex flex-col items-start justify-end p-4 bg-black/50 text-white" >
-        <p className="text-sm font-light justify-left" style = {{ width: '35%', textAlign: 'left' }}>
+                    />
+                    <div className="absolute inset-0 flex flex-col items-start justify-end p-4 bg-black/50 text-white" >
+                <p className="text-sm font-light justify-left" style = {{ width: '35%', textAlign: 'left' }} >
             { item.description }
             </p>
             < h3 className = "text-4xl font-bold" > { item.title } </h3>
@@ -61,8 +61,7 @@ const CarouselV02: React.FC<CarouselV02Props> = ({ imageItems }) => {
   })
 }
 </CarouselContent>
-    < CarouselPrevious />
-    <CarouselNext />
+
     </Carousel>
     </div>
   )
