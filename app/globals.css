@@ -33,6 +33,13 @@
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+
+    --black-width: 50%;
+    /* Porcentaje de ancho ocupado por el color negro sólido */
+    --gradient-color: rgba(0, 0, 0, 0.75);
+    /* Color del gradiente */
+    --gradient-width: 60%;
+    /* Porcentaje de ancho ocupado por el gradiente */
   }
 
   .dark {
@@ -250,6 +257,16 @@
     text-shadow: #A855F7;
     /* Ajusta según tu configuración de Tailwind */
   }
+
+  .bg-gradient-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+        black var(--black-width),
+        var(--gradient-color) var(--black-width),
+        transparent var(--gradient-width));
+  }
+
 
   .text-blue {
     color: #f7f8fa;

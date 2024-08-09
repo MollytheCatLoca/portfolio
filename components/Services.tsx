@@ -37,19 +37,19 @@ const Services: React.FC = () => {
 
 
     return (
+
         <Section id= "how-to-use" >
         <div className="container" >
             <div className="relative" >
+
                 {/* Primera sección con imagen a la izquierda y texto a la derecha */ }
-                < div className = "relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem] sm:transform sm:scale-[0.8] sm:origin-center" >
+                < div className = "relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem] sm:transform sm:scale-[0.8] sm:origin-center sm:text-sm" >
                     {/* Contenedor de la imagen con gradiente */ }
                     < div className = "absolute top-0 left-0 w-1/2 h-full overflow-hidden" >
                         <div className="relative w-full h-full" >
                             <img
-              className="w-full h-full object-cover"
-    width = { 800}
+                    className="w-full h-full object-cover max-h-[100%]"
     alt = "Smartest AI"
-    height = { 730}
     src = { service1 }
         />
         {/* Gradiente de la izquierda a la derecha */ }
@@ -59,14 +59,14 @@ const Services: React.FC = () => {
             </div>
 
     {/* Contenedor de texto */ }
-    <div className="relative z-1 max-w-[17rem] ml-auto" >
-        <h4 className="h4 mb-4" >
+    <div className="relative z-10 max-w-[17rem] ml-auto text-white" >
+        <h4 className="h4 mb-4 sm:text-base" >
             <span className="text-purple" > Energía </span> Inteligente
                 </h4>
-                < p className = "body-2 mb-[3rem] text-n-3" >
+                < p className = "body-2 mb-[3rem] text-n-3 sm:text-sm" >
                     Nuestros servicios financieros están diseñados para proporcionar soluciones completas y efectivas que impulsen el éxito de tus proyectos solares.
-          </p>
-                        < ul className = "body-2" >
+                </p>
+                        < ul className = "body-2 sm:text-sm" >
                         {
                             brainwaveServices.map((item, index) => (
                                 <li key= { index } className = "flex items-start py-4 border-t border-n-6" >
@@ -80,94 +80,50 @@ const Services: React.FC = () => {
                             </div>
 
     {/* Segunda sección con imagen a la derecha y texto a la izquierda */ }
-    <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem] sm:transform sm:scale-[0.8] sm:origin-center" >
-        {/* Contenedor de texto */ }
-        < div className = "relative z-1 max-w-[17rem] mr-auto" >
-            <h4 className="h4 mb-4" >
-                <span className="text-purple" > Innovación </span> Financiera
-                    </h4>
-                    < p className = "body-2 mb-[3rem] text-n-3" >
-                        Desarrollamos estrategias financieras avanzadas para maximizar el rendimiento y la eficiencia de tus inversiones en energía solar.
-          </p>
-                            < ul className = "body-2" >
-                            {
-                                brainwaveServices2.map((item, index) => (
-                                    <li key= { index } className = "flex items-start py-4 border-t border-n-6" >
-                                    <img width={ 24} height = { 24} src = { check } alt = "Check icon" />
-                                    <p className="ml-4" > { item } </p>
-                                </li>
-                                ))
-                            }
-                                </ul>
-                                </div>
-
-    {/* Contenedor de la imagen con gradiente */ }
-    <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden" >
-        <div className="relative w-full h-full" >
-            <img
-              className="w-full h-full object-cover transform scale-105"
-    width = { 800}
+    <div className = "relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem] sm:transform sm:scale-[0.8] sm:origin-center sm:text-sm" >
+        {/* Contenedor de la imagen con gradiente */ }
+        < div className = "absolute top-0 right-0 w-full h-full overflow-hidden" >
+            <div className="relative w-full h-full" >
+                <img
+                    className="w-full h-full object-cover max-h-[100%]"
     alt = "Financial Consulting"
-    height = { 730}
     src = { service2 }
         />
         {/* Gradiente de la derecha a la izquierda */ }
-        < div className = "absolute top-0 right-0 w-full h-full bg-gradient-to-l from-transparent via-transparent to-black opacity-75 sm:opacity-90" >
-            </div>
-            </div>
-            </div>
-            </div>
+        < div
+    className = "absolute top-0 right-0 h-full bg-gradient-overlay"
+        >
+        </div>
+        </div>
+        </div>
 
-            < div className = "relative z-1 grid gap-5 lg:grid-cols-1" >
-                <div className="p-4 bg-n-7 rounded-3xl overflow-hidden lg:min-h-[46rem] sm:transform sm:scale-[0.8] sm:origin-center" >
-                    <div className="py-12 px-4 xl:px-8" >
-                        <h4 className="h4 mb-4" >
-                            <span className="text-purple" > Asesoría </span> Estratégica
-                                </h4>
-                                < p className = "body-2 mb-[2rem] text-n-3" >
-                                    Ofrecemos soluciones personalizadas para optimizar la rentabilidad y sostenibilidad de tus proyectos energéticos.
-            </p>
+    {/* Contenedor de texto en overlay */ }
+    <div className="relative z-10 max-w-[17rem] mr-auto text-white" >
+        <h4 className="h4 mb-4 sm:text-base" >
+            <span className="text-purple" > Innovación </span> Financiera
+                </h4>
+                < p className = "body-2 mb-[3rem] text-n-3 sm:text-sm" >
+                    Desarrollamos estrategias financieras avanzadas para maximizar el rendimiento y la eficiencia de tus inversiones en energía solar.
+                </p>
+                        < ul className = "body-2 sm:text-sm" >
+                        {
+                            brainwaveServices2.map((item, index) => (
+                                <li key= { index } className = "flex items-start py-4 border-t border-n-6" >
+                                <img width={ 24} height = { 24} src = { check } alt = "Check icon" />
+                                <p className="ml-4" > { item } </p>
+                            </li>
+                            ))
+                        }
+                            </ul>
+                            </div>
 
-                                        < ul className = "flex items-center justify-between" >
-                                        {
-                                            brainwaveServicesIcons.map((item, index) => (
-                                                <li
-                  key= { index }
-                  className = {`rounded-2xl flex items-center justify-center ${index === 2
-                                                        ? "w-[3rem] h-[3rem] p-0.25 bg-conic-gradient md:w-[4.5rem] md:h-[4.5rem]"
-                                                        : "flex w-10 h-10 bg-n-6 md:w-15 md:h-15"
-                                                    }`}
-                                            >
-                                            <div
-                    className={
-        index === 2
-            ? "flex items-center justify-center w-full h-full bg-n-7 rounded-[1rem]"
-            : ""
-    }
-                  >
-        <img src={ item } width = { 24} height = { 24} alt = { item } />
-            </div>
-            </li>
-              ))}
-</ul>
-    </div>
+                            </div>
 
-    < div className = "relative h-[20rem] bg-n-8 rounded-xl overflow-hidden md:h-[25rem]" >
-        <img
-              src={ service3 }
-className = "w-full h-full object-cover object-center"
-width = { 520}
-height = { 400}
-alt = "Scary robot"
-    />
-    </div>
-    </div>
-    </div>
+                            </div>
+                            </div>
+                            </Section>
 
-    < Gradient />
-    </div>
-    </div>
-    </Section>
+      
 
   );
 };
