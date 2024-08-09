@@ -1,5 +1,4 @@
 
-
 // Nav items comunes para todas las páginas
 export const navItems = [
   { name: "Home", link: "/" },
@@ -774,7 +773,7 @@ export const gridItems_AllinOne: {
       titleClassName: "justify-end items-left bg-black bg-opacity-20",
       img: "/BatsPanel.jpg",
       spareImg: "",
-      link: "/energy"
+      link: "1"
     },
     {
       id: 2,
@@ -785,7 +784,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-50 text-white p-4 rounded-lg justify-end items-left",
       img: "/SolarTech2.jpg",
       spareImg: "",
-      link: "/energy"
+      link: "2"
     },
     {
       id: 3,
@@ -796,7 +795,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-30 text-white p-4 rounded-lg justify-end",
       img: "/SolarTech6.jpg",
       spareImg: "",
-      link: "/energy"
+      link: "3"
     },
     {
       id: 4,
@@ -807,7 +806,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-20 text-white p-4 rounded-lg",
       img: "/EN_BATFAC2.jpg",
       spareImg: "",
-      link: "/energy"
+      link: "4"
     },
     {
       id: 5,
@@ -818,7 +817,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-20 text-white p-4 rounded-lg",
       img: "/EN_BATFAC.jpg",
       spareImg: "",
-      link: "/energy"
+      link: "4"
     },
     {
       id: 6,
@@ -829,7 +828,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-30 text-white p-4 rounded-lg justify-end items-left",
       img: "/EN_BAT_PAN.jpg",
       spareImg: "",
-      link: "/energy"
+      link: "4"
     },
   ];
 
@@ -942,3 +941,53 @@ export const imageItems_Consulting: ImageItem[] = [
     description: 'Gestión integral de la instalación y mantenimiento de sistemas energéticos para garantizar un funcionamiento eficiente y duradero.'
   }
 ];
+
+export interface CardData {
+  id: number;
+  description: string;
+  title: string;
+  src: string;
+  ctaText: string;
+  ctaLink: string;
+  content: string;
+}
+
+export const CardsAllin1: CardData[] = [
+  {
+    id: 1,
+    description: "Energía Simplificada",
+    title: "Provincias y Municipios",
+    src: "/EN_SolarCam.jpg",
+    ctaText: "Home",
+    ctaLink: "/energy",
+    content: "La solución All-in-One simplifica todo el proceso energético al ofrecer una plataforma integral que cubre desde la instalación hasta el mantenimiento. Con esta solución, hemos observado una reducción del 30% en costos operativos, permitiendo a los municipios y provincias reinvertir esos ahorros en otras áreas críticas.\n\nAdemás, la plataforma proporciona un monitoreo constante y herramientas de optimización que garantizan un rendimiento energético óptimo a lo largo del tiempo, asegurando que las instalaciones funcionen con la máxima eficiencia y seguridad.\n\nEsta solución no solo reduce costos, sino que también mejora la sostenibilidad y la resiliencia de las infraestructuras energéticas locales. Al integrar todos los aspectos del ciclo de vida de los sistemas energéticos, desde la planificación hasta la operación, la solución All-in-One ofrece una experiencia sin complicaciones para los gestores de proyectos y facilita la transición hacia un futuro más verde y eficiente.",
+  },
+  {
+    id: 2,
+    description: "Proyectos de Energía Renovable",
+    title: "Financiamiento",
+    src: "/EN_FINMundo.jpg",
+    ctaText: "Home",
+    ctaLink: "/energy",
+    content: "Nuestro programa de financiamiento a través de leasing ofrece tasas competitivas y cuotas accesibles, haciendo posible que los proyectos de energía renovable se financien por sí mismos. Los altos costos de energía ahora se pueden cubrir con los ahorros generados, asegurando un retorno de inversión en menos de cinco años.\n\nAdemás, ofrecemos la suscripción de Obligaciones Negociables (ONs) y Bonos Verdes, que proporcionan una alternativa eficaz para financiar proyectos sostenibles a largo plazo. Estos instrumentos financieros no solo permiten acceder a capital en condiciones ventajosas, sino que también atraen a inversores comprometidos con la sostenibilidad y la transición energética.\n\nLa suscripción de ONs ofrece la posibilidad de obtener financiamiento flexible y estructurado, adaptado a las necesidades específicas de cada proyecto. Por otro lado, los Bonos Verdes representan una oportunidad para alinear el financiamiento con los objetivos de desarrollo sostenible, permitiendo a los inversores participar activamente en la lucha contra el cambio climático mientras obtienen rendimientos atractivos.\n\nCon estas herramientas, nuestro programa de financiamiento no solo facilita la implementación de soluciones energéticas innovadoras, sino que también impulsa el crecimiento económico y social, asegurando un futuro más verde y sostenible para todos.",
+  },
+  {
+    id: 3,
+    description: "Eficiencia Energética",
+    title: "Ahorro y Sostenibilidad",
+    src: "/EN_EDIP1.jpg",
+    ctaText: "Home",
+    ctaLink: "/energy",
+    content: "La tecnología avanzada de nuestros sistemas All-in-One no solo reduce los costos energéticos, sino que también mejora la eficiencia operativa. En nuestras instalaciones más recientes, hemos visto un ahorro energético del 40%, lo que demuestra el impacto positivo de integrar soluciones tecnológicas de última generación.\n\nEsta mejora en la eficiencia energética no solo se traduce en menores costos operativos, sino que también reduce significativamente la huella de carbono de las instalaciones, contribuyendo a un entorno más sostenible. Al combinar tecnologías de monitoreo en tiempo real y algoritmos de optimización, nuestros sistemas aseguran que cada componente opere en su punto óptimo, maximizando el rendimiento y minimizando los desperdicios energéticos.\n\nCon estas innovaciones, nuestros clientes no solo cumplen con los estándares regulatorios más exigentes, sino que también lideran la adopción de prácticas sostenibles en sus respectivas industrias. El enfoque integral de nuestras soluciones All-in-One permite a las organizaciones adaptarse rápidamente a los cambios en el mercado energético, garantizando un futuro más eficiente y sostenible.\n\nAl implementar nuestras soluciones, las empresas pueden demostrar su compromiso con la sostenibilidad y la eficiencia, convirtiéndose en líderes en sus sectores y generando un impacto positivo a largo plazo tanto para el negocio como para el medio ambiente.",
+  },
+  {
+    id: 4,
+    description: "Optimización Energética",
+    title: "Soluciones para Edificios Públicos",
+    src: "/EN_ALL1.jpg",
+    ctaText: "Home",
+    ctaLink: "/energy",
+    content: "Las soluciones All-in-One son ideales para edificios públicos que buscan optimizar su consumo energético. Gracias a nuestra tecnología avanzada, estos edificios pueden operar de manera más eficiente, reduciendo costos y mejorando su impacto ambiental, lo que resulta en un entorno más sostenible y económico.\n\nLa implementación de nuestros sistemas en edificios públicos no solo permite una reducción significativa en el consumo de energía, sino que también contribuye a mejorar la calidad del servicio ofrecido a la comunidad. Al reducir la dependencia de fuentes de energía tradicionales y aumentar la eficiencia operativa, los edificios públicos pueden reasignar recursos financieros a otras áreas esenciales, beneficiando directamente a la ciudadanía.\n\nAdemás, la integración de tecnologías inteligentes permite un monitoreo constante del uso energético, lo que facilita la identificación de áreas de mejora y la implementación de ajustes en tiempo real. Esto no solo maximiza la eficiencia, sino que también prolonga la vida útil de los sistemas instalados, asegurando un retorno de la inversión aún mayor.\n\nCon estas soluciones, los edificios públicos se convierten en referentes de sostenibilidad, demostrando el compromiso de las administraciones con la protección del medio ambiente y la gestión responsable de los recursos. Este enfoque no solo mejora la reputación institucional, sino que también promueve una cultura de eficiencia y sostenibilidad en toda la comunidad.",
+  },
+];
+
