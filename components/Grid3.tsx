@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid3';
 import HiddenExpandableCard from './blocks/HiddenExpandableCard';
 import { CardsAllin1 } from '@/data';
+import { useCardContext } from '@/context/CardContext';
 
 interface GridItem {
     id: number;
@@ -22,13 +23,21 @@ interface GridProps {
 
 const Grid: React.FC<GridProps> = ({ gridItems }) => {
     const [activeCardId, setActiveCardId] = useState<number | null>(null);
+    const { setIsCardActive } = useCardContext();
+
 
     const handleCardActivation = (link: string) => {
         const id = parseInt(link);
         if (!isNaN(id) && id > 0 && id <= CardsAllin1.length) {
             console.log('Card activation triggered for id:', id);
             setActiveCardId(id);
+            setIsCardActive(true);
         }
+    };
+
+    const handleCardClose = () => {
+        setActiveCardId(null);
+        setIsCardActive(false);
     };
 
     return (

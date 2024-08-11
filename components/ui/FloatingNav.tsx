@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/utils/cn";
+import { useCardContext } from "@/context/CardContext"; // Importar el contexto
 
 export const FloatingNav = ({
   navItems,
@@ -25,9 +26,15 @@ export const FloatingNav = ({
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
 
+  let isCardActive = false;
+  try {
+    isCardActive = useCardContext().isCardActive;
+  } catch {
+    // No hacer nada si el contexto no está disponible
+  }
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
-    if (typeof current === "number") {
+    if (typeof current === "number" && !isCardActive) { // Solo cambiar la visibilidad si el card no está activo
       let direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
@@ -42,6 +49,11 @@ export const FloatingNav = ({
       }
     }
   });
+
+  // Si el card está activo, ocultar completamente el FloatingNav
+  if (isCardActive) {
+    return null;
+  }
 
   return (
     <AnimatePresence mode= "wait" >
@@ -62,9 +74,6 @@ transition = {{
         }}
 className = {
   cn(
-          // change rounded-full to rounded-lg
-          // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
-          // change  pr-2 pl-8 py-2 to px-10 py-5
           "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
     className
   )
@@ -76,9 +85,9 @@ style = {{
         border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-  <div className = "logo-container" >
+  <div className="logo-container" >
     <img
-              src="/BISLogo.svg"
+            src="/BISLogo.svg"
 alt = "BIS Integraciones Logo"
 className = "h-10 w-10"
   />
@@ -95,16 +104,11 @@ className = {
 }
   >
   <span className="block sm:hidden" > { navItem.icon } </span>
-{/* add !cursor-pointer */ }
-{/* remove hidden sm:block for the mobile responsive */ }
-<span className=" text-sm !cursor-pointer" > { navItem.name } </span>
-  </Link>
+    < span className = " text-sm !cursor-pointer" >
+      { navItem.name }
+      </span>
+      </Link>
         ))}
-{/* remove this login btn */ }
-{/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
 </motion.div>
   </AnimatePresence>
   );

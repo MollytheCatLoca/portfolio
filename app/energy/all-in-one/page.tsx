@@ -6,9 +6,11 @@ import ChatCompNew from '@/components/ChatCompNew';
 import Hero_AllinOne from '@/components/Hero-AllInOne';
 import Grid from '@/components/Grid3';
 import Clients from '@/components/ClientsCards';
+import { CardProvider } from '@/context/CardContext';
 //**  < Clients companies = { companies_Energy } testimonials = { testimonials_AllInOne } />
 const AllInOne = () => {
   return (
+    <CardProvider>
     <main className= "relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 dark" >
     <div className="max-w-7xl w-full" >
       <FloatingNav navItems={ navItems } />
@@ -20,6 +22,7 @@ const AllInOne = () => {
             <Footer_Energy />
             </div>
             </main>
+            </CardProvider>
   );
 };
 
