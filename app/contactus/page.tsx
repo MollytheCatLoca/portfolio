@@ -1,6 +1,6 @@
 import { imageItems_Consulting, navItems, companies_Energy, testimonials_Consulting } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNav";
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero-Contact";
 import Clients from "@/components/Clients";
 import ChatCompNew from "@/components/ChatCompNew";
 import Footer from "@/components/Footer";
