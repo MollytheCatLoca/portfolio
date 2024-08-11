@@ -817,7 +817,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-20 text-white p-4 rounded-lg",
       img: "/EN_BATFAC.jpg",
       spareImg: "",
-      link: "4"
+      link: "5"
     },
     {
       id: 6,
@@ -828,7 +828,7 @@ export const gridItems_AllinOne: {
       titleClassName: "bg-black bg-opacity-30 text-white p-4 rounded-lg justify-end items-left",
       img: "/EN_BAT_PAN.jpg",
       spareImg: "",
-      link: "4"
+      link: "6"
     },
   ];
 
@@ -965,10 +965,15 @@ export const CardsAllin1: CardData[] = [
 La simplicidad es la clave de nuestro enfoque. Al centralizar todas las operaciones en un único sistema, logramos una reducción significativa en los costos operativos, que en muchos casos alcanza hasta un 30%. Esto permite a municipios y provincias liberar recursos para invertir en otras áreas críticas de desarrollo.
 
 Nuestra plataforma integrada ofrece:
+
 1. Planificación y diseño personalizado
+
 2. Instalación eficiente y profesional
+
 3. Monitoreo en tiempo real del rendimiento energético
+
 4. Mantenimiento preventivo y correctivo
+
 5. Optimización continua del sistema
 
 La solución All-in-One no solo simplifica la gestión energética, sino que también mejora la eficiencia operativa y financiera. Al reducir la burocracia y las barreras técnicas, facilitamos la transición hacia un futuro energético más sostenible y eficiente.

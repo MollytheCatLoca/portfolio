@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useId } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
-import { CardsAllin1, CardData } from '@/data';
+import { CardsAllin1 } from '@/data';
+import { useCardContext } from '@/context/CardContext'; // Importar el contexto
 
 interface HiddenExpandableCardProps {
     activeCardId: number | null;
@@ -10,6 +11,7 @@ interface HiddenExpandableCardProps {
 }
 
 const HiddenExpandableCard: React.FC<HiddenExpandableCardProps> = ({ activeCardId, onClose }) => {
+    const { setIsCardActive } = useCardContext(); // Usar el contexto para actualizar el estado
     const activeCard = activeCardId ? CardsAllin1.find(card => card.id === activeCardId) : null;
     const ref = useRef<HTMLDivElement>(null);
     const id = useId();
@@ -17,6 +19,7 @@ const HiddenExpandableCard: React.FC<HiddenExpandableCardProps> = ({ activeCardI
     useEffect(() => {
         const onKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
+                setIsCardActive(false); // Actualizar el estado al cerrar
                 onClose();
             }
         };
@@ -31,7 +34,10 @@ const HiddenExpandableCard: React.FC<HiddenExpandableCardProps> = ({ activeCardI
         return () => window.removeEventListener('keydown', onKeyDown);
     }, [activeCard, onClose]);
 
-    useOutsideClick(ref, onClose);
+    useOutsideClick(ref, () => {
+        setIsCardActive(false); // Actualizar el estado al cerrar
+        onClose();
+    });
 
     if (!activeCard) return null;
 
@@ -40,7 +46,7 @@ const HiddenExpandableCard: React.FC<HiddenExpandableCardProps> = ({ activeCardI
         { activeCard && (
             <>
             <motion.div
-            initial= {{ opacity: 0 }
+                        initial= {{ opacity: 0 }
 }
 animate = {{ opacity: 1 }}
 exit = {{ opacity: 0 }}
@@ -48,13 +54,13 @@ className = "fixed inset-0 bg-black/20 h-full w-full z-10"
     />
     <div className="fixed inset-0 grid place-items-center z-[100]" >
         <motion.div
-              layoutId={ `card-${activeCard.id}-${id}` }
+                            layoutId={ `card-${activeCard.id}-${id}` }
 ref = { ref }
 className = "w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
     >
     <motion.div layoutId={ `image-${activeCard.id}-${id}` }>
         <Image
-                  priority
+                                    priority
 width = { 500}
 height = { 300}
 src = { activeCard.src }
@@ -65,9 +71,9 @@ className = "w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover 
 
     < div >
     <div className="flex justify-between items-start p-4" >
-        <div className="" >
-            <motion.h3
-                      layoutId={ `title-${activeCard.id}-${id}` }
+        <div>
+        <motion.h3
+                                            layoutId={ `title-${activeCard.id}-${id}` }
 className = "font-medium text-neutral-700 dark:text-neutral-200 text-base"
     >
     { activeCard.title }
@@ -85,7 +91,10 @@ layout
 initial = {{ opacity: 0 }}
 animate = {{ opacity: 1 }}
 exit = {{ opacity: 0 }}
-onClick = { onClose }
+onClick = {() => {
+    setIsCardActive(false); // Actualizar el estado al cerrar
+    onClose();
+}}
 className = "px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white hover:bg-green-600 transition-colors"
     >
     Cerrar
@@ -93,15 +102,17 @@ className = "px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white ho
     </div>
     < div className = "pt-4 relative px-4" >
         <motion.div
-                    layout
+                                        layout
 initial = {{ opacity: 0 }}
 animate = {{ opacity: 1 }}
 exit = {{ opacity: 0 }}
-className = "text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+className = "text-neutral-600 text-xs md:text-sm lg:text-base h-60 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
     >
 {
     activeCard.content.split('\n\n').map((paragraph, index) => (
-        <p key= { index } className = "mb-4" > { paragraph } </p>
+        <p key= { index } className = "mb-4" >
+        { paragraph }
+        </p>
     ))
 }
     </motion.div>
@@ -110,9 +121,9 @@ className = "text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-1
     </motion.div>
     </div>
     </>
-      )}
+            )}
 </AnimatePresence>
-  );
+    );
 };
 
 export default HiddenExpandableCard;
