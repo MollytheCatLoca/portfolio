@@ -162,21 +162,23 @@ export const projects_Energy: {
       iconLists: ["/public-administration.png", "/solar-panel.png", "/planet-earth.png"],
       link: "/energy/financing",
     },
+
     {
       id: 3,
-      title: "Energía Verde para Edificios Públicos",
-      des: "Instalación de paneles solares en colegios y hospitales para reducir costos y mejorar la sostenibilidad.",
-      img: "/SolarTech5.jpg",
-      iconLists: ["/solar-panel.png", "/planet-earth.png", "/energy.png"],
-      link: "/energy/all-in-one/",
-    },
-    {
-      id: 4,
       title: "Consultoría Energética Integral",
       des: "Asesoría completa desde estudios de viabilidad hasta la implementación y optimización de sistemas.",
       img: "/consultoriaener.jpg",
       iconLists: ["/strategic-consulting.png", "/energy.png", "/planet-earth.png"],
       link: "/energy/consulting/",
+    },
+
+    {
+      id: 4,
+      title: "Energía Verde para Edificios Públicos",
+      des: "Instalación de paneles solares en colegios y hospitales para reducir costos y mejorar la sostenibilidad.",
+      img: "/SolarTech5.jpg",
+      iconLists: ["/solar-panel.png", "/planet-earth.png", "/energy.png"],
+      link: "/energy/all-in-one/",
     },
   ];
 

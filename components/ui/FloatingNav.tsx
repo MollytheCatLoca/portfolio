@@ -7,8 +7,9 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { cn } from "@/utils/cn";
-import { useCardContext } from "@/context/CardContext"; // Importar el contexto
+import { useCardContext } from "@/context/CardContext";
 
 export const FloatingNav = ({
   navItems,
@@ -22,17 +23,13 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
-
-  // Llamada al hook de contexto fuera de condiciones
   const { isCardActive } = useCardContext();
-
-  // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
+  const pathname = usePathname();
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number" && !isCardActive) {
       let direction = current! - scrollYProgress.getPrevious()!;
-
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
       } else {
@@ -45,7 +42,13 @@ export const FloatingNav = ({
     }
   });
 
-  // Si el card está activo, ocultar completamente el FloatingNav
+  const isActiveLink = (link: string) => {
+    if (link === '/') {
+      return pathname === '/';
+    }
+    return pathname.toLowerCase().startsWith(link.toLowerCase());
+  };
+
   if (isCardActive) {
     return null;
   }
@@ -94,12 +97,14 @@ className = "h-10 w-10"
 href = { navItem.link }
 className = {
   cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-  )
-}
-  >
+              "relative items-center flex space-x-1",
+    isActiveLink(navItem.link)
+  ? "text-blue-500 dark:text-blue-400"
+  : "text-neutral-600 dark:text-neutral-50 dark:hover:text-neutral-300 hover:text-neutral-500"
+            )}
+          >
   <span className="block sm:hidden" > { navItem.icon } </span>
-    < span className = " text-sm !cursor-pointer" >
+    < span className = "text-sm !cursor-pointer" >
       { navItem.name }
       </span>
       </Link>
