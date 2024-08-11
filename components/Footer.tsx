@@ -1,7 +1,5 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { socialMedia } from "@/data";
-import MagicButton from "./ui/MagicButton";
-
 
 const Footer = () => {
   return (
@@ -9,16 +7,14 @@ const Footer = () => {
       {/* background grid */ }
 
       < div className = "flex flex-col items-center" >
-        <h1 className="heading-responsive lg:max-w-[40vw] sm:max-w-[50vw] text-center " >
+        <h1 className="heading-responsive lg:max-w-[40vw] sm:max-w-[50vw] text-center" >
           ¿Listos para liderar < span className = "text-purple" > la transformación sostenible </span>?
   </h1>
   < p className = "text-white-200 md:mt-10 my-5 text-center" >
     Innovación y tecnología para un futuro más eficiente y verde.
         </p>
-
-
-      </a>
       </div>
+
       < div className = "flex mt-16 md:flex-row flex-col justify-between items-center" >
         <p className="md:text-base text-sm md:font-normal font-light" >
           Copyright © 2024 BIS Integraciones
