@@ -58,9 +58,9 @@ const Hero = () => {
     En BIS Integraciones, lideramos la transformación hacia un futuro sostenible, integrando tecnología avanzada en energías renovables, IT y soluciones viales.
           </p>
 
-        < a href = "\contactus" >
-            <MagicButton
-              title="Nosotros"
+        < a href = "\" >
+            < MagicButton
+title = "Nosotros"
 icon = {< FaLocationArrow />}
 position = "right"
     />
