@@ -59,15 +59,11 @@ const Hero = () => {
           </p>
 
         < a href = "\" >
-            < MagicButton
-title = "Home"
-icon = {< FaLocationArrow />}
-position = "right"
-    />
-    </a>
-    </div>
-    </div>
-    </div>
+            < MagicButton title = "Home" icon = {< FaLocationArrow />} position = "right" />
+                </a>
+                </div>
+                </div>
+                </div>
   );
 };
 
