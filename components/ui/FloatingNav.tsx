@@ -23,22 +23,17 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
+  // Llamada al hook de contexto fuera de condiciones
+  const { isCardActive } = useCardContext();
+
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
 
-  let isCardActive = false;
-  try {
-    isCardActive = useCardContext().isCardActive;
-  } catch {
-    // No hacer nada si el contexto no está disponible
-  }
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number" && !isCardActive) { // Solo cambiar la visibilidad si el card no está activo
+    if (typeof current === "number" && !isCardActive) {
       let direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
-        // also set true for the initial state
         setVisible(true);
       } else {
         if (direction < 0) {

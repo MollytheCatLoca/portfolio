@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { ReactNode } from "react";
+import { CardProvider } from "@/context/CardContext"; // Importar el CardProvider
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,12 @@ export default function RootLayout({
         </head>
         < body className = "dark" >
           <ThemeProvider>
-          { children }
-          < Analytics />
-          </ThemeProvider>
-          </body>
-          </html>
-    );
+          <CardProvider>{/* Envolver los children con CardProvider */ }
+  { children }
+  </CardProvider>
+    < Analytics />
+    </ThemeProvider>
+    </body>
+    </html>
+  );
 }
