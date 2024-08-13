@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Markdown from 'react-markdown';
 import '@/styles/chatbot.css';
 import { Message, useAssistant } from 'ai/react';
+import { useCardContext } from '@/context/CardContext';
 
 
 
@@ -91,6 +92,7 @@ const ChatCompNew: React.FC = () => {
   const [inputDisabled, setInputDisabled] = useState(false);
   const [lastUserMessage, setLastUserMessage] = useState<string | null>(null);
   const [initialMessageShown, setInitialMessageShown] = useState(false);
+  const { isCardActive, setIsCardActive } = useCardContext();
 
   const scrollToBottom = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -99,6 +101,12 @@ const ChatCompNew: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages, currentResponse]);
+
+  useEffect(() => {
+    if (setIsCardActive) {
+      setIsCardActive(isChatbotOpen);
+    }
+  }, [isChatbotOpen, setIsCardActive]);
 
   useEffect(() => {
     if (status === 'awaiting_message') {
