@@ -19,7 +19,7 @@ const Footer_IT = () => {
 
       < a href = "mailto:contacto@bisintegraciones.com" >
         <MagicButton
-            title="Contáctanos"
+            title="Email"
 icon = {< FaLocationArrow />}
 position = "right"
   />
