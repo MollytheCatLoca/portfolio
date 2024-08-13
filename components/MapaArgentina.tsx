@@ -244,7 +244,7 @@ return null;
             < p className = "text-[0.5rem] md: text-xs lg:text-sm" > { selectedPartner.city } </p>
                 < p className = "text-[0.5rem] md:text-xs lg:text-sm" > Tel: { selectedPartner.phone } </p>
                     < p className = "text-[0.5rem] md:text-xs lg:text-sm" > { selectedPartner.address } </p>
-                        < p className = "text-[0.5rem] md:text-xs lg:text-sm" > { selectedPartner.email } </p>
+                        < p className = "text-[0.4rem] text-center md:text-xs lg:text-sm" > { selectedPartner.email } </p>
 
                             </div>
                             </div>
