@@ -20,7 +20,7 @@ interface ProvinciasData {
 
 const partners = [
     {
-        name: "BIS Integraciones",
+        name: "BIS INTEGRACIONES",
         coordinates: [-59.216, -34.6037],
         city: "Buenos Aires",
         phone: "+54 11 5121-3012",
@@ -249,7 +249,7 @@ return null;
 }
     >
     <div className="w-full h-full bg-[#1b1b3a] p-2 rounded-xl shadow-lg text-center flex flex-col justify-center" >
-        <h3 className="text-sm font-bold mb-2" > { selectedPartner.name } </h3>
+        <h3 className="text-sm font-bold mb-2 text-purple" > { selectedPartner.name } </h3>
             < p className = "text-[0.5rem] md: text-xs lg:text-sm" > { selectedPartner.city } </p>
                 < p className = "text-[0.5rem] md:text-xs lg:text-sm" > Tel: { selectedPartner.phone } </p>
                     < p className = "text-[0.5rem] md:text-xs lg:text-sm" > { selectedPartner.address } </p>
