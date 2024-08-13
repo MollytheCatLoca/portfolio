@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState, useRef } from 'react';
 import { Circle } from 'lucide-react';
 import provinciasData from '../data/provinciasData';
@@ -150,30 +148,29 @@ const MapaArgentina: React.FC = () => {
         setActiveProvince(nombre);
     };
 
-
     return (
-        <div className= "w-full max-w-4xl mx-auto mb-20 p-12" >
+        <div className= "w-full max-w-4xl mx-auto mb-20 p-4 md:p-12 relative" >
         <div className="bg-[#111928] rounded-3xl overflow-hidden shadow-lg" style = { customStyle } >
-            <div className="p-6 text-white" >
-                <h2 className="text-2xl font-bold mb-4 justify-center text-center" > Nuestros Partners en Argentina </h2>
-                    < div className = "flex" >
-                        <div className="relative" style = {{ height: "600px", width: "70%" }
-}>
-    <svg
+            <div className="p-4 md:p-6 text-white" >
+                <h2 className="text-xl md:text-2xl font-bold mb-4 text-center" > Nuestros Partners en Argentina </h2>
+                    < div className = "flex flex-col md:flex-row" >
+                        <div className="relative w-full md:w-70% h-[400px] md:h-[600px]" >
+                            <svg
                                 ref={ mapRef }
-viewBox = "0 0 1000 1200"
-className = "absolute top-0 left-0 w-full h-full"
-preserveAspectRatio = "xMidYMid meet"
-    >
-{
-    provinciasData.features.flatMap((featureCollection) =>
-        featureCollection.features.map((provincia) => {
-            if (provincia && provincia.geometry && provincia.geometry.coordinates) {
-                return (
-                    <path
+    viewBox = "0 0 1000 1200"
+    className = "absolute top-0 left-0 w-full h-full"
+    preserveAspectRatio = "xMidYMid meet"
+        >
+        {/* Renderización de las provincias */ }
+    {
+        provinciasData.features.flatMap((featureCollection) =>
+            featureCollection.features.map((provincia) => {
+                if (provincia && provincia.geometry && provincia.geometry.coordinates) {
+                    return (
+                        <path
                                                     key= { provincia.properties.nombre }
-                d = { createPathD(provincia.geometry.coordinates)}
-className = {`
+                    d = { createPathD(provincia.geometry.coordinates)}
+    className = {`
                                                         ${activeProvince === provincia.properties.nombre ? 'fill-[#4a4ae2]' : 'fill-[#1b1b3a]'}
                                                         stroke-white stroke-[0.5] transition-colors duration-200 hover:fill-[#3b3be0]
                                                     `}
@@ -186,6 +183,7 @@ onClick = {() => handleProvinceClick(provincia.properties.nombre)}
 return null;
                                     })
                                 )}
+{/* Renderización de los partners */ }
 {
     partners.map((partner) => {
         const [x, y] = projectToSVG(partner.coordinates[0], partner.coordinates[1]);
@@ -193,16 +191,17 @@ return null;
         return (
             <g key= { partner.name } >
             <Circle
-                                                x={ adjustedX - 15 }
+                                                x={ adjustedX }
         y = { adjustedY }
         r = { 5}
         className = "fill-[#4a4ae2] stroke-white stroke-2"
             />
-
             </g>
-    );
+                                    );
 })}
 </svg>
+
+{/* Tooltip */ }
 {
     tooltipContent && (
         <div
@@ -218,37 +217,40 @@ return null;
     </div>
                             )}
 </div>
+    </div>
+    </div>
+    </div>
+
+{/* Contenedor para la Card flotante */ }
 {
     selectedPartner && (
-        <div 
-            className="absolute bottom-6 right-6 md:bottom-4 md:right-4"
+        <div
+        className="absolute"
     style = {{
-        width: '25%',
-            height: 'auto',
-                transformOrigin: 'bottom right',
-                    transform: 'scale(1)',
-                        padding: '10px',
-                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                                borderRadius: '10px',
-                                    wordBreak: 'break-word'
-    }
+        bottom: 'calc(8% + 1px)',  // Ajusta la posición en Y de manera relativa
+            right: 'calc(8% + 1px)',   // Ajusta la posición en X de manera rela
+                width: '35%',    // Ancho de la tarjeta, puedes ajustar este valor
+                    padding: '1px',
+                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                            borderRadius: '10px',
+                                backgroundColor: '#1b1b3a',
+                                    transformOrigin: 'bottom right', // Cambia el origen de transformación si es necesario
+                                        zIndex: 20,  // Asegura que la tarjeta esté sobre otros elementos
+        }
 }
-        >
-    <div className="w-full h-full bg-[#1b1b3a] p-4 rounded-xl shadow-lg text-center flex flex-col justify-center" >
+    >
+    <div className="w-full h-full bg-[#1b1b3a] p-2 rounded-xl shadow-lg text-center flex flex-col justify-center" >
         <h3 className="text-sm font-bold mb-2" > { selectedPartner.name } </h3>
-            < p className = "text-xs mb-1" > { selectedPartner.city } </p>
-                < p className = "text-xs mb-1" > Tel: { selectedPartner.phone } </p>
-                    < p className = "text-xs mb-1" > { selectedPartner.address } </p>
-                        < p className = "text-[0.6rem]" > { selectedPartner.email } </p>
+            < p className = "text-[0.5rem] md: text-xs lg:text-sm" > { selectedPartner.city } </p>
+                < p className = "text-[0.5rem] md:text-xs lg:text-sm" > Tel: { selectedPartner.phone } </p>
+                    < p className = "text-[0.5rem] md:text-xs lg:text-sm" > { selectedPartner.address } </p>
+                        < p className = "text-[0.5rem] md:text-xs lg:text-sm" > { selectedPartner.email } </p>
+
                             </div>
                             </div>
-    )
-}
+)}
 
 </div>
-    </div>
-    </div>
-    </div>
     );
 };
 

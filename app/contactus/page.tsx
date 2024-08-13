@@ -17,7 +17,7 @@ export default function ContactPage() {
                 < div className = "w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
                     <Hero className="w-full" />
                         <div className="mt-16" >
-                            <div className="max-w-4xl mx-auto flex flex-col items-center" >
+                            <div className="relative max-w-4xl mx-auto flex flex-col items-center" >
                                 <ContactForm className="w-full mb-16" />
                                     <MapaArgentina className="w-full mb-20" />
                                         </div>
