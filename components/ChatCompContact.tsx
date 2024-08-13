@@ -4,6 +4,7 @@ import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/Card'
 import { Button } from '@/components/ui/button';
 import '@/styles/chatbot.css';
 import { Message, useAssistant } from 'ai/react';
+import { useCardContext } from '@/context/CardContext';
 
 // Función para procesar Markdown simple
 const processMarkdown = (text: string) => {
@@ -91,6 +92,7 @@ const ChatCompContact: React.FC<ChatCompContactProps> = ({ submitterName }) => {
     const [inputDisabled, setInputDisabled] = useState(false);
     const [lastUserMessage, setLastUserMessage] = useState<string | null>(null);
     const [initialMessageShown, setInitialMessageShown] = useState(false);
+    const { isCardActive, setIsCardActive } = useCardContext();
 
     const scrollToBottom = () => {
         ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -105,6 +107,10 @@ const ChatCompContact: React.FC<ChatCompContactProps> = ({ submitterName }) => {
             inputRef.current?.focus();
         }
     }, [status]);
+
+    useEffect(() => {
+        setIsCardActive(isChatbotOpen);
+    }, [isChatbotOpen, setIsCardActive]);
 
     useEffect(() => {
         if (submitterName && !initialMessageShown) {
@@ -166,34 +172,49 @@ const ChatCompContact: React.FC<ChatCompContactProps> = ({ submitterName }) => {
 
     const toggleChatbot = () => {
         setIsChatbotOpen(!isChatbotOpen);
+        setIsCardActive(!isChatbotOpen); // Actualiza el estado del CardContext
         if (!isChatbotOpen) {
             setInitialMessageShown(false);
         }
     };
 
     return (
-        <div className= "fixed bottom-4 right-4 z-50" >
-        {
-            isChatbotOpen?(
-        <Card className = "chatbot-card w-[350px] md:w-[450px]" >
-                    <CardHeader className="chatbot-card-header">
-        <h3 className="text-lg font-medium" > Asistente IA de BIS </h3>
-            < Button
+        <div className= "fixed bottom-4 right-2 md:right-4 md:left-auto z-50 w-[95%] md:w-full md:max-w-md" >
+        { isChatbotOpen && (
+            <Card className="chatbot-card" >
+                <CardHeader className="chatbot-card-header" >
+                    <h3 className="text-lg font-medium" > Asistente IA de BIS </h3>
+                        < div className = "flex items-center gap-2" >
+                            <Button
+                    variant="ghost"
+    size = "icon"
+    className = "chatbot-icon"
+    onClick = { toggleChatbot }
+        >
+        <MinimizeIcon className="w-5 h-5" />
+            <span className="sr-only" > Minimize </span>
+                </Button>
+                < Button variant = "ghost" size = "icon" className = "chatbot-icon" >
+                    <MaximizeIcon className="w-5 h-5" />
+                        <span className="sr-only" > Maximize </span>
+                            </Button>
+                            < Button
     variant = "ghost"
     size = "icon"
     className = "chatbot-icon"
     onClick = { toggleChatbot }
         >
         <XIcon className="w-5 h-5" />
-            <span className="sr-only" > Cerrar </span>
+            <span className="sr-only" > Close </span>
                 </Button>
+                </div>
                 </CardHeader>
-                < CardContent className = "chatbot-card-content h-[400px] overflow-y-auto" >
+                < CardContent className = "chatbot-card-content" >
                 {
                     messages.map((message, index) => (
                         <div
-                key= { index }
-                className = {`message ${message.role === 'assistant' ? 'bot' : 'user'}`}
+                    key= { index }
+                    className = {`message ${message.role === 'assistant' ? 'bot' : 'user'}`}
                     >
                     <div className="font-medium" style = {{ fontWeight: 'bold' }
 }>
@@ -201,7 +222,7 @@ const ChatCompContact: React.FC<ChatCompContactProps> = ({ submitterName }) => {
     </div>
     < div dangerouslySetInnerHTML = {{ __html: processMarkdown(message.text) }} />
         </div>
-            ))}
+                ))}
 {
     isReceiving && (
         <div className="message bot" >
@@ -209,51 +230,76 @@ const ChatCompContact: React.FC<ChatCompContactProps> = ({ submitterName }) => {
 }> Asistente </div>
     < div dangerouslySetInnerHTML = {{ __html: processMarkdown(currentResponse) }} />
         </div>
-            )}
+                )}
 {
     status === 'in_progress' && (
         <div className="w-full h-8 max-w-md p-2 mb-8 bg-gray-300 rounded-lg dark:bg-gray-600 animate-pulse" />
-            )
+                )
 }
 <div ref={ ref } />
     </CardContent>
     < CardFooter className = "chatbot-card-footer" >
         <form onSubmit={ onSubmit } className = "flex items-center w-full" >
             <input
-                ref={ inputRef }
+                    ref={ inputRef }
 name = "message"
 value = { input }
 onChange = { handleInputChange }
 placeholder = "Escribe tu mensaje..."
-className = "chatbot-input flex-grow mr-2"
+className = "chatbot-input"
 disabled = { status !== 'awaiting_message' || inputDisabled}
-              />
+                  />
     < Button
 type = "submit"
 size = "icon"
 className = "chatbot-send-btn"
 disabled = { status !== 'awaiting_message' || inputDisabled}
-              >
+                  >
     <SendIcon className="w-4 h-4" />
         <span className="sr-only" > Enviar </span>
             </Button>
             </form>
             </CardFooter>
             </Card>
-      ) : (
-    <Button
-          variant= "ghost"
-size = "icon"
-className = "chatbot-icon chatbot-minimized-icon bg-white rounded-full shadow-lg"
-onClick = { toggleChatbot }
-    >
-    <MessageCircleIcon className="w-10 h-10 text-blue-500" />
-        <span className="sr-only" > Abrir Asistente IA </span>
-            </Button>
-      )}
+          )}
+{
+    !isChatbotOpen && (
+        <Button
+              variant="ghost"
+    size = "icon"
+    className = "chatbot-icon chatbot-minimized-icon"
+    onClick = { toggleChatbot }
+        >
+        <MessageCircleIcon className="w-16 h-16" />
+            <span className="sr-only" > Abrir Asistente IA </span>
+                </Button>
+          )
+}
 </div>
-  );
-};
+      );
+    };
+
+function MinimizeIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
+            <path d="M8 3v3a2 2 0 0 1-2 2H3" />
+                <path d="M21 8h-3a2 2 0 0 1-2-2V3" />
+                    <path d="M3 16h3a2 2 0 0 1 2 2v3" />
+                        <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
+                            </svg>
+      );
+}
+
+function MaximizeIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
+            <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+                <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+                    <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+                        <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+                            </svg>
+      );
+}
 
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
@@ -261,7 +307,7 @@ function XIcon(props: React.SVGProps<SVGSVGElement>) {
             <path d="M18 6 6 18" />
                 <path d="m6 6 12 12" />
                     </svg>
-  );
+      );
 }
 
 function MessageCircleIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -269,7 +315,7 @@ function MessageCircleIcon(props: React.SVGProps<SVGSVGElement>) {
         <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
                 </svg>
-  );
+      );
 }
 
 function SendIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -278,7 +324,7 @@ function SendIcon(props: React.SVGProps<SVGSVGElement>) {
             <path d="m22 2-7 20-4-9-9-4Z" />
                 <path d="M22 2 11 13" />
                     </svg>
-  );
+      );
 }
 
 export default ChatCompContact;
