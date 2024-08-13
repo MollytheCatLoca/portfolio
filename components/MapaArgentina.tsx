@@ -44,7 +44,7 @@ const partners = [
         phone: "+54 261 555-1212",
         address: "Av. San Martín 890, Mendoza",
         web: "www.mendozainnovations.com",
-        email: "hello@mendozainnovations.com"
+        email: "hello@mdzainnovations.com"
     },
     {
         name: "Tucumán Digital",
