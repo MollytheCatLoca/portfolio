@@ -23,8 +23,8 @@ const partners = [
         name: "BIS Integraciones",
         coordinates: [-59.216, -34.6037],
         city: "Buenos Aires",
-        phone: "+54 11 1234-5678",
-        address: "Av. Corrientes 1234, CABA",
+        phone: "+54 11 5121-3012",
+        address: "Av. Cerrito 1054 6°",
         web: "www.bisintegraciones.com",
         email: "info@bisintegraciones.com"
     },
@@ -73,6 +73,15 @@ const partners = [
         web: "www.neuquentechhub.com",
         email: "info@neuquentechhub.com"
     },
+    {
+        name: "SINERGIA GROUP S.R.L",
+        coordinates: [-66.3378, -33.3012],  // Coordenadas de la ciudad de San Luis, Argentina
+        city: "San Luis",
+        phone: "+54 11 3407-6585",  // Teléfono de BIS Integraciones
+        address: "Ángel Gallardo N° 421, Piso 5°",
+        email: "info@sinergiagroup.com.ar"
+    },
+
     {
         name: "Catamarca Innovate",
         coordinates: [-67.7795, -26.6083],
