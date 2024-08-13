@@ -65,13 +65,13 @@ const partners = [
         email: "contact@saltasolutions.com"
     },
     {
-        name: "Neuquén Tech Hub",
+        name: "Grupo BUEN AIRE",
         coordinates: [-69.9991, -38.1516],
         city: "Neuquén",
-        phone: "+54 299 333-7777",
-        address: "Av. Argentina 200, Neuquén",
+        phone: "+54 911 3780-1289",
+        address: "Int. Carro 1320",
         web: "www.neuquentechhub.com",
-        email: "info@neuquentechhub.com"
+        email: "info@grupobuenaire.com"
     },
     {
         name: "SINERGIA GROUP S.R.L",
