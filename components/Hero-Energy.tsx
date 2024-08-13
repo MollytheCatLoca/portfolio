@@ -58,11 +58,18 @@ const Hero_Energy = () => {
   En BIS Integraciones, impulsamos el cambio hacia la sostenibilidad con tecnología de punta en energías renovables.
 
           </p>
+    < a href = "\contactus" >
+      <MagicButton
+              title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+  />
+  </a>
 
 
-    </div>
-    </div>
-    </div>
+  </div>
+  </div>
+  </div>
   );
 };
 

@@ -58,11 +58,17 @@ const Hero_IT = () => {
   En BIS Integraciones, potenciamos tu negocio con soluciones tecnológicas avanzadas, garantizando eficiencia y seguridad,
 
     </p>
+    < a href = "\contactus" >
+      <MagicButton
+    title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+  />
+  </a>
 
-
-    </div>
-    </div>
-    </div>
+  </div>
+  </div>
+  </div>
   );
 };
 

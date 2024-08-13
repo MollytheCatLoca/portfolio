@@ -44,11 +44,18 @@ const Hero_Soluciones = () => {
         <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl" style = {{ color: 'white' }
 } >
     Desde el diseño hasta la implementación, transformamos la manera en que las comunidades gestionan y consumen energía.                </p>
+        < a href = "\contactus" >
+            <MagicButton
+            title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+    />
+    </a>
 
 
-        </div>
-        </div>
-        </div>
+    </div>
+    </div>
+    </div>
   );
 };
 

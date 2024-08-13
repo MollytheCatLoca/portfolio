@@ -60,7 +60,7 @@ const Hero = () => {
 
     < a href = "\contactus" >
       <MagicButton
-              title="Nosotros"
+              title="Contacto"
 icon = {< FaLocationArrow />}
 position = "right"
   />

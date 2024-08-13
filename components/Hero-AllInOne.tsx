@@ -45,10 +45,17 @@ const Hero_AllinOne = () => {
 }>
   Simplifican la Transición hacia Energías Renovables Generando Ahorros
     </p>
+    < a href = "\contactus" >
+      <MagicButton
+              title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+  />
+  </a>
 
-    </div>
-    </div>
-    </div>
+  </div>
+  </div>
+  </div>
   );
 };
 

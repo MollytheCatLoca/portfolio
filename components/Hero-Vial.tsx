@@ -58,11 +58,17 @@ const Hero_Vial = () => {
   En BIS Integraciones, transformamos la infraestructura vial con innovaciones tecnológicas que mejoran la seguridad y la eficiencia en cada ruta.
 
           </p>
+    < a href = "\contactus" >
+      <MagicButton
+          title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+  />
+  </a>
 
-
-    </div>
-    </div>
-    </div>
+  </div>
+  </div>
+  </div>
   );
 };
 

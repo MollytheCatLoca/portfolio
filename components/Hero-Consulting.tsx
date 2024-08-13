@@ -44,11 +44,17 @@ const Hero_Consulting = () => {
         <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl" style = {{ color: 'white' }
 } >
     Desde estudios de viabilidad hasta la optimización de sistemas energéticos.                </p>
+        < a href = "\contactus" >
+            <MagicButton
+            title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+    />
+    </a>
 
-
-        </div>
-        </div>
-        </div>
+    </div>
+    </div>
+    </div>
   );
 };
 

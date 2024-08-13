@@ -44,10 +44,17 @@ const Hero_Financing = () => {
         <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl" style = {{ color: 'white' }
 }>
     Catalizando Proyectos hacia un Futuro Energético Sustentable y Rentable </p>
+        < a href = "\contactus" >
+            <MagicButton
+            title="Contacto"
+icon = {< FaLocationArrow />}
+position = "right"
+    />
+    </a>
 
-        </div>
-        </div>
-        </div>
+    </div>
+    </div>
+    </div>
   );
 };
 
