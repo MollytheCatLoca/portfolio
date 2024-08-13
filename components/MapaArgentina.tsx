@@ -21,7 +21,7 @@ interface ProvinciasData {
 const partners = [
     {
         name: "BIS Integraciones",
-        coordinates: [-58.3816, -34.6037],
+        coordinates: [-59.216, -34.6037],
         city: "Buenos Aires",
         phone: "+54 11 1234-5678",
         address: "Av. Corrientes 1234, CABA",
@@ -30,7 +30,7 @@ const partners = [
     },
     {
         name: "Córdoba Tech",
-        coordinates: [-63.7836, -31.1135],
+        coordinates: [-64.1836, -31.6135],
         city: "Córdoba",
         phone: "+54 351 987-6543",
         address: "Bv. San Juan 567, Córdoba",
@@ -39,7 +39,7 @@ const partners = [
     },
     {
         name: "Mendoza Innovations",
-        coordinates: [-68.1272, -34.1908],
+        coordinates: [-68.6672, -34.1908],
         city: "Mendoza",
         phone: "+54 261 555-1212",
         address: "Av. San Martín 890, Mendoza",
@@ -48,7 +48,7 @@ const partners = [
     },
     {
         name: "Tucumán Digital",
-        coordinates: [-65.2226, -26.7083],
+        coordinates: [-65.6226, -26.6083],
         city: "Tucumán",
         phone: "+54 381 444-3333",
         address: "Calle 25 de Mayo 400, San Miguel de Tucumán",
@@ -57,7 +57,7 @@ const partners = [
     },
     {
         name: "Salta Solutions",
-        coordinates: [-65.4117, -24.7859],
+        coordinates: [-65.8117, -24.7859],
         city: "Salta",
         phone: "+54 387 222-1111",
         address: "Av. Belgrano 1500, Salta",
@@ -66,7 +66,7 @@ const partners = [
     },
     {
         name: "Neuquén Tech Hub",
-        coordinates: [-69.9591, -38.1516],
+        coordinates: [-69.9991, -38.1516],
         city: "Neuquén",
         phone: "+54 299 333-7777",
         address: "Av. Argentina 200, Neuquén",
@@ -75,7 +75,7 @@ const partners = [
     },
     {
         name: "Catamarca Innovate",
-        coordinates: [-67.1795, -26.4696],
+        coordinates: [-67.7795, -26.6083],
         city: "Catamarca",
         phone: "+54 383 666-8888",
         address: "Calle Rivadavia 750, San Fernando del Valle de Catamarca",
