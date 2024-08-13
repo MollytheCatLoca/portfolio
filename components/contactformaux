@@ -1,15 +1,10 @@
-"use client"
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/Card';
-import { Button } from '@/components/ui/button';
-import ChatCompContact from './ChatCompContact';
 
 export function ContactForm() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState('');
-    const [submitterName, setSubmitterName] = useState<string | null>(null);
 
     const customStyle = {
         backdropFilter: "blur(16px) saturate(180%)",
@@ -18,9 +13,10 @@ export function ContactForm() {
         border: "1px solid rgba(255, 255, 255, 0.125)",
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('Enviando...');
+        console.log('Sending form data:', { name, email, message });
 
         try {
             const response = await fetch('/api/contact', {
@@ -31,11 +27,12 @@ export function ContactForm() {
                 body: JSON.stringify({ name, email, message }),
             });
 
+            console.log('Response status:', response.status);
             const data = await response.json();
+            console.log('Response data:', data);
 
             if (data.success) {
                 setStatus('Mensaje enviado con éxito!');
-                setSubmitterName(name); // Establecer el nombre del remitente
                 setName('');
                 setEmail('');
                 setMessage('');
@@ -148,9 +145,6 @@ className = "bg-[#4a4ae2] hover:bg-[#3b3be0] text-white font-bold py-2 px-4 roun
                         </div>
                         </div>
                         </div>
-
-{/* Componente ChatCompContact */ }
-<ChatCompContact submitterName={ submitterName } />
-    </div>
+                        </div>
     );
 }

@@ -3,7 +3,6 @@ import React from 'react';
 import { navItems } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Hero from "@/components/Hero-Contact";
-import ChatCompNew from "@/components/ChatCompNew";
 import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/contact-form";
 import MapaArgentina from "@/components/MapaArgentina";
@@ -22,7 +21,7 @@ export default function ContactPage() {
                                     <MapaArgentina className="w-full mb-20" />
                                         </div>
                                         </div>
-                                        < ChatCompNew />
+
                                         </div>
                                         < Footer />
                                         </main>
