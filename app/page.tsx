@@ -6,7 +6,7 @@ import { navItems, RECENT_PROJECT_HOME } from "@/data";
 import Hero from '@/components/Hero';
 import RecentProjects from '@/components/RecenProjectss-Home';
 import ChatCompNew from '@/components/ChatCompNew';
-
+import Link from 'next/link';
 
 const Home = () => {
 
@@ -35,9 +35,11 @@ const Home = () => {
   <div className="scale-95" > <RecentProjects projects={ RECENT_PROJECT_HOME } /></div >
 
     <ChatCompNew />
-    < Footer />
-    </div>
-    </main>
+    < Link href = "/contactus" >
+      <Footer />
+      </Link>
+      </div>
+      </main>
   );
 };
 

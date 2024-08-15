@@ -7,6 +7,7 @@ import Hero_AllinOne from '@/components/Hero-AllInOne';
 import Grid from '@/components/Grid3';
 import Clients from '@/components/ClientsCards';
 import { CardProvider } from '@/context/CardContext';
+import Link from 'next/link';
 //**  < Clients companies = { companies_Energy } testimonials = { testimonials_AllInOne } />
 const AllInOne = () => {
   return (
@@ -19,10 +20,13 @@ const AllInOne = () => {
           <Grid gridItems={ gridItems_AllinOne } />
 
             < ChatCompNew />
-            <Footer_Energy />
-            </div>
-            </main>
-            </CardProvider>
+            <div className='mb-10' > </div>
+              < Link href = "/contactus" >
+                <Footer_Energy />
+                </Link>
+                </div>
+                </main>
+                </CardProvider>
   );
 };
 

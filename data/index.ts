@@ -5,6 +5,7 @@ export const navItems = [
   { name: "Energy", link: "/energy" },
   { name: "IT", link: "/it" },
   { name: "Vial", link: "/vial" },
+  { name: "PPTs", link: "/downloads" },
 
 ];
 

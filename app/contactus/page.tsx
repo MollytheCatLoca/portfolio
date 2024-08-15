@@ -6,7 +6,7 @@ import Hero from "@/components/Hero-Contact";
 import Footer from "@/components/Footer";
 import { ContactForm } from "@/components/contact-form";
 import MapaArgentina from "@/components/MapaArgentina";
-
+import Link from 'next/link';
 export default function ContactPage() {
     return (
         <main className= "relative bg-gradient-itemsrelative bg-black-100 flex justify-center overflow-clip items-center flex-col  mx-auto sm:px-5 px-1 dark-b from-[#000B18] to-[#111928] min-h-screen" >
@@ -23,7 +23,9 @@ export default function ContactPage() {
                                         </div>
 
                                         </div>
-                                        < Footer />
-                                        </main>
+                                        < Link href = "/" >
+                                            <Footer />
+                                            </Link>
+                                            </main>
   );
 }

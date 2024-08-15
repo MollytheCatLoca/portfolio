@@ -9,6 +9,7 @@ import Hero_Energy from '@/components/Hero-Energy';
 import Footer_Energy from '@/components/Footer-Energy';
 import Approach_Energy from '@/components/Approach-Energy';
 import ChatCompNew from '@/components/ChatCompNew';
+import Link from 'next/link';
 /**  <Grid gridItems={ gridItems_Energy } />*/
 const Energy = () => {
   return (
@@ -23,9 +24,11 @@ const Energy = () => {
               <Experience workExperience={ workExperience_Energy } />
                 < Approach_Energy />
                 <ChatCompNew />
-                < Footer_Energy />
-                </div>
-                </main>
+                < Link href = "/contactus" >
+                  <Footer_Energy />
+                  </Link>
+                  </div>
+                  </main>
   );
 };
 
