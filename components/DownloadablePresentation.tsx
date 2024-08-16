@@ -206,6 +206,16 @@ className = { cn("text-neutral-200", styles.title) }
     >
     { presentation.title }
     </motion.h3>
+
+    </div>
+    < div className = { styles.titleContainer } >
+        <motion.h5
+                  layoutId={ `title-${presentation.id}-${id}` }
+className = { cn("text-neutral-400 text-purple", styles.title) }
+    >
+    { presentation.type }
+    </motion.h5>
+
     </div>
     </div>
     </motion.div>
