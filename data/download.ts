@@ -44,5 +44,14 @@ export const presentations: Presentation[] = [
         excerpt: "BIS Integraciones ofrece un enfoque global para la gestión de líneas financieras en proyectos de energía renovable. Nuestro equipo de expertos proporciona soluciones adaptadas para proyectos desde 300 kW hasta más de 10 MW, utilizando diversas fuentes de financiamiento como leasing, créditos bancarios y organismos multilaterales.",
         imageSrc: "/EN_FINMundo.jpg",
         downloadPath: "/download/Consultoria Finaciera BIS.pdf"
+    },
+    {
+        id: 5,
+        title: "Oportunidades de Energía Renovable para Municipios",
+        description: "Análisis de las oportunidades actuales para municipios y provincias en la adopción de energías renovables, con énfasis en parques solares.",
+        category: "Energia",
+        excerpt: "En el contexto económico actual de Argentina, los municipios y provincias tienen una oportunidad única para invertir en energías renovables. Los parques solares ALL IN ONE de BIS Integraciones ofrecen una solución innovadora con financiación flexible, generación cercana a la demanda y la posibilidad de realizar obra pública autofinanciada. Con un ROI mejorado de 4-5 años y múltiples beneficios adicionales, el momento de actuar es ahora.",
+        imageSrc: "/EN_EDIP1.jpg",
+        downloadPath: "/download/EERR-MUNI-OPOR.pdf"
     }
 ];
