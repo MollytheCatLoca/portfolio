@@ -43,6 +43,6 @@ export const presentations: Presentation[] = [
         category: "Energia",
         excerpt: "BIS Integraciones ofrece un enfoque global para la gestión de líneas financieras en proyectos de energía renovable. Nuestro equipo de expertos proporciona soluciones adaptadas para proyectos desde 300 kW hasta más de 10 MW, utilizando diversas fuentes de financiamiento como leasing, créditos bancarios y organismos multilaterales.",
         imageSrc: "/EN_FINMundo.jpg",
-        downloadPath: "/download/Consultoria Financiera BIS.pdf"
+        downloadPath: "/download/Consultoria Finaciera BIS.pdf"
     }
 ];
