@@ -32,8 +32,7 @@ const styles = {
     flex-grow flex items-center justify-center
   `,
     title: `
-    font-medium text-center text-base
-    line-clamp-2 overflow-hidden
+    font-medium text-center 
   `,
     openCard: `
     w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] 
