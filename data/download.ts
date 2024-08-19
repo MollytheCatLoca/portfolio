@@ -59,5 +59,15 @@ export const presentations: Presentation[] = [
         excerpt: "En el contexto económico actual de Argentina, los municipios y provincias tienen una oportunidad única para invertir en energías renovables. Los parques solares ALL IN ONE de BIS Integraciones ofrecen una solución innovadora con financiación flexible, generación cercana a la demanda y la posibilidad de realizar obra pública autofinanciada. Con un ROI mejorado de 4-5 años y múltiples beneficios adicionales, el momento de actuar es ahora.",
         imageSrc: "/EN_EDIP1.jpg",
         downloadPath: "/download/EERR-MUNI-OPOR.pdf"
+    },
+    {
+        id: 6,
+        title: "Selección de Locaciones para Parques Solares All-in-One",
+        type: "PAPER",
+        description: "Guía detallada sobre el proceso de selección de sitios para parques solares All-in-One en Argentina, incluyendo factores clave y consideraciones técnicas.",
+        category: "Energia",
+        excerpt: "La elección del emplazamiento ideal para parques solares All-in-One se ha convertido en una disciplina sofisticada que combina análisis técnico riguroso con una comprensión profunda de las dinámicas locales. Este documento examina los factores críticos en la selección de sitios, desde la irradiación solar hasta la aceptación comunitaria, proporcionando una hoja de ruta para desarrolladores y municipios interesados en implementar proyectos solares exitosos. Con una duración de selección de sitio de 30-45 días, este proceso es crucial para maximizar el rendimiento y la viabilidad económica del proyecto.",
+        imageSrc: "/edificiosSolar.jpg",
+        downloadPath: "/download/ALLinONE-Locacion.pdf"
     }
 ];
