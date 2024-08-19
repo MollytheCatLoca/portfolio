@@ -47,24 +47,6 @@ const partners = [
         email: "hello@mdzainnovations.com"
     },
     {
-        name: "Tucumán Digital",
-        coordinates: [-65.6226, -26.6083],
-        city: "Tucumán",
-        phone: "+54 381 444-3333",
-        address: "Calle 25 de Mayo 400, San Miguel de Tucumán",
-        web: "www.tucumandigital.com",
-        email: "info@tucumandigital.com"
-    },
-    {
-        name: "Salta Solutions",
-        coordinates: [-65.8117, -24.7859],
-        city: "Salta",
-        phone: "+54 387 222-1111",
-        address: "Av. Belgrano 1500, Salta",
-        web: "www.saltasolutions.com",
-        email: "contact@saltasolutions.com"
-    },
-    {
         name: "Grupo BUEN AIRE",
         coordinates: [-69.9991, -38.1516],
         city: "Neuquén",
@@ -81,15 +63,122 @@ const partners = [
         address: "Ángel Gallardo N° 421, Piso 5°",
         email: "info@sinergiagroup.com.ar"
     },
-
     {
-        name: "Catamarca Innovate",
+        name: "Construcciones CS",
+        coordinates: [-65.6226, -26.6083],
+        city: "Tucumán",
+        phone: "+54 381 444-3333",
+        address: "Av. Sarmiento 542, San Miguel de Tucumán",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
         coordinates: [-67.7795, -26.6083],
         city: "Catamarca",
-        phone: "+54 383 666-8888",
-        address: "Calle Rivadavia 750, San Fernando del Valle de Catamarca",
-        web: "www.catamarcannovate.com",
-        email: "hello@catamarcainnovate.com"
+        phone: "+54 381 444-3333",
+        address: "Calle República 317, San Fernando del Valle de Catamarca",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-66.2995, -22.0058],
+        city: "Jujuy",
+        phone: "+54 381 444-3333",
+        address: "Av. 19 de Abril 623, San Salvador de Jujuy",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-65.4117, -24.7859],
+        city: "Salta",
+        phone: "+54 381 444-3333",
+        address: "Calle Balcarce 186, Salta",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-60.9867, -26.3506],
+        city: "Chaco",
+        phone: "+54 381 444-3333",
+        address: "Av. 9 de Julio 755, Resistencia",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-58.0344, -28.4692],
+        city: "Corrientes",
+        phone: "+54 381 444-3333",
+        address: "Calle Junín 429, Corrientes",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-59.9784, -24.8857],
+        city: "Formosa",
+        phone: "+54 381 444-3333",
+        address: "Av. 25 de Mayo 278, Formosa",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-54.5369, -26.3621],
+        city: "Misiones",
+        phone: "+54 381 444-3333",
+        address: "Calle Bolívar 691, Posadas",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-69.1023, -43.3001],
+        city: "Chubut",
+        phone: "+54 381 444-3333",
+        address: "Av. Fontana 504, Rawson",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-70.2166, -48.6231],
+        city: "Santa Cruz",
+        phone: "+54 381 444-3333",
+        address: "Calle Roca 137, Río Gallegos",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-63.6026, -27.9083],
+        city: "Santiago del Estero",
+        phone: "+54 381 444-3333",
+        address: "Av. San Martín 765, Ushuaia",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-68.3026, -53.9064],
+        city: "Tierra del Fuego",
+        phone: "+54 381 444-3333",
+        address: "Av. San Martín 765, Ushuaia",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
+    },
+    {
+        name: "Construcciones CS",
+        coordinates: [-66.0008, -36.6167],
+        city: "La Pampa",
+        phone: "+54 381 444-3333",
+        address: "Calle Coronel Gil 402, Santa Rosa",
+        web: "www.construccionescs.com.ar",
+        email: "esanchez@construccionescs.com.ar"
     }
 ];
 
