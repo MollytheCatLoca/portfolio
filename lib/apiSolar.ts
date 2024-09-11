@@ -3,7 +3,9 @@ import { getParquesSolaresCoord } from './coordenadasHelper';
 import axios from 'axios';
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL
-    ? new URL(process.env.NEXT_PUBLIC_API_URL).origin
+    ? (process.env.NEXT_PUBLIC_API_URL.startsWith('http')
+        ? process.env.NEXT_PUBLIC_API_URL
+        : `https://${process.env.NEXT_PUBLIC_API_URL}`)
     : 'https://www.bisintegraciones.com';
 
 console.log('API base URL:', baseUrl);
