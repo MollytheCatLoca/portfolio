@@ -3,6 +3,7 @@ import { getParquesSolaresCoord } from './coordenadasHelper';
 import axios from 'axios';
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+console.log('apiSolar.ts base URL:', baseUrl);
 
 interface QueryParams {
     provincia?: string;
@@ -136,6 +137,7 @@ async function fetchDataFromAPI(params: QueryParams): Promise<ParqueSolarData[]>
     };
 
     try {
+        console.log('Intentando llamar a la API:', `${baseUrl}/api/solarParks`);
         const response = await axios({
             method: 'post',
             url: `${baseUrl}/api/solarParks`,

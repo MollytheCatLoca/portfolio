@@ -23,8 +23,15 @@ async function loadProvinciasLocalidadesData(): Promise<ProvinciaData> {
         const { promises: fs } = await import('fs');
         const path = await import('path');
         const filePath = path.join(process.cwd(), 'data', 'provinciasLocalidades.json');
-        const fileContents = await fs.readFile(filePath, 'utf8');
-        provinciasLocalidadesData = JSON.parse(fileContents);
+        console.log('Intentando cargar archivo desde:', filePath);
+        try {
+            const fileContents = await fs.readFile(filePath, 'utf8');
+            provinciasLocalidadesData = JSON.parse(fileContents);
+            console.log('Archivo cargado exitosamente');
+        } catch (error) {
+            console.error('Error al cargar el archivo:', error);
+            return {};
+        }
     }
     return provinciasLocalidadesData || {};
 }
@@ -38,10 +45,15 @@ export const getParquesSolaresCoord = cache(async (provincia: string, localidad:
 
     try {
         const data = await loadProvinciasLocalidadesData();
+        console.log('Provincias disponibles:', Object.keys(data));
 
         if (!data[provincia]) {
+            console.log(`Buscando provincia: ${provincia}`);
+            console.log('Provincias disponibles:', Object.keys(data));
             throw new Error(`Provincia no encontrada: ${provincia}`);
         }
+
+        console.log(`Localidades en ${provincia}:`, data[provincia].map(l => l.nombre));
 
         const localidadInfo = data[provincia].find(l => l.nombre.toLowerCase() === localidad.toLowerCase());
 
@@ -58,7 +70,7 @@ export const getParquesSolaresCoord = cache(async (provincia: string, localidad:
 
         return coordenadas;
     } catch (error) {
-        console.error(`Error al obtener coordenadas para ${localidad}, ${provincia}:`, error);
+        console.error(`Error detallado al obtener coordenadas para ${localidad}, ${provincia}:`, error);
         throw error;
     }
 });
