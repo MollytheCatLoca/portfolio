@@ -1,0 +1,2383 @@
+{
+  "Buenos Aires": [
+    {
+      "nombre": "La Plata",
+      "lat": -34.9206797,
+      "lon": -57.9537638
+    },
+    {
+      "nombre": "Mar del Plata",
+      "lat": -37.9977225,
+      "lon": -57.5482703
+    },
+    {
+      "nombre": "Bahía Blanca",
+      "lat": -38.7176522,
+      "lon": -62.2654871
+    },
+    {
+      "nombre": "Tandil",
+      "lat": -37.3282887,
+      "lon": -59.1356957
+    },
+    {
+      "nombre": "Quilmes",
+      "lat": -34.7303025,
+      "lon": -58.268868
+    },
+    {
+      "nombre": "San Isidro",
+      "lat": -34.4739792,
+      "lon": -58.5264866
+    },
+    {
+      "nombre": "Pilar",
+      "lat": -34.4570918,
+      "lon": -58.9141609
+    },
+    {
+      "nombre": "La Matanza",
+      "lat": -34.8195526,
+      "lon": -58.1975499
+    },
+    {
+      "nombre": "Moreno",
+      "lat": -34.6396556,
+      "lon": -58.7898326
+    },
+    {
+      "nombre": "Avellaneda",
+      "lat": -34.6648394,
+      "lon": -58.3628061
+    },
+    {
+      "nombre": "Lomas de Zamora",
+      "lat": -34.7572582,
+      "lon": -58.4026638
+    },
+    {
+      "nombre": "Tigre",
+      "lat": -34.4226513,
+      "lon": -58.5808967
+    },
+    {
+      "nombre": "Lanús",
+      "lat": -34.7033363,
+      "lon": -58.3953235
+    },
+    {
+      "nombre": "San Miguel",
+      "lat": -34.540349,
+      "lon": -58.7157491
+    },
+    {
+      "nombre": "Merlo",
+      "lat": -34.6604988,
+      "lon": -58.7321695
+    },
+    {
+      "nombre": "Almirante Brown",
+      "lat": -34.5796344,
+      "lon": -60.9677445
+    },
+    {
+      "nombre": "Berazategui",
+      "lat": -34.7632677,
+      "lon": -58.2116604
+    },
+    {
+      "nombre": "Florencio Varela",
+      "lat": -34.8044384,
+      "lon": -58.2783224
+    },
+    {
+      "nombre": "Tres de Febrero",
+      "lat": -34.5718841,
+      "lon": -58.4251892
+    },
+    {
+      "nombre": "San Martín",
+      "lat": -34.5762765,
+      "lon": -58.5388435
+    },
+    {
+      "nombre": "Pigüé",
+      "lat": -37.6027951,
+      "lon": -62.4023096
+    },
+    {
+      "nombre": "Tres Arroyos",
+      "lat": -38.3770014,
+      "lon": -60.2755685
+    },
+    {
+      "nombre": "Necochea",
+      "lat": -38.5545494,
+      "lon": -58.7392624
+    },
+    {
+      "nombre": "Olavarría",
+      "lat": -36.8938752,
+      "lon": -60.3231676
+    },
+    {
+      "nombre": "Coronel Suarez",
+      "lat": -37.4585755,
+      "lon": -61.9329038
+    }
+  ],
+  "Catamarca": [
+    {
+      "nombre": "San Fernando del Valle de Catamarca",
+      "lat": -28.4688806,
+      "lon": -65.7790642
+    },
+    {
+      "nombre": "Andalgalá",
+      "lat": -27.5830261,
+      "lon": -66.3154994
+    },
+    {
+      "nombre": "Tinogasta",
+      "lat": -28.06185585,
+      "lon": -67.56434006803403
+    },
+    {
+      "nombre": "Belén",
+      "lat": -27.6495962,
+      "lon": -67.0263616
+    },
+    {
+      "nombre": "Santa María",
+      "lat": -26.694559,
+      "lon": -66.0481138
+    },
+    {
+      "nombre": "Fiambalá",
+      "lat": -27.6921885,
+      "lon": -67.6189804
+    },
+    {
+      "nombre": "Recreo",
+      "lat": -29.30307715,
+      "lon": -65.06135605659655
+    },
+    {
+      "nombre": "Saujil",
+      "lat": -28.1738086,
+      "lon": -66.2114866
+    },
+    {
+      "nombre": "Los Altos",
+      "lat": -28.0468719,
+      "lon": -65.4997332
+    },
+    {
+      "nombre": "El Alto",
+      "lat": -28.3105531,
+      "lon": -65.3644815
+    },
+    {
+      "nombre": "Icaño",
+      "lat": -28.9195324,
+      "lon": -65.3301095
+    },
+    {
+      "nombre": "Pomán",
+      "lat": -28.3951319,
+      "lon": -66.2183688
+    },
+    {
+      "nombre": "Chumbicha",
+      "lat": -28.8532078,
+      "lon": -66.2376266
+    },
+    {
+      "nombre": "Londres",
+      "lat": -27.7126212,
+      "lon": -67.1355516
+    },
+    {
+      "nombre": "Hualfín",
+      "lat": -27.2250113,
+      "lon": -66.8346818
+    },
+    {
+      "nombre": "Aconquija",
+      "lat": -27.4958156,
+      "lon": -66.02675
+    },
+    {
+      "nombre": "Antofagasta de la Sierra",
+      "lat": -26.0605153,
+      "lon": -67.4061898
+    },
+    {
+      "nombre": "Ancasti",
+      "lat": -28.8126038,
+      "lon": -65.5006949
+    },
+    {
+      "nombre": "La Puerta",
+      "lat": -28.1703819,
+      "lon": -65.7914755
+    },
+    {
+      "nombre": "Esquiú",
+      "lat": -29.3806043,
+      "lon": -65.2906737
+    }
+  ],
+  "Chaco": [
+    {
+      "nombre": "Resistencia",
+      "lat": -27.4510993,
+      "lon": -58.9865196
+    },
+    {
+      "nombre": "Barranqueras",
+      "lat": -27.4773912,
+      "lon": -58.908456098464484
+    },
+    {
+      "nombre": "Presidencia Roque Sáenz Peña",
+      "lat": -26.7909093,
+      "lon": -60.4410391
+    },
+    {
+      "nombre": "Villa Ángela",
+      "lat": -27.5768225,
+      "lon": -60.7112067
+    },
+    {
+      "nombre": "Quitilipi",
+      "lat": -26.8732221,
+      "lon": -60.21298971406674
+    },
+    {
+      "nombre": "Charata",
+      "lat": -27.2178115,
+      "lon": -61.1873712
+    },
+    {
+      "nombre": "General San Martín",
+      "lat": -27.2590809,
+      "lon": -58.97052848070476
+    },
+    {
+      "nombre": "Juan José Castelli",
+      "lat": -25.9467092,
+      "lon": -60.6200235
+    },
+    {
+      "nombre": "Machagai",
+      "lat": -26.92930105,
+      "lon": -60.05823272462102
+    },
+    {
+      "nombre": "Presidencia de la Plaza",
+      "lat": -26.998633,
+      "lon": -59.8465764
+    },
+    {
+      "nombre": "Las Breñas",
+      "lat": -27.0863246,
+      "lon": -61.0859456
+    },
+    {
+      "nombre": "Fontana",
+      "lat": -27.4172158,
+      "lon": -59.0342223
+    },
+    {
+      "nombre": "Tres Isletas",
+      "lat": -26.3419469,
+      "lon": -60.427926594151
+    },
+    {
+      "nombre": "Villa Berthet",
+      "lat": -27.292233799999998,
+      "lon": -60.41027616687617
+    },
+    {
+      "nombre": "Santa Sylvina",
+      "lat": -27.83264285,
+      "lon": -61.13717738560928
+    },
+    {
+      "nombre": "Corzuela",
+      "lat": -26.955204600000002,
+      "lon": -60.96987074432184
+    },
+    {
+      "nombre": "La Leonesa",
+      "lat": -27.0376085,
+      "lon": -58.70892150417669
+    },
+    {
+      "nombre": "Las Palmas",
+      "lat": -27.0817093,
+      "lon": -58.6696831338701
+    },
+    {
+      "nombre": "Pampa del Infierno",
+      "lat": -26.5034702,
+      "lon": -61.1764799
+    },
+    {
+      "nombre": "Taco Pozo",
+      "lat": -25.61699095,
+      "lon": -63.315498383718364
+    }
+  ],
+  "Chubut": [
+    {
+      "nombre": "Rawson",
+      "lat": -43.2991348,
+      "lon": -65.1056655
+    },
+    {
+      "nombre": "Comodoro Rivadavia",
+      "lat": -45.8632024,
+      "lon": -67.4752615
+    },
+    {
+      "nombre": "Trelew",
+      "lat": -43.2531242,
+      "lon": -65.3094407
+    },
+    {
+      "nombre": "Puerto Madryn",
+      "lat": -42.7729674,
+      "lon": -65.0366104
+    },
+    {
+      "nombre": "Esquel",
+      "lat": -42.9133652,
+      "lon": -71.31325848247513
+    },
+    {
+      "nombre": "Sarmiento",
+      "lat": -45.5867861,
+      "lon": -69.0687743
+    },
+    {
+      "nombre": "Gaiman",
+      "lat": -43.2915027,
+      "lon": -65.4982999
+    },
+    {
+      "nombre": "Trevelin",
+      "lat": -43.0791069,
+      "lon": -71.4640493
+    },
+    {
+      "nombre": "Dolavon",
+      "lat": -43.3080688,
+      "lon": -65.7105566
+    },
+    {
+      "nombre": "Río Mayo",
+      "lat": -45.5744027,
+      "lon": -71.0173072
+    },
+    {
+      "nombre": "Lago Puelo",
+      "lat": -42.160624999999996,
+      "lon": -71.64016645696006
+    },
+    {
+      "nombre": "El Hoyo",
+      "lat": -42.0659199,
+      "lon": -71.5210592
+    },
+    {
+      "nombre": "Epuyén",
+      "lat": -42.2314766,
+      "lon": -71.3690651
+    },
+    {
+      "nombre": "Rada Tilly",
+      "lat": -45.925919,
+      "lon": -67.5533438
+    },
+    {
+      "nombre": "Cholila",
+      "lat": -42.5112728,
+      "lon": -71.4312207
+    },
+    {
+      "nombre": "Gobernador Costa",
+      "lat": -44.048645,
+      "lon": -70.5989682
+    },
+    {
+      "nombre": "José de San Martín",
+      "lat": -44.0514927,
+      "lon": -70.470643
+    },
+    {
+      "nombre": "Río Pico",
+      "lat": -44.1792865,
+      "lon": -71.3682849
+    },
+    {
+      "nombre": "Corcovado",
+      "lat": -43.5396568,
+      "lon": -71.4681317
+    },
+    {
+      "nombre": "Tecka",
+      "lat": -43.4927699,
+      "lon": -70.8109003
+    }
+  ],
+  "Córdoba": [
+    {
+      "nombre": "Córdoba",
+      "lat": -31.4166867,
+      "lon": -64.1834193
+    },
+    {
+      "nombre": "Villa María",
+      "lat": -32.4106245,
+      "lon": -63.2435809
+    },
+    {
+      "nombre": "Río Cuarto",
+      "lat": -33.1237585,
+      "lon": -64.3489782
+    },
+    {
+      "nombre": "Alta Gracia",
+      "lat": -31.6578916,
+      "lon": -64.4338563
+    },
+    {
+      "nombre": "Río Tercero",
+      "lat": -32.2356026,
+      "lon": -63.6625664
+    },
+    {
+      "nombre": "Bell Ville",
+      "lat": -32.6300707,
+      "lon": -62.6888782
+    },
+    {
+      "nombre": "Villa Carlos Paz",
+      "lat": -31.4183774,
+      "lon": -64.4936985
+    },
+    {
+      "nombre": "San Francisco",
+      "lat": -31.4249815,
+      "lon": -62.0840299
+    },
+    {
+      "nombre": "Jesús María",
+      "lat": -30.9764132,
+      "lon": -64.0957082
+    },
+    {
+      "nombre": "La Calera",
+      "lat": -31.3491546,
+      "lon": -64.3387509
+    },
+    {
+      "nombre": "Arroyito",
+      "lat": -31.4192409,
+      "lon": -63.0509405
+    },
+    {
+      "nombre": "Marcos Juárez",
+      "lat": -32.6946933,
+      "lon": -62.104385
+    },
+    {
+      "nombre": "Cruz del Eje",
+      "lat": -30.7218737,
+      "lon": -64.8086332
+    },
+    {
+      "nombre": "Cosquín",
+      "lat": -31.2436548,
+      "lon": -64.4657395
+    },
+    {
+      "nombre": "Deán Funes",
+      "lat": -30.4249487,
+      "lon": -64.3527199
+    },
+    {
+      "nombre": "Villa Allende",
+      "lat": -31.2936496,
+      "lon": -64.2976569
+    },
+    {
+      "nombre": "Morteros",
+      "lat": -30.7107038,
+      "lon": -62.0067058
+    },
+    {
+      "nombre": "La Falda",
+      "lat": -31.0946192,
+      "lon": -64.4829365
+    },
+    {
+      "nombre": "Río Ceballos",
+      "lat": -31.1709088,
+      "lon": -64.3160951
+    },
+    {
+      "nombre": "Colonia Caroya",
+      "lat": -31.0220578,
+      "lon": -64.0617445
+    },
+    {
+      "nombre": "Villa Dolores",
+      "lat": -31.9449632,
+      "lon": -65.1902298
+    },
+    {
+      "nombre": "Escalante",
+      "lat": -31.4508997,
+      "lon": -64.1395532
+    }
+  ],
+  "Corrientes": [
+    {
+      "nombre": "Corrientes",
+      "lat": -27.5269702,
+      "lon": -58.76592117375753
+    },
+    {
+      "nombre": "Goya",
+      "lat": -29.1444046,
+      "lon": -59.2649825
+    },
+    {
+      "nombre": "Mercedes",
+      "lat": -29.1835645,
+      "lon": -58.0799951
+    },
+    {
+      "nombre": "Curuzú Cuatiá",
+      "lat": -29.7913375,
+      "lon": -58.0498307
+    },
+    {
+      "nombre": "Santo Tomé",
+      "lat": -28.55676325,
+      "lon": -56.05398052939918
+    },
+    {
+      "nombre": "Paso de los Libres",
+      "lat": -29.7136574,
+      "lon": -57.0861369
+    },
+    {
+      "nombre": "Bella Vista",
+      "lat": -28.5073653,
+      "lon": -59.0452284
+    },
+    {
+      "nombre": "Esquina",
+      "lat": -30.0170807,
+      "lon": -59.5340904
+    },
+    {
+      "nombre": "Monte Caseros",
+      "lat": -30.2496832,
+      "lon": -57.6294418
+    },
+    {
+      "nombre": "Saladas",
+      "lat": -28.2547059,
+      "lon": -58.6233333
+    },
+    {
+      "nombre": "Gobernador Virasoro",
+      "lat": -28.0529003,
+      "lon": -56.0183999
+    },
+    {
+      "nombre": "San Luis del Palmar",
+      "lat": -27.5077031,
+      "lon": -58.5561657
+    },
+    {
+      "nombre": "Ituzaingó",
+      "lat": -27.5896182,
+      "lon": -56.6893413
+    },
+    {
+      "nombre": "Santa Lucía",
+      "lat": -28.9897454,
+      "lon": -59.1006988
+    },
+    {
+      "nombre": "Empedrado",
+      "lat": -27.9542622,
+      "lon": -58.8089124
+    },
+    {
+      "nombre": "San Roque",
+      "lat": -28.5709194,
+      "lon": -58.7119707
+    },
+    {
+      "nombre": "La Cruz",
+      "lat": -29.1784567,
+      "lon": -56.6382532
+    },
+    {
+      "nombre": "Sauce",
+      "lat": -30.0832901,
+      "lon": -58.7884026
+    },
+    {
+      "nombre": "Alvear",
+      "lat": -29.0989143,
+      "lon": -56.5534621
+    },
+    {
+      "nombre": "Yapeyú",
+      "lat": -29.4666943,
+      "lon": -56.8164051
+    }
+  ],
+  "Entre Ríos": [
+    {
+      "nombre": "Paraná",
+      "lat": -31.7330145,
+      "lon": -60.5298511
+    },
+    {
+      "nombre": "Concordia",
+      "lat": -31.3972539,
+      "lon": -58.0173305
+    },
+    {
+      "nombre": "Gualeguaychú",
+      "lat": -33.0078585,
+      "lon": -58.5103466
+    },
+    {
+      "nombre": "Concepción del Uruguay",
+      "lat": -32.4851849,
+      "lon": -58.2320232
+    },
+    {
+      "nombre": "Gualeguay",
+      "lat": -33.1504259,
+      "lon": -59.3106789
+    },
+    {
+      "nombre": "Villaguay",
+      "lat": -31.8676271,
+      "lon": -59.0270174
+    },
+    {
+      "nombre": "Chajarí",
+      "lat": -30.7603828,
+      "lon": -57.9852672
+    },
+    {
+      "nombre": "Victoria",
+      "lat": -32.874961,
+      "lon": -60.33873047614131
+    },
+    {
+      "nombre": "La Paz",
+      "lat": -30.3522712,
+      "lon": -59.5145993
+    },
+    {
+      "nombre": "Colón",
+      "lat": -32.2182804,
+      "lon": -58.1356171
+    },
+    {
+      "nombre": "Nogoyá",
+      "lat": -32.3985574,
+      "lon": -59.787777
+    },
+    {
+      "nombre": "Crespo",
+      "lat": -32.0307826,
+      "lon": -60.3062469
+    },
+    {
+      "nombre": "Diamante",
+      "lat": -32.0670391,
+      "lon": -60.6426494
+    },
+    {
+      "nombre": "Federal",
+      "lat": -30.9558743,
+      "lon": -58.7797943
+    },
+    {
+      "nombre": "Rosario del Tala",
+      "lat": -32.3008178,
+      "lon": -59.138887
+    },
+    {
+      "nombre": "San José de Feliciano",
+      "lat": -30.3854477,
+      "lon": -58.7506643
+    },
+    {
+      "nombre": "Villa Elisa",
+      "lat": -32.1631324,
+      "lon": -58.4004902
+    },
+    {
+      "nombre": "San Salvador",
+      "lat": -31.6247717,
+      "lon": -58.5051869
+    },
+    {
+      "nombre": "Basavilbaso",
+      "lat": -32.3743512,
+      "lon": -58.8830126
+    },
+    {
+      "nombre": "Urdinarrain",
+      "lat": -32.6910946,
+      "lon": -58.8885673
+    }
+  ],
+  "Formosa": [
+    {
+      "nombre": "Formosa",
+      "lat": -26.1852983,
+      "lon": -58.1744976
+    },
+    {
+      "nombre": "Clorinda",
+      "lat": -25.2900303,
+      "lon": -57.7125898
+    },
+    {
+      "nombre": "Pirané",
+      "lat": -25.7281876,
+      "lon": -59.1064419
+    },
+    {
+      "nombre": "Las Lomitas",
+      "lat": -24.7075268,
+      "lon": -60.5942732
+    },
+    {
+      "nombre": "El Colorado",
+      "lat": -26.3083815,
+      "lon": -59.3720661
+    },
+    {
+      "nombre": "Laguna Blanca",
+      "lat": -25.1300079,
+      "lon": -58.2456194
+    },
+    {
+      "nombre": "Ingeniero Juárez",
+      "lat": -23.8987602,
+      "lon": -61.8545928
+    },
+    {
+      "nombre": "Comandante Fontana",
+      "lat": -25.3335851,
+      "lon": -59.6848511
+    },
+    {
+      "nombre": "General Belgrano",
+      "lat": -26.2420054,
+      "lon": -58.6288769
+    },
+    {
+      "nombre": "Laguna Naineck",
+      "lat": -25.2189965,
+      "lon": -58.1219241
+    },
+    {
+      "nombre": "Ibarreta",
+      "lat": -25.2101601,
+      "lon": -59.859911
+    },
+    {
+      "nombre": "Villa Dos Trece",
+      "lat": -26.1870071,
+      "lon": -59.3672362
+    },
+    {
+      "nombre": "San Martín 2",
+      "lat": -26.1820688,
+      "lon": -58.1640618
+    },
+    {
+      "nombre": "Pozo del Tigre",
+      "lat": -24.8957726,
+      "lon": -60.319435
+    },
+    {
+      "nombre": "El Espinillo",
+      "lat": -24.9814273,
+      "lon": -58.5530004
+    },
+    {
+      "nombre": "Misión Laishí",
+      "lat": -26.24476125,
+      "lon": -58.63213330850487
+    },
+    {
+      "nombre": "Palo Santo",
+      "lat": -25.5644541,
+      "lon": -59.3376622
+    },
+    {
+      "nombre": "Estanislao del Campo",
+      "lat": -25.0535003,
+      "lon": -60.0924862
+    },
+    {
+      "nombre": "General Güemes",
+      "lat": -24.7194485,
+      "lon": -60.5806608
+    },
+    {
+      "nombre": "Villa General Güemes",
+      "lat": -24.7523116,
+      "lon": -59.4915189
+    }
+  ],
+  "Jujuy": [
+    {
+      "nombre": "San Salvador de Jujuy",
+      "lat": -24.1852569,
+      "lon": -65.2994789
+    },
+    {
+      "nombre": "San Pedro",
+      "lat": -24.2689801,
+      "lon": -65.2206931
+    },
+    {
+      "nombre": "Palpalá",
+      "lat": -24.2554935,
+      "lon": -65.2093985
+    },
+    {
+      "nombre": "Libertador General San Martín",
+      "lat": -23.8093358,
+      "lon": -64.7921741
+    },
+    {
+      "nombre": "Perico",
+      "lat": -24.3938068,
+      "lon": -65.11528896134641
+    },
+    {
+      "nombre": "La Quiaca",
+      "lat": -22.1044609,
+      "lon": -65.5966941
+    },
+    {
+      "nombre": "El Carmen",
+      "lat": -24.3888414,
+      "lon": -65.2615664
+    },
+    {
+      "nombre": "Humahuaca",
+      "lat": -23.2040265,
+      "lon": -65.3487763
+    },
+    {
+      "nombre": "Abra Pampa",
+      "lat": -22.7235275,
+      "lon": -65.69442211755737
+    },
+    {
+      "nombre": "Tilcara",
+      "lat": -23.5767908,
+      "lon": -65.393396
+    },
+    {
+      "nombre": "Fraile Pintado",
+      "lat": -23.941692250000003,
+      "lon": -64.80399262558376
+    },
+    {
+      "nombre": "Caimancito",
+      "lat": -23.73997935,
+      "lon": -64.59372684590937
+    },
+    {
+      "nombre": "Yuto",
+      "lat": -23.6428337,
+      "lon": -64.4716037
+    },
+    {
+      "nombre": "Monterrico",
+      "lat": -24.4415518,
+      "lon": -65.1646447
+    },
+    {
+      "nombre": "Calilegua",
+      "lat": -23.7726709,
+      "lon": -64.7698109
+    },
+    {
+      "nombre": "La Esperanza",
+      "lat": -24.2227216,
+      "lon": -64.8389804
+    },
+    {
+      "nombre": "Maimará",
+      "lat": -23.6260856,
+      "lon": -65.4091433
+    },
+    {
+      "nombre": "El Talar",
+      "lat": -23.5578603,
+      "lon": -64.3617536
+    },
+    {
+      "nombre": "Puesto Viejo",
+      "lat": -24.4824157,
+      "lon": -64.9674872
+    },
+    {
+      "nombre": "San Antonio",
+      "lat": -24.3703757,
+      "lon": -65.3315958
+    }
+  ],
+  "La Pampa": [
+    {
+      "nombre": "Santa Rosa",
+      "lat": -36.6203503,
+      "lon": -64.2905765
+    },
+    {
+      "nombre": "General Pico",
+      "lat": -35.6591085,
+      "lon": -63.7576103
+    },
+    {
+      "nombre": "General Acha",
+      "lat": -37.3762421,
+      "lon": -64.59982964187434
+    },
+    {
+      "nombre": "Toay",
+      "lat": -36.6738649,
+      "lon": -64.3796809
+    },
+    {
+      "nombre": "Eduardo Castex",
+      "lat": -35.9160231,
+      "lon": -64.2956566
+    },
+    {
+      "nombre": "Realicó",
+      "lat": -35.0381841,
+      "lon": -64.2463205
+    },
+    {
+      "nombre": "Intendente Alvear",
+      "lat": -35.2340308,
+      "lon": -63.5929581
+    },
+    {
+      "nombre": "25 de Mayo",
+      "lat": -37.7713174,
+      "lon": -67.717905
+    },
+    {
+      "nombre": "Macachín",
+      "lat": -37.1369035,
+      "lon": -63.6668172
+    },
+    {
+      "nombre": "Victorica",
+      "lat": -36.2164693,
+      "lon": -65.4370456
+    },
+    {
+      "nombre": "Ingeniero Luiggi",
+      "lat": -35.387548,
+      "lon": -64.4661112
+    },
+    {
+      "nombre": "Quemú Quemú",
+      "lat": -36.0547871,
+      "lon": -63.5658931
+    },
+    {
+      "nombre": "Guatraché",
+      "lat": -37.6669522,
+      "lon": -63.5377873
+    },
+    {
+      "nombre": "Colonia Barón",
+      "lat": -36.1535391,
+      "lon": -63.8551114
+    },
+    {
+      "nombre": "Trenel",
+      "lat": -35.6983232,
+      "lon": -64.1331894
+    },
+    {
+      "nombre": "Winifreda",
+      "lat": -36.226981550000005,
+      "lon": -64.23214948522414
+    },
+    {
+      "nombre": "Miguel Riglos",
+      "lat": -36.856526,
+      "lon": -63.6878078
+    },
+    {
+      "nombre": "Catriló",
+      "lat": -36.4066583,
+      "lon": -63.4233114
+    },
+    {
+      "nombre": "Lonquimay",
+      "lat": -36.4663968,
+      "lon": -63.6236318
+    },
+    {
+      "nombre": "Anguil",
+      "lat": -36.5270907,
+      "lon": -64.0078958
+    }
+  ],
+  "La Rioja": [
+    {
+      "nombre": "La Rioja",
+      "lat": -29.4127411,
+      "lon": -66.8558795
+    },
+    {
+      "nombre": "Chilecito",
+      "lat": -29.165001,
+      "lon": -67.4953596
+    },
+    {
+      "nombre": "Aimogasta",
+      "lat": -28.5536844,
+      "lon": -66.8134781
+    },
+    {
+      "nombre": "Chamical",
+      "lat": -30.359464,
+      "lon": -66.3128166
+    },
+    {
+      "nombre": "Chepes",
+      "lat": -31.3378908,
+      "lon": -66.5919849
+    },
+    {
+      "nombre": "Villa Unión",
+      "lat": -29.317766,
+      "lon": -68.2278779
+    },
+    {
+      "nombre": "Famatina",
+      "lat": -28.9250137,
+      "lon": -67.5196474
+    },
+    {
+      "nombre": "Anillaco",
+      "lat": -28.8060448,
+      "lon": -66.9452765
+    },
+    {
+      "nombre": "Vinchina",
+      "lat": -29.4106125,
+      "lon": -66.827146
+    },
+    {
+      "nombre": "Sanagasta",
+      "lat": -29.14556855,
+      "lon": -67.0614158749282
+    },
+    {
+      "nombre": "Villa Castelli",
+      "lat": -29.0163711,
+      "lon": -68.2226439
+    },
+    {
+      "nombre": "Milagro",
+      "lat": -31.0060439,
+      "lon": -65.9924743
+    },
+    {
+      "nombre": "Ulapes",
+      "lat": -31.5727302,
+      "lon": -66.2376761
+    },
+    {
+      "nombre": "Patquía",
+      "lat": -30.0480698,
+      "lon": -66.8797228
+    },
+    {
+      "nombre": "Villa Santa Rita de Catuna",
+      "lat": -30.9546964,
+      "lon": -66.2207033
+    },
+    {
+      "nombre": "Tama",
+      "lat": -30.5089289,
+      "lon": -66.5289027
+    },
+    {
+      "nombre": "Aminga",
+      "lat": -28.8476607,
+      "lon": -66.9304252
+    },
+    {
+      "nombre": "Villa Mazán",
+      "lat": -28.6574997,
+      "lon": -66.5468435
+    },
+    {
+      "nombre": "Malanzán",
+      "lat": -30.8046372,
+      "lon": -66.6042221
+    },
+    {
+      "nombre": "Pituil",
+      "lat": -28.5760223,
+      "lon": -67.449135
+    }
+  ],
+  "Mendoza": [
+    {
+      "nombre": "Mendoza",
+      "lat": -32.8894155,
+      "lon": -68.8446177
+    },
+    {
+      "nombre": "San Rafael",
+      "lat": -34.6126025,
+      "lon": -68.330514
+    },
+    {
+      "nombre": "Godoy Cruz",
+      "lat": -32.9253128,
+      "lon": -68.8444184
+    },
+    {
+      "nombre": "Luján de Cuyo",
+      "lat": -33.1085238,
+      "lon": -69.0129984
+    },
+    {
+      "nombre": "Maipú",
+      "lat": -32.9836929,
+      "lon": -68.7879502
+    },
+    {
+      "nombre": "Guaymallén",
+      "lat": -32.8505123,
+      "lon": -68.7888049
+    },
+    {
+      "nombre": "Las Heras",
+      "lat": -32.8521368,
+      "lon": -68.834782
+    },
+    {
+      "nombre": "Tunuyán",
+      "lat": -33.5812925,
+      "lon": -69.0154258
+    },
+    {
+      "nombre": "General Alvear",
+      "lat": -34.9776218,
+      "lon": -67.6963461
+    },
+    {
+      "nombre": "Malargüe",
+      "lat": -35.4752134,
+      "lon": -69.585934
+    },
+    {
+      "nombre": "Rivadavia",
+      "lat": -33.1959388,
+      "lon": -68.4662317
+    },
+    {
+      "nombre": "San Martín",
+      "lat": -33.0805336,
+      "lon": -68.4710695
+    },
+    {
+      "nombre": "Junín",
+      "lat": -33.1458901,
+      "lon": -68.4848858
+    },
+    {
+      "nombre": "La Paz",
+      "lat": -33.4615574,
+      "lon": -67.5522602
+    },
+    {
+      "nombre": "Tupungato",
+      "lat": -33.3723648,
+      "lon": -69.1479533
+    },
+    {
+      "nombre": "Santa Rosa",
+      "lat": -33.2547891,
+      "lon": -68.1491268
+    },
+    {
+      "nombre": "Lavalle",
+      "lat": -34.5848399,
+      "lon": -68.5407861
+    },
+    {
+      "nombre": "San Carlos",
+      "lat": -33.77111575,
+      "lon": -69.04753877666596
+    },
+    {
+      "nombre": "Uspallata",
+      "lat": -32.5908062,
+      "lon": -69.3465546
+    },
+    {
+      "nombre": "Bowen",
+      "lat": -35.0002662,
+      "lon": -67.5104278
+    }
+  ],
+  "Misiones": [
+    {
+      "nombre": "Posadas",
+      "lat": -27.3664824,
+      "lon": -55.894295
+    },
+    {
+      "nombre": "Oberá",
+      "lat": -27.4849798,
+      "lon": -55.1202965
+    },
+    {
+      "nombre": "Eldorado",
+      "lat": -26.4100771,
+      "lon": -54.63501180729945
+    },
+    {
+      "nombre": "Puerto Iguazú",
+      "lat": -25.6346782,
+      "lon": -54.58287530604622
+    },
+    {
+      "nombre": "Apóstoles",
+      "lat": -27.9139657,
+      "lon": -55.7549174
+    },
+    {
+      "nombre": "Leandro N. Alem",
+      "lat": -27.603636,
+      "lon": -55.3235338
+    },
+    {
+      "nombre": "Jardín América",
+      "lat": -27.0430577,
+      "lon": -55.2271966
+    },
+    {
+      "nombre": "San Vicente",
+      "lat": -26.9932723,
+      "lon": -54.4866356
+    },
+    {
+      "nombre": "Montecarlo",
+      "lat": -26.5674207,
+      "lon": -54.7590379
+    },
+    {
+      "nombre": "Puerto Rico",
+      "lat": -26.8167893,
+      "lon": -55.0266912
+    },
+    {
+      "nombre": "Garupá",
+      "lat": -27.4837122,
+      "lon": -55.8296552
+    },
+    {
+      "nombre": "Candelaria",
+      "lat": -27.4612494,
+      "lon": -55.7440717
+    },
+    {
+      "nombre": "San Ignacio",
+      "lat": -27.2583992,
+      "lon": -55.5392216
+    },
+    {
+      "nombre": "Campo Grande",
+      "lat": -27.20587695,
+      "lon": -54.98073950627196
+    },
+    {
+      "nombre": "Aristóbulo del Valle",
+      "lat": -27.10075965,
+      "lon": -54.892829677317266
+    },
+    {
+      "nombre": "Campo Viera",
+      "lat": -27.3309528,
+      "lon": -55.0543134
+    },
+    {
+      "nombre": "El Soberbio",
+      "lat": -27.29549,
+      "lon": -54.1963432
+    },
+    {
+      "nombre": "Dos de Mayo",
+      "lat": -27.0288592,
+      "lon": -54.684219056471335
+    },
+    {
+      "nombre": "San Javier",
+      "lat": -27.8738956,
+      "lon": -55.1347737
+    },
+    {
+      "nombre": "Puerto Esperanza",
+      "lat": -26.0210433,
+      "lon": -54.6108029
+    }
+  ],
+  "Neuquén": [
+    {
+      "nombre": "Neuquén",
+      "lat": -38.9519679,
+      "lon": -68.0591741
+    },
+    {
+      "nombre": "Cutral-Có",
+      "lat": -38.9378831,
+      "lon": -69.2293743
+    },
+    {
+      "nombre": "Zapala",
+      "lat": -38.9006215,
+      "lon": -70.0668573
+    },
+    {
+      "nombre": "San Martín de los Andes",
+      "lat": -40.1568306,
+      "lon": -71.352631
+    },
+    {
+      "nombre": "Centenario",
+      "lat": -38.8301384,
+      "lon": -68.1215201
+    },
+    {
+      "nombre": "Plottier",
+      "lat": -38.9523098,
+      "lon": -68.2270197
+    },
+    {
+      "nombre": "Chos Malal",
+      "lat": -37.3785324,
+      "lon": -70.2719127
+    },
+    {
+      "nombre": "Rincón de los Sauces",
+      "lat": -37.390188,
+      "lon": -68.9252566
+    },
+    {
+      "nombre": "Junín de los Andes",
+      "lat": -39.950867,
+      "lon": -71.0708892
+    },
+    {
+      "nombre": "Villa La Angostura",
+      "lat": -40.7620649,
+      "lon": -71.6473205
+    },
+    {
+      "nombre": "San Patricio del Chañar",
+      "lat": -38.6258284,
+      "lon": -68.2999148
+    },
+    {
+      "nombre": "Aluminé",
+      "lat": -39.2384508,
+      "lon": -70.9158947
+    },
+    {
+      "nombre": "Andacollo",
+      "lat": -37.1797385,
+      "lon": -70.6699869
+    },
+    {
+      "nombre": "Las Lajas",
+      "lat": -38.5234753,
+      "lon": -70.3616441
+    },
+    {
+      "nombre": "Loncopué",
+      "lat": -38.0707995,
+      "lon": -70.6148771
+    },
+    {
+      "nombre": "Senillosa",
+      "lat": -39.0134511,
+      "lon": -68.4267867
+    },
+    {
+      "nombre": "Picún Leufú",
+      "lat": -39.5185334,
+      "lon": -69.2911066
+    },
+    {
+      "nombre": "Piedra del Águila",
+      "lat": -40.0488588,
+      "lon": -70.0700897
+    },
+    {
+      "nombre": "Buta Ranquil",
+      "lat": -37.051669,
+      "lon": -69.8778845
+    },
+    {
+      "nombre": "Huinganco",
+      "lat": -37.1583878,
+      "lon": -70.6212291
+    }
+  ],
+  "Río Negro": [
+    {
+      "nombre": "Viedma",
+      "lat": -40.8084274,
+      "lon": -62.994722
+    },
+    {
+      "nombre": "General Roca",
+      "lat": -39.0266276,
+      "lon": -67.5754863
+    },
+    {
+      "nombre": "San Carlos de Bariloche",
+      "lat": -41.1334421,
+      "lon": -71.3098425
+    },
+    {
+      "nombre": "Cipolletti",
+      "lat": -38.93156045,
+      "lon": -67.9787501315466
+    },
+    {
+      "nombre": "Allen",
+      "lat": -38.9794999,
+      "lon": -67.8280079
+    },
+    {
+      "nombre": "Villa Regina",
+      "lat": -39.0987435,
+      "lon": -67.0852996
+    },
+    {
+      "nombre": "Catriel",
+      "lat": -37.8792422,
+      "lon": -67.7919078
+    },
+    {
+      "nombre": "Cinco Saltos",
+      "lat": -38.8275693,
+      "lon": -68.0661786
+    },
+    {
+      "nombre": "Ingeniero Jacobacci",
+      "lat": -41.3303941,
+      "lon": -69.5471016
+    },
+    {
+      "nombre": "Río Colorado",
+      "lat": -38.9908428,
+      "lon": -64.0957548
+    },
+    {
+      "nombre": "El Bolsón",
+      "lat": -41.9649027,
+      "lon": -71.5348197
+    },
+    {
+      "nombre": "Choele Choel",
+      "lat": -39.2946503,
+      "lon": -65.6551733
+    },
+    {
+      "nombre": "San Antonio Oeste",
+      "lat": -40.7302125,
+      "lon": -64.9389955
+    },
+    {
+      "nombre": "Luis Beltrán",
+      "lat": -39.3107807,
+      "lon": -65.7635561
+    },
+    {
+      "nombre": "Sierra Grande",
+      "lat": -41.60697935,
+      "lon": -65.38696486893261
+    },
+    {
+      "nombre": "Lamarque",
+      "lat": -39.4236249,
+      "lon": -65.6988986
+    },
+    {
+      "nombre": "Fernández Oro",
+      "lat": -38.9563161,
+      "lon": -67.9212057
+    },
+    {
+      "nombre": "Los Menucos",
+      "lat": -40.8428016,
+      "lon": -68.0859299
+    },
+    {
+      "nombre": "Maquinchao",
+      "lat": -41.2483655,
+      "lon": -68.7012651
+    },
+    {
+      "nombre": "Comallo",
+      "lat": -41.0318348,
+      "lon": -70.2637661
+    }
+  ],
+  "Salta": [
+    {
+      "nombre": "Salta",
+      "lat": -24.7892946,
+      "lon": -65.4103194
+    },
+    {
+      "nombre": "San Ramón de la Nueva Orán",
+      "lat": -23.136084,
+      "lon": -64.3230702
+    },
+    {
+      "nombre": "Tartagal",
+      "lat": -22.5194493,
+      "lon": -63.7986328
+    },
+    {
+      "nombre": "Cafayate",
+      "lat": -26.071047,
+      "lon": -65.9800655
+    },
+    {
+      "nombre": "General Güemes",
+      "lat": -24.8076741,
+      "lon": -64.9167381759887
+    },
+    {
+      "nombre": "Metán",
+      "lat": -25.4971644,
+      "lon": -64.9709701
+    },
+    {
+      "nombre": "Rosario de la Frontera",
+      "lat": -25.7985752,
+      "lon": -64.9739247
+    },
+    {
+      "nombre": "Joaquín V. González",
+      "lat": -24.727413,
+      "lon": -65.4950553
+    },
+    {
+      "nombre": "Embarcación",
+      "lat": -23.2101359,
+      "lon": -64.0973737
+    },
+    {
+      "nombre": "Rosario de Lerma",
+      "lat": -24.9815849,
+      "lon": -65.5794575
+    },
+    {
+      "nombre": "San José de Metán",
+      "lat": -25.4971644,
+      "lon": -64.9709701
+    },
+    {
+      "nombre": "El Carril",
+      "lat": -25.0732283,
+      "lon": -65.4925752
+    },
+    {
+      "nombre": "Campo Quijano",
+      "lat": -24.9079731,
+      "lon": -65.6425972
+    },
+    {
+      "nombre": "Cerrillos",
+      "lat": -24.903531649999998,
+      "lon": -65.48724035306654
+    },
+    {
+      "nombre": "Salvador Mazza",
+      "lat": -24.7357629,
+      "lon": -65.3994104
+    },
+    {
+      "nombre": "Pichanal",
+      "lat": -23.3220599,
+      "lon": -64.2269308
+    },
+    {
+      "nombre": "Apolinario Saravia",
+      "lat": -24.4308768,
+      "lon": -63.9950975
+    },
+    {
+      "nombre": "San Antonio de los Cobres",
+      "lat": -24.217675,
+      "lon": -66.3178734
+    },
+    {
+      "nombre": "La Caldera",
+      "lat": -24.6026292,
+      "lon": -65.3806378
+    },
+    {
+      "nombre": "Aguaray",
+      "lat": -22.24309015,
+      "lon": -63.736510466665734
+    }
+  ],
+  "San Juan": [
+    {
+      "nombre": "San Juan",
+      "lat": -31.5370909,
+      "lon": -68.5251802
+    },
+    {
+      "nombre": "Rawson",
+      "lat": -31.68916895,
+      "lon": -68.4639902338134
+    },
+    {
+      "nombre": "Chimbas",
+      "lat": -31.48467895,
+      "lon": -68.50937850382846
+    },
+    {
+      "nombre": "Caucete",
+      "lat": -31.42702605,
+      "lon": -67.65241473093226
+    },
+    {
+      "nombre": "Santa Lucía",
+      "lat": -31.53794865,
+      "lon": -68.46198574927706
+    },
+    {
+      "nombre": "Pocito",
+      "lat": -31.738012249999997,
+      "lon": -68.58530927451417
+    },
+    {
+      "nombre": "Rivadavia",
+      "lat": -31.546595500000002,
+      "lon": -68.65054425332559
+    },
+    {
+      "nombre": "Villa Krause",
+      "lat": -31.5818952,
+      "lon": -68.5422067
+    },
+    {
+      "nombre": "Villa Paula Albarracín de Sarmiento",
+      "lat": -31.4931602,
+      "lon": -68.5326802
+    },
+    {
+      "nombre": "San José de Jáchal",
+      "lat": -30.2416005,
+      "lon": -68.7465881
+    },
+    {
+      "nombre": "Villa Aberastain",
+      "lat": -31.6576505,
+      "lon": -68.5795555
+    },
+    {
+      "nombre": "Villa del Salvador",
+      "lat": -31.4531461,
+      "lon": -68.4034622
+    },
+    {
+      "nombre": "Villa Barboza",
+      "lat": -31.5889214,
+      "lon": -68.5495726
+    },
+    {
+      "nombre": "Villa Centenario",
+      "lat": -31.4824505,
+      "lon": -68.5280585
+    },
+    {
+      "nombre": "Villa Borjas",
+      "lat": -31.8103372,
+      "lon": -68.3278102
+    },
+    {
+      "nombre": "Calingasta",
+      "lat": -31.44769675,
+      "lon": -69.88272787183107
+    },
+    {
+      "nombre": "Rodeo",
+      "lat": -30.2101856,
+      "lon": -69.1315839
+    },
+    {
+      "nombre": "San Agustín del Valle Fértil",
+      "lat": -30.6341615,
+      "lon": -67.4666629
+    },
+    {
+      "nombre": "Villa Ibáñez",
+      "lat": -31.4598475,
+      "lon": -68.7220372
+    },
+    {
+      "nombre": "Media Agua",
+      "lat": -31.9797284,
+      "lon": -68.4176923
+    }
+  ],
+  "San Luis": [
+    {
+      "nombre": "San Luis",
+      "lat": -33.3020736,
+      "lon": -66.3369577
+    },
+    {
+      "nombre": "Villa Mercedes",
+      "lat": -33.6745795,
+      "lon": -65.4617562
+    },
+    {
+      "nombre": "Merlo",
+      "lat": -32.342558,
+      "lon": -65.0136903
+    },
+    {
+      "nombre": "La Punta",
+      "lat": -33.1836028,
+      "lon": -66.3126953
+    },
+    {
+      "nombre": "Juana Koslay",
+      "lat": -33.2784552,
+      "lon": -66.2438437
+    },
+    {
+      "nombre": "Justo Daract",
+      "lat": -33.272578749999994,
+      "lon": -66.33510743347114
+    },
+    {
+      "nombre": "Tilisarao",
+      "lat": -32.7312315,
+      "lon": -65.2914654
+    },
+    {
+      "nombre": "Naschel",
+      "lat": -32.916652,
+      "lon": -65.3721781
+    },
+    {
+      "nombre": "Concarán",
+      "lat": -32.5608657,
+      "lon": -65.2443657
+    },
+    {
+      "nombre": "Santa Rosa del Conlara",
+      "lat": -32.3428631,
+      "lon": -65.2088793
+    },
+    {
+      "nombre": "La Toma",
+      "lat": -33.0533204,
+      "lon": -65.6193102
+    },
+    {
+      "nombre": "Quines",
+      "lat": -32.2328371,
+      "lon": -65.8050739
+    },
+    {
+      "nombre": "San Francisco del Monte de Oro",
+      "lat": -32.6002472,
+      "lon": -66.1271253
+    },
+    {
+      "nombre": "Buena Esperanza",
+      "lat": -34.7578641,
+      "lon": -65.2535837
+    },
+    {
+      "nombre": "Unión",
+      "lat": -35.1538154,
+      "lon": -65.9462515
+    },
+    {
+      "nombre": "Potrero de los Funes",
+      "lat": -33.2135198,
+      "lon": -66.2229416
+    },
+    {
+      "nombre": "El Trapiche",
+      "lat": -33.1085355,
+      "lon": -66.06416507164673
+    },
+    {
+      "nombre": "Fraga",
+      "lat": -33.5020567,
+      "lon": -65.7927445
+    },
+    {
+      "nombre": "Nogolí",
+      "lat": -32.9183923,
+      "lon": -66.3246987
+    },
+    {
+      "nombre": "Villa de la Quebrada",
+      "lat": -33.0165672,
+      "lon": -66.2908548
+    }
+  ],
+  "Santa Cruz": [
+    {
+      "nombre": "Río Gallegos",
+      "lat": -51.626885200000004,
+      "lon": -69.10580396264189
+    },
+    {
+      "nombre": "Caleta Olivia",
+      "lat": -46.472374599999995,
+      "lon": -67.57100144271831
+    },
+    {
+      "nombre": "El Calafate",
+      "lat": -50.3388712,
+      "lon": -72.2720843
+    },
+    {
+      "nombre": "Puerto Deseado",
+      "lat": -47.7516166,
+      "lon": -65.9013234
+    },
+    {
+      "nombre": "Pico Truncado",
+      "lat": -46.7991931,
+      "lon": -67.9576527
+    },
+    {
+      "nombre": "Las Heras",
+      "lat": -46.5897167,
+      "lon": -68.92506358558342
+    },
+    {
+      "nombre": "Puerto San Julián",
+      "lat": -49.3069531,
+      "lon": -67.7297851
+    },
+    {
+      "nombre": "Río Turbio",
+      "lat": -51.5475941,
+      "lon": -72.28251357712159
+    },
+    {
+      "nombre": "28 de Noviembre",
+      "lat": -47.7394385,
+      "lon": -65.9070656
+    },
+    {
+      "nombre": "Perito Moreno",
+      "lat": -46.578694999999996,
+      "lon": -70.93349871076681
+    },
+    {
+      "nombre": "Comandante Luis Piedrabuena",
+      "lat": -50.0016769,
+      "lon": -68.9930695923744
+    },
+    {
+      "nombre": "Gobernador Gregores",
+      "lat": -48.7637595,
+      "lon": -70.23497636707893
+    },
+    {
+      "nombre": "Los Antiguos",
+      "lat": -46.5499316,
+      "lon": -71.6254552
+    },
+    {
+      "nombre": "Puerto Santa Cruz",
+      "lat": -50.0359047,
+      "lon": -68.56009041221101
+    },
+    {
+      "nombre": "Jaramillo",
+      "lat": -47.1840118,
+      "lon": -67.144816
+    },
+    {
+      "nombre": "El Chaltén",
+      "lat": -49.32745235,
+      "lon": -72.89525207614388
+    },
+    {
+      "nombre": "Tres Lagos",
+      "lat": -49.5990118,
+      "lon": -71.4467076
+    },
+    {
+      "nombre": "Fitz Roy",
+      "lat": -47.02607,
+      "lon": -67.2495141
+    },
+    {
+      "nombre": "Koluel Kaike",
+      "lat": -46.5492055,
+      "lon": -68.9478622
+    },
+    {
+      "nombre": "Cañadón Seco",
+      "lat": -46.5630857,
+      "lon": -67.6105784
+    }
+  ],
+  "Santa Fe": [
+    {
+      "nombre": "Santa Fe",
+      "lat": -31.6186951,
+      "lon": -60.7019561
+    },
+    {
+      "nombre": "Rosario",
+      "lat": -32.9593609,
+      "lon": -60.6617024
+    },
+    {
+      "nombre": "Rafaela",
+      "lat": -31.2526923,
+      "lon": -61.4916758
+    },
+    {
+      "nombre": "Venado Tuerto",
+      "lat": -33.7455871,
+      "lon": -61.9686068
+    },
+    {
+      "nombre": "Reconquista",
+      "lat": -29.1443478,
+      "lon": -59.6437728
+    },
+    {
+      "nombre": "Villa Gobernador Gálvez",
+      "lat": -33.0250796,
+      "lon": -60.633744
+    },
+    {
+      "nombre": "Santo Tomé",
+      "lat": -31.6630458,
+      "lon": -60.7618282
+    },
+    {
+      "nombre": "San Lorenzo",
+      "lat": -32.7454865,
+      "lon": -60.743091
+    },
+    {
+      "nombre": "Esperanza",
+      "lat": -31.448994,
+      "lon": -60.9304048
+    },
+    {
+      "nombre": "Casilda",
+      "lat": -33.0443368,
+      "lon": -61.1641779
+    },
+    {
+      "nombre": "Granadero Baigorria",
+      "lat": -32.8547765,
+      "lon": -60.7074143
+    },
+    {
+      "nombre": "Firmat",
+      "lat": -33.459525049999996,
+      "lon": -61.48818099003141
+    },
+    {
+      "nombre": "Villa Constitución",
+      "lat": -33.227206,
+      "lon": -60.3298225
+    },
+    {
+      "nombre": "Cañada de Gómez",
+      "lat": -32.8234448,
+      "lon": -61.3905125
+    },
+    {
+      "nombre": "Gálvez",
+      "lat": -32.0253403,
+      "lon": -61.2196794
+    },
+    {
+      "nombre": "Rufino",
+      "lat": -34.2617313,
+      "lon": -62.7110819
+    },
+    {
+      "nombre": "Sunchales",
+      "lat": -30.9450891,
+      "lon": -61.5608072
+    },
+    {
+      "nombre": "San Justo",
+      "lat": -30.7890881,
+      "lon": -60.5933274
+    },
+    {
+      "nombre": "Arroyo Seco",
+      "lat": -33.154614,
+      "lon": -60.5082223
+    },
+    {
+      "nombre": "Funes",
+      "lat": -32.9168704,
+      "lon": -60.8105603
+    },
+    {
+      "nombre": "Vera",
+      "lat": -29.456910399999998,
+      "lon": -60.20403180651348
+    },
+    {
+      "nombre": "San Cristóbal",
+      "lat": -30.311107,
+      "lon": -61.2418955
+    }
+  ],
+  "Santiago del Estero": [
+    {
+      "nombre": "Santiago del Estero",
+      "lat": -27.7877148,
+      "lon": -64.2595062
+    },
+    {
+      "nombre": "La Banda",
+      "lat": -27.7357077,
+      "lon": -64.2434402
+    },
+    {
+      "nombre": "Termas de Río Hondo",
+      "lat": -27.4959255,
+      "lon": -64.8640783
+    },
+    {
+      "nombre": "Frías",
+      "lat": -28.6377023,
+      "lon": -65.1288391
+    },
+    {
+      "nombre": "Añatuya",
+      "lat": -28.4593692,
+      "lon": -62.8359481
+    },
+    {
+      "nombre": "Fernández",
+      "lat": -27.9254044,
+      "lon": -63.8942988
+    },
+    {
+      "nombre": "Quimilí",
+      "lat": -27.6446881,
+      "lon": -62.4174351
+    },
+    {
+      "nombre": "Clodomira",
+      "lat": -27.5732253,
+      "lon": -64.1313029
+    },
+    {
+      "nombre": "Suncho Corral",
+      "lat": -27.9341752,
+      "lon": -63.4260351
+    },
+    {
+      "nombre": "Monte Quemado",
+      "lat": -25.8034931,
+      "lon": -62.8303622
+    },
+    {
+      "nombre": "Loreto",
+      "lat": -28.3011532,
+      "lon": -64.1840358
+    },
+    {
+      "nombre": "Villa Ojo de Agua",
+      "lat": -29.5027741,
+      "lon": -63.6950156
+    },
+    {
+      "nombre": "Bandera",
+      "lat": -28.8878546,
+      "lon": -62.2688764
+    },
+    {
+      "nombre": "Beltrán",
+      "lat": -28.5712213,
+      "lon": -64.4230046
+    },
+    {
+      "nombre": "Forres",
+      "lat": -27.8748289,
+      "lon": -63.9777693
+    },
+    {
+      "nombre": "Pinto",
+      "lat": -29.1420589,
+      "lon": -62.6547332
+    },
+    {
+      "nombre": "Colonia Dora",
+      "lat": -28.5999978,
+      "lon": -62.9499986
+    },
+    {
+      "nombre": "Los Juríes",
+      "lat": -28.4633987,
+      "lon": -62.1100222
+    },
+    {
+      "nombre": "Nueva Esperanza",
+      "lat": -26.6140709,
+      "lon": -63.5922699
+    },
+    {
+      "nombre": "Villa Atamisqui",
+      "lat": -28.4962654,
+      "lon": -63.8173269
+    }
+  ],
+  "Tierra del Fuego": [
+    {
+      "nombre": "Ushuaia",
+      "lat": -54.8069332,
+      "lon": -68.3073246
+    },
+    {
+      "nombre": "Río Grande",
+      "lat": -53.7856766,
+      "lon": -67.7016369
+    },
+    {
+      "nombre": "Tolhuin",
+      "lat": -54.5113492,
+      "lon": -67.1954004
+    },
+    {
+      "nombre": "Puerto Almanza",
+      "lat": -54.870418,
+      "lon": -67.56502747509451
+    },
+    {
+      "nombre": "San Sebastián",
+      "lat": -53.2990938,
+      "lon": -68.4571574
+    },
+    {
+      "nombre": "Lago Escondido",
+      "lat": -54.65602895,
+      "lon": -67.80355599014892
+    },
+    {
+      "nombre": "Río Fuego",
+      "lat": -53.9892929,
+      "lon": -67.427355
+    },
+    {
+      "nombre": "Sarmiento",
+      "lat": -54.3374416,
+      "lon": -68.1809677
+    },
+    {
+      "nombre": "Lago Fagnano",
+      "lat": -54.5284599,
+      "lon": -67.2307706
+    },
+    {
+      "nombre": "Estancia Harberton",
+      "lat": -54.8777623,
+      "lon": -67.3293854
+    },
+    {
+      "nombre": "Puerto Parry",
+      "lat": -54.8116397,
+      "lon": -64.3709618
+    },
+    {
+      "nombre": "Estancia María Luisa",
+      "lat": -54.5137765,
+      "lon": -66.3011169
+    },
+    {
+      "nombre": "Estancia Viamonte",
+      "lat": -53.995575,
+      "lon": -67.4142244
+    },
+    {
+      "nombre": "Puerto Español",
+      "lat": -54.9060548,
+      "lon": -65.9917133
+    },
+    {
+      "nombre": "Bahía Aguirre",
+      "lat": -54.8220622,
+      "lon": -68.3288798
+    },
+    {
+      "nombre": "Cabo San Pablo",
+      "lat": -54.2836706,
+      "lon": -66.6944035
+    },
+    {
+      "nombre": "Estancia Policarpo",
+      "lat": -54.66355805,
+      "lon": -65.43900325
+    },
+    {
+      "nombre": "Puerto Rancho",
+      "lat": -55.0470109,
+      "lon": -66.5613722
+    }
+  ],
+  "Tucumán": [
+    {
+      "nombre": "San Miguel de Tucumán",
+      "lat": -26.8303703,
+      "lon": -65.2038133
+    },
+    {
+      "nombre": "Yerba Buena",
+      "lat": -26.8121581,
+      "lon": -65.2981714
+    },
+    {
+      "nombre": "Tafí Viejo",
+      "lat": -26.7342344,
+      "lon": -65.259341
+    },
+    {
+      "nombre": "Concepción",
+      "lat": -27.344708949999998,
+      "lon": -65.59997257793145
+    },
+    {
+      "nombre": "Aguilares",
+      "lat": -27.43116315,
+      "lon": -65.61863562270807
+    },
+    {
+      "nombre": "Banda del Río Salí",
+      "lat": -26.8401382,
+      "lon": -65.1609737
+    },
+    {
+      "nombre": "Famaillá",
+      "lat": -27.054364,
+      "lon": -65.4020439
+    },
+    {
+      "nombre": "Monteros",
+      "lat": -27.1653249,
+      "lon": -65.4972201
+    },
+    {
+      "nombre": "Lules",
+      "lat": -26.9222189,
+      "lon": -65.3377612
+    },
+    {
+      "nombre": "Alderetes",
+      "lat": -26.8132129,
+      "lon": -65.1411367
+    },
+    {
+      "nombre": "Las Talitas",
+      "lat": -27.4405403,
+      "lon": -65.1789772
+    },
+    {
+      "nombre": "Bella Vista",
+      "lat": -27.0328065,
+      "lon": -65.3070457
+    },
+    {
+      "nombre": "Simoca",
+      "lat": -27.262655,
+      "lon": -65.356616949214
+    },
+    {
+      "nombre": "La Cocha",
+      "lat": -27.7700082,
+      "lon": -65.5883539
+    },
+    {
+      "nombre": "Juan Bautista Alberdi",
+      "lat": -27.5913223,
+      "lon": -65.62242270598247
+    },
+    {
+      "nombre": "Trancas",
+      "lat": -26.2292049,
+      "lon": -65.28053037797763
+    },
+    {
+      "nombre": "Tafí del Valle",
+      "lat": -26.8506247,
+      "lon": -65.6962288
+    },
+    {
+      "nombre": "Burruyacú",
+      "lat": -26.4995747,
+      "lon": -64.7434868
+    },
+    {
+      "nombre": "Graneros",
+      "lat": -27.6494015,
+      "lon": -65.439508
+    },
+    {
+      "nombre": "San Isidro de Lules",
+      "lat": -26.9222189,
+      "lon": -65.3377612
+    }
+  ]
+}

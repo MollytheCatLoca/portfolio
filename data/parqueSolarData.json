@@ -1,0 +1,196 @@
+{
+    "nombre": "Parque Buenos Aires",
+    "ubicacion": {
+        "ciudad": "Pilar 2",
+        "provincia": "Buenos Aires",
+        "coordenadas": {
+            "lat": -34.4585,
+            "lon": -58.9141
+        },
+        "descripcion": "Ubicado en la zona de Pilar, Buenos Aires."
+    },
+    "capacidad": {
+        "actual": 2.86,
+        "maxima": 6.54,
+        "unidad": "MWp",
+        "paneles": 4933,
+        "inversores": 60
+    },
+    "inversion": {
+        "total": 2.31,
+        "unidad": "MUSD",
+        "periodoRecuperacion": 9.7,
+        "tir": 23.95,
+        "van": 3.17
+    },
+    "financiamiento": {
+        "plazoFinanciamiento": 6,
+        "tasaInteres": 0.01
+    },
+    "analisisFinanciero": [
+        {
+            "año": 2025,
+            "generacion": 4080.59,
+            "ingresos": 326.45,
+            "cuotaInversion": 318.22
+        },
+        {
+            "año": 2026,
+            "generacion": 4060.19,
+            "ingresos": 331.31,
+            "cuotaInversion": 318.22
+        },
+        {
+            "año": 2027,
+            "generacion": 4039.89,
+            "ingresos": 336.25,
+            "cuotaInversion": 318.22
+        },
+        {
+            "año": 2028,
+            "generacion": 4019.69,
+            "ingresos": 341.26,
+            "cuotaInversion": 318.22
+        },
+        {
+            "año": 2029,
+            "generacion": 3999.59,
+            "ingresos": 346.34,
+            "cuotaInversion": 318.22
+        },
+        {
+            "año": 2030,
+            "generacion": 3979.59,
+            "ingresos": 351.5,
+            "cuotaInversion": 318.22
+        },
+        {
+            "año": 2031,
+            "generacion": 3959.69,
+            "ingresos": 356.74,
+            "cuotaInversion": 0
+        },
+        {
+            "año": 2032,
+            "generacion": 3939.89,
+            "ingresos": 362.06,
+            "cuotaInversion": 0
+        },
+        {
+            "año": 2033,
+            "generacion": 3920.19,
+            "ingresos": 367.45,
+            "cuotaInversion": 0
+        },
+        {
+            "año": 2034,
+            "generacion": 3900.59,
+            "ingresos": 372.93,
+            "cuotaInversion": 0
+        }
+    ],
+    "produccionAnual": {
+        "estimada": 4080.59,
+        "unidad": "MWh",
+        "consumoEquivalente": 1236
+    },
+    "ahorroCO2": {
+        "anual": 2040.3,
+        "unidad": "ton",
+        "equivalenciaArboles": 91813,
+        "equivalenciaAutos": 448
+    },
+    "terreno": {
+        "area": 3.46,
+        "unidad": "hectáreas",
+        "tipo": "Terreno industrial",
+        "elevacionPromedio": 100,
+        "unidadElevacion": "metros sobre el nivel del mar",
+        "irradiacionAnual": 1800,
+        "unidadIrradiacion": "kWh/m²"
+    },
+    "generacionMensual": [
+        {
+            "mes": "Ene",
+            "generacion": 697.24
+        },
+        {
+            "mes": "Feb",
+            "generacion": 479.87
+        },
+        {
+            "mes": "Mar",
+            "generacion": 303.48
+        },
+        {
+            "mes": "Abr",
+            "generacion": 153.53
+        },
+        {
+            "mes": "May",
+            "generacion": 100.52
+        },
+        {
+            "mes": "Jun",
+            "generacion": 73.63
+        },
+        {
+            "mes": "Jul",
+            "generacion": 81.22
+        },
+        {
+            "mes": "Ago",
+            "generacion": 135.65
+        },
+        {
+            "mes": "Sep",
+            "generacion": 235.56
+        },
+        {
+            "mes": "Oct",
+            "generacion": 460.84
+        },
+        {
+            "mes": "Nov",
+            "generacion": 648.36
+        },
+        {
+            "mes": "Dic",
+            "generacion": 710.69
+        }
+    ],
+    "generacionAnual": [
+        {
+            "año": 2024,
+            "generacion": 4080.59
+        },
+        {
+            "año": 2025,
+            "generacion": 4060.19
+        },
+        {
+            "año": 2026,
+            "generacion": 4039.89
+        },
+        {
+            "año": 2027,
+            "generacion": 4019.69
+        },
+        {
+            "año": 2028,
+            "generacion": 3999.59
+        }
+    ],
+    "factorCapacidad": 16.29,
+    "impactoSocial": {
+        "empleosDirectos": 28,
+        "empleosIndirectos": 85,
+        "programasEducativos": 3
+    },
+    "detallesTecnicos": {
+        "tipoPaneles": "Monocristalinos de alta eficiencia",
+        "eficienciaPaneles": 20.64,
+        "vidaUtilEstimada": 25,
+        "degradacionAnual": 0.5
+    }
+}

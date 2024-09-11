@@ -1,5 +1,5 @@
 import React from 'react';
-import { navItems, gridItems_AllinOne, projects_Energy, companies_Energy, workExperience_Energy, testimonials_AllInOne } from '@/data';
+import { gridItems_AllinOne, projects_Energy, companies_Energy, workExperience_Energy, testimonials_AllInOne } from '@/data';
 import { FloatingNav } from '@/components/ui/FloatingNav';
 import Footer_Energy from '@/components/Footer-Energy';
 import ChatCompNew from '@/components/ChatCompNew';
@@ -9,6 +9,15 @@ import Clients from '@/components/ClientsCards';
 import { CardProvider } from '@/context/CardContext';
 import Link from 'next/link';
 //**  < Clients companies = { companies_Energy } testimonials = { testimonials_AllInOne } />
+
+const navItems = [
+  { name: "Home", link: "/" },
+  { name: "Energy", link: "/energy" },
+  { name: "Simulate", link: "/energy/simulate" },
+  { name: "PPTs", link: "/downloads" },
+
+];
+
 const AllInOne = () => {
   return (
     <CardProvider>

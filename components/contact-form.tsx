@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/Card';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/Card2';
 import { Button } from '@/components/ui/button';
 import ChatCompContact from './ChatCompContact';
 

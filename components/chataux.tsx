@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/Card';
+import { Card, CardHeader, CardContent, CardFooter } from 'Card3';
 import { Button } from '@/components/ui/button';
 import Markdown from 'react-markdown';
 import '@/styles/chatbot.css';
@@ -13,34 +13,35 @@ type MessageProps = {
 };
 
 const UserMessage = ({ text }: { text: string }) => (
-  <div className="user-message">{text}</div>
+  <div className= "user-message" > { text } </div>
 );
 
 const AssistantMessage = ({ text }: { text: string }) => (
-  <div className="assistant-message">
-    <Markdown>{text}</Markdown>
+  <div className= "assistant-message" >
+  <Markdown>{ text } </Markdown>
   </div>
 );
 
 const CodeMessage = ({ text }: { text: string }) => (
-  <div className="code-message">
-    {text.split('\n').map((line, index) => (
-      <div key={index}>
-        <span>{`${index + 1}. `}</span>
-        {line}
-      </div>
+  <div className= "code-message" >
+  {
+    text.split('\n').map((line, index) => (
+      <div key= { index } >
+      <span>{`${index + 1}. `} </span>
+{ line }
+</div>
     ))}
-  </div>
+</div>
 );
 
 const MessageComponent = ({ role, text }: MessageProps) => {
   switch (role) {
     case 'user':
-      return <UserMessage text={text} />;
+      return <UserMessage text={ text } />;
     case 'assistant':
-      return <AssistantMessage text={text} />;
+      return <AssistantMessage text={ text } />;
     case 'code':
-      return <CodeMessage text={text} />;
+      return <CodeMessage text={ text } />;
     default:
       return null;
   }
@@ -119,119 +120,126 @@ const ChatCompNew: React.FC = () => {
     setIsChatbotOpen(!isChatbotOpen);
   };
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-full max-w-md">
-      {isChatbotOpen && (
-        <Card className="chatbot-card">
-          <CardHeader className="chatbot-card-header">
-            <h3 className="text-lg font-medium">Chatbot BIS</h3>
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" className="chatbot-icon" onClick={toggleChatbot}>
+    <div className= "fixed bottom-4 right-4 z-50 w-full max-w-md" >
+    { isChatbotOpen && (
+      <Card className="chatbot-card" >
+        <CardHeader className="chatbot-card-header" >
+          <h3 className="text-lg font-medium" > Chatbot BIS </h3>
+            < div className = "flex items-center gap-2" >
+              <Button variant="ghost" size = "icon" className = "chatbot-icon" onClick = { toggleChatbot } >
                 <MinimizeIcon className="w-5 h-5" />
-                <span className="sr-only">Minimize</span>
-              </Button>
-              <Button variant="ghost" size="icon" className="chatbot-icon">
-                <MaximizeIcon className="w-5 h-5" />
-                <span className="sr-only">Maximize</span>
-              </Button>
-              <Button variant="ghost" size="icon" className="chatbot-icon" onClick={toggleChatbot}>
-                <XIcon className="w-5 h-5" />
-                <span className="sr-only">Close</span>
-              </Button>
-            </div>
-          </CardHeader>
-          <CardContent className="chatbot-card-conte">
-            {messages.map((message, index) => (
-              <div key={index} className={`message ${message.role === 'assistant' ? 'bot' : 'user'}`}>
-                <div className="font-medium">{message.role === 'assistant' ? 'Chatbot' : 'You'}</div>
-                <p>{message.text}</p>
-              </div>
+                  <span className="sr-only" > Minimize </span>
+                    </Button>
+                    < Button variant = "ghost" size = "icon" className = "chatbot-icon" >
+                      <MaximizeIcon className="w-5 h-5" />
+                        <span className="sr-only" > Maximize </span>
+                          </Button>
+                          < Button variant = "ghost" size = "icon" className = "chatbot-icon" onClick = { toggleChatbot } >
+                            <XIcon className="w-5 h-5" />
+                              <span className="sr-only" > Close </span>
+                                </Button>
+                                </div>
+                                </CardHeader>
+                                < CardContent className = "chatbot-card-conte" >
+                                {
+                                  messages.map((message, index) => (
+                                    <div key= { index } className = {`message ${message.role === 'assistant' ? 'bot' : 'user'}`} >
+                                  <div className="font-medium" > { message.role === 'assistant' ? 'Chatbot' : 'You' } </div>
+                                    < p > { message.text } </p>
+                                    </div>
             ))}
-            {isReceiving && (
-              <div className='message bot'>
-                <div className='font-medium'>Chatbot</div>
-                <p>{currentResponse}</p>
-              </div>
-            )}
-            {status === 'in_progress' && (
-              <div className="w-full h-8 max-w-md p-2 mb-8 bg-gray-300 rounded-lg dark:bg-gray-600 animate-pulse" />
-            )}
-            <div ref={ref} />
-          </CardContent>
-          <CardFooter className="chatbot-card-footer">
-            <form onSubmit={onSubmit}>
-              <input
-                ref={inputRef}
-                name='message'
-                value={input}
-                onChange={handleInputChange}
-                placeholder="Type your message..."
-                className="chatbot-input"
-                disabled={status !== 'awaiting_message' || inputDisabled} // Deshabilitar entrada si está en progreso o esperando respuesta
+{
+  isReceiving && (
+    <div className='message bot' >
+      <div className='font-medium' > Chatbot </div>
+        < p > { currentResponse } </p>
+        </div>
+            )
+}
+{
+  status === 'in_progress' && (
+    <div className="w-full h-8 max-w-md p-2 mb-8 bg-gray-300 rounded-lg dark:bg-gray-600 animate-pulse" />
+            )
+}
+<div ref={ ref } />
+  </CardContent>
+  < CardFooter className = "chatbot-card-footer" >
+    <form onSubmit={ onSubmit }>
+      <input
+                ref={ inputRef }
+name = 'message'
+value = { input }
+onChange = { handleInputChange }
+placeholder = "Type your message..."
+className = "chatbot-input"
+disabled = { status !== 'awaiting_message' || inputDisabled} // Deshabilitar entrada si está en progreso o esperando respuesta
               />
-              <Button type="submit" size="icon" className="chatbot-send-btn" disabled={status !== 'awaiting_message' || inputDisabled}>
-                <SendIcon className="w-4 h-4" />
-                <span className="sr-only">Send</span>
-              </Button>
-            </form>
-          </CardFooter>
+  < Button type = "submit" size = "icon" className = "chatbot-send-btn" disabled = { status !== 'awaiting_message' || inputDisabled}>
+    <SendIcon className="w-4 h-4" />
+      <span className="sr-only" > Send </span>
+        </Button>
+        </form>
+        </CardFooter>
         </Card>
       )}
-      {!isChatbotOpen && (
-      <Button variant="ghost" size="icon" className="chatbot-icon chatbot-minimized-icon" onClick={toggleChatbot}>
-        <MessageCircleIcon className="w-16 h-16" />  {/* Aumenta el tamaño aquí */}
-        <span className="sr-only">Open Chatbot</span>
-      </Button>
-)}
+{
+  !isChatbotOpen && (
+    <Button variant="ghost" size = "icon" className = "chatbot-icon chatbot-minimized-icon" onClick = { toggleChatbot } >
+      <MessageCircleIcon className="w-16 h-16" /> {/* Aumenta el tamaño aquí */ }
+        < span className = "sr-only" > Open Chatbot </span>
+          </Button>
+)
+}
 
-    </div>
+</div>
   );
 };
 
 function MinimizeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
       <path d="M8 3v3a2 2 0 0 1-2 2H3" />
-      <path d="M21 8h-3a2 2 0 0 1-2-2V3" />
-      <path d="M3 16h3a2 2 0 0 1 2 2v3" />
-      <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
-    </svg>
+        <path d="M21 8h-3a2 2 0 0 1-2-2V3" />
+          <path d="M3 16h3a2 2 0 0 1 2 2v3" />
+            <path d="M16 21v-3a2 2 0 0 1 2-2h3" />
+              </svg>
   );
 }
 
 function MaximizeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
       <path d="M8 3H5a2 2 0 0 0-2 2v3" />
-      <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
-      <path d="M3 16v3a2 2 0 0 0 2 2h3" />
-      <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
-    </svg>
+        <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+          <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+            <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+              </svg>
   );
 }
 
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
       <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
+        <path d="m6 6 12 12" />
+          </svg>
   );
 }
 
 function MessageCircleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
       <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-    </svg>
+        </svg>
   );
 }
 
 function SendIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg { ...props } xmlns = "http://www.w3.org/2000/svg" width = "24" height = "24" viewBox = "0 0 24 24" fill = "none" stroke = "currentColor" strokeWidth = "2" strokeLinecap = "round" strokeLinejoin = "round" >
       <path d="m22 2-7 20-4-9-9-4Z" />
-      <path d="M22 2 11 13" />
-    </svg>
+        <path d="M22 2 11 13" />
+          </svg>
   );
 }
 

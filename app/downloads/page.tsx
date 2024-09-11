@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { navItems } from "@/data";
+
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import DownloadablePresentation from '@/components/DownloadablePresentation';
 import Hero from '@/components/Hero-Down';
@@ -8,6 +8,15 @@ import Footer from "@/components/Footer";
 import { Spotlight } from "@/components/ui/Spotlight";
 import ChatCompNew from '@/components/ChatCompNew';
 import Link from 'next/link';
+
+const navItems = [
+    { name: "Home", link: "/" },
+    { name: "Energy", link: "/energy" },
+    { name: "All-In-One", link: "/energy/all-in-one" },
+    { name: "Simulate", link: "/energy/simulate" },
+
+
+];
 
 const DownloadPage = () => {
     return (
