@@ -19,17 +19,16 @@ let provinciasLocalidadesData: ProvinciaData | null = null;
 const coordCache = new Map<string, Coordenadas>();
 
 async function loadProvinciasLocalidadesData(): Promise<ProvinciaData> {
-    if (typeof window === 'undefined' && provinciasLocalidadesData === null) {
-        const { promises: fs } = await import('fs');
-        const path = await import('path');
-        const filePath = path.join(process.cwd(), 'data', 'provinciasLocalidades.json');
-        console.log('Intentando cargar archivo desde:', filePath);
+    if (provinciasLocalidadesData === null) {
         try {
-            const fileContents = await fs.readFile(filePath, 'utf8');
-            provinciasLocalidadesData = JSON.parse(fileContents);
-            console.log('Archivo cargado exitosamente');
+            const response = await fetch('/data/provinciasLocalidades.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            provinciasLocalidadesData = await response.json();
+            console.log('Provincias cargadas:', Object.keys(provinciasLocalidadesData));
         } catch (error) {
-            console.error('Error al cargar el archivo:', error);
+            console.error('Error al cargar el archivo de provincias y localidades:', error);
             return {};
         }
     }

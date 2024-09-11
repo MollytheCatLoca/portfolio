@@ -2,8 +2,12 @@ import { cache } from 'react'
 import { getParquesSolaresCoord } from './coordenadasHelper';
 import axios from 'axios';
 
-const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-console.log('apiSolar.ts base URL:', baseUrl);
+const baseUrl = process.env.NEXT_PUBLIC_API_URL
+    ? new URL(process.env.NEXT_PUBLIC_API_URL).origin
+    : 'https://www.bisintegraciones.com';
+
+console.log('API base URL:', baseUrl);
+
 
 interface QueryParams {
     provincia?: string;
