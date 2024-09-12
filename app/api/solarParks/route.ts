@@ -43,6 +43,8 @@ export async function POST(req: NextRequest) {
     const startTime = Date.now();
     try {
         const requestData = await req.json();
+        //console.log("API solarPark reqData: ", requestData)
+
         const data = {
             provincia: requestData.provincia || "Test",
             localidad: requestData.localidad || "Test",
@@ -72,7 +74,7 @@ export async function POST(req: NextRequest) {
             };
 
             console.log('API route: Requesting data from Heroku');
-            console.log('API route: Using auth:', { username: auth.username, passwordLength: auth.password?.length });
+            //console.log('API route: Using auth:', { username: auth.username, passwordLength: auth.password?.length });
 
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);

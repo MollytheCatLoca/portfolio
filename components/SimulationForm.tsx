@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FaSolarPanel } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import { useQueryParams } from '@/context/QueryParamsContext';
-import provinciasLocalidadesData from '@/data/provinciasLocalidades.json';
+import provinciasLocalidadesData from '@/public/data/provinciasLocalidades.json';
 import { Modal } from 'antd';
 
 interface SimulationFormProps {
