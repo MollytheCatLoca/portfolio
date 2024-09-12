@@ -14,6 +14,7 @@ import TechnicalDetails from '@/components/dashboard/TechnicalDetails';
 import InterpretationCenter from '@/components/dashboard/InterpretationCenter';
 import Footer_Energy from '@/components/Footer-Energy';
 import { Skeleton } from '@/components/ui/skeleton';
+//import GeneratePDFButton from './GeneratePDFButton';
 
 interface DashboardPageContentProps {
     initialScenarios: any[];
@@ -134,6 +135,7 @@ return (
                                                                             </div>
                                                                             </main>
                                                                             < div className = "mt-20 mb-16 w-4/5 mx-auto" >
+
                                                                                 <Footer_Energy />
                                                                                 </div>
                                                                                 </div>
