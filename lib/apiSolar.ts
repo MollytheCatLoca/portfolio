@@ -125,7 +125,11 @@ async function fetchDataFromAPI(params: QueryParams): Promise<ParqueSolarData[]>
     console.log("fetchDataFromAPI: Fetching from API with params", params);
 
     let coordenadas = { lat: 0, lon: 0 };
+    console.log("ANTES IF Params Lat", params.longitud)
+    console.log("ANTES IF Params Lat", params.latitud)
     if (params.provincia && params.localidad && !params.latitud && !params.longitud) {
+        console.log("Params Lat", params.longitud)
+        console.log("Params Lat", params.latitud)
         try {
             coordenadas = await getParquesSolaresCoord(params.provincia, params.localidad);
             console.log("apiSolar.TS Coordendas", coordenadas)
