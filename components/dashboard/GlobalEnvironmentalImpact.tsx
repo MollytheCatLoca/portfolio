@@ -22,7 +22,7 @@ type GlobalEnvironmentalImpactProps = {
 };
 
 export default function GlobalEnvironmentalImpact({ scenarios }: GlobalEnvironmentalImpactProps) {
-    console.log('GlobalEnvironmentalImpact - Received scenarios:', scenarios);
+    //console.log('GlobalEnvironmentalImpact - Received scenarios:', scenarios);
 
     if (!scenarios || scenarios.length === 0) {
         console.log('GlobalEnvironmentalImpact - No scenarios available');
@@ -43,7 +43,7 @@ export default function GlobalEnvironmentalImpact({ scenarios }: GlobalEnvironme
         };
     });
 
-    console.log('GlobalEnvironmentalImpact - Environmental metrics:', environmentalMetrics);
+    //console.log('GlobalEnvironmentalImpact - Environmental metrics:', environmentalMetrics);
 
     const cumulativeCO2Savings = scenarios.map(scenario => {
         let cumulativeSavings = 0;
@@ -64,7 +64,7 @@ export default function GlobalEnvironmentalImpact({ scenarios }: GlobalEnvironme
         return combined;
     });
 
-    console.log('GlobalEnvironmentalImpact - Combined CO2 savings:', combinedCO2Savings);
+    //console.log('GlobalEnvironmentalImpact - Combined CO2 savings:', combinedCO2Savings);
 
     return (
         <section id= "impacto-ambiental" className = "mt-8" >

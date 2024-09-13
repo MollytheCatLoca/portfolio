@@ -16,7 +16,7 @@ export default async function DashboardPage({
         area: searchParams.area as string || ''
     };
 
-    console.log("DashboardPage: Initial query params", initialQueryParams);
+    //console.log("DashboardPage: Initial query params", initialQueryParams);
 
     let initialScenarios = [];
     if (Object.values(initialQueryParams).every(param => param !== '')) {

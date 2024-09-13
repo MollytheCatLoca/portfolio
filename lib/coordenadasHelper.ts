@@ -10,11 +10,11 @@ export async function getParquesSolaresCoord(provincia: string, localidad: strin
 
     try {
         if (!provinciasLocalidadesData[provincia]) {
-            console.log('Provincias disponibles:', Object.keys(provinciasLocalidadesData));
+            //console.log('Provincias disponibles:', Object.keys(provinciasLocalidadesData));
             throw new Error(`Provincia no encontrada: ${provincia}`);
         }
 
-        console.log(`Localidades en ${provincia}:`, provinciasLocalidadesData[provincia].map(l => l.nombre));
+        //console.log(`Localidades en ${provincia}:`, provinciasLocalidadesData[provincia].map(l => l.nombre));
 
         const localidadInfo = provinciasLocalidadesData[provincia].find(
             l => l.nombre.toLowerCase() === localidad.toLowerCase()

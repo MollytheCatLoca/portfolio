@@ -1,7 +1,7 @@
 // components/DashboardPDFContent.tsx
-import React, { useEffect, useState } from 'react';
-import { getParquesSolaresData } from '@/lib/apiSolar';
-import GlobalHeader from '@/components/dashboard/GlobalHeader';
+import React from 'react';
+import PDFPage from '@/components/PDFPage';
+import { cn } from "@/lib/utils";
 import GlobalExecutiveSummary from '@/components/dashboard/GlobalExecutiveSummary';
 import LocationMap from '@/components/dashboard/LocationMap';
 import GlobalEnergyGeneration from '@/components/dashboard/GlobalEnergyGeneration';
@@ -9,83 +9,176 @@ import GlobalFinancialAnalysis from '@/components/dashboard/GlobalFinancialAnaly
 import GlobalEnvironmentalImpact from '@/components/dashboard/GlobalEnvironmentalImpact';
 import TechnicalDetails from '@/components/dashboard/TechnicalDetails';
 import InterpretationCenter from '@/components/dashboard/InterpretationCenter';
-import Footer_Energy from '@/components/Footer-Energy';
+import PDFHero from '@/components/Hero-AllInOnePDF';
+import Footer_Energy from '@/components/Footer-EnergyPDF';
+import ExecutiveIntro from '@/components/dashboard/GlobalIntro';
 
-export default function DashboardPDFContent({ sceneData }) {
-    const [scenarios, setScenarios] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
 
-    useEffect(() => {
-        console.log('DashboardPDFContent received sceneData:', JSON.stringify(sceneData, null, 2));
+const TOTAL_PAGES = 9; // Ajusta este número según la cantidad total de páginas en tu PDF
 
-        const fetchData = async () => {
-            if (!sceneData || !sceneData.queryParams) {
-                setError("No se recibieron parámetros válidos");
-                setIsLoading(false);
-                return;
-            }
 
-            const { provincia, localidad, capacidad, area } = sceneData.queryParams;
-
-            if (!provincia || !localidad || !capacidad || !area) {
-                setError("Faltan parámetros necesarios para la simulación");
-                setIsLoading(false);
-                return;
-            }
-
-            try {
-                const data = await getParquesSolaresData(sceneData.queryParams);
-                console.log("Datos obtenidos OK:", data);
-                if (Array.isArray(data) && data.length > 0) {
-                    setScenarios(data);
-                } else {
-                    setError("No se encontraron escenarios para los parámetros proporcionados");
-                }
-            } catch (error) {
-                console.error("Error al cargar los escenarios:", error);
-                setError("Error al cargar los escenarios. Por favor, intente de nuevo.");
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchData();
-    }, [sceneData]);
-
-    if (isLoading) {
-        return <div>Cargando datos...</div>;
-    }
-
-    if (error) {
-        return <div>Error: { error } </div>;
-    }
-
-    if (!scenarios || scenarios.length === 0) {
+export default function DashboardPDFContent({ initialScenarios, initialQueryParams }) {
+    if (!initialScenarios || initialScenarios.length === 0) {
         return <div>No se encontraron escenarios.</div>;
     }
 
-    const parqueName = scenarios[0].nombre.split(' - ')[0];
+    const scenarios = initialScenarios;
+    const queryParams = initialQueryParams;
 
     return (
-        <div className= "flex flex-col min-h-screen bg-black-100 text-white" >
-        <GlobalHeader parqueName={ `Parque ${scenarios[0].ubicacion.ciudad}` } />
-            < main className = "flex-grow pt-4 sm:pt-6" >
-                <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
-                    <div className="space-y-12" >
-                        <GlobalExecutiveSummary scenarios={ scenarios } queryParams = { sceneData.queryParams } />
-                            <LocationMap ubicacion={ scenarios[0].ubicacion } terreno = { scenarios[0].terreno } />
-                                <GlobalEnergyGeneration scenarios={ scenarios } />
-                                    < GlobalFinancialAnalysis scenarios = { scenarios } />
-                                        <GlobalEnvironmentalImpact scenarios={ scenarios } />
-                                            < TechnicalDetails detallesTecnicos = { scenarios[0].detallesTecnicos } capacidad = { scenarios[0].capacidad } />
-                                                <InterpretationCenter impactoSocial={ scenarios[0].impactoSocial } />
-                                                    </div>
-                                                    </div>
-                                                    </main>
-                                                    < div className = "mt-20 mb-16 w-4/5 mx-auto" >
-                                                        <Footer_Energy />
-                                                        </div>
-                                                        </div>
+        <div className= "pdf-container font-sans text-xs leading-tight text-white bg-[#121212]" >
+
+        <PDFPage pageNumber={ 1 } totalPages = { TOTAL_PAGES } >
+
+            <div pdfstyles = {
+        {
+            top: '0mm',
+                left: '10mm',
+                    width: '250mm',
+                        height: '290mm',
+                            transform: 'scale(0.9)',
+                }
+    }>
+        <PDFHero/>
+        </div>
+        </PDFPage>
+
+        < PDFPage pageNumber = { 2 } totalPages = { TOTAL_PAGES } >
+
+            <div pdfstyles = {
+        {
+            top: '30mm',
+                left: '10mm',
+                    width: '250mm',
+                        height: '180mm',
+                            transform: 'scale(0.9)',
+                }
+    }>
+        <ExecutiveIntro/>
+        </div>
+        </PDFPage>
+
+
+
+        < PDFPage pageNumber = { 3 } totalPages = { TOTAL_PAGES } >
+
+            <div pdfstyles = {
+        {
+            top: '30mm',
+                left: '10mm',
+                    width: '250mm',
+                        height: '180mm',
+                            transform: 'scale(0.4)',
+                }
+    }>
+        <GlobalExecutiveSummary scenarios={ scenarios } queryParams = { queryParams } />
+            </div>
+            </PDFPage>
+
+            < PDFPage pageNumber = { 4} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
+        {
+            top: '10mm',
+                left: '10mm',
+                    width: '277mm',
+                        height: '90mm',
+                            transform: 'scale(0.9)',
+                }
+    }>
+        <LocationMap ubicacion={ scenarios[0].ubicacion } terreno = { scenarios[0].terreno } />
+            </div>
+            </PDFPage>
+
+            < PDFPage pageNumber = { 5} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles = {
+        {
+            top: '10mm',
+                left: '10mm',
+                    width: '277mm',
+                        height: '90mm',
+                            transform: 'scale(0.9)',
+                }
+    }>
+        <GlobalEnergyGeneration scenarios={ scenarios } />
+            </div>
+            </PDFPage>
+
+            < PDFPage pageNumber = { 6} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
+        {
+            top: '10mm',
+                left: '10mm',
+                    width: '277mm',
+                        height: '200mm', // Aumentamos la altura para que quepa más contenido
+                            transform: 'scale(0.7)', // Escala vertical 0.7 para comprimir verticalmente
+                            //transformOrigin: 'top left', // Asegura que la transformación comience desde la esquina superior izquierda
+          }
+    }>
+        <GlobalFinancialAnalysis scenarios={ scenarios } isPDF = { true} />
+            </div>
+            </PDFPage>
+
+
+            < PDFPage pageNumber = { 7} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles = {
+        {
+            top: '10mm',
+                left: '10mm',
+                    width: '277mm',
+                        height: '180mm',
+                            transform: 'scale(0.7)',
+                }
+    }>
+        <GlobalEnvironmentalImpact scenarios={ scenarios } />
+            </div>
+            </PDFPage>
+
+            < PDFPage pageNumber = { 8} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
+        {
+            top: '10mm',
+                left: '10mm',
+                    width: '277mm',
+                        height: '90mm',
+                            transform: 'scale(0.7)',
+                }
+    }>
+        <TechnicalDetails detallesTecnicos={ scenarios[0].detallesTecnicos } capacidad = { scenarios[0].capacidad } />
+            </div>
+            </PDFPage>
+
+
+            < PDFPage pageNumber = { 9} totalPages = { TOTAL_PAGES } >
+                <div style={
+        {
+            position: 'relative',
+                height: '100%',
+                    width: '100%',
+                        display: 'flex',
+                            flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                    padding: '10mm',
+    }
+    }>
+        <div style={
+        {
+            transform: 'scale(0.9)',
+                transformOrigin: 'top center',
+        }
+    }>
+        <InterpretationCenter impactoSocial={ scenarios[0].impactoSocial } />
+            </div>
+
+            < div style = {{
+        marginTop: '10mm',
+            transform: 'scale(0.99)',
+                transformOrigin: 'bottom center',
+        }
+}>
+    <Footer_Energy />
+    </div>
+    </div>
+    </PDFPage>
+    </div>
     );
 }

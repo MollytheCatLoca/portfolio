@@ -1,0 +1,86 @@
+/* styles/pdf.css */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        line-height: 1.2;
+        background-color: #121212;
+        color: white;
+    }
+
+    .pdf-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .pdf-page {
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+    }
+
+    .pdf-component {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    /* Estilos específicos para componentes */
+    .pdf-component>div {
+        width: 100%;
+        max-width: 277mm;
+        margin-bottom: 10mm;
+    }
+
+    /* Ajustes para componentes específicos si es necesario */
+    .global-financial-analysis {
+        height: auto !important;
+        /* Anula cualquier altura fija */
+        overflow: visible !important;
+        /* Permite que el contenido exceda los límites del contenedor */
+    }
+
+    .global-financial-analysis>* {
+        transform-origin: top left;
+        transform: scale(1, 1.43);
+        /* Invierte la compresión vertical para el contenido interno */
+    }
+
+    .global-financial-analysis.pdf-version {
+        font-size: 9px;
+    }
+
+    .global-financial-analysis.pdf-version h2 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .global-financial-analysis.pdf-version h3 {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .pdf-finance .recharts-cartesian-axis-tick-value {
+        font-size: 9px;
+    }
+
+    .pdf-finance .recharts-legend-item-text {
+        font-size: 9px;
+    }
+
+    .pdf-finance .recharts-tooltip-label,
+    .pdf-finance .recharts-tooltip-item {
+        font-size: 9px;
+    }
+
+
+    .global-executive-summary,
+    .location-map,
+    .global-energy-generation,
+    .global-environmental-impact,
+    .technical-details,
+    .interpretation-center {
+        padding: 0%;
+    }
+}

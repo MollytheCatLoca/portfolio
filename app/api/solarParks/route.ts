@@ -54,7 +54,8 @@ export async function POST(req: NextRequest) {
             longitud: requestData.longitud || -58.76592117375753
         };
 
-        console.log("API route: Using data", JSON.stringify(data, null, 2));
+        //console.log("API route: Using data", JSON.stringify(data, null, 2));
+        console.log("API route: Using data");
 
         const cacheKey = getCacheKey(data);
         const cachedItem = cache.get(cacheKey);

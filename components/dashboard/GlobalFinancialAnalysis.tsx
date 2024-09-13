@@ -23,28 +23,28 @@ type Scenario = {
 
 type GlobalFinancialAnalysisProps = {
     scenarios: Scenario[];
+    isPDF?: boolean;
 };
 
-export default function GlobalFinancialAnalysis({ scenarios }: GlobalFinancialAnalysisProps) {
-    console.log('Scenarios received:', scenarios);
-
+export default function GlobalFinancialAnalysis({ scenarios, isPDF = false }: GlobalFinancialAnalysisProps) {
     if (!scenarios || scenarios.length === 0) {
         console.log('No scenarios available');
         return <div>No hay datos financieros disponibles.</div>;
     }
 
+    const chartHeight = isPDF ? 190 : 250;
+    const fontSize = isPDF ? 8 : 12;
+    const titleFontSize = isPDF ? '14px' : '18px';
+    const subtitleFontSize = isPDF ? '12px' : '16px';
+
     try {
-        const financialMetrics = scenarios.map(scenario => {
-            console.log('Processing scenario:', scenario.nombre);
-            return {
-                nombre: scenario.nombre,
-                inversion: scenario.inversion.total,
-                tir: scenario.inversion.tir,
-                van: scenario.inversion.van,
-                periodoRecuperacion: scenario.inversion.periodoRecuperacion
-            };
-        });
-        console.log('Financial metrics:', financialMetrics);
+        const financialMetrics = scenarios.map(scenario => ({
+            nombre: scenario.nombre,
+            inversion: scenario.inversion.total,
+            tir: scenario.inversion.tir,
+            van: scenario.inversion.van,
+            periodoRecuperacion: scenario.inversion.periodoRecuperacion
+        }));
 
         const cumulativeCashFlow = scenarios.map(scenario => {
             let cumulativeFlow = -scenario.inversion.total;
@@ -64,50 +64,55 @@ export default function GlobalFinancialAnalysis({ scenarios }: GlobalFinancialAn
             });
             return combined;
         });
-        console.log('Combined cash flow:', combinedCashFlow);
 
         return (
-            <section id= "finanzas" className = "mt-8" >
-                <Card className="bg-black-200 border-gray-800" >
-                    <CardHeader>
-                    <CardTitle className="text-xl font-bold text-white" > Análisis Financiero Global </CardTitle>
-                        </CardHeader>
-                        < CardContent >
-                        <div className="mb-6" style = {{ height: '400px', width: '100%' }
+            <section id= "finanzas" className = {`mt-8 ${isPDF ? 'pdf-finance' : ''}`
     }>
-        <h3 className="text-lg font-semibold mb-2 text-white" > Métricas Financieras </h3>
-            < ResponsiveContainer width = "100%" height = { 300} >
-                <BarChart data={ financialMetrics } margin = {{ top: 20, right: 30, left: 20, bottom: 5 }
+        <Card className="bg-black-200 border-gray-800" >
+            <CardHeader>
+            <CardTitle className="text-xl font-bold text-white" style = {{ fontSize: titleFontSize }
 }>
-    <CartesianGrid strokeDasharray="3 3" stroke = "#4a5568" />
-        <XAxis dataKey="nombre" stroke = "#718096" />
-            <YAxis yAxisId="left" orientation = "left" stroke = "#718096" />
-                <YAxis yAxisId="right" orientation = "right" stroke = "#718096" />
-                    <Tooltip
+    Análisis Financiero Global
+        </CardTitle>
+        </CardHeader>
+        < CardContent >
+        <div className="mb-6" style = {{ height: isPDF ? '200px' : '400px', width: '100%' }}>
+            <h3 className="text-lg font-semibold mb-2 text-white" style = {{ fontSize: subtitleFontSize }}>
+                Métricas Financieras
+                    </h3>
+                    < ResponsiveContainer width = "100%" height = { chartHeight } >
+                        <BarChart data={ financialMetrics } margin = {{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                            <CartesianGrid strokeDasharray="3 3" stroke = "#4a5568" />
+                                <XAxis dataKey="nombre" stroke = "#718096" fontSize = { fontSize } />
+                                    <YAxis yAxisId="left" orientation = "left" stroke = "#718096" fontSize = { fontSize } />
+                                        <YAxis yAxisId="right" orientation = "right" stroke = "#718096" fontSize = { fontSize } />
+                                            <Tooltip
                                         contentStyle={ { backgroundColor: '#2D3748', border: '1px solid #4A5568' } }
-labelStyle = {{ color: '#E2E8F0' }}
-itemStyle = {{ color: '#A0AEC0' }}
+labelStyle = {{ color: '#E2E8F0', fontSize: fontSize }}
+itemStyle = {{ color: '#A0AEC0', fontSize: fontSize }}
                                     />
-    < Legend wrapperStyle = {{ color: '#A0AEC0' }} />
+    < Legend wrapperStyle = {{ color: '#A0AEC0', fontSize: fontSize }} />
         < Bar yAxisId = "left" dataKey = "inversion" fill = "#4299E1" name = "Inversión Total (MUSD)" />
             <Bar yAxisId="left" dataKey = "van" fill = "#48BB78" name = "VAN (MUSD)" />
                 <Bar yAxisId="right" dataKey = "tir" fill = "#ED8936" name = "TIR (%)" />
                     </BarChart>
                     </ResponsiveContainer>
                     </div>
-                    < div style = {{ height: '400px', width: '100%' }}>
-                        <h3 className="text-lg font-semibold mb-2 text-white" > Flujo de Caja Acumulado </h3>
-                            < ResponsiveContainer width = "100%" height = { 300} >
-                                <LineChart data={ combinedCashFlow } margin = {{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                                    <CartesianGrid strokeDasharray="3 3" stroke = "#4a5568" />
-                                        <XAxis dataKey="año" stroke = "#718096" />
-                                            <YAxis stroke="#718096" />
-                                                <Tooltip
+                    < div style = {{ height: isPDF ? '200px' : '400px', width: '100%' }}>
+                        <h3 className="text-lg font-semibold mb-2 text-white" style = {{ fontSize: subtitleFontSize }}>
+                            Flujo de Caja Acumulado
+                                </h3>
+                                < ResponsiveContainer width = "100%" height = { chartHeight } >
+                                    <LineChart data={ combinedCashFlow } margin = {{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                                        <CartesianGrid strokeDasharray="3 3" stroke = "#4a5568" />
+                                            <XAxis dataKey="año" stroke = "#718096" fontSize = { fontSize } />
+                                                <YAxis stroke="#718096" fontSize = { fontSize } />
+                                                    <Tooltip
                                         contentStyle={ { backgroundColor: '#2D3748', border: '1px solid #4A5568' } }
-labelStyle = {{ color: '#E2E8F0' }}
-itemStyle = {{ color: '#A0AEC0' }}
+labelStyle = {{ color: '#E2E8F0', fontSize: fontSize }}
+itemStyle = {{ color: '#A0AEC0', fontSize: fontSize }}
                                     />
-    < Legend wrapperStyle = {{ color: '#A0AEC0' }} />
+    < Legend wrapperStyle = {{ color: '#A0AEC0', fontSize: fontSize }} />
 {
     scenarios.map((scenario, index) => (
         <Line
@@ -116,6 +121,7 @@ itemStyle = {{ color: '#A0AEC0' }}
                                             dataKey = { scenario.nombre }
                                             stroke = {`hsl(${index * 120}, 70%, 50%)`}
 name = { scenario.nombre }
+strokeWidth = { isPDF? 1: 2 }
     />
                                     ))}
 </LineChart>

@@ -1,4 +1,3 @@
-// app/api/generate-pdf/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import puppeteer from 'puppeteer';
 
@@ -29,26 +28,45 @@ export async function POST(req: NextRequest) {
             console.log('Data injected into page:', JSON.stringify(window.initialSceneData, null, 2));
         `);
 
+        await page.setViewport({
+            width: 1920,
+            height: 1080,
+            deviceScaleFactor: 1,
+        });
+
         await page.goto(pdfUrl, {
             waitUntil: 'networkidle0',
             timeout: 60000
         });
 
-        // Captura logs de la página
         page.on('console', msg => console.log('PAGE LOG:', msg.text()));
 
         const pdf = await page.pdf({
             format: 'A4',
+            landscape: true,
             printBackground: true,
-            margin: { top: '1cm', right: '1cm', bottom: '1cm', left: '1cm' },
+            margin: { top: '0cm', right: '0cm', bottom: '0cm', left: '0cm' },
+            scale: 1,
         });
 
+        // Obtener la fecha actual en formato MM-YY
+        const currentDate = new Date();
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+        const year = currentDate.getFullYear().toString().slice(-2);
+        const dateString = `${month}-${year}`;
+
+        // Crear el nombre del archivo
+
+        const fileName = `BIS-Simulador-${searchParams.localidad || 'PVsit'}-${dateString}.pdf`;
+        const encodedFileName = encodeURIComponent(fileName);
+
         console.log('PDF generated successfully');
+        console.log('File name:', fileName);
 
         return new NextResponse(pdf, {
             headers: {
                 'Content-Type': 'application/pdf',
-                'Content-Disposition': 'attachment; filename=dashboard.pdf',
+                'Content-Disposition': `attachment; filename="${encodedFileName}"`,
             },
         });
     } catch (error) {

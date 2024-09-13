@@ -35,7 +35,8 @@ export default function LocationMap({ ubicacion, terreno }: LocationMapProps) {
                 </Card>
         );
     }
-    console.log('Nuevas coordenadas:', ubicacion.coordenadas.lat);
+    //console.log('Nuevas coordenadas:', ubicacion.coordenadas.lat);
+    console.log('LOCATION MAP Nuevas coordenadas:');
     return (
         <Card className= "bg-black-200 border-gray-800" >
         <CardHeader>

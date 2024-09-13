@@ -122,7 +122,7 @@ export const getParquesSolaresData = cache(async (params: QueryParams = {}): Pro
 });
 
 async function fetchDataFromAPI(params: QueryParams): Promise<ParqueSolarData[]> {
-    console.log("fetchDataFromAPI: Fetching from API with params", params);
+    console.log("fetchDataFromAPI: Fetching from API with params");
 
     let coordenadas = { lat: 0, lon: 0 };
     //console.log("ANTES IF Params Lat", params.longitud)
@@ -135,7 +135,7 @@ async function fetchDataFromAPI(params: QueryParams): Promise<ParqueSolarData[]>
 
         try {
             coordenadas = await getParquesSolaresCoord(params.provincia, params.localidad);
-            console.log("apiSolar.TS Coordendas", coordenadas)
+            console.log("apiSolar.TS Coordendas")
         } catch (error) {
             console.error('Error al obtener coordenadas:', error);
         }

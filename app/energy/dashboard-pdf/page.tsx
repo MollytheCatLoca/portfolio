@@ -1,30 +1,35 @@
 // app/energy/dashboard-pdf/page.tsx
-'use client';
-
-import { useEffect, useState } from 'react';
+import { getParquesSolaresData } from '@/lib/apiSolar';
 import DashboardPDFContent from "@/components/DashboardPDFContent";
 
-export default function DashboardPDFPage() {
-    const [sceneData, setSceneData] = useState(null);
+export default async function DashboardPDFPage({
+    searchParams
+}: {
+    searchParams: { [key: string]: string | string[] | undefined }
+}) {
+    const initialQueryParams = {
+        provincia: searchParams.provincia as string || '',
+        localidad: searchParams.localidad as string || '',
+        capacidad: searchParams.capacidad as string || '',
+        area: searchParams.area as string || ''
+    };
 
-    useEffect(() => {
-        console.log('Initial window.initialSceneData:', window.initialSceneData);
+    console.log("DashboardPDFPage: Initial query params", initialQueryParams);
 
-        const timeout = setTimeout(() => {
-            if (window.initialSceneData) {
-                console.log('Setting sceneData:', window.initialSceneData);
-                setSceneData(window.initialSceneData);
-            } else {
-                console.error('No initialSceneData found after timeout');
-            }
-        }, 1000); // Espera 1 segundo
-
-        return () => clearTimeout(timeout);
-    }, []);
-
-    if (!sceneData) {
-        return <div>Cargando datos... Por favor espere.</div>;
+    let initialScenarios = [];
+    if (Object.values(initialQueryParams).every(param => param !== '')) {
+        try {
+            console.log("DashboardPDFPage: Intentando obtener escenarios iniciales");
+            initialScenarios = await getParquesSolaresData(initialQueryParams);
+        } catch (error) {
+            console.error("Error al obtener escenarios iniciales:", error);
+        }
+    } else {
+        console.log("DashboardPDFPage: Faltan parámetros para obtener escenarios iniciales");
     }
 
-    return <DashboardPDFContent sceneData={ sceneData } />;
+    return <DashboardPDFContent 
+        initialScenarios={ initialScenarios }
+    initialQueryParams = { initialQueryParams }
+        />;
 }

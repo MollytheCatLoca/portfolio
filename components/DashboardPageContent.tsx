@@ -12,9 +12,9 @@ import GlobalFinancialAnalysis from '@/components/dashboard/GlobalFinancialAnaly
 import GlobalEnvironmentalImpact from '@/components/dashboard/GlobalEnvironmentalImpact';
 import TechnicalDetails from '@/components/dashboard/TechnicalDetails';
 import InterpretationCenter from '@/components/dashboard/InterpretationCenter';
-import Footer_Energy from '@/components/Footer-Energy';
+import Footer_Energy_Dash from './Footer_EnergyDash';
 import { Skeleton } from '@/components/ui/skeleton';
-//import GeneratePDFButton from './GeneratePDFButton';
+import GeneratePDFButton from '@/components/GeneratePDFButton';
 
 interface DashboardPageContentProps {
     initialScenarios: any[];
@@ -136,8 +136,8 @@ return (
                                                                             </main>
                                                                             < div className = "mt-20 mb-16 w-4/5 mx-auto" >
 
-                                                                                <Footer_Energy />
-                                                                                </div>
-                                                                                </div>
+                                                                                <Footer_Energy_Dash scenarios = { scenarios } />
+                                                                                    </div>
+                                                                                    </div>
     );
 }

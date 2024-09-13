@@ -30,7 +30,8 @@ export function QueryParamsProvider({ children }: { children: React.ReactNode })
         //console.log("QueryParamsContext: Updating query params", newParams);
         setQueryParamsState(prevParams => {
             const updatedParams = { ...prevParams, ...newParams };
-            console.log("QueryParamsContext: Parámetros actualizados", updatedParams);
+            //console.log("QueryParamsContext: Parámetros actualizados", updatedParams);
+            console.log("QueryParamsContext: Parámetros actualizados");
             return updatedParams;
         });
     }, []);
