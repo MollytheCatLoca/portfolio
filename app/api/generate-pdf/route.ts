@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+
+// Definir isDev fuera de la función
+const isDev = process.env.NODE_ENV === 'development';
 
 export async function POST(req: NextRequest) {
     console.log('PDF generation request received');
@@ -16,10 +19,26 @@ export async function POST(req: NextRequest) {
 
     let browser;
     try {
-        browser = await puppeteer.launch({
-            headless: "new",
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
-        });
+        if (isDev) {
+            // En desarrollo, usa la instalación local de Chrome
+            browser = await puppeteer.launch({
+                headless: true,
+                args: ['--no-sandbox', '--disable-setuid-sandbox'],
+                executablePath: process.platform === 'win32'
+                    ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+                    : process.platform === 'linux'
+                        ? '/usr/bin/google-chrome'
+                        : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+            });
+        } else {
+            // En producción (Vercel), usa chrome-aws-lambda
+            browser = await chromium.puppeteer.launch({
+                args: chromium.args,
+                defaultViewport: chromium.defaultViewport,
+                executablePath: await chromium.executablePath,
+                headless: chromium.headless,
+            });
+        }
 
         const page = await browser.newPage();
 

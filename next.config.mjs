@@ -18,6 +18,13 @@ const nextConfig = {
     // Will be available on both server and client
     apiTimeout: 30000, // 30 seconds
   },
+  reactStrictMode: true,
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals.push('puppeteer');
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
