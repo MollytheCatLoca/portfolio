@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import puppeteer from 'puppeteer-core';
 
-// Definir isDev fuera de la función
-const isDev = process.env.NODE_ENV === 'development';
+// Eliminamos las importaciones estáticas
+// import puppeteer from 'puppeteer-core';
+// import chromium from '@sparticuz/chromium-min';
 
+// Definimos la función POST
 export async function POST(req: NextRequest) {
     console.log('PDF generation request received');
+
+    // Importamos dinámicamente los módulos necesarios
+    const { default: puppeteer } = await import('puppeteer-core');
+    const { default: chromium } = await import('@sparticuz/chromium-min');
+
+    // Definimos si estamos en desarrollo o producción
+    const isDev = process.env.NODE_ENV === 'development';
 
     const body = await req.json();
     const { searchParams, sceneData } = body;
@@ -20,23 +28,28 @@ export async function POST(req: NextRequest) {
     let browser;
     try {
         if (isDev) {
-            // En desarrollo, usa la instalación local de Chrome
+            // En desarrollo, usamos la instalación local de Chrome
             browser = await puppeteer.launch({
                 headless: true,
                 args: ['--no-sandbox', '--disable-setuid-sandbox'],
-                executablePath: process.platform === 'win32'
-                    ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-                    : process.platform === 'linux'
-                        ? '/usr/bin/google-chrome'
-                        : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+                executablePath:
+                    process.platform === 'win32'
+                        ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+                        : process.platform === 'linux'
+                            ? '/usr/bin/google-chrome'
+                            : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
             });
         } else {
-            // En producción (Vercel), usa chrome-aws-lambda
-            browser = await chromium.puppeteer.launch({
+            // En producción (Vercel), usamos chromium-min
+            const executablePath = await chromium.executablePath();
+            console.log('Chromium executable path:', executablePath);
+
+            browser = await puppeteer.launch({
                 args: chromium.args,
                 defaultViewport: chromium.defaultViewport,
-                executablePath: await chromium.executablePath,
+                executablePath,
                 headless: chromium.headless,
+                ignoreHTTPSErrors: true,
             });
         }
 
@@ -55,10 +68,10 @@ export async function POST(req: NextRequest) {
 
         await page.goto(pdfUrl, {
             waitUntil: 'networkidle0',
-            timeout: 60000
+            timeout: 60000,
         });
 
-        page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+        page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
 
         const pdf = await page.pdf({
             format: 'A4',
@@ -75,7 +88,6 @@ export async function POST(req: NextRequest) {
         const dateString = `${month}-${year}`;
 
         // Crear el nombre del archivo
-
         const fileName = `BIS-Simulador-${searchParams.localidad || 'PVsit'}-${dateString}.pdf`;
         const encodedFileName = encodeURIComponent(fileName);
 
@@ -90,10 +102,13 @@ export async function POST(req: NextRequest) {
         });
     } catch (error) {
         console.error('Error generating PDF:', error);
-        return new NextResponse(JSON.stringify({ error: 'Failed to generate PDF', details: error.message }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-        });
+        return new NextResponse(
+            JSON.stringify({ error: 'Failed to generate PDF', details: error.message }),
+            {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' },
+            }
+        );
     } finally {
         if (browser) {
             await browser.close();
