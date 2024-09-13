@@ -19,15 +19,11 @@ const nextConfig = {
     apiTimeout: 30000, // 30 seconds
   },
   reactStrictMode: true,
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.externals = [
-        ...config.externals,
-        'puppeteer-core',
-        '@sparticuz/chromium-min',
-        { 'puppeteer-core': 'commonjs puppeteer-core' },
-        { '@sparticuz/chromium-min': 'commonjs @sparticuz/chromium-min' },
-      ];
+  webpack: (config, { isServer, dev }) => {
+    if (!dev && isServer) {
+      config.externals.push({
+        'playwright-core': 'commonjs playwright-core',
+      })
     }
     return config;
   },
