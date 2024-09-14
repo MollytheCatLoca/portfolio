@@ -6,8 +6,10 @@ export async function POST(req: NextRequest) {
     console.log('PDF generation request received');
 
     // Importaciones dinámicas
+
     const { default: puppeteer } = await import('puppeteer-core');
     const { default: chromium } = await import('@sparticuz/chromium');
+
 
     const isDev = process.env.NODE_ENV === 'development';
 
@@ -42,9 +44,8 @@ export async function POST(req: NextRequest) {
 
             browser = await puppeteer.launch({
                 args: chromium.args,
+                executablePath: await chromium.executablePath(),
                 defaultViewport: chromium.defaultViewport,
-                executablePath,
-                headless: chromium.headless,
                 ignoreHTTPSErrors: true,
             });
         }
