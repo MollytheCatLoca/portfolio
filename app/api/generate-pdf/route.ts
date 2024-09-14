@@ -1,114 +1,70 @@
 import { NextRequest, NextResponse } from 'next/server';
+import axios from 'axios';
 
-// No hay importaciones estáticas de 'puppeteer-core' o '@sparticuz/chromium'
+const HEROKU_PDF_SERVICE_URL = process.env.HEROKU_PDF_SERVICE_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/generate-pdf/';
+const TIMEOUT = 120000; // 120 segundos de timeout
 
 export async function POST(req: NextRequest) {
-    console.log('PDF generation request received');
+    console.log("API route: POST request received for PDF generation");
+    const startTime = Date.now();
 
-    // Importaciones dinámicas
-
-    const { default: puppeteer } = await import('puppeteer-core');
-    const { default: chromium } = await import('@sparticuz/chromium');
-
-
-    const isDev = process.env.NODE_ENV === 'development';
-
-    const body = await req.json();
-    const { searchParams, sceneData } = body;
-
-    console.log('Received sceneData:', JSON.stringify(sceneData, null, 2));
-
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const pdfUrl = `${baseUrl}/energy/dashboard-pdf?${new URLSearchParams(searchParams).toString()}`;
-
-    console.log('Generating PDF for URL:', pdfUrl);
-
-    let browser;
     try {
-        if (isDev) {
-            // En desarrollo, usa la instalación local de Chrome
-            browser = await puppeteer.launch({
-                headless: true,
-                args: ['--no-sandbox', '--disable-setuid-sandbox'],
-                executablePath:
-                    process.platform === 'win32'
-                        ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
-                        : process.platform === 'linux'
-                            ? '/usr/bin/google-chrome'
-                            : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+        const requestData = await req.json();
+        console.log("API route: Using data for PDF generation");
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);
+
+        try {
+            const response = await axios({
+                method: 'post',
+                url: HEROKU_PDF_SERVICE_URL,
+                data: requestData,
+                responseType: 'arraybuffer',
+                timeout: TIMEOUT,
+                signal: controller.signal,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
-        } else {
-            // En producción (Vercel), usa @sparticuz/chromium
-            const executablePath = await chromium.executablePath();
-            console.log('Chromium executable path:', executablePath);
 
-            browser = await puppeteer.launch({
-                args: chromium.args,
-                executablePath: await chromium.executablePath(),
-                defaultViewport: chromium.defaultViewport,
-                ignoreHTTPSErrors: true,
+            clearTimeout(timeoutId);
+
+            console.log('API route: Received PDF from Heroku service. Size:', response.data.byteLength, 'bytes');
+            const headers = response.headers;
+            const fileName = headers['content-disposition']?.split('filename=')[1]?.replace(/"/g, '') || 'BIS-Simulador.pdf';
+
+            return new NextResponse(response.data, {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/pdf',
+                    'Content-Disposition': `attachment; filename="${fileName}"`
+                }
             });
-        }
 
-        const page = await browser.newPage();
 
-        await page.evaluateOnNewDocument(`
-      window.initialSceneData = ${JSON.stringify({ queryParams: searchParams })};
-      console.log('Data injected into page:', JSON.stringify(window.initialSceneData, null, 2));
-    `);
 
-        await page.setViewport({
-            width: 1920,
-            height: 1080,
-            deviceScaleFactor: 1,
-        });
-
-        await page.goto(pdfUrl, {
-            waitUntil: 'networkidle0',
-            timeout: 60000,
-        });
-
-        page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
-
-        const pdf = await page.pdf({
-            format: 'A4',
-            landscape: true,
-            printBackground: true,
-            margin: { top: '0cm', right: '0cm', bottom: '0cm', left: '0cm' },
-            scale: 1,
-        });
-
-        // Obtener la fecha actual en formato MM-YY
-        const currentDate = new Date();
-        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-        const year = currentDate.getFullYear().toString().slice(-2);
-        const dateString = `${month}-${year}`;
-
-        // Crear el nombre del archivo
-        const fileName = `BIS-Simulador-${searchParams.localidad || 'PVsit'}-${dateString}.pdf`;
-        const encodedFileName = encodeURIComponent(fileName);
-
-        console.log('PDF generated successfully');
-        console.log('File name:', fileName);
-
-        return new NextResponse(pdf, {
-            headers: {
-                'Content-Type': 'application/pdf',
-                'Content-Disposition': `attachment; filename="${encodedFileName}"`,
-            },
-        });
-    } catch (error) {
-        console.error('Error generating PDF:', error);
-        return new NextResponse(
-            JSON.stringify({ error: 'Failed to generate PDF', details: error.message }),
-            {
-                status: 500,
-                headers: { 'Content-Type': 'application/json' },
+        } catch (axiosError: any) {
+            console.error('API route: Axios error:', axiosError.message);
+            if (axiosError.response) {
+                console.error('API route: Axios error response:', axiosError.response.data);
+                console.error('API route: Axios error status:', axiosError.response.status);
+                console.error('API route: Axios error headers:', axiosError.response.headers);
+            } else if (axiosError.request) {
+                console.error('API route: No response received:', axiosError.request);
+            } else {
+                console.error('API route: Error setting up request:', axiosError.message);
             }
+            throw axiosError;
+        }
+    } catch (error) {
+        console.error('API route: Error generating PDF:', error);
+        return NextResponse.json(
+            { error: 'Failed to generate PDF', details: error.message },
+            { status: 500 }
         );
     } finally {
-        if (browser) {
-            await browser.close();
-        }
+        const endTime = Date.now();
+        console.log(`API route: Total processing time: ${(endTime - startTime) / 1000} seconds`);
     }
 }

@@ -23,8 +23,7 @@ const nextConfig = {
     if (isServer) {
       config.externals = [
         ...config.externals,
-        { 'puppeteer-core': 'commonjs puppeteer-core' },
-        { '@sparticuz/chromium': 'commonjs @sparticuz/chromium' },
+
       ];
     }
     return config;
