@@ -20,10 +20,12 @@ const nextConfig = {
   },
   reactStrictMode: true,
   webpack: (config, { isServer, dev }) => {
-    if (!dev && isServer) {
-      config.externals.push({
-        'playwright-core': 'commonjs playwright-core',
-      })
+    if (isServer) {
+      config.externals = [
+        ...config.externals,
+        { 'puppeteer-core': 'commonjs puppeteer-core' },
+        { '@sparticuz/chromium': 'commonjs @sparticuz/chromium' },
+      ];
     }
     return config;
   },
