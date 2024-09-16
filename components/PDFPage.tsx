@@ -67,10 +67,10 @@ const PDFPage: React.FC<PDFPageProps> = ({ children, pageNumber, totalPages }) =
 <div style={
     {
         position: 'absolute',
-            top: '10mm',
+            top: '5mm',
                 left: 0,
                     right: 0,
-                        bottom: '15mm',
+                        bottom: '10mm',
                             zIndex: 5,
                                 overflow: 'hidden',
                                     padding: '10mm',

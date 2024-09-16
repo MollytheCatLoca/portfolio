@@ -13,7 +13,7 @@ const ExecutiveIntro = ({ simulationData }) => {
                     </CardHeader>
                     < CardContent >
                     <p className="text-gray-300 mb-6" >
-                        BIS Integraciones presenta su revolucionario sistema All - In - One para parques solares fotovoltaicos,
+                        BIS INTEGRACIONES presenta su revolucionario sistema All - In - One para parques solares fotovoltaicos,
                             junto con un simulador avanzado que evalúa integralmente su implementación.
           </p>
 
@@ -76,3 +76,4 @@ const FeatureCard = ({ icon, title, description }) => (
 );
 
 export default ExecutiveIntro;
+

@@ -47,14 +47,14 @@ export default function DashboardPDFContent({ initialScenarios, initialQueryPara
 
             <div pdfstyles = {
         {
-            top: '30mm',
+            top: '0mm',
                 left: '10mm',
                     width: '250mm',
-                        height: '180mm',
+                        height: '290mm',
                             transform: 'scale(0.9)',
                 }
     }>
-        <ExecutiveIntro/>
+        <ExecutiveIntro />
         </div>
         </PDFPage>
 
