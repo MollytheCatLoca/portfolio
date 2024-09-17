@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card3';
 import { DollarSign, Building, Shield, FileText, Check } from 'lucide-react';
 
 const VentajasAllinOne = () => {
