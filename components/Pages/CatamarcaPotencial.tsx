@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card3';
 import { Building2, Shield, FileText, Zap, Check, Home, DollarSign } from 'lucide-react';
 
 const CatamarcaPotential = () => {
@@ -18,9 +18,9 @@ const CatamarcaPotential = () => {
     description = "Facilita a los municipios el acceso a energía solar, permitiendo financiar proyectos de obra pública con los ahorros generados en las facturas de luz."
     details = {
         [
-        "Reducción de costos energéticos municipales",
-        "Financiamiento de obras públicas sin aumentar impuestos",
-        "Promoción de la autosuficiencia energética local",
+            "Reducción de costos energéticos municipales",
+            "Financiamiento de obras públicas sin aumentar impuestos",
+            "Promoción de la autosuficiencia energética local",
                     ]}
         />
         <StrategyCard
@@ -29,9 +29,9 @@ const CatamarcaPotential = () => {
     description = "Los parques modulares ofrecen un alto retorno de inversión, aprovechando las condiciones favorables del mercado y la alta eficiencia energética."
     details = {
         [
-        "Tasas de retorno atractivas",
-        "Rápida amortización de la inversión",
-        "Incremento en el valor patrimonial",
+            "Tasas de retorno atractivas",
+            "Rápida amortización de la inversión",
+            "Incremento en el valor patrimonial",
                     ]}
         />
         <StrategyCard
@@ -40,9 +40,9 @@ const CatamarcaPotential = () => {
     description = "La energía generada permite financiar proyectos públicos, aprovechando los ahorros en gastos energéticos para reinvertir en infraestructura provincial."
     details = {
         [
-        "Optimización del presupuesto público",
-        "Desarrollo sostenible de la infraestructura",
-        "Beneficios directos para la comunidad",
+            "Optimización del presupuesto público",
+            "Desarrollo sostenible de la infraestructura",
+            "Beneficios directos para la comunidad",
                     ]}
         />
         <StrategyCard
@@ -51,9 +51,9 @@ const CatamarcaPotential = () => {
     description = "Implementación de una estrategia energética que impulsa el crecimiento económico y posiciona a Catamarca como líder en energías renovables."
     details = {
         [
-        "Atracción de inversiones nacionales e internacionales",
-        "Generación de empleo en el sector energético",
-        "Impulso a la innovación tecnológica",
+            "Atracción de inversiones nacionales e internacionales",
+            "Generación de empleo en el sector energético",
+            "Impulso a la innovación tecnológica",
                     ]}
         />
         <Card className="bg-gray-800 border-gray-700 col-span-2" >
@@ -67,17 +67,17 @@ const CatamarcaPotential = () => {
                         <ul className="grid grid-cols-2 gap-2 text-xs text-gray-300" >
                         {
                             [
-                            "Reducción de la dependencia de energías fósiles",
-                            "Disminución de la huella de carbono provincial",
-                            "Fortalecimiento de la economía local",
-                            "Mejora en la calidad de vida de los habitantes",
-                            "Formación y capacitación en energías renovables",
+                                "Reducción de la dependencia de energías fósiles",
+                                "Disminución de la huella de carbono provincial",
+                                "Fortalecimiento de la economía local",
+                                "Mejora en la calidad de vida de los habitantes",
+                                "Formación y capacitación en energías renovables",
                             ].map((benefit, index) => (
-                                <li key= { index } className = "flex items-start" >
-                                <Check className="h-4 w-4 text-green-500 mr-1 flex-shrink-0 mt-0.5" />
-                                <span>{ benefit } </span>
-                            </li>
-                            ))
+                                    <li key= { index } className = "flex items-start" >
+                                    <Check className="h-4 w-4 text-green-500 mr-1 flex-shrink-0 mt-0.5" />
+                                    <span>{ benefit } </span>
+                                </li>
+                                ))
                         }
                             </ul>
                             </CardContent>
