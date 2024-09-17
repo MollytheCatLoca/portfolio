@@ -15,6 +15,7 @@ import InterpretationCenter from '@/components/dashboard/InterpretationCenter';
 import Footer_Energy_Dash from './Footer_EnergyDash';
 import { Skeleton } from '@/components/ui/skeleton';
 import GeneratePDFButton from '@/components/GeneratePDFButton';
+import SavingsVsCostsChart from '@/components/dashboard/SavingsVsCostsChart';
 
 interface DashboardPageContentProps {
     initialScenarios: any[];
@@ -120,24 +121,30 @@ return (
                                                 <GlobalFinancialAnalysis scenarios={ scenarios } />
                                                     </Suspense>
 
+
                                                     < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800" />}>
-                                                        <GlobalEnvironmentalImpact scenarios={ scenarios } />
+                                                        <SavingsVsCostsChart scenarios={ scenarios } />
                                                             </Suspense>
 
+
                                                             < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800" />}>
-                                                                <TechnicalDetails detallesTecnicos={ scenarios[0].detallesTecnicos } capacidad = { scenarios[0].capacidad } />
+                                                                <GlobalEnvironmentalImpact scenarios={ scenarios } />
                                                                     </Suspense>
 
-                                                                    < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800 mb-10" />}>
-                                                                        <InterpretationCenter impactoSocial={ scenarios[0].impactoSocial } />
+                                                                    < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800" />}>
+                                                                        <TechnicalDetails detallesTecnicos={ scenarios[0].detallesTecnicos } capacidad = { scenarios[0].capacidad } />
                                                                             </Suspense>
-                                                                            </div>
-                                                                            </div>
-                                                                            </main>
-                                                                            < div className = "mt-20 mb-16 w-4/5 mx-auto" >
 
-                                                                                <Footer_Energy_Dash scenarios = { scenarios } />
+                                                                            < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800 mb-10" />}>
+                                                                                <InterpretationCenter impactoSocial={ scenarios[0].impactoSocial } />
+                                                                                    </Suspense>
                                                                                     </div>
                                                                                     </div>
+                                                                                    </main>
+                                                                                    < div className = "mt-20 mb-16 w-4/5 mx-auto" >
+
+                                                                                        <Footer_Energy_Dash scenarios = { scenarios } />
+                                                                                            </div>
+                                                                                            </div>
     );
 }

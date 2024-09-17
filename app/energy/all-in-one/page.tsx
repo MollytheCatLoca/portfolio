@@ -8,6 +8,8 @@ import Grid from '@/components/Grid3';
 import Clients from '@/components/ClientsCards';
 import { CardProvider } from '@/context/CardContext';
 import Link from 'next/link';
+import VentajasAllinOne from '@/components//Pages/VentajasAllinOne';
+
 //**  < Clients companies = { companies_Energy } testimonials = { testimonials_AllInOne } />
 
 const navItems = [
@@ -26,16 +28,19 @@ const AllInOne = () => {
       <FloatingNav navItems={ navItems } />
         < h1 className = "text-white text-center text-4xl" > </h1>
           < Hero_AllinOne />
-          <Grid gridItems={ gridItems_AllinOne } />
+
+          <Grid gridItems = { gridItems_AllinOne } />
 
             < ChatCompNew />
-            <div className='mb-10' > </div>
-              < Link href = "/contactus" >
-                <Footer_Energy />
-                </Link>
-                </div>
-                </main>
-                </CardProvider>
+            <div className = 'mb-10' > </div>
+              < div className = 'p-6 mb-10' > <VentajasAllinOne /></div >
+
+                <Link href = "/contactus" >
+                  <Footer_Energy />
+                  </Link>
+                  </div>
+                  </main>
+                  </CardProvider>
   );
 };
 

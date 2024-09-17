@@ -1,9 +1,10 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
+
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/Text-Generate-Effect";
 
-const Hero = () => {
+const Hero_Home = () => {
   return (
     <div className= "pb-1 pt-40" >
     {/**
@@ -71,4 +72,4 @@ position = "right"
   );
 };
 
-export default Hero;
+export default Hero_Home;

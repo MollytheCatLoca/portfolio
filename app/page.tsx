@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems, RECENT_PROJECT_HOME } from "@/data";
-import Hero from '@/components/Hero';
+import Hero_Home from '@/components/Hero-Home';
 import RecentProjects from '@/components/RecenProjectss-Home';
 import ChatCompNew from '@/components/ChatCompNew';
 import Link from 'next/link';
@@ -29,10 +29,12 @@ const Home = () => {
   return (
     <main className= "relative bg-black-100 flex justify-center overflow-clip items-center flex-col  mx-auto sm:px-5 px-1 dark" >
     <div className="w-full" >
+
       <FloatingNav navItems={ navItems } />
 
-  { refreshHero && <Hero /> }
-  <div className="scale-95" > <RecentProjects projects={ RECENT_PROJECT_HOME } /></div >
+  { refreshHero && <Hero_Home /> }
+
+  <div className = "scale-95" > <RecentProjects projects={ RECENT_PROJECT_HOME } /></div >
 
     <ChatCompNew />
     < Link href = "/contactus" >
