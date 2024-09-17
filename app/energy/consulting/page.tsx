@@ -3,7 +3,7 @@ import { imageItems_Consulting, navItems, companies_Energy, testimonials_Consult
 import { FloatingNav } from "@/components/ui/FloatingNav"
 import Hero_Consulting from "@/components/Hero-Consulting"
 import Clients from "@/components/Clients"
-import ChatCompNew from "@/components/ChatCompNew"
+import ChatCompNew2 from "@/components/ChatCompNew2"
 import Footer_Energy from "@/components/Footer-Energy"
 import { Divide } from "lucide-react"
 
@@ -17,7 +17,7 @@ export default function ConsultingPage() {
                     <Hero_Consulting />
                     < CarouselV02 imageItems = { imageItems_Consulting } />
                         <Clients companies={ companies_Energy } testimonials = { testimonials_Consulting } />
-                            <ChatCompNew />
+                            <ChatCompNew2 />
                             < Footer_Energy />
                             </div>
                             </div>

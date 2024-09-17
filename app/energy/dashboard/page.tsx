@@ -1,6 +1,7 @@
 import { QueryParamsProvider } from "@/context/QueryParamsContext";
 import DashboardPageContent from "@/components/DashboardPageContent";
 import { getParquesSolaresData } from '@/lib/apiSolar'
+import ChatCompNew2 from "@/components/ChatCompNew2";
 
 export default async function DashboardPage({
     searchParams
@@ -37,6 +38,7 @@ export default async function DashboardPage({
                 initialScenarios={ initialScenarios }
     initialQueryParams = { initialQueryParams }
         />
+        <ChatCompNew2 />
         </QueryParamsProvider>
     );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { imageItems_Consulting, navItems, companies_Energy, testimonials_Consulting } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Hero_Financing from "@/components/Hero-Financing";
-import ChatCompNew from "@/components/ChatCompNew";
+import ChatCompNew2 from "@/components/ChatCompNew2";
 import Footer_Energy from "@/components/Footer-Energy";
 import Benefits from '@/components/Benefits';
 import Services from '@/components/Services';
@@ -27,7 +27,7 @@ const App: React.FC<AppProps> = () => {
                 < div style = { { transform: 'scale(0.95)', transformOrigin: 'center' }
 }>
     <Benefits /></div >
-    <ChatCompNew />
+    <ChatCompNew2 />
     < Footer_Energy />
 
     </div>

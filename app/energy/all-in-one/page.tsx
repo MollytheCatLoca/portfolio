@@ -2,7 +2,7 @@ import React from 'react';
 import { gridItems_AllinOne, projects_Energy, companies_Energy, workExperience_Energy, testimonials_AllInOne } from '@/data';
 import { FloatingNav } from '@/components/ui/FloatingNav';
 import Footer_Energy from '@/components/Footer-Energy';
-import ChatCompNew from '@/components/ChatCompNew';
+import ChatCompNew2 from '@/components/ChatCompNew2';
 import Hero_AllinOne from '@/components/Hero-AllInOne';
 import Grid from '@/components/Grid3';
 import Clients from '@/components/ClientsCards';
@@ -31,7 +31,7 @@ const AllInOne = () => {
 
           <Grid gridItems = { gridItems_AllinOne } />
 
-            < ChatCompNew />
+            < ChatCompNew2 />
             <div className = 'mb-10' > </div>
               < div className = 'p-6 mb-10' > <VentajasAllinOne /></div >
 

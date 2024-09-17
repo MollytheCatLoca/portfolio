@@ -5,7 +5,7 @@ import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems, RECENT_PROJECT_HOME } from "@/data";
 import Hero_Home from '@/components/Hero-Home';
 import RecentProjects from '@/components/RecenProjectss-Home';
-import ChatCompNew from '@/components/ChatCompNew';
+import ChatCompNew2 from '@/components/ChatCompNew2';
 import Link from 'next/link';
 
 const Home = () => {
@@ -36,7 +36,7 @@ const Home = () => {
 
   <div className = "scale-95" > <RecentProjects projects={ RECENT_PROJECT_HOME } /></div >
 
-    <ChatCompNew />
+    <ChatCompNew2 />
     < Link href = "/contactus" >
       <Footer />
       </Link>

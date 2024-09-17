@@ -8,7 +8,7 @@ import { FloatingNav } from '@/components/ui/FloatingNav';
 import Hero_Energy from '@/components/Hero-Energy';
 import Footer_Energy from '@/components/Footer-Energy';
 import Approach_Energy from '@/components/Approach-Energy';
-import ChatCompNew from '@/components/ChatCompNew';
+import ChatCompNew2 from '@/components/ChatCompNew2';
 import Link from 'next/link';
 /**  <Grid gridItems={ gridItems_Energy } />*/
 const Energy = () => {
@@ -34,7 +34,7 @@ const Energy = () => {
             < Clients companies = { companies_Energy } testimonials = { testimonials_Energy } />
               <Experience workExperience={ workExperience_Energy } />
                 < Approach_Energy />
-                <ChatCompNew />
+                <ChatCompNew2 />
                 < Link href = "/contactus" >
                   <Footer_Energy />
                   </Link>
