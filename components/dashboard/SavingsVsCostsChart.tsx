@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card3';
@@ -35,7 +37,7 @@ const SavingsVsCostsChart: React.FC<SavingsVsCostsChartProps> = ({ scenarios }) 
     });
 
     return (
-        <Card className= "bg-black-200 border-gray-800 mt-6" >
+        <Card className= "bg-black-200 border-gray-800 mt-1" >
         <CardHeader>
         <CardTitle className="text-xl font-bold text-white" > Ahorros vs Cuotas Anuales por Escenario </CardTitle>
             </CardHeader>
@@ -65,7 +67,7 @@ labelStyle = {{ color: '#fff' }}
             </BarChart>
             </ResponsiveContainer>
             </div>
-            < div className = "text-sm text-gray-400 mt-2 space-y-2 p-10 " >
+            < div className = "text-sm text-gray-400 mt-1 space-y-1 p-10 " >
                 <p>
                 Este gráfico muestra la comparación entre los ahorros anuales estimados y las cuotas anuales promedio de inversión para cada escenario.
                         Los ahorros están representados en verde y las cuotas en naranja.

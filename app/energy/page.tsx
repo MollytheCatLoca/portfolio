@@ -16,7 +16,7 @@ const Energy = () => {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "Energy", link: "/energy" },
-    { name: "All-In-One", link: "/energy/all-in-one" },
+    { name: "All In One", link: "/energy/all-in-one" },
     { name: "Simulate", link: "/energy/simulate" },
     { name: "PPTs", link: "/downloads" },
 

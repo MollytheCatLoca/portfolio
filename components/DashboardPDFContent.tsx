@@ -12,9 +12,17 @@ import InterpretationCenter from '@/components/dashboard/InterpretationCenter';
 import PDFHero from '@/components/Hero-AllInOnePDF';
 import Footer_Energy from '@/components/Footer-EnergyPDF';
 import ExecutiveIntro from '@/components/dashboard/GlobalIntro';
+import ClientSideWrapper from '@/components/ClientSideWrapper';
+import dynamic from 'next/dynamic';
+
+const SavingsVsCostsChart = dynamic(
+    () => import('@/components/dashboard/SavingsVsCostsChart'),
+    { ssr: false }
+);
 
 
-const TOTAL_PAGES = 9; // Ajusta este número según la cantidad total de páginas en tu PDF
+
+const TOTAL_PAGES = 10; // Ajusta este número según la cantidad total de páginas en tu PDF
 
 
 export default function DashboardPDFContent({ initialScenarios, initialQueryParams }) {
@@ -120,6 +128,24 @@ export default function DashboardPDFContent({ initialScenarios, initialQueryPara
 
 
             < PDFPage pageNumber = { 7} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
+        {
+            top: '0mm',
+                left: '10mm',
+                    width: '277mm',
+                        height: '250mm', // Aumentamos la altura para que quepa más contenido
+                            transform: 'scale(0.7)', // Escala vertical 0.7 para comprimir verticalmente
+                        //transformOrigin: 'top left', // Asegura que la transformación comience desde la esquina superior izquierda
+      }
+    }>
+        <ClientSideWrapper>
+        <SavingsVsCostsChart scenarios={ scenarios }  />
+            </ClientSideWrapper>
+            </div>
+            </PDFPage>
+
+
+            < PDFPage pageNumber = { 8} totalPages = { TOTAL_PAGES } >
                 <div pdfstyles = {
         {
             top: '10mm',
@@ -133,10 +159,10 @@ export default function DashboardPDFContent({ initialScenarios, initialQueryPara
             </div>
             </PDFPage>
 
-            < PDFPage pageNumber = { 8} totalPages = { TOTAL_PAGES } >
+            < PDFPage pageNumber = { 9} totalPages = { TOTAL_PAGES } >
                 <div pdfstyles={
         {
-            top: '10mm',
+            top: '40mm',
                 left: '10mm',
                     width: '277mm',
                         height: '90mm',
@@ -148,7 +174,7 @@ export default function DashboardPDFContent({ initialScenarios, initialQueryPara
             </PDFPage>
 
 
-            < PDFPage pageNumber = { 9} totalPages = { TOTAL_PAGES } >
+            < PDFPage pageNumber = { 10} totalPages = { TOTAL_PAGES } >
                 <div style={
         {
             position: 'relative',
