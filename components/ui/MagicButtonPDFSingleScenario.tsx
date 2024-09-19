@@ -19,6 +19,7 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
         console.log('MagicButton: QueryParams:', queryParams);
     }, [id, scenario, queryParams]);
 
+
     const handleGeneratePDF = async () => {
         setIsGenerating(true);
         setError(null);
@@ -49,26 +50,25 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
 
             if (response.ok) {
                 const blob = await response.blob();
-
-                const currentDate = new Date();
-                const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-                const year = currentDate.getFullYear().toString().slice(-2);
-                const dateString = `${month}-${year}`;
-                const fileName = `BIS-Simulador-${scenario.ubicacion?.ciudad || 'PVsit'}-${dateString}.pdf`;
+                const contentDisposition = response.headers.get('Content-Disposition');
+                let fileName = 'document.pdf';
+                if (contentDisposition) {
+                    const fileNameMatch = contentDisposition.match(/filename="?(.+)"?/i);
+                    if (fileNameMatch) {
+                        fileName = fileNameMatch[1];
+                    }
+                }
 
                 console.log('MagicButton: PDF generated successfully');
                 console.log('MagicButton: File name:', fileName);
 
-                const file = new File([blob], fileName, { type: 'application/pdf' });
-                const url = window.URL.createObjectURL(file);
-
+                const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = fileName;
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-
                 window.URL.revokeObjectURL(url);
             } else {
                 const errorText = await response.text();
