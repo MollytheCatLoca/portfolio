@@ -52,12 +52,15 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
                 const blob = await response.blob();
                 const contentDisposition = response.headers.get('Content-Disposition');
                 let fileName = 'document.pdf';
+
                 if (contentDisposition) {
-                    const fileNameMatch = contentDisposition.match(/filename="?(.+)"?/i);
-                    if (fileNameMatch) {
-                        fileName = fileNameMatch[1];
+                    // Corregido: Ajustada la expresión regular para extraer el nombre del archivo
+                    const fileNameMatch = contentDisposition.match(/filename="?(.+?)"?$/i);
+                    if (fileNameMatch && fileNameMatch[1]) {
+                        fileName = fileNameMatch[1].trim();
                     }
                 }
+
 
                 console.log('MagicButton: PDF generated successfully');
                 console.log('MagicButton: File name:', fileName);
