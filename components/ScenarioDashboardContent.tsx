@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useQueryParams } from '@/context/QueryParamsContext';
 import { getParqueSolarData } from '@/lib/apiSolar';
 import IdDashboard from './idDashboard';
+import Footer_Energy_SingleScenario from './Footer_Energy_SingleScenario';
 
 interface ScenarioDashboardContentProps {
     initialScenario: any;
@@ -104,6 +105,7 @@ export default function ScenarioDashboardContent({ initialScenario, id }: Scenar
         <>
 
         <IdDashboard data = { scenario } queryParams = { queryParams } />
-            </>
+            <Footer_Energy_SingleScenario scenario={ scenario } id = { id } />
+                </>
     );
 }

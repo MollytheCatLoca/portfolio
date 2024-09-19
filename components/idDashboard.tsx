@@ -10,7 +10,7 @@ import FinancialAnalysis from '@/components/dashboard/FinancialAnalysis'
 import EnvironmentalImpact from '@/components/dashboard/EnvironmentalImpact'
 import TechnicalDetails from '@/components/dashboard/TechnicalDetails'
 import InterpretationCenter from '@/components/dashboard/InterpretationCenter'
-import Footer_Energy from '@/components/Footer-Energy'
+
 
 interface IdDashboardProps {
     data: {
@@ -31,7 +31,7 @@ interface IdDashboardProps {
 
 export default function IdDashboard({ data }: IdDashboardProps) {
     return (
-        <div className= "flex flex-col min-h-screen bg-black-100 text-white" >
+        <div className= "flex flex-col min-h-screen bg-black-100 text-white mb-10" >
         <GlobalHeader parqueName={ `Parque ${data.ubicacion.ciudad}` } />
             < main className = "flex-grow pt-4 sm:pt-6" >
                 <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
@@ -86,13 +86,11 @@ capacidad = { data.capacidad }
     </Suspense>
     </div>
 
-    < div className = "mt-20 mb-16 w-4/5 mx-auto" > {/* 80% de ancho y centrado */ }
-        < Footer_Energy />
-        </div>
-        </div>
 
-        </main>
+    </div>
 
-        </div>
+    </main>
+
+    </div>
     );
 }
