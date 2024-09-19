@@ -33,7 +33,7 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
                 body: JSON.stringify({
                     id: id,
                     searchParams: queryParams,
-                    sceneData: sceneData
+                    scenario: scenario
                 }),
             });
 
