@@ -17,14 +17,23 @@ export async function POST(req: NextRequest) {
 
     try {
         const requestData = await req.json();
-        console.log("API route: Using data for single scenario PDF generation");
+        console.log("API route: Received request data:", JSON.stringify(requestData, null, 2));
 
-        // Asegúrate de que el servicio de Heroku espera este formato
+        if (!requestData.id || !requestData.sceneData || !requestData.sceneData.scenario) {
+            console.error("API route: Missing required data in request");
+            return NextResponse.json(
+                { error: 'Missing required data (id, sceneData, or scenario)' },
+                { status: 400 }
+            );
+        }
+
         const dataToSend = {
             id: requestData.id,
             searchParams: requestData.searchParams,
             scenario: requestData.sceneData.scenario
         };
+
+        console.log("API route: Prepared data to send to Heroku:", JSON.stringify(dataToSend, null, 2));
 
         const response = await axios.post(HEROKU_PDF_SERVICE_URL, dataToSend, {
             headers: { 'Content-Type': 'application/json' },
@@ -34,13 +43,13 @@ export async function POST(req: NextRequest) {
         const { job_id } = response.data;
         console.log('API route: Single scenario PDF generation job started with ID:', job_id);
 
-        // Esperar antes de la primera verificación
         await wait(INITIAL_DELAY);
 
         for (let i = 0; i < MAX_RETRIES; i++) {
             try {
                 const statusResponse = await axios.get(`${HEROKU_PDF_STATUS_URL}${job_id}`);
                 const statusData = statusResponse.data;
+                console.log(`API route: Job status (attempt ${i + 1}):`, JSON.stringify(statusData, null, 2));
 
                 if (statusData.status === 'completed') {
                     const pdfResponse = await axios({
@@ -66,6 +75,9 @@ export async function POST(req: NextRequest) {
                 await wait(RETRY_DELAY);
             } catch (error) {
                 console.error(`API route: Error checking single scenario PDF status (attempt ${i + 1}):`, error);
+                if (i === MAX_RETRIES - 1) {
+                    throw error; // Re-throw on last attempt
+                }
                 await wait(RETRY_DELAY);
             }
         }

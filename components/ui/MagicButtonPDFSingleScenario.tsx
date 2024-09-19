@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQueryParams } from "@/context/QueryParamsContext";
 import { Sparkles } from 'lucide-react';
 
@@ -14,15 +14,29 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
     const [isGenerating, setIsGenerating] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+    useEffect(() => {
+        console.log('MagicButton: Received props:', { id, scenario: scenario ? 'present' : 'missing' });
+        console.log('MagicButton: QueryParams:', queryParams);
+    }, [id, scenario, queryParams]);
+
     const handleGeneratePDF = async () => {
         setIsGenerating(true);
         setError(null);
-        const sceneData = {
-            scenario: scenario,
-            queryParams: queryParams
+
+        if (!id || !scenario) {
+            console.error('MagicButton: Missing required data (id or scenario)');
+            setError('Datos incompletos para generar el PDF.');
+            setIsGenerating(false);
+            return;
+        }
+
+        const dataToSend: any = {
+            id: id,
+            searchParams: queryParams,
+            sceneData: { scenario: scenario }
         };
 
-        console.log('Data being sent for PDF generation:', JSON.stringify(sceneData, null, 2));
+        console.log('MagicButton: Data being sent for PDF generation:', JSON.stringify(dataToSend, null, 2));
 
         try {
             const response = await fetch('/api/generate-pdf-single', {
@@ -30,11 +44,7 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    id: id,
-                    searchParams: queryParams,
-                    scenario: scenario
-                }),
+                body: JSON.stringify(dataToSend),
             });
 
             if (response.ok) {
@@ -44,10 +54,10 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
                 const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
                 const year = currentDate.getFullYear().toString().slice(-2);
                 const dateString = `${month}-${year}`;
-                const fileName = `BIS-Simulador-${scenario.ubicacion.ciudad || 'PVsit'}-${dateString}.pdf`;
+                const fileName = `BIS-Simulador-${scenario.ubicacion?.ciudad || 'PVsit'}-${dateString}.pdf`;
 
-                console.log('MAGIC BUTTON: PDF generated successfully');
-                console.log('MAGIC BUTTON: File name:', fileName);
+                console.log('MagicButton: PDF generated successfully');
+                console.log('MagicButton: File name:', fileName);
 
                 const file = new File([blob], fileName, { type: 'application/pdf' });
                 const url = window.URL.createObjectURL(file);
@@ -62,11 +72,11 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
                 window.URL.revokeObjectURL(url);
             } else {
                 const errorText = await response.text();
-                console.error('MAGIC BUTTON: Error generating PDF:', errorText);
+                console.error('MagicButton: Error generating PDF:', errorText);
                 setError('Error al generar el PDF. Por favor, inténtelo de nuevo.');
             }
         } catch (error) {
-            console.error('MAGIC BUTTON: Error in PDF generation process:', error);
+            console.error('MagicButton: Error in PDF generation process:', error);
             setError('Error en el proceso de generación del PDF. Por favor, inténtelo de nuevo.');
         } finally {
             setIsGenerating(false);
