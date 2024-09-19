@@ -105,7 +105,9 @@ export default function ScenarioDashboardContent({ initialScenario, id }: Scenar
         <>
 
         <IdDashboard data = { scenario } queryParams = { queryParams } />
-            <Footer_Energy_SingleScenario scenario={ scenario } id = { id } />
-                </>
+            <div className='p-20' >
+                <Footer_Energy_SingleScenario scenario={ scenario } id = { id } />
+                    </div>
+                    </>
     );
 }
