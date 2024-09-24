@@ -129,6 +129,11 @@
       "nombre": "Mercedes",
       "lat": -34.6506717,
       "lon": -59.4317202
+    },
+    {
+      "nombre": "San Pedro",
+      "lat": -33.6812399,
+      "lon": -59.6664626
     }
   ],
   "Catamarca": [

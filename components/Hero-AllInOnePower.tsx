@@ -77,7 +77,7 @@ const PowerHero = () => {
                 display: 'inline-block',
                     fontSize: '14px',
                 }}>
-    POTENCIAL EN CATAMARCA →
+    CLUSTER San Pedro →
 </div>
     </div>
     </div>

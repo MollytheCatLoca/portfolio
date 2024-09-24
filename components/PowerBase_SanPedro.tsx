@@ -6,16 +6,16 @@ import CatamarcaPotential from './Pages/CatamarcaPotencial';
 import PowerHero from './Hero-AllInOnePower';
 import Footer_Energy from '@/components/Footer-EnergyPDF';
 import ExecutiveIntro from '@/components/dashboard/GlobalIntro';
-import Opcion1 from './Pages/ENERSA_opcion1';
-import Opcion2 from './Pages/ENERSA_opcion2';
-import Opcion3 from './Pages/ENERSA_opcion3';
-import Opcion4 from './Pages/ENERSA_opcion4';
-import BeneficiosBISAllInOne from './Pages/ENERSA_BeneficiosBISAllInOne';
-import ResumenEjecutivo from './Pages/ENERSA_ResumenEjecutivo';
+import VentajasActores from './Pages/SanPedro_ VentajasActores';
+import RutaImplementacion2 from './Pages/SanPedro_ RutaImplementacion2';
+import RutaImplementacion1 from './Pages/SanPedro_ RutaImplementacion1';
+import ClusterGeneradorResumen from './Pages/ClusterGeneradorResumen';
+import ResumenEjecutivo from './Pages/SanPedro_ ResumenEjecutivo';
 import FinancialAnalysisTable from './Pages/AuxDPA';
-const TOTAL_PAGES = 8;
+import BeneficiosAllInOne from './Pages/SanPedro_ BeneficiosAllInOne';
+const TOTAL_PAGES = 9;
 
-export default function PowerContent({ initialScenarios, initialQueryParams }) {
+export default function PowerContent_SanPedro({ initialScenarios, initialQueryParams }) {
 
 
     return (
@@ -35,10 +35,11 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
         </PowerPage>
 
 
+
         < PowerPage pageNumber = { 2} totalPages = { TOTAL_PAGES } >
             <div pdfstyles={
         {
-            top: '0mm',
+            top: '10mm',
                 left: '10mm',
                     width: '250mm',
                         height: '290mm',
@@ -46,29 +47,35 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
                 }
     }>
 
-        <BeneficiosBISAllInOne />
+
+
         </div>
         </PowerPage>
+
+
+
+
+
+
 
         < PowerPage pageNumber = { 3} totalPages = { TOTAL_PAGES } >
             <div pdfstyles={
         {
-            top: '0mm',
+            top: '10mm',
                 left: '10mm',
                     width: '250mm',
                         height: '290mm',
                             transform: 'scale(0.9)',
                 }
     }>
-        <ResumenEjecutivo />
-        </div>
-        </PowerPage>
 
+        <ResumenEjecutivo transform = "scale(1) translate(0%, 0%)" />
 
+            </div>
+            </PowerPage>
 
-
-        < PowerPage pageNumber = { 4} totalPages = { TOTAL_PAGES } >
-            <div pdfstyles={
+            < PowerPage pageNumber = { 4} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
         {
             top: '0mm',
                 left: '10mm',
@@ -77,13 +84,15 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
                             transform: 'scale(0.9)',
                 }
     }>
-        <Opcion1 />
-        </div>
-        </PowerPage>
+        <BeneficiosAllInOne transform = "scale(1) translate(0%, 5%)" />
+            </div>
+            </PowerPage>
 
 
-        < PowerPage pageNumber = { 5} totalPages = { TOTAL_PAGES } >
-            <div pdfstyles={
+
+
+            < PowerPage pageNumber = { 5} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
         {
             top: '0mm',
                 left: '10mm',
@@ -92,13 +101,13 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
                             transform: 'scale(0.9)',
                 }
     }>
-        <Opcion2 />
-        </div>
-        </PowerPage>
+        <VentajasActores transform = "scale(1) translate(0%, 5%)" />
+            </div>
+            </PowerPage>
 
 
-        < PowerPage pageNumber = { 6} totalPages = { TOTAL_PAGES } >
-            <div pdfstyles={
+            < PowerPage pageNumber = { 6} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
         {
             top: '0mm',
                 left: '10mm',
@@ -107,21 +116,36 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
                             transform: 'scale(0.9)',
                 }
     }>
-        <Opcion3 />
-        </div>
-        </PowerPage>
+        <RutaImplementacion1 transform="scale(1) translate(0%, 0%)" />
+            </div>
+            </PowerPage>
 
-        < PowerPage pageNumber = { 7} totalPages = { TOTAL_PAGES } >
-            <div pdfstyles={
+
+            < PowerPage pageNumber = { 7} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
         {
             top: '0mm',
                 left: '10mm',
                     width: '250mm',
                         height: '290mm',
+                            transform: 'scale(0.9)',
+                }
+    }>
+        <RutaImplementacion2 transform="scale(1) translate(0%, 0%)" />
+            </div>
+            </PowerPage>
+
+            < PowerPage pageNumber = { 8} totalPages = { TOTAL_PAGES } >
+                <div pdfstyles={
+        {
+            top: '100mm',
+                left: '10mm',
+                    width: '250mm',
+                        height: '200mm',
                             transform: 'scale(0.9)',
             }
     }>
-        <Opcion4 />
+        <ClusterGeneradorResumen />
         </div>
         </PowerPage>
 
@@ -134,7 +158,7 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
 
 
 
-        < PowerPage pageNumber = { 8} totalPages = { TOTAL_PAGES } >
+        < PowerPage pageNumber = { 9} totalPages = { TOTAL_PAGES } >
             <div style={
         {
             position: 'relative',
