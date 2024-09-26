@@ -22,9 +22,9 @@
             "inversion": {
                 "total": 1.21,
                 "unidad": "MUSD",
-                "periodoRecuperacion": 6.4,
-                "tir": 17.12,
-                "van": 1.2
+                "periodoRecuperacion": 4.6,
+                "tir": 17.84,
+                "van": 1.98
             },
             "financiamiento": {
                 "plazoFinanciamiento": 6,
@@ -33,75 +33,75 @@
             "analisisFinanciero": [
                 {
                     "year": 2025,
-                    "generacion": 2731.24,
-                    "ingresos": 191.19,
+                    "generacion": 3304.86,
+                    "ingresos": 247.86,
                     "cuotaInversion": 166.9
                 },
                 {
                     "year": 2026,
-                    "generacion": 2717.58,
-                    "ingresos": 194.04,
+                    "generacion": 3288.33,
+                    "ingresos": 251.56,
                     "cuotaInversion": 166.9
                 },
                 {
                     "year": 2027,
-                    "generacion": 2704.0,
-                    "ingresos": 196.93,
+                    "generacion": 3271.89,
+                    "ingresos": 255.31,
                     "cuotaInversion": 166.9
                 },
                 {
                     "year": 2028,
-                    "generacion": 2690.48,
-                    "ingresos": 199.86,
+                    "generacion": 3255.53,
+                    "ingresos": 259.11,
                     "cuotaInversion": 166.9
                 },
                 {
                     "year": 2029,
-                    "generacion": 2677.02,
-                    "ingresos": 202.84,
+                    "generacion": 3239.25,
+                    "ingresos": 262.97,
                     "cuotaInversion": 166.9
                 },
                 {
                     "year": 2030,
-                    "generacion": 2663.64,
-                    "ingresos": 205.86,
+                    "generacion": 3223.06,
+                    "ingresos": 266.89,
                     "cuotaInversion": 166.9
                 },
                 {
                     "year": 2031,
-                    "generacion": 2650.32,
-                    "ingresos": 208.93,
+                    "generacion": 3206.94,
+                    "ingresos": 270.87,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2032,
-                    "generacion": 2637.07,
-                    "ingresos": 212.04,
+                    "generacion": 3190.91,
+                    "ingresos": 274.9,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2033,
-                    "generacion": 2623.88,
-                    "ingresos": 215.2,
+                    "generacion": 3174.95,
+                    "ingresos": 279.0,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2034,
-                    "generacion": 2610.76,
-                    "ingresos": 218.41,
+                    "generacion": 3159.08,
+                    "ingresos": 283.15,
                     "cuotaInversion": 0
                 }
             ],
             "produccionAnual": {
-                "estimada": 2731.24,
+                "estimada": 3304.86,
                 "unidad": "MWh",
-                "consumoEquivalente": 827
+                "consumoEquivalente": 1001
             },
             "ahorroCO2": {
-                "anual": 1365.62,
+                "anual": 1652.43,
                 "unidad": "ton",
-                "equivalenciaArboles": 61452,
-                "equivalenciaAutos": 300
+                "equivalenciaArboles": 74359,
+                "equivalenciaAutos": 363
             },
             "terreno": {
                 "area": 1.82,
@@ -115,76 +115,76 @@
             "generacionMensual": [
                 {
                     "mes": "Ene",
-                    "generacion": 355.38
+                    "generacion": 430.02
                 },
                 {
                     "mes": "Feb",
-                    "generacion": 292.04
+                    "generacion": 353.37
                 },
                 {
                     "mes": "Mar",
-                    "generacion": 248.83
+                    "generacion": 301.09
                 },
                 {
                     "mes": "Abr",
-                    "generacion": 148.73
+                    "generacion": 179.97
                 },
                 {
                     "mes": "May",
-                    "generacion": 103.97
+                    "generacion": 125.81
                 },
                 {
                     "mes": "Jun",
-                    "generacion": 82.36
+                    "generacion": 99.66
                 },
                 {
                     "mes": "Jul",
-                    "generacion": 92.9
+                    "generacion": 112.41
                 },
                 {
                     "mes": "Ago",
-                    "generacion": 139.69
+                    "generacion": 169.03
                 },
                 {
                     "mes": "Sep",
-                    "generacion": 224.26
+                    "generacion": 271.37
                 },
                 {
                     "mes": "Oct",
-                    "generacion": 311.95
+                    "generacion": 377.47
                 },
                 {
                     "mes": "Nov",
-                    "generacion": 344.98
+                    "generacion": 417.43
                 },
                 {
                     "mes": "Dic",
-                    "generacion": 386.13
+                    "generacion": 467.22
                 }
             ],
             "generacionAnual": [
                 {
                     "year": 2024,
-                    "generacion": 2731.24
+                    "generacion": 3304.86
                 },
                 {
                     "year": 2025,
-                    "generacion": 2717.58
+                    "generacion": 3288.33
                 },
                 {
                     "year": 2026,
-                    "generacion": 2704.0
+                    "generacion": 3271.89
                 },
                 {
                     "year": 2027,
-                    "generacion": 2690.48
+                    "generacion": 3255.53
                 },
                 {
                     "year": 2028,
-                    "generacion": 2677.02
+                    "generacion": 3239.25
                 }
             ],
-            "factorCapacidad": 20.79,
+            "factorCapacidad": 25.15,
             "impactoSocial": {
                 "empleosDirectos": 15,
                 "empleosIndirectos": 45,
@@ -219,9 +219,9 @@
             "inversion": {
                 "total": 1.81,
                 "unidad": "MUSD",
-                "periodoRecuperacion": 6.4,
-                "tir": 17.41,
-                "van": 1.82
+                "periodoRecuperacion": 4.6,
+                "tir": 17.75,
+                "van": 2.96
             },
             "financiamiento": {
                 "plazoFinanciamiento": 6,
@@ -230,75 +230,75 @@
             "analisisFinanciero": [
                 {
                     "year": 2025,
-                    "generacion": 4096.86,
-                    "ingresos": 286.78,
+                    "generacion": 4957.28,
+                    "ingresos": 371.8,
                     "cuotaInversion": 250.35
                 },
                 {
                     "year": 2026,
-                    "generacion": 4076.38,
-                    "ingresos": 291.05,
+                    "generacion": 4932.5,
+                    "ingresos": 377.34,
                     "cuotaInversion": 250.35
                 },
                 {
                     "year": 2027,
-                    "generacion": 4056.0,
-                    "ingresos": 295.39,
+                    "generacion": 4907.83,
+                    "ingresos": 382.96,
                     "cuotaInversion": 250.35
                 },
                 {
                     "year": 2028,
-                    "generacion": 4035.72,
-                    "ingresos": 299.79,
+                    "generacion": 4883.29,
+                    "ingresos": 388.66,
                     "cuotaInversion": 250.35
                 },
                 {
                     "year": 2029,
-                    "generacion": 4015.54,
-                    "ingresos": 304.26,
+                    "generacion": 4858.88,
+                    "ingresos": 394.46,
                     "cuotaInversion": 250.35
                 },
                 {
                     "year": 2030,
-                    "generacion": 3995.46,
-                    "ingresos": 308.79,
+                    "generacion": 4834.58,
+                    "ingresos": 400.33,
                     "cuotaInversion": 250.35
                 },
                 {
                     "year": 2031,
-                    "generacion": 3975.48,
-                    "ingresos": 313.39,
+                    "generacion": 4810.41,
+                    "ingresos": 406.3,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2032,
-                    "generacion": 3955.6,
-                    "ingresos": 318.06,
+                    "generacion": 4786.36,
+                    "ingresos": 412.35,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2033,
-                    "generacion": 3935.83,
-                    "ingresos": 322.8,
+                    "generacion": 4762.43,
+                    "ingresos": 418.5,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2034,
-                    "generacion": 3916.15,
-                    "ingresos": 327.61,
+                    "generacion": 4738.62,
+                    "ingresos": 424.73,
                     "cuotaInversion": 0
                 }
             ],
             "produccionAnual": {
-                "estimada": 4096.86,
+                "estimada": 4957.28,
                 "unidad": "MWh",
-                "consumoEquivalente": 1241
+                "consumoEquivalente": 1502
             },
             "ahorroCO2": {
-                "anual": 2048.43,
+                "anual": 2478.64,
                 "unidad": "ton",
-                "equivalenciaArboles": 92179,
-                "equivalenciaAutos": 450
+                "equivalenciaArboles": 111538,
+                "equivalenciaAutos": 545
             },
             "terreno": {
                 "area": 2.72,
@@ -312,76 +312,76 @@
             "generacionMensual": [
                 {
                     "mes": "Ene",
-                    "generacion": 533.07
+                    "generacion": 645.02
                 },
                 {
                     "mes": "Feb",
-                    "generacion": 438.06
+                    "generacion": 530.06
                 },
                 {
                     "mes": "Mar",
-                    "generacion": 373.25
+                    "generacion": 451.64
                 },
                 {
                     "mes": "Abr",
-                    "generacion": 223.09
+                    "generacion": 269.95
                 },
                 {
                     "mes": "May",
-                    "generacion": 155.96
+                    "generacion": 188.72
                 },
                 {
                     "mes": "Jun",
-                    "generacion": 123.54
+                    "generacion": 149.49
                 },
                 {
                     "mes": "Jul",
-                    "generacion": 139.35
+                    "generacion": 168.62
                 },
                 {
                     "mes": "Ago",
-                    "generacion": 209.53
+                    "generacion": 253.55
                 },
                 {
                     "mes": "Sep",
-                    "generacion": 336.4
+                    "generacion": 407.05
                 },
                 {
                     "mes": "Oct",
-                    "generacion": 467.93
+                    "generacion": 566.2
                 },
                 {
                     "mes": "Nov",
-                    "generacion": 517.48
+                    "generacion": 626.15
                 },
                 {
                     "mes": "Dic",
-                    "generacion": 579.2
+                    "generacion": 700.84
                 }
             ],
             "generacionAnual": [
                 {
                     "year": 2024,
-                    "generacion": 4096.86
+                    "generacion": 4957.28
                 },
                 {
                     "year": 2025,
-                    "generacion": 4076.38
+                    "generacion": 4932.5
                 },
                 {
                     "year": 2026,
-                    "generacion": 4056.0
+                    "generacion": 4907.83
                 },
                 {
                     "year": 2027,
-                    "generacion": 4035.72
+                    "generacion": 4883.29
                 },
                 {
                     "year": 2028,
-                    "generacion": 4015.54
+                    "generacion": 4858.88
                 }
             ],
-            "factorCapacidad": 20.79,
+            "factorCapacidad": 25.15,
             "impactoSocial": {
                 "empleosDirectos": 22,
                 "empleosIndirectos": 67,
@@ -416,9 +416,9 @@
             "inversion": {
                 "total": 2.42,
                 "unidad": "MUSD",
-                "periodoRecuperacion": 6.4,
-                "tir": 17.57,
-                "van": 2.45
+                "periodoRecuperacion": 4.6,
+                "tir": 17.38,
+                "van": 3.86
             },
             "financiamiento": {
                 "plazoFinanciamiento": 6,
@@ -427,75 +427,75 @@
             "analisisFinanciero": [
                 {
                     "year": 2025,
-                    "generacion": 5462.48,
-                    "ingresos": 382.37,
+                    "generacion": 6609.71,
+                    "ingresos": 495.73,
                     "cuotaInversion": 333.8
                 },
                 {
                     "year": 2026,
-                    "generacion": 5435.17,
-                    "ingresos": 388.07,
+                    "generacion": 6576.66,
+                    "ingresos": 503.11,
                     "cuotaInversion": 333.8
                 },
                 {
                     "year": 2027,
-                    "generacion": 5407.99,
-                    "ingresos": 393.85,
+                    "generacion": 6543.78,
+                    "ingresos": 510.61,
                     "cuotaInversion": 333.8
                 },
                 {
                     "year": 2028,
-                    "generacion": 5380.95,
-                    "ingresos": 399.72,
+                    "generacion": 6511.06,
+                    "ingresos": 518.22,
                     "cuotaInversion": 333.8
                 },
                 {
                     "year": 2029,
-                    "generacion": 5354.05,
-                    "ingresos": 405.68,
+                    "generacion": 6478.5,
+                    "ingresos": 525.94,
                     "cuotaInversion": 333.8
                 },
                 {
                     "year": 2030,
-                    "generacion": 5327.28,
-                    "ingresos": 411.72,
+                    "generacion": 6446.11,
+                    "ingresos": 533.78,
                     "cuotaInversion": 333.8
                 },
                 {
                     "year": 2031,
-                    "generacion": 5300.64,
-                    "ingresos": 417.86,
+                    "generacion": 6413.88,
+                    "ingresos": 541.73,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2032,
-                    "generacion": 5274.14,
-                    "ingresos": 424.08,
+                    "generacion": 6381.81,
+                    "ingresos": 549.8,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2033,
-                    "generacion": 5247.77,
-                    "ingresos": 430.4,
+                    "generacion": 6349.9,
+                    "ingresos": 557.99,
                     "cuotaInversion": 0
                 },
                 {
                     "year": 2034,
-                    "generacion": 5221.53,
-                    "ingresos": 436.81,
+                    "generacion": 6318.15,
+                    "ingresos": 566.31,
                     "cuotaInversion": 0
                 }
             ],
             "produccionAnual": {
-                "estimada": 5462.48,
+                "estimada": 6609.71,
                 "unidad": "MWh",
-                "consumoEquivalente": 1655
+                "consumoEquivalente": 2002
             },
             "ahorroCO2": {
-                "anual": 2731.24,
+                "anual": 3304.86,
                 "unidad": "ton",
-                "equivalenciaArboles": 122905,
-                "equivalenciaAutos": 600
+                "equivalenciaArboles": 148718,
+                "equivalenciaAutos": 727
             },
             "terreno": {
                 "area": 3.63,
@@ -509,76 +509,76 @@
             "generacionMensual": [
                 {
                     "mes": "Ene",
-                    "generacion": 710.77
+                    "generacion": 860.03
                 },
                 {
                     "mes": "Feb",
-                    "generacion": 584.08
+                    "generacion": 706.75
                 },
                 {
                     "mes": "Mar",
-                    "generacion": 497.66
+                    "generacion": 602.19
                 },
                 {
                     "mes": "Abr",
-                    "generacion": 297.45
+                    "generacion": 359.93
                 },
                 {
                     "mes": "May",
-                    "generacion": 207.95
+                    "generacion": 251.63
                 },
                 {
                     "mes": "Jun",
-                    "generacion": 164.72
+                    "generacion": 199.32
                 },
                 {
                     "mes": "Jul",
-                    "generacion": 185.8
+                    "generacion": 224.83
                 },
                 {
                     "mes": "Ago",
-                    "generacion": 279.38
+                    "generacion": 338.06
                 },
                 {
                     "mes": "Sep",
-                    "generacion": 448.53
+                    "generacion": 542.73
                 },
                 {
                     "mes": "Oct",
-                    "generacion": 623.9
+                    "generacion": 754.93
                 },
                 {
                     "mes": "Nov",
-                    "generacion": 689.97
+                    "generacion": 834.87
                 },
                 {
                     "mes": "Dic",
-                    "generacion": 772.27
+                    "generacion": 934.45
                 }
             ],
             "generacionAnual": [
                 {
                     "year": 2024,
-                    "generacion": 5462.48
+                    "generacion": 6609.71
                 },
                 {
                     "year": 2025,
-                    "generacion": 5435.17
+                    "generacion": 6576.66
                 },
                 {
                     "year": 2026,
-                    "generacion": 5407.99
+                    "generacion": 6543.78
                 },
                 {
                     "year": 2027,
-                    "generacion": 5380.95
+                    "generacion": 6511.06
                 },
                 {
                     "year": 2028,
-                    "generacion": 5354.05
+                    "generacion": 6478.5
                 }
             ],
-            "factorCapacidad": 20.79,
+            "factorCapacidad": 25.15,
             "impactoSocial": {
                 "empleosDirectos": 30,
                 "empleosIndirectos": 90,
