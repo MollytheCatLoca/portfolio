@@ -134,6 +134,26 @@
       "nombre": "San Pedro",
       "lat": -33.6812399,
       "lon": -59.6664626
+    },
+    {
+      "nombre": "Madariaga",
+      "lat": -36.6515737,
+      "lon": -56.6922453
+    },
+    {
+      "nombre": "Madariaga Hospital",
+      "lat": -37.0064,
+      "lon": -57.1297
+    },
+    {
+      "nombre": "Ezeiza Desarrollo",
+      "lat": -34.95821,
+      "lon": -58.56751
+    },
+    {
+      "nombre": "Ezeiza",
+      "lat": -34.81681415,
+      "lon": -58.54742335052262
     }
   ],
   "Catamarca": [
