@@ -9,7 +9,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   // output: 'export', // Comentar o eliminar esta línea
-  distDir: 'out',
+  //distDir: 'out',
   serverRuntimeConfig: {
     // Will only be available on the server side
     apiTimeout: 30000, // 30 seconds
