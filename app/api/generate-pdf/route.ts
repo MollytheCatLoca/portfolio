@@ -15,9 +15,12 @@ export async function POST(req: NextRequest) {
     console.log("API route: POST request received for PDF generation");
     const startTime = Date.now();
 
+
     try {
         const requestData = await req.json();
         console.log("API route: Using data for PDF generation");
+        console.log("API route: Using data for PDF generation:", JSON.stringify(requestData, null, 2));
+
 
         const response = await axios.post(HEROKU_PDF_SERVICE_URL, requestData, {
             headers: { 'Content-Type': 'application/json' },

@@ -27,8 +27,7 @@ export default function MagicButtonPDF({ scenarios }) {
                 },
                 body: JSON.stringify({
                     searchParams: queryParams,
-                    sceneData: sceneData,
-                    scenarioId: queryParams.scenarioId // Añadimos el scenarioId aqu
+                    sceneData: sceneData
                 }),
             });
 
