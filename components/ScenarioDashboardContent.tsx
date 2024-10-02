@@ -27,7 +27,9 @@ export default function ScenarioDashboardContent({ initialScenario, id }: Scenar
             provincia: params.get('provincia') || '',
             localidad: params.get('localidad') || '',
             capacidad: params.get('capacidad') || '',
-            area: params.get('area') || ''
+            area: params.get('area') || '',
+            scenarioId: params.get('scenarioId') || ''
+
         };
 
         console.log("Syncing query params with URL:", currentQueryParams);

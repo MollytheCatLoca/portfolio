@@ -23,7 +23,7 @@ export default async function ScenarioDashboardPage({
     };
 
     console.log("ScenarioDashboardPage: Fetching data for scenario", id)
-    //console.log("ScenarioDashboardPage: Fetching data for scenario", id, "with params", queryParams);
+    console.log("ScenarioDashboardPage: Fetching data for scenario", id, "with params", queryParams);
 
     try {
         const scenario = await getParqueSolarData(id, queryParams);

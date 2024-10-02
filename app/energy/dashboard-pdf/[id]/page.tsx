@@ -15,7 +15,7 @@ export default async function ScenarioDashboardPDFPage({
         localidad: searchParams.localidad as string || '',
         capacidad: searchParams.capacidad as string || '',
         area: searchParams.area as string || '',
-        scenarioId: searchParams.scenarioId as string || ''  // Añadido scenarioId
+        scenarioId: searchParams.scenarioId as string || ''
     };
 
     console.log("ScenarioDashboardPDFPage: Fetching data for scenario", id);

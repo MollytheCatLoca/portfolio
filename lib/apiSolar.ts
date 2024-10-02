@@ -18,7 +18,7 @@ interface QueryParams {
     area?: string | number;
     latitud?: number;
     longitud?: number;
-    scenarioId?: string; // Añadido scenarioId
+    scenarioId: string;
 
 }
 
