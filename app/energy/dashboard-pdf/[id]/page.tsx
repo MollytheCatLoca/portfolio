@@ -14,7 +14,8 @@ export default async function ScenarioDashboardPDFPage({
         provincia: searchParams.provincia as string || '',
         localidad: searchParams.localidad as string || '',
         capacidad: searchParams.capacidad as string || '',
-        area: searchParams.area as string || ''
+        area: searchParams.area as string || '',
+        scenarioId: searchParams.scenarioId as string || ''  // Añadido scenarioId
     };
 
     console.log("ScenarioDashboardPDFPage: Fetching data for scenario", id);
