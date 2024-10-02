@@ -8,6 +8,14 @@ import { useQueryParams } from '@/context/QueryParamsContext';
 import provinciasLocalidadesData from '@/public/data/provinciasLocalidades.json';
 import { Modal } from 'antd';
 
+interface Scenario {
+    id: string;
+    name: string;
+    description: string;
+    validez_capacidad_min: number;
+    validez_capacidad_max: number;
+}
+
 interface SimulationFormProps {
     className?: string;
     onSubmit: (formData: {
@@ -15,6 +23,7 @@ interface SimulationFormProps {
         localidad: string;
         capacidad: string;
         area: string;
+        scenarioId: string;
     }) => void;
 }
 
@@ -29,17 +38,34 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
         localidad: '',
         capacidad: '',
         area: '',
-        projectDescription: ''
+        projectDescription: '',
+        scenarioId: ''
     });
 
     const [localidades, setLocalidades] = useState<{ nombre: string; lat: number; lon: number; }[]>([]);
     const [status, setStatus] = useState('');
+    const [scenarios, setScenarios] = useState<Scenario[]>([]);
+    const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(null);
 
     useEffect(() => {
         if (formData.provincia) {
             setLocalidades(provinciasLocalidadesData[formData.provincia] || []);
         }
     }, [formData.provincia]);
+
+    useEffect(() => {
+        const fetchScenarios = async () => {
+            try {
+                const response = await fetch('/api/scenarios');
+                const data = await response.json();
+                setScenarios(data);
+            } catch (error) {
+                console.error('Error fetching scenarios:', error);
+            }
+        };
+
+        fetchScenarios();
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -53,6 +79,11 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
                 ...prevData,
                 localidad: ''
             }));
+        }
+
+        if (name === 'scenarioId') {
+            const scenario = scenarios.find(s => s.id === value);
+            setSelectedScenario(scenario || null);
         }
     };
 
@@ -72,6 +103,14 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
             return;
         }
 
+        // Validación de rango de capacidad
+        if (selectedScenario) {
+            if (capacity < selectedScenario.validez_capacidad_min || capacity > selectedScenario.validez_capacidad_max) {
+                setStatus(`En este ESCENARIO la capacidad debe estar entre ${selectedScenario.validez_capacidad_min} MW y ${selectedScenario.validez_capacidad_max} MW para el escenario seleccionado.`);
+                return;
+            }
+        }
+
         Modal.info({
             title: 'Simulación en Proceso',
             content: (
@@ -89,7 +128,7 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
 const processSimulation = async () => {
     setStatus('Enviando datos de simulación...');
 
-    const simulationMessage = `SIMULACION: Provincia: ${formData.provincia}, Localidad: ${formData.localidad}, Capacidad: ${formData.capacidad}MW, Área: ${formData.area}m², Descripción: ${formData.projectDescription}`;
+    const simulationMessage = `SIMULACION: Provincia: ${formData.provincia}, Localidad: ${formData.localidad}, Capacidad: ${formData.capacidad}MW, Área: ${formData.area}m², Descripción: ${formData.projectDescription}, Escenario: ${selectedScenario?.name || 'No seleccionado'}`;
 
     try {
         console.log("Iniciando envío de datos a la API de contacto");
@@ -118,7 +157,8 @@ const processSimulation = async () => {
                 provincia: formData.provincia,
                 localidad: formData.localidad,
                 capacidad: formData.capacidad,
-                area: formData.area
+                area: formData.area,
+                scenarioId: formData.scenarioId
             };
             console.log("Nuevos parámetros:", newParams);
             setQueryParams(newParams);
@@ -241,6 +281,24 @@ placeholder = "Área en m²"
 required
     />
     </div>
+    < div >
+    <label htmlFor="scenario" className = "block mb-1 text-sm text-white" > Escenario </label>
+        < select
+id = "scenarioId"
+name = "scenarioId"
+value = { formData.scenarioId }
+onChange = { handleChange }
+className = "bg-[#1b1b3a] border border-[#3b3b4f] rounded-3xl px-3 py-2 w-full text-sm text-white"
+required
+    >
+    <option value="" > Seleccione un escenario </option>
+{
+    scenarios.map((scenario) => (
+        <option key= { scenario.id } value = { scenario.id } > { scenario.name } </option>
+    ))
+}
+</select>
+    </div>
     </div>
     < div >
     <label htmlFor="projectDescription" className = "block mb-1 text-sm text-white" > Descripción del Proyecto </label>
@@ -254,11 +312,29 @@ placeholder = "Cuéntenos sobre su proyecto..."
 rows = { 4}
     />
     </div>
-    < Button type = "submit" className = "w-full flex items-center justify-center bg-[#4a4ae2] hover:bg-[#3b3be0] text-white font-bold py-2 px-4 rounded-3xl" >
-        <FaSolarPanel className="mr-2" />
-            Iniciar Simulación
-                </Button>
-                </form>
+{
+    selectedScenario && (
+        <div>
+        <label htmlFor="scenarioDescription" className = "block mb-1 text-sm text-white" > Descripción del Escenario </label>
+            < textarea
+    id = "scenarioDescription"
+    name = "scenarioDescription"
+    value = { selectedScenario.description }
+    className = "bg-[#1b1b3a] border border-[#3b3b4f] rounded-3xl px-3 py-2 w-full text-sm text-white"
+    readOnly
+    rows = { 3}
+        />
+        <p className="mt-2 text-sm text-white" >
+            Rango de capacidad válido: { selectedScenario.validez_capacidad_min } MW - { selectedScenario.validez_capacidad_max } MW
+                </p>
+                </div>
+                )
+}
+<Button type="submit" className = "w-full flex items-center justify-center bg-[#4a4ae2] hover:bg-[#3b3be0] text-white font-bold py-2 px-4 rounded-3xl" >
+    <FaSolarPanel className="mr-2" />
+        Iniciar Simulación
+            </Button>
+            </form>
 { status && <p className="mt-4 text-center text-white" > { status } </p> }
 </div>
     );

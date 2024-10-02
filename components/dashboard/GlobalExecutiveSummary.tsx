@@ -31,6 +31,7 @@ type GlobalExecutiveSummaryProps = {
         localidad: string;
         capacidad: string;
         area: string;
+        scenarioId: string;
     };
 };
 

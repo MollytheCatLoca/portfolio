@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model capacity_based_parameters {
+  id           Int        @id @default(autoincrement())
+  scenario_id  String?    @db.VarChar(50)
+  category     String     @db.VarChar(50)
+  capacity_min Float
+  capacity_max Float
+  value        Float
+  updated_at   DateTime?  @default(now()) @db.Timestamp(6)
+  scenarios    scenarios? @relation(fields: [scenario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model contact_messages {
+  id         Int       @id @default(autoincrement())
+  name       String    @db.VarChar(100)
+  email      String    @db.VarChar(100)
+  message    String
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+}
+
+model economic_parameters {
+  id          Int        @id @default(autoincrement())
+  scenario_id String?    @db.VarChar(50)
+  category    String     @db.VarChar(50)
+  name        String     @db.VarChar(100)
+  value       Float
+  updated_at  DateTime?  @default(now()) @db.Timestamp(6)
+  scenarios   scenarios? @relation(fields: [scenario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model goodresp2 {
+  id              Int                   @id @default(autoincrement())
+  question        String
+  question_vector Unsupported("vector")
+  answer          String
+  answer_vector   Unsupported("vector")
+  rating          Int?
+  filename        String?
+}
+
+model scenarios {
+  id                        String                      @id @db.VarChar(50)
+  name                      String                      @db.VarChar(100)
+  description               String?
+  created_at                DateTime?                   @default(now()) @db.Timestamp(6)
+  updated_at                DateTime?                   @default(now()) @db.Timestamp(6)
+  validez_capacidad_min     Float                       @default(0)
+  validez_capacidad_max     Float                       @default(500)
+  capacity_based_parameters capacity_based_parameters[]
+  economic_parameters       economic_parameters[]
+}
+
+model weather_cache {
+  id           Int       @id @default(autoincrement())
+  latitude     Float?
+  longitude    Float?
+  cache_time   DateTime? @db.Timestamp(6)
+  weather_data Json?
+
+  @@unique([latitude, longitude])
+}

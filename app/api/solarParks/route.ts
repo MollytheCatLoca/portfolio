@@ -31,7 +31,8 @@ async function fetchFromHeroku(url: string, data: any, options: any) {
 }
 
 function getCacheKey(data: any): string {
-    return `${data.provincia}-${data.localidad}-${data.capacidad}-${data.latitud}-${data.longitud}`;
+    return `${data.provincia}-${data.localidad}-${data.capacidad}-${data.latitud}-${data.longitud}-${data.scenarioId}`; // Añada -${data.scenarioId} al final
+
 }
 
 function isCacheValid(cacheItem: CacheItem): boolean {
@@ -51,7 +52,9 @@ export async function POST(req: NextRequest) {
             capacidad: requestData.capacidad || 1,
             area: requestData.area || 100000,
             latitud: requestData.latitud || -27.5269702,
-            longitud: requestData.longitud || -58.76592117375753
+            longitud: requestData.longitud || -58.76592117375753,
+            scenarioId: requestData.scenarioId || "" // Añada esta línea
+
         };
 
         //console.log("API route: Using data", JSON.stringify(data, null, 2));

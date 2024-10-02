@@ -18,6 +18,8 @@ interface QueryParams {
     area?: string | number;
     latitud?: number;
     longitud?: number;
+    scenarioId?: string; // Añadido scenarioId
+
 }
 
 interface ParqueSolarData {
@@ -147,7 +149,9 @@ async function fetchDataFromAPI(params: QueryParams): Promise<ParqueSolarData[]>
         capacidad: params.capacidad || 1,
         area: params.area || 100000,
         latitud: params.latitud || coordenadas.lat || -27.5269702,
-        longitud: params.longitud || coordenadas.lon || -58.76592117375753
+        longitud: params.longitud || coordenadas.lon || -58.76592117375753,
+        scenarioId: params.scenarioId || "" // Añadido scenarioId
+
     };
 
     try {

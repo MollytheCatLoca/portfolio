@@ -7,6 +7,7 @@ interface QueryParams {
     localidad: string;
     capacidad: string;
     area: string;
+    scenarioId: string;
 }
 
 interface QueryParamsContextType {
@@ -18,7 +19,8 @@ const initialQueryParams: QueryParams = {
     provincia: '',
     localidad: '',
     capacidad: '',
-    area: ''
+    area: '',
+    scenarioId: '',
 };
 
 const QueryParamsContext = createContext<QueryParamsContextType | undefined>(undefined);

@@ -27,7 +27,7 @@
                 "van": 1.78
             },
             "financiamiento": {
-                "plazoFinanciamiento": 6,
+                "plazoFinanciamiento": 6.0,
                 "tasaInteres": 0.01
             },
             "analisisFinanciero": [
@@ -224,7 +224,7 @@
                 "van": 2.67
             },
             "financiamiento": {
-                "plazoFinanciamiento": 6,
+                "plazoFinanciamiento": 6.0,
                 "tasaInteres": 0.01
             },
             "analisisFinanciero": [
@@ -421,7 +421,7 @@
                 "van": 3.56
             },
             "financiamiento": {
-                "plazoFinanciamiento": 6,
+                "plazoFinanciamiento": 6.0,
                 "tasaInteres": 0.01
             },
             "analisisFinanciero": [
