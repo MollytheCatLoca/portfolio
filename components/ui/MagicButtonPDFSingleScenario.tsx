@@ -34,7 +34,8 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
         const dataToSend: any = {
             id: id,
             searchParams: queryParams,
-            sceneData: { scenario: scenario }
+            sceneData: { scenario: scenario },
+            scenarioId: queryParams.scenarioId // Añadimos el scenarioId aqu
         };
 
         console.log('MagicButton: Data being sent for PDF generation:', JSON.stringify(dataToSend, null, 2));
