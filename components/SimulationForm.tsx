@@ -59,6 +59,18 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
                 const response = await fetch('/api/scenarios');
                 const data = await response.json();
                 setScenarios(data);
+
+                // Find the default scenario
+                const defaultScenario = data.find((scenario: Scenario) => scenario.id === 'BASE_1');
+                if (defaultScenario) {
+                    setFormData(prevData => ({
+                        ...prevData,
+                        scenarioId: defaultScenario.id
+                    }));
+                    setSelectedScenario(defaultScenario);
+                }
+
+
             } catch (error) {
                 console.error('Error fetching scenarios:', error);
             }
