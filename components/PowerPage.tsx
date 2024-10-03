@@ -67,14 +67,14 @@ const PowerPage: React.FC<PDFPageProps> = ({ children, pageNumber, totalPages })
 <div style={
     {
         position: 'absolute',
-            top: '5mm',
-                left: 0,
+            top: '0mm',
+                left: 40,
                     right: 0,
                         bottom: '10mm',
                             zIndex: 5,
                                 overflow: 'hidden',
                                     padding: '10mm',
-                                        transform: 'scale(0.8)',
+                                        transform: 'scale(0.9)',
         }
 }>
     { children }

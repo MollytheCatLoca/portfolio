@@ -1,6 +1,6 @@
-// app/energy/dashboard-pdf/page.tsx
+// app/energy/powerbase/page.tsx
 import { getParquesSolaresData } from '@/lib/apiSolar';
-import PowerContent_SanPedro from '@/components/PowerBase_SanPedro';
+import PowerContent from '@/components/PowerBase_Dinamico';
 export default async function DashboardPDFPage({
     searchParams
 }: {
@@ -27,7 +27,7 @@ export default async function DashboardPDFPage({
     //    console.log("DashboardPDFPage: Faltan parámetros para obtener escenarios iniciales");
     //}
 
-    return <PowerContent_SanPedro 
+    return <PowerContent
         initialScenarios={ initialScenarios }
     initialQueryParams = { initialQueryParams }
         />;

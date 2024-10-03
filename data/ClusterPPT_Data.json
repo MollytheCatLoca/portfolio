@@ -1,0 +1,628 @@
+{
+    "SanPeto": {
+        "nombre": "San Pedro",
+        "heroSection": {
+            "subtitle": "BIS INTEGRACIONES - ENERGY - ALL IN ONE",
+            "title": "Parques All-In-One",
+            "description": "Simplifican la Transición hacia Energías Renovables Generando Ahorros",
+            "buttonText": "CLUSTER San Pedro →"
+        },
+        "resumenEjecutivo": {
+            "title": "Resumen Ejecutivo: Problemática y Solución Propuesta",
+            "problematica": "El municipio de San Pedro enfrenta una limitación en su capacidad de crecimiento debido a la imposibilidad de ampliar el suministro energético más allá de los 42 MW generados por la cooperativa eléctrica actual. Esto frena el desarrollo empresarial y la atracción de nuevas inversiones.",
+            "solucionPropuesta": [
+                {
+                    "icon": "Sun",
+                    "title": "Cluster Generador de Energía Solar",
+                    "description": "Creación de un cluster en terrenos de 20 hectáreas, mediante convenio entre la municipalidad y la UBA, aprovechando tierras disponibles en la zona."
+                },
+                {
+                    "icon": "Battery",
+                    "title": "Parques Solares All-In-One",
+                    "description": "Instalación de parques solares modulares mediante leasing para empresas locales, permitiendo ajustar la capacidad de generación al consumo energético actual y futuro de cada empresa."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Generación Distribuida",
+                    "description": "Integración de la energía generada bajo el marco de la ley de generación distribuida, con operación y mantenimiento a cargo de la cooperativa eléctrica, garantizando continuidad sin necesidad de gestión por parte de las empresas."
+                },
+                {
+                    "icon": "Building",
+                    "title": "Mejora de Capacidad y Protección",
+                    "description": "Aumento de la capacidad de generación energética del municipio en 20 MW, asegurando que las empresas no se vean afectadas por futuros aumentos del costo de la energía (50% proyectado)."
+                }
+            ]
+        },
+        "beneficiosAllInOne": {
+            "title": "Beneficios de los Parques All In One para el Cluster Generador",
+            "beneficios": [
+                {
+                    "icon": "Zap",
+                    "title": "Flexibilidad y escalabilidad",
+                    "description": [
+                        "Adquisición de parques solares modulares según necesidades.",
+                        "Permite a las empresas controlar su consumo y evitar sobrecostos, adaptándose a su crecimiento futuro."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Reducción de riesgos financieros",
+                    "description": [
+                        "Leasing evita grandes inversiones iniciales.",
+                        "Mejora el flujo de caja de las empresas, permitiendo una gestión financiera más eficiente y flexible."
+                    ]
+                },
+                {
+                    "icon": "Shield",
+                    "title": "Protección frente a aumentos tarifarios",
+                    "description": [
+                        "Costo fijo de energía asegurado.",
+                        "Los parques solares propios protegen a las empresas de futuros incrementos en las tarifas eléctricas, ofreciendo estabilidad a largo plazo."
+                    ]
+                },
+                {
+                    "icon": "Network",
+                    "title": "Generación distribuida",
+                    "description": [
+                        "Mayor eficiencia y autonomía energética.",
+                        "Las empresas se integran al esquema de generación distribuida, optimizando la red eléctrica local y reduciendo pérdidas por transmisión."
+                    ]
+                },
+                {
+                    "icon": "Wrench",
+                    "title": "Simplicidad operativa",
+                    "description": [
+                        "Gestión por cooperativa eléctrica municipal.",
+                        "Elimina la necesidad de que cada empresa se ocupe del mantenimiento técnico, centralizando la operación y optimizando recursos."
+                    ]
+                }
+            ]
+        },
+        "ventajasActores": {
+            "title": "Ventajas para los Actores Clave",
+            "actores": [
+                {
+                    "icon": "Building",
+                    "title": "Municipalidad de San Pedro",
+                    "ventajas": [
+                        "Crecimiento económico sostenido al permitir la expansión energética necesaria para nuevas inversiones y el desarrollo empresarial.",
+                        "Consolidación como un municipio pionero en la adopción de energías renovables y la ley de generación distribuida.",
+                        "Aumento en la recaudación de impuestos gracias al crecimiento del parque industrial y la instalación de nuevas empresas."
+                    ]
+                },
+                {
+                    "icon": "GraduationCap",
+                    "title": "UBA",
+                    "ventajas": [
+                        "Aprovechamiento de terrenos infrautilizados mediante un convenio que posiciona a la universidad como un actor clave en el desarrollo energético de la región.",
+                        "Posibilidad de desarrollar proyectos de investigación y desarrollo en colaboración con empresas locales y la municipalidad.",
+                        "Generación de ingresos adicionales mediante el uso de los terrenos para actividades de alto impacto."
+                    ]
+                },
+                {
+                    "icon": "Factory",
+                    "title": "Empresas",
+                    "ventajas": [
+                        "Acceso a energía limpia y a costos controlados, minimizando el impacto de los aumentos en las tarifas energéticas.",
+                        "Mejora en la sostenibilidad de sus operaciones y cumplimiento con normativas ambientales, lo que puede ser un diferenciador competitivo.",
+                        "Flexibilidad para escalar su generación de energía según su crecimiento sin necesidad de inversiones iniciales elevadas."
+                    ]
+                }
+            ]
+        },
+        "rutaImplementacion": {
+            "title": "Ruta de Implementación",
+            "parte1": [
+                {
+                    "icon": "Handshake",
+                    "title": "Convenio con la UBA",
+                    "detalles": [
+                        "Establecer un acuerdo para la utilización de 20 hectáreas de terrenos disponibles de la UBA.",
+                        "Negociación de los términos que permitan el uso a largo plazo, con la posibilidad de que la UBA participe activamente en el proyecto."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Reclutamiento de Empresas y Modelos de Adhesión al Cluster",
+                    "detalles": [
+                        "Convocatoria y sensibilización: Realizar reuniones con las empresas locales para exponer los beneficios de unirse al cluster generador de energía solar.",
+                        "Generación de incentivos: Definir beneficios fiscales y/o financieros que faciliten la adhesión de las empresas al proyecto.",
+                        "Modelos de adhesión: Desarrollar contratos y acuerdos que incluyan opciones flexibles de leasing.",
+                        "Dimensionamiento del cluster: Evaluar la demanda de las empresas interesadas y ajustar el tamaño del cluster según las necesidades energéticas proyectadas."
+                    ]
+                },
+                {
+                    "icon": "BarChart",
+                    "title": "Análisis de Viabilidad Técnica y Económica",
+                    "detalles": [
+                        "Realizar estudios preliminares para determinar la capacidad exacta de generación solar en la zona y los costos asociados.",
+                        "Definir las necesidades de inversión para cada empresa y los modelos de leasing aplicables."
+                    ]
+                }
+            ],
+            "parte2": [
+                {
+                    "icon": "Layout",
+                    "title": "Diseño del Cluster Generador",
+                    "detalles": [
+                        "Planificación y diseño del cluster, considerando la instalación modular de parques solares All-In-One.",
+                        "Preparación de la infraestructura necesaria, incluyendo el acceso y distribución energética para las empresas.",
+                        "El sistema All-In-One es altamente escalable, permitiendo una integración progresiva de las empresas."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Financiamiento, Leasing e Instalación",
+                    "detalles": [
+                        "Desarrollar los contratos de leasing entre las empresas y los proveedores de equipos.",
+                        "Coordinar con entidades financieras para estructurar los modelos de leasing.",
+                        "Instalación progresiva: Comenzar la construcción e instalación de generadores solares de manera modular y escalable.",
+                        "La cooperativa eléctrica estará a cargo de la operación y el mantenimiento de los generadores."
+                    ]
+                },
+                {
+                    "icon": "ActivitySquare",
+                    "title": "Monitoreo y Evaluación del Desempeño del Cluster",
+                    "detalles": [
+                        "Seguimiento del desempeño energético del cluster para asegurar la eficiencia y sostenibilidad a largo plazo.",
+                        "Evaluación continua de la viabilidad económica y medioambiental del proyecto, ajustando estrategias según sea necesario."
+                    ]
+                }
+            ]
+        },
+        "clusterGeneradorResumen": {
+            "title": "Cluster Generador de Energía Solar en San Pedro",
+            "subtitle": "Modelo innovador de asociación público-privada para el desarrollo energético sostenible, impulsando el crecimiento económico y la autonomía energética del municipio.",
+            "caracteristicas": [
+                {
+                    "icon": "Users",
+                    "title": "Asociación Público-Privada",
+                    "details": [
+                        "Colaboración entre municipio y empresas locales",
+                        "Municipio como vector del cluster",
+                        "Participación activa de la UBA"
+                    ]
+                },
+                {
+                    "icon": "Building",
+                    "title": "Financiamiento Privado",
+                    "details": [
+                        "Modelo de leasing para adquisición de parques solares",
+                        "Reducción de riesgos financieros para empresas",
+                        "Flexibilidad en la inversión según necesidades"
+                    ]
+                },
+                {
+                    "icon": "Sun",
+                    "title": "Generación Distribuida",
+                    "details": [
+                        "Aprovechamiento de 20 hectáreas de terreno",
+                        "Integración a la red bajo ley de generación distribuida",
+                        "Aumento de 20 MW en la capacidad energética"
+                    ]
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Beneficios del Modelo",
+                    "details": [
+                        "Crecimiento económico sostenible",
+                        "Protección contra aumentos en tarifas eléctricas",
+                        "Fomento de energías renovables y sostenibilidad"
+                    ]
+                }
+            ]
+        }
+    },
+    "Berazategui": {
+        "nombre": "Berazategui",
+        "heroSection": {
+            "subtitle": "BIS INTEGRACIONES - ENERGY - ALL IN ONE",
+            "title": "Parques All-In-One",
+            "description": "Impulsan la Transición hacia Energías Renovables y Desarrollo Sostenible",
+            "buttonText": "CLUSTER Berazategui →"
+        },
+        "resumenEjecutivo": {
+            "title": "Resumen Ejecutivo: Problemática y Solución Propuesta",
+            "problematica": "El municipio de Berazategui enfrenta limitaciones en su capacidad energética actual, estimada en aproximadamente 50 MW, lo que dificulta satisfacer la creciente demanda y limita el desarrollo económico y la atracción de nuevas inversiones.",
+            "solucionPropuesta": [
+                {
+                    "icon": "Sun",
+                    "title": "Cluster Generador de Energía Solar",
+                    "description": "Implementación de un cluster energético de 10 MW en tierras municipales y privadas, impulsando inversiones por USD 10 millones."
+                },
+                {
+                    "icon": "Battery",
+                    "title": "Parque Solar All-In-One Municipal",
+                    "description": "Instalación de un parque solar de 1 MW en 5 hectáreas distribuidas del municipio, sirviendo como proyecto piloto y catalizador del cluster."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Generación Distribuida y Colaboración Público-Privada",
+                    "description": "Integración de la energía generada bajo el marco de la ley de generación distribuida, promoviendo la participación de empresas privadas y propietarios de tierras."
+                },
+                {
+                    "icon": "Building",
+                    "title": "Mejora de Capacidad y Desarrollo Sostenible",
+                    "description": "Aumento de la capacidad energética del municipio en 10 MW, fomentando el crecimiento económico y la sustentabilidad ambiental."
+                }
+            ]
+        },
+        "beneficiosAllInOne": {
+            "title": "Beneficios de los Parques All In One para el Cluster Generador",
+            "beneficios": [
+                {
+                    "icon": "Zap",
+                    "title": "Flexibilidad y Escalabilidad",
+                    "description": [
+                        "Implementación modular de parques solares según demanda.",
+                        "Permite al municipio y empresas ajustar la generación de energía a las necesidades actuales y futuras."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Atracción de Inversiones y Desarrollo Económico",
+                    "description": [
+                        "Generación de inversiones por USD 10 millones.",
+                        "Impulsa el crecimiento económico local y la creación de empleo."
+                    ]
+                },
+                {
+                    "icon": "Shield",
+                    "title": "Protección frente a Limitaciones Energéticas",
+                    "description": [
+                        "Aumento de la capacidad energética en 10 MW.",
+                        "Mitiga riesgos asociados a limitaciones en el transporte y suministro de energía."
+                    ]
+                },
+                {
+                    "icon": "Network",
+                    "title": "Generación Distribuida",
+                    "description": [
+                        "Integración de energía renovable en la red local.",
+                        "Fomenta la participación de múltiples actores en la generación energética."
+                    ]
+                },
+                {
+                    "icon": "Wrench",
+                    "title": "Uso Óptimo de Terrenos Municipales y Privados",
+                    "description": [
+                        "Aprovechamiento de 5 hectáreas municipales y terrenos privados.",
+                        "Maximiza el uso de espacios disponibles para generación sostenible."
+                    ]
+                }
+            ]
+        },
+        "ventajasActores": {
+            "title": "Ventajas para los Actores Clave",
+            "actores": [
+                {
+                    "icon": "Building",
+                    "title": "Municipalidad de Berazategui",
+                    "ventajas": [
+                        "Aumento de la capacidad energética, impulsando el desarrollo económico y atrayendo nuevas inversiones.",
+                        "Posicionamiento como líder en energías renovables y sostenibilidad ambiental.",
+                        "Uso eficiente de terrenos municipales, generando valor y beneficios para la comunidad."
+                    ]
+                },
+                {
+                    "icon": "Handshake",
+                    "title": "Empresas y Propietarios Privados",
+                    "ventajas": [
+                        "Oportunidad de invertir en energía renovable, obteniendo beneficios económicos y fiscales.",
+                        "Participación en un proyecto sostenible que mejora la imagen corporativa y responsabilidad social.",
+                        "Acceso a energía limpia y reducción de costos energéticos a largo plazo."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Comunidad Local",
+                    "ventajas": [
+                        "Generación de empleo y desarrollo de capital humano especializado.",
+                        "Mejora de la calidad ambiental y reducción de emisiones de CO2.",
+                        "Acceso a programas educativos y de concientización sobre energías renovables."
+                    ]
+                }
+            ]
+        },
+        "rutaImplementacion": {
+            "title": "Ruta de Implementación",
+            "parte1": [
+                {
+                    "icon": "ChartLine",
+                    "title": "Estudios y Análisis Preliminares",
+                    "detalles": [
+                        "Realizar estudios técnicos, económicos y ambientales detallados.",
+                        "Evaluar la viabilidad del proyecto y definir estrategias de implementación."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Alianzas Estratégicas y Modelos de Colaboración",
+                    "detalles": [
+                        "Establecer acuerdos con empresas y propietarios privados para el uso de tierras.",
+                        "Definir modelos de inversión y participación público-privada."
+                    ]
+                },
+                {
+                    "icon": "BarChart",
+                    "title": "Gestión de Permisos y Financiamiento",
+                    "detalles": [
+                        "Obtener los permisos legales y regulatorios necesarios.",
+                        "Gestionar el financiamiento del proyecto, incluyendo líneas de leasing y créditos."
+                    ]
+                }
+            ],
+            "parte2": [
+                {
+                    "icon": "Layout",
+                    "title": "Diseño y Construcción del Cluster",
+                    "detalles": [
+                        "Planificar y diseñar el cluster energético, incluyendo el parque solar municipal de 1 MW.",
+                        "Iniciar la construcción e instalación de los parques solares en las tierras identificadas."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Integración y Puesta en Marcha",
+                    "detalles": [
+                        "Conectar los parques solares a la red bajo el marco de la ley de generación distribuida.",
+                        "Realizar pruebas y asegurar el correcto funcionamiento del sistema."
+                    ]
+                },
+                {
+                    "icon": "ActivitySquare",
+                    "title": "Operación, Mantenimiento y Expansión",
+                    "detalles": [
+                        "Establecer protocolos de operación y mantenimiento a largo plazo.",
+                        "Monitorear el desempeño y planificar futuras expansiones del cluster."
+                    ]
+                }
+            ]
+        },
+        "clusterGeneradorResumen": {
+            "title": "Cluster Generador de Energía Solar en Berazategui",
+            "subtitle": "Modelo innovador de desarrollo energético sostenible, impulsando la economía local y promoviendo la colaboración público-privada.",
+            "caracteristicas": [
+                {
+                    "icon": "Users",
+                    "title": "Colaboración Público-Privada",
+                    "details": [
+                        "Alianza entre municipio, empresas y propietarios privados.",
+                        "Fomento de inversiones y desarrollo tecnológico."
+                    ]
+                },
+                {
+                    "icon": "Building",
+                    "title": "Financiamiento e Inversiones",
+                    "details": [
+                        "Inversiones proyectadas por USD 10 millones.",
+                        "Uso de modelos de leasing y financiamiento flexible."
+                    ]
+                },
+                {
+                    "icon": "Sun",
+                    "title": "Generación Distribuida",
+                    "details": [
+                        "Implementación de parques solares en 5 hectáreas municipales y tierras privadas.",
+                        "Aumento de la capacidad energética en 10 MW."
+                    ]
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Beneficios del Proyecto",
+                    "details": [
+                        "Desarrollo económico y creación de empleo.",
+                        "Sustentabilidad ambiental y reducción de emisiones.",
+                        "Mejora de la infraestructura energética local."
+                    ]
+                }
+            ]
+        }
+    },
+    "Rawson": {
+        "nombre": "Berazategui",
+        "heroSection": {
+            "subtitle": "BIS INTEGRACIONES - ENERGY - ALL IN ONE",
+            "title": "Parques All-In-One",
+            "description": "Impulsan la Transición hacia Energías Renovables y Desarrollo Sostenible",
+            "buttonText": "CLUSTER RAWSON →"
+        },
+        "resumenEjecutivo": {
+            "title": "Resumen Ejecutivo: Problemática y Solución Propuesta",
+            "problematica": "El municipio de Rawson enfrenta limitaciones en la transmisión eléctrica que afectan el suministro de energía a empresas y consumidores, sumado a altas facturas eléctricas que disminuyen la competitividad del sector privado.",
+            "solucionPropuesta": [
+                {
+                    "icon": "Sun",
+                    "title": "Cluster Generador de Energía Solar",
+                    "description": "Implementación de un cluster energético que facilite la generación local de energía solar, reduciendo la dependencia de la red de transmisión y las limitaciones asociadas."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Generación Distribuida y Mejora de Infraestructura",
+                    "description": "Promoción de proyectos de generación distribuida bajo el marco legal vigente, optimizando el uso de la red eléctrica y disminuyendo pérdidas en la transmisión."
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Reducción de Costos Energéticos",
+                    "description": "Implementación de soluciones que disminuyan las facturas eléctricas de las empresas, aumentando su competitividad y estimulando el desarrollo económico local."
+                },
+                {
+                    "icon": "Building",
+                    "title": "Colaboración Público-Privada y Competitividad Municipal",
+                    "description": "Aprovechamiento de los costos eléctricos competitivos del municipio para impulsar iniciativas conjuntas con el sector privado, fortaleciendo la economía regional."
+                }
+            ]
+        },
+        "beneficiosAllInOne": {
+            "title": "Beneficios de los Parques All In One para el Cluster Generador",
+            "beneficios": [
+                {
+                    "icon": "Zap",
+                    "title": "Flexibilidad y Escalabilidad",
+                    "description": [
+                        "Implementación modular de parques solares según demanda.",
+                        "Permite al municipio y empresas ajustar la generación de energía a las necesidades actuales y futuras."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Atracción de Inversiones y Desarrollo Económico",
+                    "description": [
+                        "Generación potencial de inversiones por USD 10 millones.",
+                        "Impulsa el crecimiento económico local y la creación de empleo."
+                    ]
+                },
+                {
+                    "icon": "Shield",
+                    "title": "Protección frente a Limitaciones Energéticas",
+                    "description": [
+                        "Aumento de la capacidad energética en 10 MW.",
+                        "Mitiga riesgos asociados a limitaciones en el transporte y suministro de energía."
+                    ]
+                },
+                {
+                    "icon": "Network",
+                    "title": "Generación Distribuida",
+                    "description": [
+                        "Integración de energía renovable en la red local.",
+                        "Fomenta la participación de múltiples actores en la generación energética."
+                    ]
+                },
+                {
+                    "icon": "Wrench",
+                    "title": "Uso Óptimo de Terrenos Municipales y Privados",
+                    "description": [
+                        "Aprovechamiento de 10 hectáreas municipales y terrenos privados.",
+                        "Maximiza el uso de espacios disponibles para generación sostenible."
+                    ]
+                }
+            ]
+        },
+        "ventajasActores": {
+            "title": "Ventajas para los Actores Clave",
+            "actores": [
+                {
+                    "icon": "Building",
+                    "title": "Municipalidad de Rawson",
+                    "ventajas": [
+                        "Aumento de la capacidad energética, impulsando el desarrollo económico y atrayendo nuevas inversiones.",
+                        "Posicionamiento como líder en energías renovables y sostenibilidad ambiental.",
+                        "Uso eficiente de terrenos municipales, generando valor y beneficios para la comunidad."
+                    ]
+                },
+                {
+                    "icon": "Handshake",
+                    "title": "Empresas y Propietarios Privados",
+                    "ventajas": [
+                        "Oportunidad de invertir en energía renovable, obteniendo beneficios económicos y fiscales.",
+                        "Participación en un proyecto sostenible que mejora la imagen corporativa y responsabilidad social.",
+                        "Acceso a energía limpia y reducción de costos energéticos a largo plazo."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Comunidad Local",
+                    "ventajas": [
+                        "Generación de empleo y desarrollo de capital humano especializado.",
+                        "Mejora de la calidad ambiental y reducción de emisiones de CO2.",
+                        "Acceso a programas educativos y de concientización sobre energías renovables."
+                    ]
+                }
+            ]
+        },
+        "rutaImplementacion": {
+            "title": "Ruta de Implementación",
+            "parte1": [
+                {
+                    "icon": "ChartLine",
+                    "title": "Estudios y Análisis Preliminares",
+                    "detalles": [
+                        "Realizar estudios técnicos, económicos y ambientales detallados.",
+                        "Evaluar la viabilidad del proyecto y definir estrategias de implementación."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Alianzas Estratégicas y Modelos de Colaboración",
+                    "detalles": [
+                        "Establecer acuerdos con empresas y propietarios privados para el uso de tierras.",
+                        "Definir modelos de inversión y participación público-privada."
+                    ]
+                },
+                {
+                    "icon": "BarChart",
+                    "title": "Gestión de Permisos y Financiamiento",
+                    "detalles": [
+                        "Obtener los permisos legales y regulatorios necesarios.",
+                        "Gestionar el financiamiento del proyecto, incluyendo líneas de leasing y créditos."
+                    ]
+                }
+            ],
+            "parte2": [
+                {
+                    "icon": "Layout",
+                    "title": "Diseño y Construcción del Cluster",
+                    "detalles": [
+                        "Planificar y diseñar el cluster energético, incluyendo el parque solar municipal de 1 MW.",
+                        "Iniciar la construcción e instalación de los parques solares en las tierras identificadas."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Integración y Puesta en Marcha",
+                    "detalles": [
+                        "Conectar los parques solares a la red bajo el marco de la ley de generación distribuida.",
+                        "Realizar pruebas y asegurar el correcto funcionamiento del sistema."
+                    ]
+                },
+                {
+                    "icon": "ActivitySquare",
+                    "title": "Operación, Mantenimiento y Expansión",
+                    "detalles": [
+                        "Establecer protocolos de operación y mantenimiento a largo plazo.",
+                        "Monitorear el desempeño y planificar futuras expansiones del cluster."
+                    ]
+                }
+            ]
+        },
+        "clusterGeneradorResumen": {
+            "title": "Cluster Generador de Energía Solar en RAWSON",
+            "subtitle": "Modelo innovador de desarrollo energético sostenible, impulsando la economía local y promoviendo la colaboración público-privada.",
+            "caracteristicas": [
+                {
+                    "icon": "Users",
+                    "title": "Colaboración Público-Privada",
+                    "details": [
+                        "Alianza entre municipio, empresas y propietarios privados.",
+                        "Fomento de inversiones y desarrollo tecnológico."
+                    ]
+                },
+                {
+                    "icon": "Building",
+                    "title": "Financiamiento e Inversiones",
+                    "details": [
+                        "Inversiones proyectadas por USD 10 millones.",
+                        "Uso de modelos de leasing y financiamiento flexible."
+                    ]
+                },
+                {
+                    "icon": "Sun",
+                    "title": "Generación Distribuida",
+                    "details": [
+                        "Implementación de parques solares en 10 hectáreas municipales y tierras privadas.",
+                        "Aumento de la capacidad energética en 10 MW."
+                    ]
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Beneficios del Proyecto",
+                    "details": [
+                        "Desarrollo económico y creación de empleo.",
+                        "Sustentabilidad ambiental y reducción de emisiones.",
+                        "Mejora de la infraestructura energética local."
+                    ]
+                }
+            ]
+        }
+    }
+}
