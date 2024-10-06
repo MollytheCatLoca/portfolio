@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 
-const HEROKU_PDF_SERVICE_URL = process.env.HEROKU_PDF_SERVICE_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/generate-pdf-single/';
-const HEROKU_PDF_STATUS_URL = process.env.HEROKU_PDF_STATUS_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/pdf-status/';
-const HEROKU_PDF_DOWNLOAD_URL = process.env.HEROKU_PDF_DOWNLOAD_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
+const HEROKU_PDF_SERVICE_URL_SINGLE = process.env.HEROKU_PDF_SERVICE_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/generate-pdf-single/';
+const HEROKU_PDF_STATUS_URL_SINGLE = process.env.HEROKU_PDF_STATUS_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/pdf-status/';
+const HEROKU_PDF_DOWNLOAD_URL_SINGLE = process.env.HEROKU_PDF_DOWNLOAD_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
 const TIMEOUT = 300000; // 5 minutos de timeout
 const INITIAL_DELAY = 1000; // 1 segundo de espera inicial
 const MAX_RETRIES = 20;
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
 
         console.log("API route: Prepared data to send to Heroku:", JSON.stringify(dataToSend, null, 2));
 
-        const response = await axios.post(HEROKU_PDF_SERVICE_URL, dataToSend, {
+        const response = await axios.post(HEROKU_PDF_SERVICE_URL_SINGLE, dataToSend, {
             headers: { 'Content-Type': 'application/json' },
             timeout: TIMEOUT
         });
@@ -47,14 +47,14 @@ export async function POST(req: NextRequest) {
 
         for (let i = 0; i < MAX_RETRIES; i++) {
             try {
-                const statusResponse = await axios.get(`${HEROKU_PDF_STATUS_URL}${job_id}`);
+                const statusResponse = await axios.get(`${HEROKU_PDF_STATUS_URL_SINGLE}${job_id}`);
                 const statusData = statusResponse.data;
                 console.log(`API route: Job status (attempt ${i + 1}):`, JSON.stringify(statusData, null, 2));
 
                 if (statusData.status === 'completed') {
                     const pdfResponse = await axios({
                         method: 'get',
-                        url: `${HEROKU_PDF_DOWNLOAD_URL}${job_id}`,
+                        url: `${HEROKU_PDF_DOWNLOAD_URL_SINGLE}${job_id}`,
                         responseType: 'arraybuffer'
                     });
 

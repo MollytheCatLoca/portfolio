@@ -38,8 +38,8 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
             scenarioId: queryParams.scenarioId // Añadimos el scenarioId aqu
         };
 
-        console.log('MagicButton: Data being sent for PDF generation:', JSON.stringify(dataToSend, null, 2));
-
+        //console.log('MagicButton: Data being sent for PDF generation:', JSON.stringify(dataToSend, null, 2));
+        console.log('MagicButtonSingleScenario: Data being sent for PDF generation:')
         try {
             const response = await fetch('/api/generate-pdf-single', {
                 method: 'POST',
