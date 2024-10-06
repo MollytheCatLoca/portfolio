@@ -15,8 +15,8 @@ export default function MagicButtonPDFSingleScenario({ scenario, id }: MagicButt
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log('MagicButton: Received props:', { id, scenario: scenario ? 'present' : 'missing' });
-        console.log('MagicButton: QueryParams:', queryParams);
+        console.log('MagicButtonSingle: Received props:', { id, scenario: scenario ? 'present' : 'missing' });
+        console.log('MagicButtonSingle: QueryParams:', queryParams);
     }, [id, scenario, queryParams]);
 
 

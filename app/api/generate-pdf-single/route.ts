@@ -49,7 +49,8 @@ export async function POST(req: NextRequest) {
             try {
                 const statusResponse = await axios.get(`${HEROKU_PDF_STATUS_URL_SINGLE}${job_id}`);
                 const statusData = statusResponse.data;
-                console.log(`API route: Job status (attempt ${i + 1}):`, JSON.stringify(statusData, null, 2));
+                //console.log(`API route: Job status (attempt ${i + 1}):`, JSON.stringify(statusData, null, 2));
+                console.log("API route: Job status ");
 
                 if (statusData.status === 'completed') {
                     const pdfResponse = await axios({
