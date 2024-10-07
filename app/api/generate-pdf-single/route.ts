@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 
-const HEROKU_PDF_SERVICE_URL_SINGLE = process.env.HEROKU_PDF_SERVICE_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/generate-pdf-single/';
-const HEROKU_PDF_STATUS_URL_SINGLE = process.env.HEROKU_PDF_STATUS_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/pdf-status/';
-const HEROKU_PDF_DOWNLOAD_URL_SINGLE = process.env.HEROKU_PDF_DOWNLOAD_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
+const HEROKU_PDF_SERVICE_URL_SINGLE = process.env.HEROKU_PDF_SERVICE_URL_SINGLE || 'https://prompt-handler-06fbef253337.herokuapp.com/generate-pdf-single/';
+const HEROKU_PDF_STATUS_URL_SINGLE = process.env.HEROKU_PDF_STATUS_URL_SINGLE || 'https://prompt-handler-06fbef253337.herokuapp.com/pdf-status/';
+const HEROKU_PDF_DOWNLOAD_URL_SINGLE = process.env.HEROKU_PDF_DOWNLOAD_URL_SINGLE || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
 const TIMEOUT = 300000; // 5 minutos de timeout
 const INITIAL_DELAY = 1000; // 1 segundo de espera inicial
 const MAX_RETRIES = 20;
