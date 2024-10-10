@@ -118,8 +118,10 @@ export default function ScenarioDashboardPDFContent({ data, id, queryParams }: S
                 }
 }>
     <EnergyGeneration 
-                        generacionData={ data.generacionAnual }
-generacionMensual = { data.generacionMensual }
+generacionMensual={ data.generacionMensual }
+generacionAnual = { data.generacionAnual }
+factorCapacidad = { data.factorCapacidad }
+produccionAnual = { data.produccionAnual }
     />
     </div>
     </PDFPage>

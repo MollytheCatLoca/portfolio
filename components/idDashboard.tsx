@@ -54,9 +54,12 @@ terreno = { data.terreno }
 
     < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800" />}>
         <EnergyGeneration 
-                                generacionData={ data.generacionAnual }
-generacionMensual = { data.generacionMensual }
+    generacionMensual={ data.generacionMensual }
+generacionAnual = { data.generacionAnual }
+factorCapacidad = { data.factorCapacidad }
+produccionAnual = { data.produccionAnual }
     />
+
     </Suspense>
 
     < Suspense fallback = {< Skeleton className = "h-[400px] w-full bg-gray-800" />}>
