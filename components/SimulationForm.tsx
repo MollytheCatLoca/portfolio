@@ -51,14 +51,25 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        const plantCapacity = searchParams.get('plantCapacity');
-        if (plantCapacity) {
-            const capacidadValue = parseFloat(plantCapacity).toFixed(2);
-            setFormData(prevData => ({
-                ...prevData,
-                capacidad: capacidadValue
-            }));
-            console.log('Capacidad recibida:', capacidadValue);
+        if (searchParams) {
+            const plantCapacity = searchParams.get('plantCapacity');
+            const area = searchParams.get('area');
+
+            if (plantCapacity) {
+                const capacidadValue = parseFloat(plantCapacity).toFixed(2);
+                setFormData(prevData => ({
+                    ...prevData,
+                    capacidad: capacidadValue,
+                }));
+                console.log('Capacidad recibida:', capacidadValue);
+            }
+
+            if (area) {
+                setFormData(prevData => ({
+                    ...prevData,
+                    area: area,
+                }));
+            }
         }
     }, [searchParams]);
 

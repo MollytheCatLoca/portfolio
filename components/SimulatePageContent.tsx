@@ -8,6 +8,8 @@ import HeroSimulate from "@/components/Hero-Simulate";
 import Footer from "@/components/Footer";
 import { SimulationForm } from "@/components/SimulationForm";
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export default function SimulatePage() {
     const { setQueryParams } = useQueryParams();
@@ -41,13 +43,15 @@ export default function SimulatePage() {
                     <HeroSimulate className="w-full" />
                         <div className="mt-1" >
                             <div className="relative max-w-4xl mx-auto flex flex-col items-center gap-2" >
-                                <SimulationForm className="w-full mb-16" onSubmit = { handleSimulationSubmit } />
-                                    </div>
-                                    </div>
-                                    </div>
-                                    < Link href = "/" >
-                                        <Footer />
-                                        </Link>
-                                        </main>
+                                <Suspense fallback={ <Skeleton className="h-[200px] w-full bg-gray-800" />}>
+                                    <SimulationForm className="w-full mb-16" onSubmit = { handleSimulationSubmit } />
+                                        </Suspense>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        < Link href = "/" >
+                                            <Footer />
+                                            </Link>
+                                            </main>
     );
 }
