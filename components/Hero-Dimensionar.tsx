@@ -4,9 +4,9 @@ import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/Text-Generate-Effect-Sh";
 
-const HeroSimulate = () => {
+const HeroDimensionar = () => {
     return (
-        <div className= "pt-24" >
+        <div className= " pt-24" >
         <div>
         <Spotlight
                     className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -30,22 +30,22 @@ const HeroSimulate = () => {
         < div className = "flex justify-center relative my-20 z-10" >
             <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center" >
                 <TextGenerateEffect
-                        words="Simulador de Parques Solares"
+                        words="Dimensionador de Parques Solares"
     className = "text-center text-[40px] md:text-5xl lg:text-6xl"
         />
 
-        <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl" style = {{ color: 'white' }
+        <p className="text-center md:tracking-wider mb-1 text-sm md:text-lg lg:text-2xl" style = {{ color: 'white' }
 }>
-    Diseña y visualiza tu proyecto de energía solar con nuestra herramienta de simulación avanzada.Optimiza tu parque solar con datos precisos y proyecciones detalladas.
-                    </p>
+    Optimiza el Tamaño de tu Parque Solar: Maximiza Ahorros y Eficiencia
+Nuestro Dimensionador Inteligente te ayuda a determinar la capacidad óptima de tu instalación solar, equilibrando perfectamente tus necesidades energéticas con las oportunidades de ahorro.                    </p>
 
-        < div className = "flex items-center justify-center mt-8" >
+    < div className = "flex items-center justify-center mt-1" >
 
-            </div>
-            </div>
-            </div>
-            </div>
+        </div>
+        </div>
+        </div>
+        </div>
     );
 };
 
-export default HeroSimulate;
+export default HeroDimensionar;

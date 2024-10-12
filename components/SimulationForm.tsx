@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { FaSolarPanel } from "react-icons/fa";
-import { useRouter } from 'next/navigation';
+import { FaSolarPanel, FaRuler } from "react-icons/fa";
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useQueryParams } from '@/context/QueryParamsContext';
 import provinciasLocalidadesData from '@/public/data/provinciasLocalidades.json';
 import { Modal } from 'antd';
@@ -46,6 +46,21 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
     const [status, setStatus] = useState('');
     const [scenarios, setScenarios] = useState<Scenario[]>([]);
     const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(null);
+
+    // Añade esto justo después de la declaración de los estados
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const plantCapacity = searchParams.get('plantCapacity');
+        if (plantCapacity) {
+            const capacidadValue = parseFloat(plantCapacity).toFixed(2);
+            setFormData(prevData => ({
+                ...prevData,
+                capacidad: capacidadValue
+            }));
+            console.log('Capacidad recibida:', capacidadValue);
+        }
+    }, [searchParams]);
 
     useEffect(() => {
         if (formData.provincia) {
@@ -102,6 +117,20 @@ export function SimulationForm({ className = "", onSubmit }: SimulationFormProps
     const validateCapacityArea = (capacity: number, area: number) => {
         const minAreaRequired = capacity * 10000;
         return area >= minAreaRequired;
+    };
+
+    const handleDimensionar = () => {
+        // Obtenemos los valores relevantes del formulario
+        const { capacidad, area } = formData;
+
+        // Creamos un objeto con los parámetros que queremos pasar
+        const params = new URLSearchParams({
+            capacidad,
+            area
+        });
+
+        // Navegamos a la página de dimensionamiento con los parámetros
+        router.push(`/energy/dimensionar?${params.toString()}`);
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -311,10 +340,25 @@ required
 }
 </select>
     </div>
-    </div>
-    < div >
-    <label htmlFor="projectDescription" className = "block mb-1 text-sm text-white" > Descripción del Proyecto </label>
-        < textarea
+    < div className = "flex items-end" >
+        <Button
+    type="button"
+onClick = { handleDimensionar }
+className = "bg-[#4a4ae2] hover:bg-[#3b3be0] text-white font-bold py-2 px-4 rounded-3xl flex items-center justify-center"
+style = {{ minWidth: '390px', height: '36px' }} // Ajusta estos valores según sea necesario
+>
+    <FaRuler className="mr-4" />
+        Dimensionar
+        </Button>
+        </div>
+
+
+
+
+        </div>
+        < div >
+        <label htmlFor="projectDescription" className = "block mb-1 text-sm text-white" > Descripción del Proyecto </label>
+            < textarea
 id = "projectDescription"
 name = "projectDescription"
 value = { formData.projectDescription }

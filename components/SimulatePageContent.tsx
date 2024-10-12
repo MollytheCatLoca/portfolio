@@ -27,6 +27,7 @@ export default function SimulatePage() {
     const navItems = [
         { name: "Home", link: "/" },
         { name: "Energy", link: "/energy" },
+        { name: "Dimensionar", link: "/energy/dimensionar" },
         { name: "All In One", link: "/energy/all-in-one" },
 
     ];
