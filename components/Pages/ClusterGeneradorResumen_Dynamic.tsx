@@ -17,7 +17,7 @@ const ClusterGeneradorResumen_Dynamic: React.FC<{ data: any, transform?: string 
     return (
         <div className= "space-y-4 text-white bg-[#121212] p-4 mt-20" >
         <h2 className="text-2xl font-bold mb-4" >
-            <span className="text-blue-500" > { title.split(' en ')[0] } </span> en {title.split(' en ')[1]}
+            <span className="text-blue-500" > { title.split(' en ')[0] } </span>  {title.split(' en ')[1]}
                 </h2>
                 < p className = "text-sm text-gray-300 mb-4" style = {{ transform: 'scale(0.95)' }
 }>

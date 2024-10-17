@@ -15,7 +15,7 @@ const ClusterGeneradorResumen_Dynamic = dynamic(() => import('./Pages/ClusterGen
 const TOTAL_PAGES = 8;
 
 // Constante para la localidad seleccionada
-const SELECTED_LOCATION = 'Rawson'; // Cambia esto a 'SanPedro' cuando sea necesario
+const SELECTED_LOCATION = 'Cluster'; // Cambia esto a 'SanPedro' cuando sea necesario
 
 interface ClusterData {
     nombre: string;

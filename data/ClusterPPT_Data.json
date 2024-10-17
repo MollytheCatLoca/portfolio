@@ -624,5 +624,211 @@
                 }
             ]
         }
+    },
+    "Cluster": {
+        "nombre": "Cluster Energético Renovable",
+        "heroSection": {
+            "subtitle": "BIS INTEGRACIONES - ENERGY - ALL IN ONE",
+            "title": "Parques All-In-One",
+            "description": "Catalizando la Generación Distribuida y el Desarrollo Sostenible",
+            "buttonText": "EXPLORAR CLUSTER →"
+        },
+        "resumenEjecutivo": {
+            "title": "Resumen Ejecutivo: Problemática y Solución Propuesta",
+            "problematica": "Muchas comunidades enfrentan limitaciones en la transmisión de energía, lo que afecta tanto a consumidores como a empresas, elevando los costos energéticos y disminuyendo la competitividad.",
+            "solucionPropuesta": [
+                {
+                    "icon": "Sun",
+                    "title": "Cluster Generador de Energía Solar",
+                    "description": "Implementación de un clúster energético renovable que promueve la generación local de energía solar, reduciendo la dependencia de la red de transmisión."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Generación Distribuida y Mejora de Infraestructura",
+                    "description": "Fomento de proyectos de generación distribuida bajo el marco legal vigente, optimizando el uso de la red y reduciendo pérdidas energéticas."
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Reducción de Costos Energéticos",
+                    "description": "Soluciones energéticas que disminuyen los costos de las facturas eléctricas, incrementando la competitividad de empresas y municipios."
+                },
+                {
+                    "icon": "Building",
+                    "title": "Colaboración Público-Privada",
+                    "description": "Iniciativas conjuntas entre el sector público y privado para mejorar la competitividad y generar desarrollo económico sostenible."
+                }
+            ]
+        },
+        "beneficiosAllInOne": {
+            "title": "Beneficios de los Parques All In One para el Cluster Energético",
+            "beneficios": [
+                {
+                    "icon": "Zap",
+                    "title": "Flexibilidad y Escalabilidad",
+                    "description": [
+                        "Implementación modular y escalable según las necesidades energéticas.",
+                        "Permite ajustar la generación de energía a la demanda actual y futura."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Atracción de Inversiones y Desarrollo Económico",
+                    "description": [
+                        "Generación de inversiones y crecimiento económico local.",
+                        "Creación de empleo y oportunidades de desarrollo."
+                    ]
+                },
+                {
+                    "icon": "Shield",
+                    "title": "Protección ante Limitaciones Energéticas",
+                    "description": [
+                        "Aumento de la capacidad energética en función de la demanda local.",
+                        "Reducción de riesgos asociados a la saturación de la red de transporte."
+                    ]
+                },
+                {
+                    "icon": "Network",
+                    "title": "Generación Distribuida",
+                    "description": [
+                        "Integración de energía renovable en la red local.",
+                        "Participación activa de múltiples actores en la generación de energía."
+                    ]
+                },
+                {
+                    "icon": "Wrench",
+                    "title": "Uso Óptimo de Terrenos",
+                    "description": [
+                        "Aprovechamiento eficiente de terrenos públicos y privados.",
+                        "Generación sostenible en terrenos disponibles."
+                    ]
+                }
+            ]
+        },
+        "ventajasActores": {
+            "title": "Ventajas para los Actores Clave",
+            "actores": [
+                {
+                    "icon": "Building",
+                    "title": "Gobiernos Locales",
+                    "ventajas": [
+                        "Aumento de la capacidad energética y desarrollo económico.",
+                        "Posicionamiento como líderes en sostenibilidad.",
+                        "Uso eficiente de recursos públicos y generación de valor para la comunidad."
+                    ]
+                },
+                {
+                    "icon": "Handshake",
+                    "title": "Empresas Privadas",
+                    "ventajas": [
+                        "Inversión en energía renovable con beneficios económicos.",
+                        "Mejora de la imagen corporativa y responsabilidad social.",
+                        "Acceso a energía limpia y reducción de costos."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Comunidad",
+                    "ventajas": [
+                        "Generación de empleo y capital humano especializado.",
+                        "Mejora ambiental y reducción de emisiones.",
+                        "Acceso a programas educativos sobre energías renovables."
+                    ]
+                }
+            ]
+        },
+        "rutaImplementacion": {
+            "title": "Ruta de Implementación",
+            "parte1": [
+                {
+                    "icon": "ChartLine",
+                    "title": "Estudios y Análisis Preliminares",
+                    "detalles": [
+                        "Estudios técnicos, económicos y ambientales detallados.",
+                        "Evaluación de viabilidad y estrategias de implementación."
+                    ]
+                },
+                {
+                    "icon": "Users",
+                    "title": "Alianzas Estratégicas",
+                    "detalles": [
+                        "Acuerdos con empresas y propietarios privados para el uso de tierras.",
+                        "Modelos de inversión y participación público-privada."
+                    ]
+                },
+                {
+                    "icon": "BarChart",
+                    "title": "Gestión de Permisos y Financiamiento",
+                    "detalles": [
+                        "Permisos legales y regulatorios.",
+                        "Gestión de financiamiento, leasing y créditos."
+                    ]
+                }
+            ],
+            "parte2": [
+                {
+                    "icon": "Layout",
+                    "title": "Diseño y Construcción",
+                    "detalles": [
+                        "Planificación del clúster energético y parques solares.",
+                        "Construcción e instalación de las plantas solares."
+                    ]
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Integración y Puesta en Marcha",
+                    "detalles": [
+                        "Conexión a la red bajo la ley de generación distribuida.",
+                        "Pruebas y aseguramiento del correcto funcionamiento."
+                    ]
+                },
+                {
+                    "icon": "ActivitySquare",
+                    "title": "Operación y Mantenimiento",
+                    "detalles": [
+                        "Protocolos de operación y mantenimiento a largo plazo.",
+                        "Monitoreo y planificación de expansiones."
+                    ]
+                }
+            ]
+        },
+        "clusterGeneradorResumen": {
+            "title": "Cluster Energético Renovable",
+            "subtitle": "Modelo innovador para un desarrollo energético sostenible, impulsando la economía local y promoviendo la colaboración público-privada.",
+            "caracteristicas": [
+                {
+                    "icon": "Users",
+                    "title": "Colaboración Público-Privada",
+                    "details": [
+                        "Alianza entre gobiernos, empresas y propietarios privados.",
+                        "Fomento de inversiones y desarrollo tecnológico."
+                    ]
+                },
+                {
+                    "icon": "Building",
+                    "title": "Financiamiento e Inversiones",
+                    "details": [
+                        "Inversiones proyectadas en crecimiento energético.",
+                        "Modelos de leasing y financiamiento flexible."
+                    ]
+                },
+                {
+                    "icon": "Sun",
+                    "title": "Generación Distribuida",
+                    "details": [
+                        "Parques solares en terrenos públicos y privados.",
+                        "Aumento de la capacidad energética."
+                    ]
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Beneficios del Proyecto",
+                    "details": [
+                        "Crecimiento económico y creación de empleo.",
+                        "Sostenibilidad y reducción de emisiones.",
+                        "Mejora de la infraestructura energética local."
+                    ]
+                }
+            ]
+        }
     }
 }
