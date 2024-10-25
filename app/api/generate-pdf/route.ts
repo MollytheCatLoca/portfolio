@@ -6,7 +6,7 @@ const HEROKU_PDF_STATUS_URL = process.env.HEROKU_PDF_STATUS_URL || 'https://prom
 const HEROKU_PDF_DOWNLOAD_URL = process.env.HEROKU_PDF_DOWNLOAD_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
 const TIMEOUT = 300000; // 5 minutos de timeout
 const INITIAL_DELAY = 1000; // 2 segundos de espera inicial
-const MAX_RETRIES = 20;
+const MAX_RETRIES = 50;
 const RETRY_DELAY = 1000; // 5 segundos entre intentos
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
