@@ -8,6 +8,8 @@ const TIMEOUT = 60000; // 1 minuto por solicitud
 const INITIAL_DELAY = 2000; // 2 segundos de espera inicial
 const MAX_RETRIES = 50;
 const RETRY_DELAY = 5000; // 5 segundos entre intentos
+const DOWNLOAD_RETRY_DELAY = 2000; // 2 segundos entre intentos de descarga
+const DOWNLOAD_MAX_RETRIES = 5;
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -45,33 +47,20 @@ async function checkPdfStatusLoop(job_id: string) {
             const statusData = statusResponse.data;
 
             if (statusData.status === 'completed') {
-                const pdfResponse = await axios({
-                    method: 'get',
-                    url: `${HEROKU_PDF_DOWNLOAD_URL}${job_id}`,
-                    responseType: 'arraybuffer',
-                    timeout: TIMEOUT // Timeout para la descarga
-                });
+                // Agregar una espera adicional antes de intentar la descarga para dar tiempo al sistema
+                await wait(DOWNLOAD_RETRY_DELAY);
 
-                console.log('API route: PDF downloaded successfully. Size:', pdfResponse.data.byteLength, 'bytes');
+                const pdf = await downloadPdfWithRetries(job_id);
+                if (pdf) return pdf;
 
-                return new NextResponse(pdfResponse.data, {
-                    status: 200,
-                    headers: {
-                        'Content-Type': 'application/pdf',
-                        'Content-Disposition': `attachment; filename="${statusData.file_name}"`
-                    }
-                });
+                throw new Error('PDF was marked as completed, but could not be downloaded.');
             } else if (statusData.status === 'failed') {
                 throw new Error(`PDF generation failed: ${statusData.error}`);
             }
 
             console.log(`API route: PDF not ready, retrying in ${RETRY_DELAY / 1000} seconds. Attempt ${i + 1} of ${MAX_RETRIES}`);
 
-            // Uso de setImmediate para no bloquear la función serverless
-            await new Promise((resolve) => setImmediate(async () => {
-                await wait(RETRY_DELAY);
-                resolve(true);
-            }));
+            await wait(RETRY_DELAY);
 
         } catch (error) {
             console.error(`Error checking PDF status (attempt ${i + 1}):`, error.message);
@@ -80,4 +69,34 @@ async function checkPdfStatusLoop(job_id: string) {
     }
 
     throw new Error('PDF generation timed out after maximum retries');
+}
+
+async function downloadPdfWithRetries(job_id: string) {
+    for (let j = 0; j < DOWNLOAD_MAX_RETRIES; j++) {
+        try {
+            const pdfResponse = await axios({
+                method: 'get',
+                url: `${HEROKU_PDF_DOWNLOAD_URL}${job_id}`,
+                responseType: 'arraybuffer',
+                timeout: TIMEOUT
+            });
+
+            console.log('API route: PDF downloaded successfully. Size:', pdfResponse.data.byteLength, 'bytes');
+
+            return new NextResponse(pdfResponse.data, {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/pdf',
+                    'Content-Disposition': `attachment; filename="generated.pdf"`
+                }
+            });
+
+        } catch (error) {
+            console.error(`Attempt ${j + 1} to download PDF failed. Retrying in ${DOWNLOAD_RETRY_DELAY / 1000} seconds...`);
+            await wait(DOWNLOAD_RETRY_DELAY);
+        }
+    }
+
+    console.error('All attempts to download the completed PDF failed.');
+    return null;
 }
