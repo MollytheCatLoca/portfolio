@@ -602,6 +602,11 @@
       "nombre": "San Pedro",
       "lat": -31.9364496,
       "lon": -65.2188982
+    },
+    {
+      "nombre": "Ente BioCórdoba",
+      "lat": -31.42444,
+      "lon": -64.17611
     }
   ],
   "Corrientes": [
@@ -1831,6 +1836,16 @@
       "nombre": "Media Agua",
       "lat": -31.9797284,
       "lon": -68.4176923
+    },
+    {
+      "nombre": "BIOFINCA DE LOS ANDES",
+      "lat": -31.708333,
+      "lon": -68.50833
+    },
+    {
+      "nombre": "ICEBERG AGRICOLA",
+      "lat": -31.71444,
+      "lon": -68.47527
     }
   ],
   "San Luis": [
