@@ -92,7 +92,7 @@ export interface MetricasManuales {
     vidaUtil: number; // 
 }
 
-export const useCalcularMetricasManuales = (plantCapacityKW: number): MetricasManuales => {
+export const calcularMetricasManuales = (plantCapacityKW: number): MetricasManuales => {
 
 
     // Valores base

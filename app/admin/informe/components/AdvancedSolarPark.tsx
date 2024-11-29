@@ -2,7 +2,7 @@
 import { useMemo } from 'react';
 import React from 'react';
 import { Sun, Battery, Cpu, Gauge, LayoutGrid } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card3";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts';
 import { calcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
