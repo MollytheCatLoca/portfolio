@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calculator, LeafyGreen, Zap, WalletCards, LineChart } from 'lucide-react';
-import { calcularMetricasManuales } from '../data/constants_pdf';
+import { usecalcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 
 type PlantMetrics = {
@@ -36,7 +36,7 @@ const PowerSummary = ({
     const mplantCapacityKW = plantMetricsC.plantCapacityKW
     const coveragePercentage = plantMetrics.selfConsumptionPercentage || 0;
     //const annualSavings = ((netBenefits.duringLeasing * 6) + (netBenefits.afterLeasing * 19)) / 25;
-    const metricasManuales = calcularMetricasManuales(mplantCapacityKW)
+    const metricasManuales = usecalcularMetricasManuales(mplantCapacityKW)
     //const annualSavings = ((metricasManuales.ahorroTotalProyecto / 25))
     const annualSavings = ((metricasManuales.ahorroTotalProyecto / 25))
     const cuotaLeasingMensual = metricasManuales.cuotaLeasing
