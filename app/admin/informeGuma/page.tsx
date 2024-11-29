@@ -14,7 +14,7 @@ import DimensionarContainer2 from './components/DimensionarContainer2';
 import PowerForm from './components/PowerForm';
 import StateMonitor from './components/StateMonitor';
 import { Settings, Zap, Calculator, BarChart3 } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card3";
 import AhorrosComponent from './components/AhorrosComponentAUX';
 import AhorrosYBeneficios1 from './components/AhorrosComponent1';
 import AhorrosYBeneficios2 from './components/AhorrosComponent2';

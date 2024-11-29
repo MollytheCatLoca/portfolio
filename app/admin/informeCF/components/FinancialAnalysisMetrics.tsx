@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FinancialAnalysisMetrics from '../utils/FinancialAnalysisMetrics';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card3";
 import { Download, Calculator } from "lucide-react";
 import { Save } from "lucide-react"; // Cambiamos Download por Save
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card3";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Sun, Battery, Timer, DollarSign } from 'lucide-react';
 import { SOLAR_PROJECT_DATA } from '../data/data_gen';

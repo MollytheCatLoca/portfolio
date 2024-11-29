@@ -4,7 +4,7 @@ import { Clock,BatteryCharging, Gauge, TrendingUp, AlertCircle, Zap } from 'luci
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card3";
 import { ComposedChart, ReferenceLine, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area } from 'recharts';
 import { useConstants } from '../contexts/ConstantsContext';
 

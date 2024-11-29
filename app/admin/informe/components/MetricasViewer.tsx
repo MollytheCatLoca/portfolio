@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useConstants } from '../contexts/ConstantsContext';
 import { calcularMetricasManuales } from '../data/constants_pdf';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card3";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Calculator } from "lucide-react";

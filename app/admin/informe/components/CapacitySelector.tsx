@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card3";
 
 const CapacitySelector = ({
     selectedMetrics,

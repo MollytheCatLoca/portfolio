@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calculator,Sun,Zap, DollarSign, TrendingUp, Clock, Package, Wallet } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card3";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts';
 import { calcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card3";
 import { useConstants } from '../contexts/ConstantsContext';
 import { Sun, Battery, Zap, AlertTriangle, ArrowUpRight, Leaf, DollarSign, BarChart3 } from 'lucide-react';
 

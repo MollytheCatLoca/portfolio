@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card3";
 import DimensionarForm from './DimensionarForm';
 import AnalisisParqueSolar from './AnalisisParqueSolar';
 
