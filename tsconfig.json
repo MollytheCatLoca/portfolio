@@ -37,7 +37,8 @@
         "app/api/assistant/route.ts",
         "app/api/assistants/files/[fileld]/route.js",
         "app/api/assist/route.js",
-        "out/types/**/*.ts"
+        "out/types/**/*.ts",
+        "app/api/save-analysis"
     ],
     "exclude": [
         "node_modules"

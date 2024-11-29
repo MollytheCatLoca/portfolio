@@ -1,0 +1,80 @@
+{
+  "technical": {
+    "contractedPowerKVA": 8000000,
+    "contractedPowerKW": 8000000,
+    "injectionLimitKW": 8000000,
+    "costPerKW": 1000,
+    "referencePowerMW": 1,
+    "referenceAnnualGenerationMWH": 2300,
+    "maxCurtailmentPercentage": 7,
+    "daysPerYear": 365,
+    "hoursPico": 5,
+    "hoursValle": 6,
+    "hoursResto": 13,
+    "hoursGeneration": 9
+  },
+  "consumption": {
+    "annualConsumption": 34276812,
+    "picoMonthly": 1142560.4,
+    "valleMonthly": 856920.3,
+    "restoMonthly": 856920.3
+  },
+  "power": {
+    "installedPowerKW": 8000000,
+    "exchangeRate": 1250,
+    "totalInvoiceAmountDollars": 500000,
+    "taxesNonRecoverable": 15,
+    "nonAbsorbableTaxes": 5,
+    "fixedChargesAnnualDollars": 12000,
+    "reactivePowerChargesDollars": 3000,
+    "energyPricePerMW": 85.75,
+    "invoiceGuma": {
+      "exchangeRate": 1260,
+      "totalInvoiceAmountDollars": 500000,
+      "taxesNonRecoverable": 15,
+      "nonAbsorbableTaxes": 5,
+      "fixedChargesAnnualDollars": 12500,
+      "reactivePowerChargesDollars": 3000,
+      "energyPricePerMW": 85.75
+    }
+  },
+  "invoiceGuma": {
+    "exchangeRate": 1250,
+    "totalInvoiceAmountDollars": 500000,
+    "taxesNonRecoverable": 15,
+    "nonAbsorbableTaxes": 5,
+    "fixedChargesAnnualDollars": 12000,
+    "reactivePowerChargesDollars": 3000,
+    "energyPricePerMW": 85.75,
+    "invoiceGuma": {
+      "exchangeRate": 1000,
+      "totalInvoiceAmountDollars": 500000,
+      "taxesNonRecoverable": 15,
+      "nonAbsorbableTaxes": 5,
+      "fixedChargesAnnualDollars": 12000,
+      "reactivePowerChargesDollars": 3000,
+      "energyPricePerMW": 85.75
+    }
+  },
+  "company": {
+    "companyName": "LESAFFRE ARGENTINA S.A.",
+    "latitude": -34.8861,
+    "longitude": -58.6772,
+    "address": "M. Pumacahua 6640, Virrey del Pino, Buenos Aires"
+  },
+  "detailedMetrics": {
+    "capacityMW": 14,
+    "valoresAnuales": {
+      "generacionTotal": 32200,
+      "autoconsumo": 11425.604,
+      "inyeccion": 20774.396,
+      "curtailment": 0
+    },
+    "porcentajes": {
+      "ahorroTotal": 93.94105846249646,
+      "autoconsumo": 35.48324223602484,
+      "inyeccion": 64.51675776397515,
+      "curtailment": 0
+    }
+  }
+}

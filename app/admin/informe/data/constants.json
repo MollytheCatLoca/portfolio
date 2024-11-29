@@ -1,0 +1,59 @@
+{
+  "technical": {
+    "contractedPowerKVA": 480,
+    "contractedPowerKW": 100,
+    "injectionLimitKW": 480,
+    "costPerKW": 1000,
+    "referencePowerMW": 1,
+    "referenceAnnualGenerationMWH": 1950,
+    "maxCurtailmentPercentage": 7,
+    "daysPerYear": 365,
+    "hoursPico": 5,
+    "hoursValle": 6,
+    "hoursResto": 13,
+    "hoursGeneration": 8,
+    "OyMLeasing": 3000,
+    "OyMSLeasing": 6000,
+    "duracionLeasing": 6,
+    "vidaUtil": 25,
+    "tasaInteres": 6
+  },
+  "consumption": {
+    "annualConsumption": 288454,
+    "picoMonthly": 9615.13,
+    "valleMonthly": 7211.35,
+    "restoMonthly": 7211.35
+  },
+  "power": {
+    "installedPowerKW": 100
+  },
+  "invoice": {
+    "exchangeRate": 1010,
+    "totalInvoiceAmountPesos": 4366000,
+    "taxesPercentage": 21,
+    "fixedChargesPesos": 933966,
+    "reactivePowerChargesPesos": 15000,
+    "priceEnergyMWh": 127
+  },
+  "company": {
+    "companyName": "MUNICIPALIDAD ESCOBAR",
+    "latitude": -34.4047,
+    "longitude": -58.7744,
+    "address": "Polideportivo Municipal, Escobar, Buenos Aires"
+  },
+  "detailedMetrics": {
+    "capacityMW": 0.1,
+    "valoresAnuales": {
+      "generacionTotal": 195,
+      "autoconsumo": 96.15133333333331,
+      "inyeccion": 98.8486666666667,
+      "curtailment": 0
+    },
+    "porcentajes": {
+      "ahorroTotal": 67.60176665950203,
+      "autoconsumo": 49.308376068376056,
+      "inyeccion": 50.69162393162395,
+      "curtailment": 0
+    }
+  }
+}

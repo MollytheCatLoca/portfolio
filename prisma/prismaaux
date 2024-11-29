@@ -1,0 +1,153 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model capacity_based_parameters {
+  id           Int        @id @default(autoincrement())
+  scenario_id  String?    @db.VarChar(50)
+  category     String     @db.VarChar(50)
+  capacity_min Float
+  capacity_max Float
+  value        Float
+  updated_at   DateTime?  @default(now()) @db.Timestamp(6)
+  scenarios    scenarios? @relation(fields: [scenario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model contact_messages {
+  id         Int       @id @default(autoincrement())
+  name       String    @db.VarChar(100)
+  email      String    @db.VarChar(100)
+  message    String
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+}
+
+model economic_parameters {
+  id          Int        @id @default(autoincrement())
+  scenario_id String?    @db.VarChar(50)
+  category    String     @db.VarChar(50)
+  name        String     @db.VarChar(100)
+  value       Float
+  updated_at  DateTime?  @default(now()) @db.Timestamp(6)
+  scenarios   scenarios? @relation(fields: [scenario_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model goodresp2 {
+  id              Int                   @id @default(autoincrement())
+  question        String
+  question_vector Unsupported("vector")
+  answer          String
+  answer_vector   Unsupported("vector")
+  rating          Int?
+  filename        String?
+}
+
+model scenarios {
+  id                        String                      @id @db.VarChar(50)
+  name                      String                      @db.VarChar(100)
+  description               String?
+  created_at                DateTime?                   @default(now()) @db.Timestamp(6)
+  updated_at                DateTime?                   @default(now()) @db.Timestamp(6)
+  validez_capacidad_min     Float                       @default(0)
+  validez_capacidad_max     Float                       @default(500)
+  capacity_based_parameters capacity_based_parameters[]
+  economic_parameters       economic_parameters[]
+}
+
+model weather_cache {
+  id           Int       @id @default(autoincrement())
+  latitude     Float?
+  longitude    Float?
+  cache_time   DateTime? @db.Timestamp(6)
+  weather_data Json?
+
+  @@unique([latitude, longitude])
+}
+
+model clients {
+  id           Int        @id @default(autoincrement())
+  company_name String     @unique @db.VarChar(255)
+  plants       plants[]   // Relación con las plantas del cliente
+}
+
+model plants {
+  id              Int        @id @default(autoincrement())
+  client_id       Int
+  address         String     @unique @db.VarChar(255)
+  latitude        Float
+  longitude       Float
+  client          clients    @relation(fields: [client_id], references: [id], onDelete: Cascade)
+  quotations      quotations[] // Relación con las cotizaciones asociadas a la planta
+}
+
+model quotations {
+  id              Int         @id @default(autoincrement())
+  created_at      DateTime    @default(now())
+  plant_id        Int
+  status          String      @default("pendiente") @db.VarChar(50)
+  quotation_name  String?     @db.VarChar(100) // Campo opcional para identificar distintas versiones
+
+  plant           plants      @relation(fields: [plant_id], references: [id], onDelete: Cascade)
+  technical_data  technical_data[]
+  consumption_data consumption_data[]
+  invoice_data    invoice_data[]
+  detailed_metrics detailed_metrics[]
+}
+
+model technical_data {
+  id                    Int         @id @default(autoincrement())
+  quotation_id          Int
+  contracted_power_kva  Int?
+  contracted_power_kw   Int?
+  injection_limit_kw    Int?
+  cost_per_kw           Int?
+  reference_power_mw    Float?
+  reference_annual_generation_mwh Float?
+  max_curtailment_percentage Float?
+
+  quotations quotations @relation(fields: [quotation_id], references: [id], onDelete: Cascade)
+}
+
+model consumption_data {
+  id              Int      @id @default(autoincrement())
+  quotation_id    Int
+  annual_consumption Float?
+  pico_monthly    Float?
+  valle_monthly   Float?
+  resto_monthly   Float?
+
+  quotations quotations @relation(fields: [quotation_id], references: [id], onDelete: Cascade)
+}
+
+model invoice_data {
+  id                       Int      @id @default(autoincrement())
+  quotation_id             Int
+  exchange_rate            Float?
+  total_invoice_amount_pesos Int?
+  taxes_percentage         Int?
+  fixed_charges_pesos      Int?
+  reactive_power_charges_pesos Int?
+  price_energy_mwh         Float?
+
+  quotations quotations @relation(fields: [quotation_id], references: [id], onDelete: Cascade)
+}
+
+model detailed_metrics {
+  id             Int       @id @default(autoincrement())
+  quotation_id   Int
+  capacity_mw    Float?
+  total_generation Float?
+  self_consumption Float?
+  injection       Float?
+  curtailment     Float?
+  ahorro_total    Float?
+  autoconsumo     Float?
+  inyeccion       Float?
+  curtailment_percentage Float?
+
+  quotations quotations @relation(fields: [quotation_id], references: [id], onDelete: Cascade)
+}

@@ -1,0 +1,59 @@
+{
+  "technical": {
+    "contractedPowerKVA": 480,
+    "contractedPowerKW": 940,
+    "injectionLimitKW": 480,
+    "costPerKW": 900,
+    "referencePowerMW": 1,
+    "referenceAnnualGenerationMWH": 1950,
+    "maxCurtailmentPercentage": 7,
+    "daysPerYear": 365,
+    "hoursPico": 5,
+    "hoursValle": 6,
+    "hoursResto": 13,
+    "hoursGeneration": 8,
+    "OyMLeasing": 3000,
+    "OyMSLeasing": 6000,
+    "duracionLeasing": 6,
+    "vidaUtil": 25,
+    "tasaInteres": 6
+  },
+  "consumption": {
+    "annualConsumption": 2871300,
+    "picoMonthly": 95710,
+    "valleMonthly": 71782.5,
+    "restoMonthly": 71782.5
+  },
+  "power": {
+    "installedPowerKW": 1000
+  },
+  "invoice": {
+    "exchangeRate": 1010,
+    "totalInvoiceAmountPesos": 31012214,
+    "taxesPercentage": 9,
+    "fixedChargesPesos": 5219345,
+    "reactivePowerChargesPesos": 158000,
+    "priceEnergyMWh": 120
+  },
+  "company": {
+    "companyName": "BOCA JUNIORS",
+    "latitude": -34.6356,
+    "longitude": -58.3647,
+    "address": "Brandsen 805"
+  },
+  "detailedMetrics": {
+    "capacityMW": 1,
+    "valoresAnuales": {
+      "generacionTotal": 1950,
+      "autoconsumo": 957.1,
+      "inyeccion": 992.8999999999999,
+      "curtailment": 0
+    },
+    "porcentajes": {
+      "ahorroTotal": 67.9134886636715,
+      "autoconsumo": 49.08205128205128,
+      "inyeccion": 50.91794871794871,
+      "curtailment": 0
+    }
+  }
+}

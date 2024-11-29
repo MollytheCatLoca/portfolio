@@ -1,0 +1,53 @@
+{
+  "technical": {
+    "contractedPowerKVA": 501,
+    "contractedPowerKW": 80,
+    "injectionLimitKW": 150,
+    "costPerKW": 1500,
+    "referencePowerMW": 1,
+    "referenceAnnualGenerationMWH": 2300,
+    "maxCurtailmentPercentage": 7,
+    "daysPerYear": 365,
+    "hoursPico": 5,
+    "hoursValle": 6,
+    "hoursResto": 13,
+    "hoursGeneration": 9
+  },
+  "consumption": {
+    "annualConsumption": 40000,
+    "picoMonthly": 1333.33,
+    "valleMonthly": 1000,
+    "restoMonthly": 1000
+  },
+  "power": {
+    "installedPowerKW": 40
+  },
+  "invoice": {
+    "exchangeRate": 1001,
+    "totalInvoiceAmountPesos": 7790000,
+    "taxesPercentage": 21,
+    "fixedChargesPesos": 845000,
+    "reactivePowerChargesPesos": 65000
+  },
+  "company": {
+    "companyName": "Municipalidad San Javier",
+    "latitude": -32.0306,
+    "longitude": -65.0308,
+    "address": "San Javier y Yacanto, Córdoba Province"
+  },
+  "detailedMetrics": {
+    "capacityMW": 0.1,
+    "valoresAnuales": {
+      "generacionTotal": 180,
+      "autoconsumo": 13.333333333333334,
+      "inyeccion": 166.66666666666666,
+      "curtailment": 0
+    },
+    "porcentajes": {
+      "ahorroTotal": 100,
+      "autoconsumo": 7.407407407407408,
+      "inyeccion": 92.59259259259258,
+      "curtailment": 0
+    }
+  }
+}

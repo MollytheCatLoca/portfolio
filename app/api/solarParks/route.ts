@@ -5,7 +5,7 @@ import path from 'path';
 
 const DEBUG_MODE = 1; // 1 para usar datos de Heroku, 2 para usar datos locales
 const TIMEOUT = 60000; // 60 segundos de timeout
-const CACHE_EXPIRATION = 3600000; // 1 hora en milisegundos
+const CACHE_EXPIRATION = 3; // 1 hora en milisegundos
 
 interface CacheItem {
     data: any;
@@ -15,7 +15,7 @@ interface CacheItem {
 const cache = new Map<string, CacheItem>();
 
 async function getLocalData() {
-    const filePath = path.join(process.cwd(), 'data', 'parquesSolaresEscenarios.json');
+    const filePath = path.join(process.cwd(), 'data', 'parquesSolaresEscenariosAAA.json');
     const fileContents = await fs.readFile(filePath, 'utf8');
     return JSON.parse(fileContents);
 }
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
                     }
                 });
                 console.log('API route: Received response from Heroku');
-
+                console.log(responseData);
                 // Guardar en caché
                 cache.set(cacheKey, { data: responseData, timestamp: Date.now() });
             } catch (axiosError: any) {

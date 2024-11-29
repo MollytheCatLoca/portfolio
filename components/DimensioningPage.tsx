@@ -183,9 +183,28 @@ const DimensioningPage = () => {
 
     const handleChartClick = (data) => {
         if (data && data.activePayload && data.activePayload.length > 0) {
-            const clickedCapacity = data.activePayload[0].payload.capacity;
-            setSelectedCapacity(clickedCapacity);
-            handleChange('plantCapacity', clickedCapacity / 1000); // Convertir kW a MW
+            const selectedData = data.activePayload[0].payload;
+            setSelectedCapacity(selectedData.capacity);
+            handleChange('plantCapacity', selectedData.capacity / 1000); // Convertir kW a MW
+
+            // Calculamos las métricas y actualizamos el contexto
+            const metricsDisplay = calculateMetricsDisplay(selectedData, constants);
+
+            if (metricsDisplay) {
+                try {
+                    const updatedConstants = {
+                        ...constants,
+                        detailedMetrics: metricsDisplay
+                    };
+
+                    // Enviamos la actualización al API
+                    axios.post('/api/constants', updatedConstants)
+                        .catch(error => console.error('Error updating metrics:', error));
+
+                } catch (error) {
+                    console.error('Error processing metrics:', error);
+                }
+            }
         }
     };
 
