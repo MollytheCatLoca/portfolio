@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from components/ui/Card3"
+import { Card, CardContent, CardHeader, CardFooter, CardTitle } from '../ui/Card2';
 import { ChevronDown, Layers, Zap, Users, Lightbulb } from 'lucide-react';
 
 const CustomAccordionItem = ({ title, icon, summary, details }) => {
