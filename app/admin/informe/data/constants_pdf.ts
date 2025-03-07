@@ -1,14 +1,20 @@
 // data/constants_pdf.ts
+import { Constants } from '../contexts/ConstantsContext';
+
+// Variable global para almacenar constants
+let _globalConstants: any = null;
+
+// Función para actualizar constants globales
+export function setGlobalConstants(constants: Constants) {
+  _globalConstants = constants;
+}
+
 export const heroSectionData = {
     subtitle: "Informe de Energía Renovable",
     title: "Parque Solar All-in-One",
     description: "Solución integrada para la generación de energía sostenible en proyectos empresariales y municipales, adaptada a las necesidades actuales.",
     buttonText: "Informe Tecnico - Inglow S.A."
 };
-
-import { useConstants } from '../contexts/ConstantsContext';
-// constants_pdf.ts
-
 
 // Datos de la Sección Ventajas All-in-One
 export const ventajasAllinOneData = {
@@ -69,11 +75,6 @@ export const ventajasAllinOneData = {
     ]
 };
 
-// Puedes añadir más secciones según lo necesites
-// Ejemplo:
-// export const otraSeccionData = { ... }
-
-
 // Constantes y tipos para métricas manuales
 export interface MetricasManuales {
     energiaGenerada: number;
@@ -89,52 +90,62 @@ export interface MetricasManuales {
     factorPlanta: number;
     costoParque: number;
     duracionLeasing: number;
-    vidaUtil: number; // 
+    vidaUtil: number;
+    plantCapacityKWcm: number;
 }
 
-export const calcularMetricasManuales = (plantCapacityKW: number): MetricasManuales => {
+// Función original que requiere constants como parámetro
+// Modificar la función original para que sea retrocompatible
+export const calcularMetricasManuales = (plantCapacityKW: number, constants?: any): MetricasManuales => {
+    // Si no se proporciona constants, usar _globalConstants
+    const actualConstants = constants || _globalConstants;
+    
+    // Si no hay constants disponibles (ni pasados ni globales), retorna valores por defecto
+    if (!actualConstants) {
+        return {
+            energiaGenerada: 0,
+            precioUnitarioEnergia: 0,
+            cuotaLeasing: 0,
+            oYMenLeasing: 0,
+            oYMfueraLeasing: 0,
+            ahorroEnLeasing: 0,
+            ahorroFueraLeasing: 0,
+            ahorroEnLeasingTotalPeriodo: 0,
+            ahorroFueraLeasingTotalPeriodo: 0,
+            ahorroTotalProyecto: 0,
+            factorPlanta: 0,
+            costoParque: 0,
+            duracionLeasing: 6,
+            vidaUtil: 25,
+            plantCapacityKWcm: plantCapacityKW,
+        };
+    }
+    
+    const plantCapacityKWcm = plantCapacityKW;
 
+    // Código actual de la función con actualConstants...
+    const energiaGenerada = Math.floor(actualConstants?.detailedMetrics?.valoresAnuales?.generacionTotal || 0);
+    const precioUnitarioEnergia = actualConstants?.invoice?.priceEnergyMWh || 0;
+    const costoParquexMW = actualConstants?.technical?.costPerKW || 0;
 
-    // Valores base
-    const { constants } = useConstants();
-    const plantCapacityKWcm = plantCapacityKW
-
-    //const energiaGenerada = 2026;
-    const energiaGenerada = Math.floor(constants.detailedMetrics?.valoresAnuales.generacionTotal)
-    const precioUnitarioEnergia = constants.invoice.priceEnergyMWh
-    const costoParquexMW = constants.technical.costPerKW
-
-    // Cálculos proporcionales basados en la capacidad de la planta
+    // Resto de la función sin cambios pero usando actualConstants en lugar de constants
     const cuotaLeasing = 104000 * (plantCapacityKW / 600);
-
-    // O&M proporcional a la capacidad (base: 30000 para 1000kW en leasing)
-    const oYMenLeasing = constants.technical.OyMLeasing * (plantCapacityKW / 1000);
-
-    // O&M proporcional a la capacidad (base: 60000 para 1000kW fuera de leasing)
-    const oYMfueraLeasing = constants.technical.OyMSLeasing * (plantCapacityKW / 1000);
-
-    // Cálculo de ahorros (energiaGenerada * precioUnitarioEnergia) - oYMenLeasing - cuotaLeasing;
-    const ahorroEnLeasing = (energiaGenerada * precioUnitarioEnergia) - oYMenLeasing - cuotaLeasing
+    const oYMenLeasing = (actualConstants?.technical?.OyMLeasing || 30000) * (plantCapacityKW / 1000);
+    const oYMfueraLeasing = (actualConstants?.technical?.OyMSLeasing || 60000) * (plantCapacityKW / 1000);
+    
+    const ahorroEnLeasing = (energiaGenerada * precioUnitarioEnergia) - oYMenLeasing - cuotaLeasing;
     const ahorroFueraLeasing = (energiaGenerada * precioUnitarioEnergia) - oYMfueraLeasing;
-
-    const duracionLeasing = constants.technical.duracionLeasing
-    const duracionResto = (25 - duracionLeasing)
-    const vidaUtil = 25
-
-    const ahorroEnLeasingTotalPeriodo = ahorroEnLeasing * duracionLeasing
-    //
-    const ahorroFueraLeasingTotalPeriodo = ahorroFueraLeasing * duracionResto
-    const ahorroTotalProyecto = ahorroEnLeasingTotalPeriodo + ahorroFueraLeasingTotalPeriodo
-    //+ ahorroFueraLeasingTotalPeriodo
-    //energiaGenerada
-    //const energiaGeneradaAux = 1850 / (plantCapacityKW / 1000)
-    //(energiaGeneradaAux) / (plantCapacityKW / 1000 * 8760)
-    const factorPlanta = energiaGenerada * 1000 / ((plantCapacityKW * 1000) * 8760)
-
-    const costoParque = costoParquexMW * plantCapacityKW
-
-
-
+    
+    const duracionLeasing = actualConstants?.technical?.duracionLeasing || 6;
+    const duracionResto = (25 - duracionLeasing);
+    const vidaUtil = 25;
+    
+    const ahorroEnLeasingTotalPeriodo = ahorroEnLeasing * duracionLeasing;
+    const ahorroFueraLeasingTotalPeriodo = ahorroFueraLeasing * duracionResto;
+    const ahorroTotalProyecto = ahorroEnLeasingTotalPeriodo + ahorroFueraLeasingTotalPeriodo;
+    
+    const factorPlanta = energiaGenerada * 1000 / ((plantCapacityKW * 1000) * 8760);
+    const costoParque = costoParquexMW * plantCapacityKW;
 
     return {
         energiaGenerada,
@@ -154,6 +165,3 @@ export const calcularMetricasManuales = (plantCapacityKW: number): MetricasManua
         plantCapacityKWcm,
     };
 };
-
-// Ejemplo de uso:
-// const metricasManuales = calcularMetricasManuales(800); // Para una planta de 800kW

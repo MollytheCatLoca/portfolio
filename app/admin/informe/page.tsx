@@ -419,7 +419,7 @@ return (
 
     </PDFPage>
 
-    /* Analisis Financiero */ }
+    {/* Analisis Financiero */ }
 <PDFPage pageNumber={ 8 } totalPages = { totalPages } >
 <PDFSection sectionTitle="Analisis Financiero" >
 

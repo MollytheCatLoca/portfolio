@@ -31,12 +31,12 @@
     "exchangeRate": 1010,
     "totalInvoiceAmountPesos": 23472550,
     "taxesPercentage": 31,
-    "fixedChargesPesos": 14725490,
+    "fixedChargesPesos": 1725490,
     "reactivePowerChargesPesos": 158000,
     "priceEnergyMWh": 146
   },
   "company": {
-    "companyName": "FRIGORIFICO MARU S.A.",
+    "companyName": "1 FRIGORIFICO MARU S.A.",
     "latitude": -34.24861,
     "longitude": -62.65472,
     "address": "RN 33 33, Rufino, Santa Fe"

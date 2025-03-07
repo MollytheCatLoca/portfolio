@@ -34,7 +34,7 @@ const SolarQuotation: React.FC = () => {
     });
 
     const plantMetrics = calculatePlantMetrics();
-    const manualMetrics = calcularMetricasManuales(plantMetrics.plantCapacityKW);
+    const manualMetrics = calcularMetricasManuales(plantMetrics.plantCapacityKW, constants);
 
     const [financials, setFinancials] = useState<FinancialMetrics>({
         totalInvestment: manualMetrics.costoParque * 1000,
