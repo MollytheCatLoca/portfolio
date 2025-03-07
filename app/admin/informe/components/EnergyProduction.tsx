@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-import { Card, CardContent } from components/ui/Card3";
+import { Card, CardContent } from '@/components/ui/Card3';
+
 import { 
     Zap,
     Battery,
