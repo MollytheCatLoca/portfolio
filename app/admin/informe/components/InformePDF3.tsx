@@ -20,10 +20,13 @@ import { heroSectionData } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 import ReactDOMServer from 'react-dom/server';
 import CompanyPresentationPrint from './CompanyPresentationPrint';
-import SolarImpactDashboard from './SolarImpactDashboard';
+import TucumanSolarTechnical from './AdvancedSolarPark';
+import SolarQuotation from './SolarQuotation';
+import SolarParkSummary from './SolarParkSummary';
+import EscoDash from './EscobarDash';
 
-const InformePDF = () => {
-  const totalPages = 10;
+const InformePDF3 = () => {
+  const totalPagesInd = 10;
   const [consumptionData, setConsumptionData] = useState(null);
   const [invoiceData, setInvoiceData] = useState(null);
   const [monthlyConsumptions, setMonthlyConsumptions] = useState(null);
@@ -69,12 +72,12 @@ const InformePDF = () => {
     <div>
       <div id="informe-pdf-container">
         {/* Página de Inicio */}
-        <BasePage pageNumber={1} totalPages={totalPages}>
+        <BasePage pageNumber={1} totalPages={totalPagesInd}>
           <PowerHero_Informe data={{ heroSection: heroSectionData }} />
         </BasePage>
 
         {/* Ventajas de All-in-One */}
-        <BasePage pageNumber={2} totalPages={totalPages}>
+        <BasePage pageNumber={2} totalPages={totalPagesInd}>
           <div
             style={{
               transform: 'scale(1.05) translate(-15px, -10px)',
@@ -87,7 +90,7 @@ const InformePDF = () => {
         </BasePage>
 
         {/* Empresa */}
-        <PDFPage pageNumber={3} totalPages={totalPages}>
+        <PDFPage pageNumber={3} totalPages={totalPagesInd}>
           <PDFSection sectionTitle="Locacion" />
           <div
             style={{
@@ -102,26 +105,31 @@ const InformePDF = () => {
           </div>
         </PDFPage>
 
-        {/* Consumo Energético y Análisis */}
-        <PDFPage pageNumber={4} totalPages={totalPages}>
-          <PDFSection sectionTitle="Consumo Energético y Análisis">
-            <div className="grid grid-cols-2 p-4 pt-12">
-              <div className="transform scale-90 origin-top-left">
-                <ConsumptionForm />
-              </div>
-              <div className="transform scale-90 origin-top-right">
-                <InvoiceDataForm />
-              </div>
-            </div>
-          </PDFSection>
-        </PDFPage>
+
+     {/* SolarParkSummary */}
+     
+     < PDFPage pageNumber = { 4 } totalPages = { totalPagesInd } >
+     <PDFSection sectionTitle="Puntos de Ahorro" >
+
+         </PDFSection>
+         < div style = {{
+ transform: 'scale(0.58) translate(290px, 0px)', // Ajusta el valor de escala y desplazamiento aquí
+     transformOrigin: 'top left', // Define el punto de referencia para la transformación
+         overflow: 'hidden', // Opcional: oculta cualquier contenido que desborde el área visible
+ }}>
+
+ <EscoDash />
+ </div>
+ </PDFPage>
+
+      
 
         {/* Dimensionamiento del Parque Solar */}
-        <PDFPage pageNumber={5} totalPages={totalPages}>
+        <PDFPage pageNumber={5} totalPages={totalPagesInd}>
           <PDFSection sectionTitle="Dimensionamiento del Parque Solar" />
           <div
             style={{
-              transform: 'scaleX(0.85) scaleY(0.85) translate(40px, 50px)',
+              transform: 'scaleX(0.80) scaleY(0.80) translate(90px, 70px)',
               transformOrigin: 'top left',
               overflow: 'visible'
             }}
@@ -130,77 +138,70 @@ const InformePDF = () => {
           </div>
         </PDFPage>
 
-        <PDFPage pageNumber={6} totalPages={totalPages}>
-          <PDFSection sectionTitle="Dimensionamiento del Parque Solar" />
-          <div
-            style={{
-              transform: 'scale(0.8) translate(120px, 10px)',
-              transformOrigin: 'top left',
-              overflow: 'hidden',
-            }}
-          >
-            <DimensionarContainer2 />
-          </div>
-        </PDFPage>
+       
 
         {/* Analítica Dimensionamiento */}
-        <PDFPage pageNumber={7} totalPages={totalPages}>
-          <PDFSection sectionTitle="Análisis Financiero" />
-          <div
-            style={{
-              transform: 'scaleX(1) scaleY(1) translate(5px, 20px)',
-              transformOrigin: 'top left',
-              overflow: 'hidden',
-            }}
-          >
-            <AhorrosYBeneficios1 />
-          </div>
-        </PDFPage>
+        < PDFPage pageNumber = { 6 } totalPages = { totalPagesInd } >
+        <PDFSection sectionTitle="Dimensionamiento del Parque Solar" >
 
-        {/* Análisis Financiero */}
-        <PDFPage pageNumber={8} totalPages={totalPages}>
-          <PDFSection sectionTitle="Análisis Financiero" />
-          <div
-            style={{
-              transform: 'scaleX(0.93) scaleY(0.93) translate(35px, 30px)',
-              transformOrigin: 'top left',
-              overflow: 'hidden',
-            }}
-          >
-            <AhorrosYBeneficios2 />
-          </div>
-        </PDFPage>
+            </PDFSection>
+            < div style = {{
+    transform: 'scale(0.8) translate(140px, 10px)', // Ajusta el valor de escala y desplazamiento aquí
+        transformOrigin: 'top left', // Define el punto de referencia para la transformación
+            overflow: 'hidden', // Opcional: oculta cualquier contenido que desborde el área visible
+            }}>
+    <DimensionarContainer2 />
+    </div>
+    </PDFPage>
+
+ {/* AdvanceSolarPark */}
+        <PDFPage pageNumber = { 7 } totalPages = { totalPagesInd } >
+    <PDFSection sectionTitle="Techical Data del Parque Solar" >
+
+        </PDFSection>
+        < div style = {{
+    transform: 'scale(0.8) translate(140px, 20px)', // Ajusta el valor de escala y desplazamiento aquí
+        transformOrigin: 'top left', // Define el punto de referencia para la transformación
+            overflow: 'hidden', // Opcional: oculta cualquier contenido que desborde el área visible
+        }}>
+    <TucumanSolarTechnical />
+    </div>
+    </PDFPage>
+
+ {/* SolarQuotation */}
+    < PDFPage pageNumber = { 8 } totalPages = { totalPagesInd } >
+    <PDFSection sectionTitle="Techical Data del Parque Solar" >
+
+        </PDFSection>
+        < div style = {{
+transform: 'scale(0.65) translate(180px, 70px)', // Ajusta el valor de escala y desplazamiento aquí
+    transformOrigin: 'top left', // Define el punto de referencia para la transformación
+        overflow: 'hidden', // Opcional: oculta cualquier contenido que desborde el área visible
+    }}>
+<SolarQuotation />
+</div>
+</PDFPage>
+
+        {/* SolarParkSummary */}
+     
+        < PDFPage pageNumber = { 9 } totalPages = { totalPagesInd } >
+        <PDFSection sectionTitle="Techical Data del Parque Solar" >
+
+            </PDFSection>
+            < div style = {{
+    transform: 'scale(0.65) translate(260px, 100px)', // Ajusta el valor de escala y desplazamiento aquí
+        transformOrigin: 'top left', // Define el punto de referencia para la transformación
+            overflow: 'hidden', // Opcional: oculta cualquier contenido que desborde el área visible
+    }}>
+
+    <SolarParkSummary />
+    </div>
+    </PDFPage>
 
 
-
-        {/* Conclusiones */}
-        <PDFPage pageNumber={9} totalPages={totalPages}>
-          <PDFSection sectionTitle="Análisis Financiero" />
-          <div
-            style={{
-              transform: 'scale(0.80) translate(130px, 20px)',
-              transformOrigin: 'top left',
-              overflow: 'hidden',
-            }}
-          >
-            <PowerSummary
-              plantMetrics={detailedMetrics_Power}
-              monthlyMetrics={detailedMetrics_Power}
-              netBenefits={{ duringLeasing: 0, afterLeasing: 0 }}
-              formatCurrency={(value) =>
-                new Intl.NumberFormat('en-US', {
-                  style: 'currency',
-                  currency: 'USD',
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                }).format(value)
-              }
-            />
-          </div>
-        </PDFPage>
-
+       
         {/* Página Final */}
-        <BasePage pageNumber={10} totalPages={totalPages}>
+        <BasePage pageNumber={10} totalPages={totalPagesInd}>
           <div
             style={{
               marginTop: '90mm',
@@ -216,4 +217,26 @@ const InformePDF = () => {
   );
 };
 
-export default InformePDF;
+export default InformePDF3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+
+
+
+

@@ -3,7 +3,7 @@ import { useConstants } from '../contexts/ConstantsContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card3';
 import { LineChart, BarChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { Sun, DollarSign, BatteryCharging, TrendingUp, Zap, Leaf, PiggyBank } from 'lucide-react';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 // Tipos
 type InvoiceMetrics = {
     monthlyMetrics: {
@@ -163,7 +163,7 @@ const AhorrosYBeneficios2: React.FC = () => {
         annualMetrics.fixedCharges
     );
 
-    const metricasManuales = usecalcularMetricasManuales(plantMetrics.plantCapacityKW)
+    const metricasManuales = calcularMetricasManuales(plantMetrics.plantCapacityKW)
     const total25YearBenefits = metricasManuales.ahorroTotalProyecto
 
     // Datos para gráficos

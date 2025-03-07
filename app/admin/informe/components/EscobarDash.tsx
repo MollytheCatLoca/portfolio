@@ -6,10 +6,13 @@ import { Sun, Battery, PiggyBank, Zap } from 'lucide-react';
 
 const EscoDash = () => {
     const consumptionData = [
-        { id: 1, name: "POLIDEPORTIVO MUNICIPAL", power: 30, monthlyConsumption: 7164, energyPrice: 127, monthlySavings: 909828 },
-        { id: 2, name: "MICROESTADIO", power: 28, monthlyConsumption: 4910, energyPrice: 127, monthlySavings: 623570 },
-        { id: 3, name: "ASBORNO 701", power: 26, monthlyConsumption: 9759, energyPrice: 127, monthlySavings: 1239393 },
-        { id: 4, name: "POLIDEPORTIVO MATHEU", power: 9, monthlyConsumption: 2205, energyPrice: 127, monthlySavings: 280035 }
+        { id: 1, name: "A Italia", power: 79, monthlyConsumption: 56097, energyPrice: 114, monthlySavings: 6033220  },
+        { id: 2, name: "METRO BOMB", power: 87, monthlyConsumption: 56833, energyPrice: 114, monthlySavings:  6116065 },
+        { id: 3, name: "POZO PROCREAR", power: 85, monthlyConsumption: 60184, energyPrice: 114, monthlySavings:  6843260 },
+        { id: 4, name: "POZO Vietes", power: 106, monthlyConsumption: 74626, energyPrice: 114, monthlySavings:  8487010 },
+        { id: 5, name: "Las Torcacitas", power: 87, monthlyConsumption: 61834, energyPrice: 114, monthlySavings:  7031305 },
+        { id: 6, name: "POZO PALMA", power: 127, monthlyConsumption: 90311, energyPrice: 114, monthlySavings:  10268835 }
+
     ];
 
     const totalConsumption = consumptionData.reduce((acc, curr) => acc + curr.monthlyConsumption, 0);
@@ -25,9 +28,9 @@ const EscoDash = () => {
     }));
 
     return (
-        <div className="w-[270mm] h-[210mm] p-6 bg-gray-50 dark:bg-gray-950">
+        <div className="w-[300mm] h-[310mm] p-6 bg-gray-50 dark:bg-gray-950">
             <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold dark:text-white">Parque Solar Municipal Escobar</h2>
+                <h2 className="text-2xl font-bold dark:text-white">Parque Solar Municipal MAIPU</h2>
                 <div className="px-3 py-1.5 bg-yellow-100 dark:bg-yellow-900 rounded-full">
                     <span className="text-yellow-700 dark:text-yellow-300 text-sm font-semibold">
                         Proyecto de Energía Renovable

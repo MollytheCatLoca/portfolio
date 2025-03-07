@@ -234,7 +234,8 @@ export default function CompanyPresentation() {
                                             <span className="text-sm text-gray-300">Irradiancia Est.</span>
                                         </div>
                                         <span className="text-sm font-semibold text-white">
-                                            {5.2 - Math.abs(company.latitude).toFixed(2) / 20} kWh/m²
+                                            {(5.2 - Math.abs(company.latitude) / 20).toFixed(2)
+                                            } kWh/m²
                                         </span>
                                     </div>
                                 </div>

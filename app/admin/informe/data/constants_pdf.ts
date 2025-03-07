@@ -1,4 +1,4 @@
-// constants_pdf.ts
+// data/constants_pdf.ts
 export const heroSectionData = {
     subtitle: "Informe de Energía Renovable",
     title: "Parque Solar All-in-One",
@@ -92,7 +92,7 @@ export interface MetricasManuales {
     vidaUtil: number; // 
 }
 
-export const usecalcularMetricasManuales = (plantCapacityKW: number): MetricasManuales => {
+export const calcularMetricasManuales = (plantCapacityKW: number): MetricasManuales => {
 
 
     // Valores base

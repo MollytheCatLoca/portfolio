@@ -1,12 +1,10 @@
 import React from 'react';
 import { ConstantsProvider } from '../contexts/ConstantsContext';
-
-
-import PresupFierros from '../components/presupFierros';
+import InformePDF3 from '../components/InformePDF3';
 const App = () => {
     return (
         <ConstantsProvider>
-        <PresupFierros />
+        <InformePDF3 />
         </ConstantsProvider>
     );
 };

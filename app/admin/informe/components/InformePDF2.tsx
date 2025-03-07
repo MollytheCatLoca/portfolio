@@ -23,6 +23,7 @@ import CompanyPresentationPrint from './CompanyPresentationPrint';
 import TucumanSolarTechnical from './AdvancedSolarPark';
 import SolarQuotation from './SolarQuotation';
 import SolarParkSummary from './SolarParkSummary';
+import EscoDash from './EscobarDash';
 
 const InformePDF2 = () => {
   const totalPagesInd = 9;

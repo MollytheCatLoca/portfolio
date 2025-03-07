@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card3";
 import { useConstants } from '../contexts/ConstantsContext';
 import { Sun, Battery, Zap, AlertTriangle, ArrowUpRight, Leaf, DollarSign, BarChart3 } from 'lucide-react';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 
 const AnalisisParqueSolar2 = () => {
     const { constants } = useConstants();
@@ -34,7 +34,7 @@ const AnalisisParqueSolar2 = () => {
 
     const metrics = detailedMetrics || defaultMetrics;
     const plantMetrics = calculatePlantMetrics();
-    const metricasManuales = usecalcularMetricasManuales(plantMetrics.plantCapacityKW);
+    const metricasManuales = calcularMetricasManuales(plantMetrics.plantCapacityKW);
 
     // Calculamos algunos KPIs adicionales
     const factorPlanta = metricasManuales.factorPlanta * 100

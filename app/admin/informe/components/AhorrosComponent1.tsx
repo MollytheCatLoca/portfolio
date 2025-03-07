@@ -3,7 +3,7 @@ import { useConstants } from '../contexts/ConstantsContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card3';
 import { LineChart, BarChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Sun, DollarSign, BatteryCharging, TrendingUp, Zap, Leaf, PiggyBank } from 'lucide-react';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 import { metadata } from '@/app/layout';
 
 
@@ -108,7 +108,7 @@ const AhorrosYBeneficios1: React.FC = () => {
     const plantMetrics = calculatePlantMetrics();
 
 
-    const metricasManuales = usecalcularMetricasManuales(plantMetrics.plantCapacityKW);
+    const metricasManuales = calcularMetricasManuales(plantMetrics.plantCapacityKW);
     const total25YearBenefits = metricasManuales.ahorroEnLeasing * 6 + metricasManuales.ahorroFueraLeasing * 19
     const plantCost = metricasManuales.costoParque
 

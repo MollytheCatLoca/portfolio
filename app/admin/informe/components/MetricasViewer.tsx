@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useConstants } from '../contexts/ConstantsContext';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card3";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ const MetricasManualesAuditor: React.FC = () => {
     const [auxPlantCapacity, setAuxPlantCapacity] = useState(constants.detailedMetrics.capacityMW * 1000);
     const [metricas, setMetricas] = useState(null);
     const [decimals, setDecimals] = useState(2);
-    const resultados = usecalcularMetricasManuales(constants.detailedMetrics?.capacityMW * 1000);
+    const resultados = calcularMetricasManuales(constants.detailedMetrics?.capacityMW * 1000);
 
     const handleCalculate = () => {
         setMetricas(resultados);

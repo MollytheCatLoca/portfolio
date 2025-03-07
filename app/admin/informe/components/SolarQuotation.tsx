@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calculator,Sun,Zap, DollarSign, TrendingUp, Clock, Package, Wallet } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card3";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 
 interface FinancialMetrics {
@@ -34,7 +34,7 @@ const SolarQuotation: React.FC = () => {
     });
 
     const plantMetrics = calculatePlantMetrics();
-    const manualMetrics = usecalcularMetricasManuales(plantMetrics.plantCapacityKW);
+    const manualMetrics = calcularMetricasManuales(plantMetrics.plantCapacityKW);
 
     const [financials, setFinancials] = useState<FinancialMetrics>({
         totalInvestment: manualMetrics.costoParque * 1000,
@@ -151,9 +151,9 @@ const SolarQuotation: React.FC = () => {
                             },
                             {
                                 icon: <Zap className="h-6 w-6" />,
-                                title: "Annual Generation",
-                                value: `${financials.yearlyGeneration} MWh`,
-                                subtext: formatCurrency(financials.energyUnitPrice) + " per MWh",
+                                title: "Monthly Saving",
+                                value: `${formatCurrency((financials.yearlyGeneration * financials.energyUnitPrice) /12 )}`,
+                                subtext: " Energy Saved",
                                 gradient: "from-amber-500/20 to-orange-900/40",
                                 borderColor: "border-amber-500/30"
                             }

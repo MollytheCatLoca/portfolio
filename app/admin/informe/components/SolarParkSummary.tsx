@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sun, Battery, Gauge, WalletCards, LineChart } from 'lucide-react';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 
 interface SolarSummaryProps {
@@ -29,7 +29,7 @@ const SolarParkSummary: React.FC<SolarSummaryProps> = ({
     });
 
     const plantMetrics = calculatePlantMetrics();
-    const manualMetrics = usecalcularMetricasManuales(plantMetrics.plantCapacityKW);
+    const manualMetrics = calcularMetricasManuales(plantMetrics.plantCapacityKW);
 
 
     // Datos calculados del parque

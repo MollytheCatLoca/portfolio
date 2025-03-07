@@ -5,7 +5,7 @@ import { Sun, Battery, Cpu, Gauge, LayoutGrid } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card3";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts';
 //import { calcularMetricasManuales } from '../data/constants_pdf';
-import { usecalcularMetricasManuales } from '../data/constants_pdf';
+import { calcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 
 const TucumanSolarTechnical: React.FC<Props> = () => {

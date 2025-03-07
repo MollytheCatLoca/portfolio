@@ -30,7 +30,7 @@ import SolarParkSummary from './components/SolarParkSummary';
 import MetricasViewer from './components/MetricasViewer';
 import QuotationManager from './components/QuotationManager';
 import EscoDash from './components/EscobarDash';
-
+import SolarImpactDashboard from './components/SolarImpactDashboard';
 
 
 const MainContent = () => {
@@ -418,6 +418,21 @@ return (
     </div>
 
     </PDFPage>
+
+    /* Analisis Financiero */ }
+<PDFPage pageNumber={ 8 } totalPages = { totalPages } >
+<PDFSection sectionTitle="Analisis Financiero" >
+
+    </PDFSection>
+    < div style = {{
+transform: 'scaleX(0.63) scaleY(0.63) translate(35px, 30px)', // Ajusta el valor de escala y desplazamiento aquí
+    transformOrigin: 'top left', // Define el punto de referencia para la transformación
+        overflow: 'hidden', // Opcional: oculta cualquier contenido que desborde el área visible
+        }}>
+<SolarImpactDashboard />
+</div>
+
+</PDFPage>
 
 
 {/* Conclusiones */ }

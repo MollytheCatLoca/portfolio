@@ -1,11 +1,11 @@
 {
   "technical": {
-    "contractedPowerKVA": 480,
-    "contractedPowerKW": 100,
-    "injectionLimitKW": 480,
-    "costPerKW": 1000,
+    "contractedPowerKVA": 200,
+    "contractedPowerKW": 200,
+    "injectionLimitKW": 200,
+    "costPerKW": 900,
     "referencePowerMW": 1,
-    "referenceAnnualGenerationMWH": 1950,
+    "referenceAnnualGenerationMWH": 2190,
     "maxCurtailmentPercentage": 7,
     "daysPerYear": 365,
     "hoursPico": 5,
@@ -19,41 +19,41 @@
     "tasaInteres": 6
   },
   "consumption": {
-    "annualConsumption": 288454,
-    "picoMonthly": 9615.13,
-    "valleMonthly": 7211.35,
-    "restoMonthly": 7211.35
+    "annualConsumption": 952044,
+    "picoMonthly": 15041,
+    "valleMonthly": 47380,
+    "restoMonthly": 16916
   },
   "power": {
-    "installedPowerKW": 100
+    "installedPowerKW": 500
   },
   "invoice": {
     "exchangeRate": 1010,
-    "totalInvoiceAmountPesos": 4366000,
-    "taxesPercentage": 21,
-    "fixedChargesPesos": 933966,
-    "reactivePowerChargesPesos": 15000,
-    "priceEnergyMWh": 127
+    "totalInvoiceAmountPesos": 23472550,
+    "taxesPercentage": 31,
+    "fixedChargesPesos": 14725490,
+    "reactivePowerChargesPesos": 158000,
+    "priceEnergyMWh": 146
   },
   "company": {
-    "companyName": "MUNICIPALIDAD ESCOBAR",
-    "latitude": -34.4047,
-    "longitude": -58.7744,
-    "address": "Polideportivo Municipal, Escobar, Buenos Aires"
+    "companyName": "FRIGORIFICO MARU S.A.",
+    "latitude": -34.24861,
+    "longitude": -62.65472,
+    "address": "RN 33 33, Rufino, Santa Fe"
   },
   "detailedMetrics": {
-    "capacityMW": 0.1,
+    "capacityMW": 0.5,
     "valoresAnuales": {
-      "generacionTotal": 195,
-      "autoconsumo": 96.15133333333331,
-      "inyeccion": 98.8486666666667,
-      "curtailment": 0
+      "generacionTotal": 1095,
+      "autoconsumo": 317.348,
+      "inyeccion": 642.4000000000001,
+      "curtailment": 135.25199999999998
     },
     "porcentajes": {
-      "ahorroTotal": 67.60176665950203,
-      "autoconsumo": 49.308376068376056,
-      "inyeccion": 50.69162393162395,
-      "curtailment": 0
+      "ahorroTotal": 100,
+      "autoconsumo": 28.981552511415526,
+      "inyeccion": 58.66666666666668,
+      "curtailment": 12.351780821917806
     }
   }
 }

@@ -20,10 +20,14 @@ import { heroSectionData } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 import ReactDOMServer from 'react-dom/server';
 import CompanyPresentationPrint from './CompanyPresentationPrint';
-import SolarImpactDashboard from './SolarImpactDashboard';
+import SolarParkSpecs from './SolarParkSpecs';
+import EnergyResource from './EnergyResource';
+import EnergyProduction from './EnergyProduction';
+import SolarBudget from './SolarBudget';
+import ProjectSummary from './ProjectSummary';
 
-const InformePDF = () => {
-  const totalPages = 10;
+const PresupFierros = () => {
+  const totalPages = 9;
   const [consumptionData, setConsumptionData] = useState(null);
   const [invoiceData, setInvoiceData] = useState(null);
   const [monthlyConsumptions, setMonthlyConsumptions] = useState(null);
@@ -104,42 +108,44 @@ const InformePDF = () => {
 
         {/* Consumo Energético y Análisis */}
         <PDFPage pageNumber={4} totalPages={totalPages}>
-          <PDFSection sectionTitle="Consumo Energético y Análisis">
-            <div className="grid grid-cols-2 p-4 pt-12">
-              <div className="transform scale-90 origin-top-left">
-                <ConsumptionForm />
-              </div>
-              <div className="transform scale-90 origin-top-right">
-                <InvoiceDataForm />
-              </div>
-            </div>
-          </PDFSection>
-        </PDFPage>
-
-        {/* Dimensionamiento del Parque Solar */}
-        <PDFPage pageNumber={5} totalPages={totalPages}>
-          <PDFSection sectionTitle="Dimensionamiento del Parque Solar" />
+          <PDFSection sectionTitle="Specs Parque Solar" />
           <div
             style={{
-              transform: 'scaleX(0.85) scaleY(0.85) translate(40px, 50px)',
+              transform: 'scaleX(0.72) scaleY(0.72) translate(170px, 20px)',
               transformOrigin: 'top left',
               overflow: 'visible'
             }}
           >
-            <DimensionarForm1 />
+          <SolarParkSpecs />
+           
+          </div>
+        </PDFPage>
+        {/* Dimensionamiento del Parque Solar */}
+        <PDFPage pageNumber={5} totalPages={totalPages}>
+          <PDFSection sectionTitle="Recurso Solar" />
+          <div
+            style={{
+              transform: 'scaleX(0.85) scaleY(0.92) translate(100px, 20px)',
+              transformOrigin: 'top left',
+              overflow: 'visible'
+            }}
+          >
+          <EnergyResource />
+           
           </div>
         </PDFPage>
 
         <PDFPage pageNumber={6} totalPages={totalPages}>
-          <PDFSection sectionTitle="Dimensionamiento del Parque Solar" />
+          <PDFSection sectionTitle="Generacion Parque Solar" />
           <div
             style={{
-              transform: 'scale(0.8) translate(120px, 10px)',
+              transform: 'scaleX(0.7) scaleY(0.68) translate(220px, 10px)',
               transformOrigin: 'top left',
               overflow: 'hidden',
             }}
           >
-            <DimensionarContainer2 />
+          <EnergyProduction />
+           
           </div>
         </PDFPage>
 
@@ -148,12 +154,12 @@ const InformePDF = () => {
           <PDFSection sectionTitle="Análisis Financiero" />
           <div
             style={{
-              transform: 'scaleX(1) scaleY(1) translate(5px, 20px)',
+              transform: 'scaleX(0.8) scaleY(0.8) translate(140px, 20px)',
               transformOrigin: 'top left',
               overflow: 'hidden',
             }}
           >
-            <AhorrosYBeneficios1 />
+           <SolarBudget />
           </div>
         </PDFPage>
 
@@ -162,45 +168,19 @@ const InformePDF = () => {
           <PDFSection sectionTitle="Análisis Financiero" />
           <div
             style={{
-              transform: 'scaleX(0.93) scaleY(0.93) translate(35px, 30px)',
+              transform: 'scaleX(0.80) scaleY(0.80) translate(140px, 30px)',
               transformOrigin: 'top left',
               overflow: 'hidden',
             }}
           >
-            <AhorrosYBeneficios2 />
+           <ProjectSummary />
           </div>
         </PDFPage>
 
-
-
-        {/* Conclusiones */}
-        <PDFPage pageNumber={9} totalPages={totalPages}>
-          <PDFSection sectionTitle="Análisis Financiero" />
-          <div
-            style={{
-              transform: 'scale(0.80) translate(130px, 20px)',
-              transformOrigin: 'top left',
-              overflow: 'hidden',
-            }}
-          >
-            <PowerSummary
-              plantMetrics={detailedMetrics_Power}
-              monthlyMetrics={detailedMetrics_Power}
-              netBenefits={{ duringLeasing: 0, afterLeasing: 0 }}
-              formatCurrency={(value) =>
-                new Intl.NumberFormat('en-US', {
-                  style: 'currency',
-                  currency: 'USD',
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                }).format(value)
-              }
-            />
-          </div>
-        </PDFPage>
+   
 
         {/* Página Final */}
-        <BasePage pageNumber={10} totalPages={totalPages}>
+        <BasePage pageNumber={9} totalPages={totalPages}>
           <div
             style={{
               marginTop: '90mm',
@@ -216,4 +196,4 @@ const InformePDF = () => {
   );
 };
 
-export default InformePDF;
+export default PresupFierros;
