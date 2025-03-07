@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card2";
 import { TrendingUp, Sun, Battery, DollarSign, Zap, Lightbulb } from "lucide-react";
 import { calcularMetricasManuales } from "../data/constants_pdf";
 import { useConstants } from "../contexts/ConstantsContext";
