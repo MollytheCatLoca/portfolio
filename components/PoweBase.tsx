@@ -11,7 +11,7 @@ import Opcion2 from './Pages/ENERSA_opcion2';
 import Opcion3 from './Pages/ENERSA_opcion3';
 import Opcion4 from './Pages/ENERSA_opcion4';
 import BeneficiosBISAllInOne from './Pages/ENERSA_BeneficiosBISAllInOne';
-import ResumenEjecutivo from './Pages/ENERSA_ResumenEjecutivo';
+//import ResumenEjecutivo from './Pages/ENERSA_ResumenEjecutivo';
 import FinancialAnalysisTable from './Pages/AuxDPA';
 const TOTAL_PAGES = 8;
 
@@ -60,7 +60,7 @@ export default function PowerContent({ initialScenarios, initialQueryParams }) {
                             transform: 'scale(0.9)',
                 }
     }>
-        <ResumenEjecutivo />
+        
         </div>
         </PowerPage>
 
