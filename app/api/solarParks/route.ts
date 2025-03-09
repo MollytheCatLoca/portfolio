@@ -3,6 +3,13 @@ import axios from 'axios';
 import fs from 'fs/promises';
 import path from 'path';
 
+// Get base URL dynamically from environment variables
+const getApiBaseUrl = () => {
+  const serverUrl = process.env.API_SERVER_URL || 'http://82.29.58.172';
+  const serverPort = process.env.API_SERVER_PORT || '8001';
+  return `${serverUrl}:${serverPort}`;
+};
+
 const DEBUG_MODE = 1; // 1 para usar datos de Heroku, 2 para usar datos locales
 const TIMEOUT = 60000; // 60 segundos de timeout
 const CACHE_EXPIRATION = 3; // 1 hora en milisegundos
@@ -22,7 +29,7 @@ async function getLocalData() {
 
 async function fetchFromHeroku(url: string, data: any, options: any) {
     const response = await axios({
-        method: 'get',
+        method: 'post',
         url: url,
         ...options,
         data: JSON.stringify(data)
@@ -31,8 +38,7 @@ async function fetchFromHeroku(url: string, data: any, options: any) {
 }
 
 function getCacheKey(data: any): string {
-    return `${data.provincia}-${data.localidad}-${data.capacidad}-${data.latitud}-${data.longitud}-${data.scenarioId}`; // Añada -${data.scenarioId} al final
-
+    return `${data.provincia}-${data.localidad}-${data.capacidad}-${data.latitud}-${data.longitud}-${data.scenarioId}`;
 }
 
 function isCacheValid(cacheItem: CacheItem): boolean {
@@ -44,7 +50,6 @@ export async function POST(req: NextRequest) {
     const startTime = Date.now();
     try {
         const requestData = await req.json();
-        //console.log("API solarPark reqData: ", requestData)
 
         const data = {
             provincia: requestData.provincia || "Test",
@@ -53,11 +58,9 @@ export async function POST(req: NextRequest) {
             area: requestData.area || 100000,
             latitud: requestData.latitud || -27.5269702,
             longitud: requestData.longitud || -58.76592117375753,
-            scenarioId: requestData.scenarioId || "" // Añada esta línea
-
+            scenarioId: requestData.scenarioId || ""
         };
 
-        //console.log("API route: Using data", JSON.stringify(data, null, 2));
         console.log("API route: Using data");
 
         const cacheKey = getCacheKey(data);
@@ -71,20 +74,21 @@ export async function POST(req: NextRequest) {
         let responseData;
 
         if (DEBUG_MODE === 1) {
-            const herokuUrl = 'https://prompt-handler-06fbef253337.herokuapp.com/solar-parks';
+            // Use dynamic API base URL
+            const solarParksUrl = `${getApiBaseUrl()}/solar-parks`;
+
             const auth = {
                 username: process.env.API_USERNAME || '',
                 password: process.env.API_PASSWORD || ''
             };
 
-            console.log('API route: Requesting data from Heroku');
-            //console.log('API route: Using auth:', { username: auth.username, passwordLength: auth.password?.length });
+            console.log('API route: Requesting data from API server');
 
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), TIMEOUT);
 
             try {
-                responseData = await fetchFromHeroku(herokuUrl, data, {
+                responseData = await fetchFromHeroku(solarParksUrl, data, {
                     auth: auth,
                     timeout: TIMEOUT,
                     signal: controller.signal,
@@ -92,7 +96,7 @@ export async function POST(req: NextRequest) {
                         'Content-Type': 'application/json'
                     }
                 });
-                console.log('API route: Received response from Heroku');
+                console.log('API route: Received response from API server');
                 console.log(responseData);
                 // Guardar en caché
                 cache.set(cacheKey, { data: responseData, timestamp: Date.now() });

@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 
-const HEROKU_PDF_SERVICE_URL_SINGLE = process.env.HEROKU_PDF_SERVICE_URL_SINGLE || 'https://prompt-handler-06fbef253337.herokuapp.com/generate-pdf-single/';
-const HEROKU_PDF_STATUS_URL_SINGLE = process.env.HEROKU_PDF_STATUS_URL_SINGLE || 'https://prompt-handler-06fbef253337.herokuapp.com/pdf-status/';
-const HEROKU_PDF_DOWNLOAD_URL_SINGLE = process.env.HEROKU_PDF_DOWNLOAD_URL_SINGLE || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
+// Get base URL dynamically from environment variables
+const getApiBaseUrl = () => {
+  const serverUrl = process.env.API_SERVER_URL || 'http://82.29.58.172';
+  const serverPort = process.env.API_SERVER_PORT || '8001';
+  return `${serverUrl}:${serverPort}`;
+};
+
+// Define service endpoints with dynamic base URL
+const HEROKU_PDF_SERVICE_URL_SINGLE = process.env.HEROKU_PDF_SERVICE_URL_SINGLE || `${getApiBaseUrl()}/generate-pdf-single/`;
+const HEROKU_PDF_STATUS_URL_SINGLE = process.env.HEROKU_PDF_STATUS_URL_SINGLE || `${getApiBaseUrl()}/pdf-status/`;
+const HEROKU_PDF_DOWNLOAD_URL_SINGLE = process.env.HEROKU_PDF_DOWNLOAD_URL_SINGLE || `${getApiBaseUrl()}/download-pdf/`;
+
 const TIMEOUT = 300000; // 5 minutos de timeout
 const INITIAL_DELAY = 1000; // 1 segundo de espera inicial
 const MAX_RETRIES = 50;

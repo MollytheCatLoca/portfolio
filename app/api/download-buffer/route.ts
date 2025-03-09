@@ -1,7 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios from 'axios';
 
-const HEROKU_PDF_DOWNLOAD_URL = process.env.HEROKU_PDF_DOWNLOAD_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
+//const HEROKU_PDF_DOWNLOAD_URL = process.env.HEROKU_PDF_DOWNLOAD_URL || 'https://prompt-handler-06fbef253337.herokuapp.com/download-pdf/';
+// Get base URL dynamically from environment variables
+const getApiBaseUrl = () => {
+    const serverUrl = process.env.API_SERVER_URL || 'http://82.29.58.172';
+    const serverPort = process.env.API_SERVER_PORT || '8001';
+    return `${serverUrl}:${serverPort}`;
+  };
+  
+// Use the dynamic base URL for PDF download URL
+const HEROKU_PDF_DOWNLOAD_URL = process.env.HEROKU_PDF_DOWNLOAD_URL || `${getApiBaseUrl()}/download-pdf/`;
+
 const TIMEOUT = 30000;
 const DOWNLOAD_RETRY_DELAY = 2000;
 const DOWNLOAD_MAX_RETRIES = 5;
