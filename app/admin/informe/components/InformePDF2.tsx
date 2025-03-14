@@ -24,6 +24,7 @@ import TucumanSolarTechnical from './AdvancedSolarPark';
 import SolarQuotation from './SolarQuotation';
 import SolarParkSummary from './SolarParkSummary';
 import EscoDash from './EscobarDash';
+import FlowDiagram from './FlowDiagram';
 
 const InformePDF2 = () => {
   const totalPagesInd = 9;
@@ -80,7 +81,7 @@ const InformePDF2 = () => {
         <BasePage pageNumber={2} totalPages={totalPagesInd}>
           <div
             style={{
-              transform: 'scale(1.05) translate(-15px, -10px)',
+              transform: 'scale(1.05) translate(15px, 40px)',
               transformOrigin: 'top left',
               overflow: 'hidden',
             }}
@@ -94,7 +95,7 @@ const InformePDF2 = () => {
           <PDFSection sectionTitle="Locacion" />
           <div
             style={{
-              transform: 'scale(0.75) translate(160px, 50px)',
+              transform: 'scale(0.8) translate(120px, 100px)',
               transformOrigin: 'top left',
               overflow: 'visible', // Cambiamos a visible para debugging
       minHeight: '500px',  // Aseguramos espacio suficiente
@@ -195,6 +196,7 @@ transform: 'scale(0.65) translate(180px, 70px)', // Ajusta el valor de escala y 
           </div>
         </BasePage>
       </div>
+      
     </div>
   );
 };

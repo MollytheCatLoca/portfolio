@@ -1,11 +1,11 @@
 {
   "technical": {
-    "contractedPowerKVA": 200,
-    "contractedPowerKW": 200,
-    "injectionLimitKW": 200,
-    "costPerKW": 900,
+    "contractedPowerKVA": 750,
+    "contractedPowerKW": 750,
+    "injectionLimitKW": 750,
+    "costPerKW": 850,
     "referencePowerMW": 1,
-    "referenceAnnualGenerationMWH": 2190,
+    "referenceAnnualGenerationMWH": 2250,
     "maxCurtailmentPercentage": 7,
     "daysPerYear": 365,
     "hoursPico": 5,
@@ -19,41 +19,41 @@
     "tasaInteres": 6
   },
   "consumption": {
-    "annualConsumption": 952044,
-    "picoMonthly": 15041,
-    "valleMonthly": 47380,
-    "restoMonthly": 16916
+    "annualConsumption": 1731912,
+    "picoMonthly": 79056,
+    "valleMonthly": 33701,
+    "restoMonthly": 31569
   },
   "power": {
-    "installedPowerKW": 500
+    "installedPowerKW": 800
   },
   "invoice": {
     "exchangeRate": 1010,
-    "totalInvoiceAmountPesos": 23472550,
-    "taxesPercentage": 31,
-    "fixedChargesPesos": 1725490,
+    "totalInvoiceAmountPesos": 44155936,
+    "taxesPercentage": 21,
+    "fixedChargesPesos": 12014615,
     "reactivePowerChargesPesos": 158000,
-    "priceEnergyMWh": 146
+    "priceEnergyMWh": 109
   },
   "company": {
-    "companyName": "1 FRIGORIFICO MARU S.A.",
-    "latitude": -34.24861,
-    "longitude": -62.65472,
-    "address": "RN 33 33, Rufino, Santa Fe"
+    "companyName": "Grupo Pignata",
+    "latitude": -31.6464,
+    "longitude": -63.8578,
+    "address": "AUTOPISTA CBA PILAR KM 665, X5960 Río Segundo, Córdoba"
   },
   "detailedMetrics": {
-    "capacityMW": 0.5,
+    "capacityMW": 0.8,
     "valoresAnuales": {
-      "generacionTotal": 1095,
-      "autoconsumo": 317.348,
-      "inyeccion": 642.4000000000001,
-      "curtailment": 135.25199999999998
+      "generacionTotal": 1800,
+      "autoconsumo": 577.3039999999999,
+      "inyeccion": 1222.6960000000001,
+      "curtailment": 0
     },
     "porcentajes": {
       "ahorroTotal": 100,
-      "autoconsumo": 28.981552511415526,
-      "inyeccion": 58.66666666666668,
-      "curtailment": 12.351780821917806
+      "autoconsumo": 32.072444444444436,
+      "inyeccion": 67.92755555555556,
+      "curtailment": 0
     }
   }
 }

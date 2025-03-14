@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/Card3';
 import { 
     MapPin, Building2, Globe2, Navigation, 
     Sun, Wind, Thermometer, CloudRain,
-    Battery, Zap, Calendar, ArrowUpRight
+    Battery, Zap, Calendar
 } from 'lucide-react';
 import { useConstants } from '../contexts/ConstantsContext';
 
@@ -77,8 +77,12 @@ export default function CompanyPresentation() {
 
     if (!company || !company.companyName) {
         return (
-            <Card className="bg-black-200 border-gray-800 mt-4">
-                <CardContent>Cargando datos de la empresa...</CardContent>
+            <Card className="bg-[#0A0F1C] border-gray-800 mt-4">
+                <CardContent className="p-4">
+                    <div className="flex items-center justify-center">
+                        <p className="text-gray-400">Cargando datos de la empresa...</p>
+                    </div>
+                </CardContent>
             </Card>
         );
     }
@@ -93,147 +97,141 @@ export default function CompanyPresentation() {
     });
 
     return (
-        <Card className="bg-black-200 border-gray-800">
-            <CardContent className="p-6">
+        <Card className="bg-[#0A0F1C] border-gray-800">
+            <CardContent className="p-4">
                 {/* Header con nombre de empresa */}
-                <div className="flex items-center gap-2 mb-6">
-                    <Building2 className="h-6 w-6 text-blue-400" />
-                    <h2 className="text-xl font-bold text-white">
-                        {company.companyName}
-                    </h2>
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                        <Building2 className="h-5 w-5 text-blue-400" />
+                        <div>
+                            <h2 className="text-lg font-bold text-white">
+                                {company.companyName}
+                            </h2>
+                            <p className="text-xs text-gray-400">
+                                Análisis de Ubicación
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex items-center text-xs text-gray-400">
+                        <Calendar className="h-3.5 w-3.5 mr-1.5" />
+                        {currentDate}
+                    </div>
                 </div>
 
-                {/* Cards en línea */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                    <Card className="bg-[#1a1f2e] border-none">
-                        <CardContent className="p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                                <MapPin className="h-4 w-4 text-red-400" />
-                                <p className="text-sm font-medium text-gray-300">Dirección</p>
-                            </div>
-                            <p className="text-sm text-gray-400 truncate" title={company.address}>
-                                {company.address}
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-[#1a1f2e] border-none">
-                        <CardContent className="p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                                <Globe2 className="h-4 w-4 text-green-400" />
-                                <p className="text-sm font-medium text-gray-300">Latitud</p>
-                            </div>
-                            <p className="text-sm font-semibold text-white">
-                                {company.latitude || 'N/A'}
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-[#1a1f2e] border-none">
-                        <CardContent className="p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                                <Globe2 className="h-4 w-4 text-yellow-400" />
-                                <p className="text-sm font-medium text-gray-300">Longitud</p>
-                            </div>
-                            <p className="text-sm font-semibold text-white">
-                                {company.longitude || 'N/A'}
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-[#1a1f2e] border-none">
-                        <CardContent className="p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                                <Navigation className="h-4 w-4 text-purple-400" />
-                                <p className="text-sm font-medium text-gray-300">Región</p>
-                            </div>
-                            <p className="text-sm font-semibold text-white">
-                                {region}
-                            </p>
-                        </CardContent>
-                    </Card>
+                {/* Cards en grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                    <LocationCard 
+                        icon={<MapPin className="h-4 w-4 text-red-400" />}
+                        title="Dirección"
+                        value={company.address}
+                    />
+                    <LocationCard 
+                        icon={<Globe2 className="h-4 w-4 text-green-400" />}
+                        title="Latitud"
+                        value={company.latitude || 'N/A'}
+                    />
+                    <LocationCard 
+                        icon={<Globe2 className="h-4 w-4 text-yellow-400" />}
+                        title="Longitud"
+                        value={company.longitude || 'N/A'}
+                    />
+                    <LocationCard 
+                        icon={<Navigation className="h-4 w-4 text-purple-400" />}
+                        title="Región"
+                        value={region}
+                    />
                 </div>
 
                 {/* Contenedor flex para mapa y datos */}
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                     {/* Mapa estático con overlay */}
-                    <div className="relative w-2/3">
-                        <div className="rounded-xl shadow-lg overflow-hidden">
+                    <div className="relative flex-1 md:w-2/3">
+                        <div className="rounded-lg overflow-hidden border border-gray-800">
                             <img 
                                 src="/maps/static_map.png" 
                                 alt="Map Static" 
                                 style={{ 
-                                    height: '80mm', 
+                                    height: '65mm', 
                                     width: '100%', 
-                                    objectFit: 'cover' 
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
                                 }} 
                             />
-                            <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black opacity-30"></div>
-                            <div className="absolute bottom-4 left-4 text-white font-semibold bg-black/50 rounded-md px-3 py-2 flex items-center gap-2">
-                                <MapPin className="h-4 w-4" />
-                                {company.companyName}
+                            {/* Sólo gradiente en la parte inferior para mejorar visibilidad */}
+                            <div className="absolute left-0 right-0 bottom-0 h-12 bg-gradient-to-t from-black to-transparent opacity-40"></div>
+                            
+                            {/* Punto de ubicación */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                <div className="w-3 h-3 bg-red-500 rounded-full relative">
+                                    <div className="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-75"></div>
+                                </div>
+                            </div>
+                            
+                            <div className="absolute bottom-3 left-3 text-white bg-black/60 rounded-md px-2 py-1 text-xs">
+                                <div className="font-medium">{company.companyName}</div>
+                                <div className="text-gray-300 text-[10px]">{region}</div>
                             </div>
                         </div>
                     </div>
 
                     {/* Panel de datos climatológicos y energéticos */}
-                    <div className="w-1/3 space-y-4">
+                    <div className="md:w-1/3 space-y-3">
                         <Card className="bg-[#1a1f2e] border-none">
-                            <CardContent className="p-4">
-                                <div className="flex items-center justify-between mb-8">
-                                    <h3 className="text-white font-semibold">Datos del Sitio</h3>
-                                    <span className="text-xs text-gray-400">{currentDate}</span>
+                            <CardContent className="p-3">
+                                <div className="flex items-center justify-between mb-3 pb-1 border-b border-gray-700">
+                                    <h3 className="text-sm text-white font-medium">Datos del Sitio</h3>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <Sun className="h-4 w-4 text-yellow-400" />
-                                                <span className="text-xs text-gray-400">Horas Sol/día</span>
-                                            </div>
-                                            <p className="text-sm font-semibold text-white">{climateData.solarHours}h</p>
-                                        </div>
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <Wind className="h-4 w-4 text-blue-400" />
-                                                <span className="text-xs text-gray-400">Velocidad Viento</span>
-                                            </div>
-                                            <p className="text-sm font-semibold text-white">{climateData.windSpeed} km/h</p>
-                                        </div>
-                                    </div>
-                                    <div className="space-y-4">
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <Thermometer className="h-4 w-4 text-red-400" />
-                                                <span className="text-xs text-gray-400">Temp. Media</span>
-                                            </div>
-                                            <p className="text-sm font-semibold text-white">{climateData.avgTemp}°C</p>
-                                        </div>
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <CloudRain className="h-4 w-4 text-blue-300" />
-                                                <span className="text-xs text-gray-400">Precip. Anual</span>
-                                            </div>
-                                            <p className="text-sm font-semibold text-white">{climateData.rainfall} mm</p>
-                                        </div>
-                                    </div>
+                                <div className="grid grid-cols-2 gap-3">
+                                    <ClimateDataCard 
+                                        icon={<Sun className="h-4 w-4 text-yellow-400" />}
+                                        title="Horas Sol/día"
+                                        value={`${climateData.solarHours}h`}
+                                    />
+                                    <ClimateDataCard 
+                                        icon={<Wind className="h-4 w-4 text-blue-400" />}
+                                        title="Velocidad Viento"
+                                        value={`${climateData.windSpeed} km/h`}
+                                    />
+                                    <ClimateDataCard 
+                                        icon={<Thermometer className="h-4 w-4 text-red-400" />}
+                                        title="Temp. Media"
+                                        value={`${climateData.avgTemp}°C`}
+                                    />
+                                    <ClimateDataCard 
+                                        icon={<CloudRain className="h-4 w-4 text-blue-300" />}
+                                        title="Precip. Anual"
+                                        value={`${climateData.rainfall} mm`}
+                                    />
                                 </div>
 
                                 {/* Potencial Energético */}
-                                <div className="mt-8 mb-5 pt-4 border-t border-gray-700">
+                                <div className="mt-3 pt-3 border-t border-gray-700">
                                     <div className="flex items-center justify-between mb-2">
                                         <div className="flex items-center gap-2">
                                             <Battery className="h-4 w-4 text-green-400" />
-                                            <span className="text-sm text-gray-300">Potencial Solar</span>
+                                            <span className="text-xs text-gray-300">Potencial Solar</span>
                                         </div>
-                                        <span className="text-sm font-semibold text-white">{solarPotential}</span>
+                                        <span className="text-xs font-medium text-white">{solarPotential}</span>
                                     </div>
+                                    
+                                    {/* Barra de progreso para potencial solar */}
+                                    <div className="w-full h-1.5 bg-gray-700 rounded-full mb-3">
+                                        <div 
+                                            className="h-full bg-gradient-to-r from-yellow-500 to-green-500 rounded-full" 
+                                            style={{ 
+                                                width: `${solarPotential === 'Alto' ? 90 : 
+                                                    solarPotential === 'Medio-Alto' ? 75 : 
+                                                    solarPotential === 'Medio' ? 50 : 35}%` 
+                                            }}
+                                        ></div>
+                                    </div>
+                                    
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-2">
                                             <Zap className="h-4 w-4 text-yellow-400" />
-                                            <span className="text-sm text-gray-300">Irradiancia Est.</span>
+                                            <span className="text-xs text-gray-300">Irradiancia Est.</span>
                                         </div>
-                                        <span className="text-sm font-semibold text-white">
+                                        <span className="text-xs font-medium text-white">
                                             {(5.2 - Math.abs(company.latitude) / 20).toFixed(2)
                                             } kWh/m²
                                         </span>
@@ -247,3 +245,29 @@ export default function CompanyPresentation() {
         </Card>
     );
 }
+
+// Componente para tarjetas de ubicación
+const LocationCard = ({ icon, title, value }) => (
+    <div className="bg-[#1a1f2e] rounded-lg p-2.5 border border-gray-800">
+        <div className="flex items-center gap-1.5 mb-1.5">
+            {icon}
+            <p className="text-xs text-gray-400">{title}</p>
+        </div>
+        <p className="text-xs text-white truncate" title={value}>
+            {value}
+        </p>
+    </div>
+);
+
+// Componente para tarjetas de datos climáticos
+const ClimateDataCard = ({ icon, title, value }) => (
+    <div className="bg-[#151b2a] rounded-lg p-2 border border-gray-800">
+        <div className="flex items-center gap-1.5 mb-1">
+            {icon}
+            <p className="text-[10px] text-gray-400">{title}</p>
+        </div>
+        <p className="text-sm font-medium text-white">
+            {value}
+        </p>
+    </div>
+);

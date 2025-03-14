@@ -26,7 +26,7 @@ const SolarQuotation: React.FC = () => {
     const PROJECT_YEARS = 25;
 
     const calculatePlantMetrics = () => ({
-        plantCapacityKW: constants.detailedMetrics.capacityMW,
+        plantCapacityKW: constants.detailedMetrics.capacityMW.toFixed(3),
         annualGenerationMWh: constants.detailedMetrics.valoresAnuales.generacionTotal,
         selfConsumptionMWh: constants.detailedMetrics.valoresAnuales.autoconsumo,
         gridInjectionMWh: constants.detailedMetrics.valoresAnuales.inyeccion,

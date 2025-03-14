@@ -1,10 +1,9 @@
 "use client"
 import { useMemo } from 'react';
 import React from 'react';
-import { Sun, Battery, Cpu, Gauge, LayoutGrid } from "lucide-react";
+import { Sun, Battery, Cpu, Gauge, LayoutGrid, Zap, BarChart3 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card3";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, ReferenceLine } from 'recharts';
-//import { calcularMetricasManuales } from '../data/constants_pdf';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, ReferenceLine, CartesianGrid } from 'recharts';
 import { calcularMetricasManuales } from '../data/constants_pdf';
 import { useConstants } from '../contexts/ConstantsContext';
 
@@ -22,11 +21,15 @@ const TucumanSolarTechnical: React.FC<Props> = () => {
     const plantMetrics = calculatePlantMetrics();
     const manualMetrics = calcularMetricasManuales(plantMetrics.plantCapacityKW);
     const dcAcRatio = 0.85;
+   
+    
+        // Calculamos algunos KPIs adicionales
+    const factorPlanta = manualMetrics.factorPlanta * 100;
 
     const panel = {
         modelo: "TrinaSolar 550W",
         potencia: 550,
-        eficiencia: 21.3,
+        eficiencia: factorPlanta.toFixed(2),
         voc: 49.5,
         isc: 13.85,
         vmpp: 41.5,
@@ -114,45 +117,80 @@ const TucumanSolarTechnical: React.FC<Props> = () => {
         perdidas_inv: parseFloat((monthData.perdidas.inv * scalingFactor).toFixed(1)),
     }));
 
-    const CustomTooltip = useMemo(() => ({
-        backgroundColor: '#2D3748',
-        border: '1px solid #4A5568',
-        fontSize: '11px',
-        color: '#E5E7EB'
-      }), []);
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+            const total = payload.reduce((sum, entry) => sum + entry.value, 0);
+            
+            return (
+                <div className="bg-gray-800 border border-gray-700 rounded-md shadow-lg p-3 text-white">
+                    <p className="text-sm font-bold border-b border-gray-700 pb-1 mb-2">{label}</p>
+                    {payload.map((entry, index) => (
+                        <div key={index} className="flex items-center justify-between gap-4 text-xs">
+                            <div className="flex items-center gap-1">
+                                <div className="w-3 h-3" style={{ backgroundColor: entry.color }}></div>
+                                <span>{entry.name}:</span>
+                            </div>
+                            <span className="font-mono">{entry.value.toFixed(1)} kWh</span>
+                        </div>
+                    ))}
+                    <div className="border-t border-gray-700 mt-2 pt-1 text-xs font-bold flex justify-between">
+                        <span>Total:</span>
+                        <span className="font-mono">{total.toFixed(1)} kWh</span>
+                    </div>
+                </div>
+            );
+        }
+        return null;
+    };
     
     const bars = [
-        { dataKey: 'generacion', fill: '#4CAF50', name: 'Generación' },
-        { dataKey: 'perdidas_temp', fill: '#FFC107', name: 'P.Temp', stack: 'perdidas' },
-        { dataKey: 'perdidas_opticas', fill: '#FF9800', name: 'P.Ópt', stack: 'perdidas' },
-        { dataKey: 'perdidas_cables', fill: '#F44336', name: 'P.DC', stack: 'perdidas' },
-        { dataKey: 'perdidas_inv', fill: '#9C27B0', name: 'P.Inv', stack: 'perdidas' }
-      ];
+        { dataKey: 'generacion', fill: '#10B981', name: 'Generación' },
+        { dataKey: 'perdidas_temp', fill: '#F59E0B', name: 'P.Temp', stack: 'perdidas' },
+        { dataKey: 'perdidas_opticas', fill: '#F97316', name: 'P.Ópt', stack: 'perdidas' },
+        { dataKey: 'perdidas_cables', fill: '#EF4444', name: 'P.DC', stack: 'perdidas' },
+        { dataKey: 'perdidas_inv', fill: '#8B5CF6', name: 'P.Inv', stack: 'perdidas' }
+    ];
   
-
-    
-      return (
-        <div className="w-[280mm] h-[140mm] bg-gray-900 p-6">
-            <div className="flex gap-6 h-full">
+    // Calcular la eficiencia total del sistema
+    const totalEfficiency = Math.round(equipmentData.paneles.eficiencia * (equipmentData.inversores.eficiencia / 100) * 0.9 * 10) / 10;
+  
+    return (
+        <div className="w-[280mm] h-[140mm] bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-lg shadow-xl">
+            <div className="flex justify-between items-center mb-4">
+                <div className="flex items-center gap-2">
+                    <Zap className="h-6 w-6 text-yellow-400" />
+                    <h1 className="text-white text-lg font-bold">Planta Solar {plantMetrics.plantCapacityKW.toFixed(3)}MW - Detalles Técnicos</h1>
+                </div>
+                <div className="bg-gray-800/60 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-700 text-gray-200 text-xs">
+                    Eficiencia del Sistema: <span className="font-bold text-green-400">{totalEfficiency}%</span>
+                </div>
+            </div>
+            
+            <div className="flex gap-6 h-[calc(100%-2rem)]">
                 {/* Left Column */}
-                <div className="w-[45%] flex flex-col gap-3">
+                <div className="w-[45%] flex flex-col gap-4">
                     {/* System Configuration */}
-                    <Card className="bg-gray-800 border-gray-700 h-[19%]">
-                        <CardContent className="p-1">
-                            <div className="flex items-center gap-3 mb-2">
-                                <Cpu className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                                <h2 className="text-sm font-bold text-white truncate">CONFIGURACIÓN DEL SISTEMA</h2>
+                    <Card className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 shadow-lg rounded-xl overflow-hidden">
+                        <CardContent className="p-3">
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="bg-blue-500/20 p-1.5 rounded-lg">
+                                    <Cpu className="h-4 w-4 text-blue-400" />
+                                </div>
+                                <h2 className="text-sm font-bold text-white">CONFIGURACIÓN DEL SISTEMA</h2>
                             </div>
-                            <div className="grid grid-cols-2 gap-2 text-xs">
+                            <div className="grid grid-cols-2 gap-3 text-xs">
                                 {[
-                                    { label: 'Potencia DC:', value: `${equipmentData.configuracion.potenciaDC} kWp` },
-                                    { label: 'Potencia AC:', value: `${equipmentData.configuracion.potenciaAC} kW` },
-                                    { label: 'DC/AC Ratio:', value: equipmentData.configuracion.dcAcRatio },
-                                    { label: 'Strings Total:', value: equipmentData.configuracion.stringsPorInversor * equipmentData.inversores.cantidad }
+                                    { label: 'Potencia DC:', value: `${equipmentData.configuracion.potenciaDC} kWp`, icon: '⚡' },
+                                    { label: 'Potencia AC:', value: `${equipmentData.configuracion.potenciaAC} kW`, icon: '🔌' },
+                                    { label: 'DC/AC Ratio:', value: equipmentData.configuracion.dcAcRatio, icon: '⚖️' },
+                                    { label: 'Strings Total:', value: equipmentData.configuracion.stringsPorInversor * equipmentData.inversores.cantidad, icon: '🔗' }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gray-700 p-1 rounded flex justify-between">
-                                        <span className="text-gray-300 truncate">{item.label}</span>
-                                        <span className="font-bold ml-1">{item.value}</span>
+                                    <div key={i} className="bg-gray-700/50 p-2 rounded-lg flex items-center">
+                                        <div className="flex items-center gap-1.5 text-gray-300">
+                                            <span>{item.icon}</span>
+                                            <span className="truncate">{item.label}</span>
+                                        </div>
+                                        <span className="font-bold text-white ml-auto">{item.value}</span>
                                     </div>
                                 ))}
                             </div>
@@ -160,30 +198,38 @@ const TucumanSolarTechnical: React.FC<Props> = () => {
                     </Card>
     
                     {/* Modules */}
-                    <Card className="bg-gray-800 border-gray-700 h-[24%]">
-                        <CardContent className="p-2">
-                            <div className="flex items-center gap-3 mb-2">
-                                <LayoutGrid className="h-4 w-4 text-yellow-400 flex-shrink-0" />
-                                <h3 className="text-xs font-bold text-white truncate">
-                                    MÓDULOS FOTOVOLTAICOS [{equipmentData.paneles.cantidad}x]
+                    <Card className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 shadow-lg rounded-xl overflow-hidden">
+                        <CardContent className="p-3">
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="bg-yellow-500/20 p-1.5 rounded-lg">
+                                    <LayoutGrid className="h-4 w-4 text-yellow-400" />
+                                </div>
+                                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                                    MÓDULOS FOTOVOLTAICOS
+                                    <span className="px-2 py-0.5 bg-yellow-600/30 text-yellow-300 rounded-full text-xs">
+                                        {equipmentData.paneles.cantidad}x
+                                    </span>
                                 </h3>
                             </div>
-                            <div className="bg-gray-700 p-1 rounded text-xs">
-                                <div className="mb-2 pb-0 border-b border-gray-600">
-                                    <span className="font-bold truncate block">{equipmentData.paneles.modelo}</span>
+                            <div className="bg-gray-700/50 p-3 rounded-lg text-xs">
+                                <div className="mb-3 pb-1 border-b border-gray-600 flex items-center justify-between">
+                                    <span className="font-bold text-white">{equipmentData.paneles.modelo}</span>
+                                    <span className="text-xs px-2 py-0.5 bg-green-600/20 text-green-300 rounded-full">
+                                        {equipmentData.paneles.eficiencia}% Eficiencia
+                                    </span>
                                 </div>
-                                <div className="grid grid-cols-2 gap-x-2 gap-y-0">
+                                <div className="grid grid-cols-3 gap-2">
                                     {[
                                         { label: 'Potencia:', value: `${equipmentData.paneles.potencia}W` },
                                         { label: 'Voc:', value: `${equipmentData.paneles.voc}V` },
                                         { label: 'Isc:', value: `${equipmentData.paneles.isc}A` },
                                         { label: 'Vmpp:', value: `${equipmentData.paneles.vmpp}V` },
                                         { label: 'Impp:', value: `${equipmentData.paneles.impp}A` },
-                                        { label: 'Eficiencia:', value: `${equipmentData.paneles.eficiencia}%` }
+                                        { label: 'Temp.Coef:', value: `${equipmentData.paneles.temperatureCoef}%/°C` }
                                     ].map((item, i) => (
-                                        <div key={i} className="flex justify-between">
-                                            <span className="text-gray-300 truncate">{item.label}</span>
-                                            <span className="ml-1">{item.value}</span>
+                                        <div key={i} className="bg-gray-800/60 p-2 rounded-lg">
+                                            <span className="text-gray-400 block">{item.label}</span>
+                                            <span className="text-white font-mono">{item.value}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -191,56 +237,39 @@ const TucumanSolarTechnical: React.FC<Props> = () => {
                         </CardContent>
                     </Card>
     
-                    {/* Technical Configuration */}
-                    <Card className="bg-gray-800 border-gray-700 h-[24%]">
-                        <CardContent className="p-2">
-                            <div className="flex items-center gap-3 mb-2">
-                                <Gauge className="h-4 w-4 text-purple-400 flex-shrink-0" />
-                                <h3 className="text-xs font-bold text-white truncate">
-                                    CONFIGURACIÓN TÉCNICA
-                                </h3>
-                            </div>
-                            <div className="grid grid-cols-2 gap-x-2 gap-y-0 text-xs">
-                                {[
-                                    { label: 'Vmpp Range:', value: `${equipmentData.configuracion.vmpptMin}V - ${equipmentData.configuracion.vmpptMax}V` },
-                                    { label: 'Impp String:', value: `${equipmentData.configuracion.corrienteString}A` },
-                                    { label: 'Módulos Total:', value: equipmentData.paneles.cantidad },
-                                    { label: 'Módulos/String:', value: equipmentData.configuracion.modulesPorString }
-                                ].map((item, i) => (
-                                    <div key={i} className="bg-gray-700 p-2 rounded flex justify-between">
-                                        <span className="text-gray-300 truncate">{item.label}</span>
-                                        <span className="ml-1">{item.value}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </CardContent>
-                    </Card>
-    
                     {/* Inverters */}
-                    <Card className="bg-gray-800 border-gray-700 h-[24%]">
-                        <CardContent className="p-2">
-                            <div className="flex items-center gap-3 mb-2">
-                                <Battery className="h-4 w-4 text-green-400 flex-shrink-0" />
-                                <h3 className="text-xs font-bold text-white truncate">
-                                    INVERSORES [{equipmentData.inversores.cantidad}x]
+                    <Card className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 shadow-lg rounded-xl overflow-hidden">
+                        <CardContent className="p-3">
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="bg-green-500/20 p-1.5 rounded-lg">
+                                    <Battery className="h-4 w-4 text-green-400" />
+                                </div>
+                                <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                                    INVERSORES
+                                    <span className="px-2 py-0.5 bg-green-600/30 text-green-300 rounded-full text-xs">
+                                        {equipmentData.inversores.cantidad}x
+                                    </span>
                                 </h3>
                             </div>
-                            <div className="bg-gray-700 p-1 rounded text-xs">
-                                <div className="mb-2 pb-0 border-b border-gray-600">
-                                    <span className="font-bold truncate block">{equipmentData.inversores.modelo}</span>
+                            <div className="bg-gray-700/50 p-3 rounded-lg text-xs">
+                                <div className="mb-3 pb-1 border-b border-gray-600 flex items-center justify-between">
+                                    <span className="font-bold text-white">{equipmentData.inversores.modelo}</span>
+                                    <span className="text-xs px-2 py-0.5 bg-blue-600/20 text-blue-300 rounded-full">
+                                        {equipmentData.inversores.eficiencia}% Eficiencia
+                                    </span>
                                 </div>
-                                <div className="grid grid-cols-2 gap-x-2 gap-y-0">
+                                <div className="grid grid-cols-3 gap-2">
                                     {[
                                         { label: 'Potencia:', value: `${equipmentData.inversores.potencia}kW` },
-                                        { label: 'Eficiencia:', value: `${equipmentData.inversores.eficiencia}%` },
                                         { label: 'MPPT Range:', value: `${equipmentData.inversores.mpptRangeMin}-${equipmentData.inversores.mpptRangeMax}V` },
                                         { label: 'Max I:', value: `${equipmentData.inversores.maxInputCurrent}A` },
+                                        { label: 'Max Strings:', value: equipmentData.inversores.maxStrings },
                                         { label: 'Strings/MPPT:', value: equipmentData.inversores.stringsPerMPPT },
-                                        { label: 'Max Strings:', value: equipmentData.inversores.maxStrings }
+                                        { label: 'Strings/Inv:', value: stringsPerInverter }
                                     ].map((item, i) => (
-                                        <div key={i} className="flex justify-between">
-                                            <span className="text-gray-300 truncate">{item.label}</span>
-                                            <span className="ml-1">{item.value}</span>
+                                        <div key={i} className="bg-gray-800/60 p-2 rounded-lg">
+                                            <span className="text-gray-400 block">{item.label}</span>
+                                            <span className="text-white font-mono">{item.value}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -251,30 +280,59 @@ const TucumanSolarTechnical: React.FC<Props> = () => {
     
                 {/* Right Column - Chart */}
                 <div className="w-[55%] h-full">
-                    <Card className="bg-gray-800 border-gray-700 h-full">
-                        <CardContent className="p-3 h-full flex flex-col">
-                            <div className="flex items-center gap-1 mb-2">
-                                <Sun className="h-4 w-4 text-yellow-400" />
-                                <h2 className="text-sm font-bold text-white truncate">RENDIMIENTO DEL SISTEMA</h2>
+                    <Card className="bg-gray-800/60 backdrop-blur-sm border border-gray-700 shadow-lg rounded-xl overflow-hidden h-full">
+                        <CardContent className="p-4 h-full flex flex-col">
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center gap-2">
+                                    <div className="bg-yellow-500/20 p-1.5 rounded-lg">
+                                        <BarChart3 className="h-4 w-4 text-yellow-400" />
+                                    </div>
+                                    <h2 className="text-sm font-bold text-white">RENDIMIENTO MENSUAL DEL SISTEMA</h2>
+                                </div>
+                                <div className="flex text-xs text-gray-400 gap-2">
+                                    <div className="flex items-center gap-1">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                        <span>Generación</span>
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                        <span>Pérdidas</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="h-[90%]">
+                            <div className="h-[calc(100%-2rem)] bg-gray-900/40 p-3 rounded-lg">
                                 <ResponsiveContainer>
                                     <BarChart 
                                         data={chartData} 
-                                        margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                                        margin={{ top: 10, right: 30, left: 0, bottom: 5 }}
                                     >
+                                        <CartesianGrid strokeDasharray="3 3" stroke="#374151" vertical={false} />
                                         <XAxis 
                                             dataKey="mes" 
-                                            tick={{ fill: '#E5E7EB', fontSize: 11 }} 
+                                            tick={{ fill: '#E5E7EB', fontSize: 11 }}
+                                            axisLine={{ stroke: '#4B5563' }}
+                                            tickLine={{ stroke: '#4B5563' }}
                                         />
                                         <YAxis 
-                                            tick={{ fill: '#E5E7EB', fontSize: 11 }} 
+                                            tick={{ fill: '#E5E7EB', fontSize: 11 }}
+                                            axisLine={{ stroke: '#4B5563' }}
+                                            tickLine={{ stroke: '#4B5563' }}
+                                            label={{ 
+                                                value: 'kWh', 
+                                                angle: -90, 
+                                                position: 'insideLeft',
+                                                fill: '#9CA3AF',
+                                                fontSize: 11,
+                                                dy: 50
+                                            }}
                                         />
-                                        <Tooltip contentStyle={CustomTooltip} />
+                                        <Tooltip content={<CustomTooltip />} />
                                         <Legend 
-                                            wrapperStyle={{ fontSize: '11px', color: '#E5E7EB' }} 
+                                            wrapperStyle={{ fontSize: '11px', color: '#E5E7EB' }}
+                                            iconType="circle"
+                                            iconSize={8}
                                             verticalAlign="top" 
-                                            height={36}
+                                            height={30}
                                         />
                                         {bars.map(({ dataKey, fill, name, stack }) => (
                                             <Bar 
@@ -283,7 +341,8 @@ const TucumanSolarTechnical: React.FC<Props> = () => {
                                                 fill={fill} 
                                                 name={name}
                                                 stackId={stack}
-                                                barSize={20} 
+                                                barSize={16} 
+                                                radius={[4, 4, 0, 0]}
                                             />
                                         ))}
                                     </BarChart>

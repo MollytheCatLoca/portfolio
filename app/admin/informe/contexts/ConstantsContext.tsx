@@ -328,14 +328,18 @@ export const ConstantsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
 
     // Función de actualización de detailedMetrics
+    // En updateDetailedMetrics, añade estos logs:
     const updateDetailedMetrics = useCallback(async (newDetailedMetrics) => {
         try {
+            console.log("ConstantsContext: Actualizando detailedMetrics:", newDetailedMetrics);
+            
             setConstants((prevConstants) => {
                 const capacityMW = newDetailedMetrics.capacityMW;
                 let newInstalledPowerKW = prevConstants.power.installedPowerKW;
 
                 if (typeof capacityMW === 'number') {
                     newInstalledPowerKW = capacityMW * 1000;
+                    console.log("ConstantsContext: Calculando nuevo installedPowerKW:", newInstalledPowerKW);
                 }
 
                 const updatedConstants = {
@@ -347,6 +351,7 @@ export const ConstantsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                     }
                 };
 
+                console.log("ConstantsContext: Nuevos constants a enviar al API:", updatedConstants);
                 axios.post('/api/constants', updatedConstants).catch((err) => {
                     console.error('Error updating constants:', err);
                 });
@@ -358,6 +363,7 @@ export const ConstantsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
             throw new Error('Error al actualizar las métricas detalladas');
         }
     }, []);
+
 
 
 
@@ -391,11 +397,14 @@ export const ConstantsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
 
     // Cargar constantes iniciales
+    // En la función fetchConstants, añade estos logs:
     const fetchConstants = useCallback(async () => {
         try {
+            console.log("ConstantsContext: Iniciando fetchConstants");
             setIsLoading(true);
             const response = await axios.get('/api/constants');
             const data = response.data;
+            console.log("ConstantsContext: Datos recibidos del API:", data);
 
             // Limpiamos y validamos cada sección
             const validatedData: Constants = {
@@ -430,6 +439,7 @@ export const ConstantsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
                 }
             };
 
+            console.log("ConstantsContext: Datos validados:", validatedData);
             setConstants(validatedData);
             setError(null);
         } catch (err) {
@@ -437,10 +447,13 @@ export const ConstantsProvider: React.FC<{ children: React.ReactNode }> = ({ chi
             console.error('Error loading constants:', err);
         } finally {
             setIsLoading(false);
+            console.log("ConstantsContext: Finalizado fetchConstants");
         }
     }, []);
 
+
     useEffect(() => {
+        console.log("ConstantsContext: useEffect para fectchConstants")
         fetchConstants();
     }, [fetchConstants]);
 
